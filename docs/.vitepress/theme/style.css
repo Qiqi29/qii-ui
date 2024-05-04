@@ -1,0 +1,182 @@
+/**
+ * 颜色
+ * 
+ * 每种颜色都有完全相同的色阶系统，有3个级别的固体
+ * 不同亮度的颜色，1种柔和的颜色。
+ *  
+ * -'XXX-1'：主要用于彩色文本的最纯色。它必须
+ * 满足'XXX-soft'顶部使用时的对比度。
+ * 
+ * -'XXX-2'：主要用于按钮悬停状态的颜色。
+ * 
+ * -'XXX-3'：纯色背景的颜色，例如按钮的bg颜色。
+ * 它必须满足纯白色（#ffffff）文本的对比度
+ * 顶部。
+ * 
+ * -'XXX-soft'：用于自定义容器等微妙背景的颜色
+ * 或徽章。放置'XXX-1'颜色时必须满足对比度
+ * 在它上面。
+ * 
+ * 柔和的颜色必须是半透明的Alpha通道。这是至关重要的
+ * 因为它允许在彼此之上添加多个“软”颜色
+ * 创建重音，例如当内部有内联代码块时
+ * 自定义容器。
+ * 
+ * -'default'：纯粹用于微妙指示的颜色，没有任何
+ * 附加到它的特殊含义，例如菜单悬停状态的bg颜色。
+ * 
+ * -'品牌'：用于原色品牌，如链接文本、按钮
+ * 品牌主题等。
+ * 
+ * -'提示'：用于指示有用的信息。默认主题使用
+ * 默认情况下为此使用品牌颜色。
+ * 
+ * -'警告'：用于向用户指示警告。在自定义中使用
+ * 容器、徽章等。
+ * 
+ * -'危险'：用于向用户显示错误或危险信息。使用过
+ * 在自定义容器、徽章等中。
+ * --------------------------------------------------------------------------*/
+
+:root {
+  --q-color-theme: #3380FF;
+  --q-color-theme-h: #1b59cd;
+
+  --vp-c-default-1: var(--vp-c-gray-1);
+  --vp-c-default-2: var(--vp-c-gray-2);
+  --vp-c-default-3: var(--vp-c-gray-3);
+  --vp-c-default-soft: var(--vp-c-gray-soft);
+
+  --vp-c-brand-1: var(--q-color-theme);
+  --vp-c-brand-2: var(--vp-c-indigo-2);
+  --vp-c-brand-3: var(--vp-c-indigo-3);
+  --vp-c-brand-soft: var(--vp-c-indigo-soft);
+
+  --vp-c-tip-1: var(--vp-c-brand-1);
+  --vp-c-tip-2: var(--vp-c-brand-2);
+  --vp-c-tip-3: var(--vp-c-brand-3);
+  --vp-c-tip-soft: var(--vp-c-brand-soft);
+
+  --vp-c-warning-1: var(--vp-c-yellow-1);
+  --vp-c-warning-2: var(--vp-c-yellow-2);
+  --vp-c-warning-3: var(--vp-c-yellow-3);
+  --vp-c-warning-soft: var(--vp-c-yellow-soft);
+
+  --vp-c-danger-1: var(--vp-c-red-1);
+  --vp-c-danger-2: var(--vp-c-red-2);
+  --vp-c-danger-3: var(--vp-c-red-3);
+  --vp-c-danger-soft: var(--vp-c-red-soft);
+}
+
+/**
+ * Component: Button
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-button-brand-border: transparent;
+  --vp-button-brand-text: var(--vp-c-white);
+  --vp-button-brand-bg: var(--q-color-theme);
+  --vp-button-brand-hover-border: transparent;
+  --vp-button-brand-hover-text: var(--vp-c-white);
+  --vp-button-brand-hover-bg: var(--q-color-theme-h);
+  --vp-button-brand-active-border: transparent;
+  --vp-button-brand-active-text: var(--vp-c-white);
+  --vp-button-brand-active-bg: var(--vp-c-brand-1);
+}
+
+
+/**
+ * Component: Home
+ * -------------------------------------------------------------------------- */
+
+
+:root {
+  /* 首页标题文本 */
+  --vp-home-hero-name-color: var(--q-color-theme);
+  /* --vp-home-hero-name-background: -webkit-linear-gradient(
+    120deg,
+    #bd34fe 30%,
+    #41d1ff
+  ); */
+
+  /* 首页图像背景 */
+  --vp-home-hero-image-background-image: linear-gradient(0deg, #3380FF30, #3380FF30);
+  --vp-home-hero-image-filter: blur(65px);
+}
+
+
+/**
+ * Component: Custom Block
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-custom-block-tip-border: transparent;
+  --vp-custom-block-tip-text: var(--vp-c-text-1);
+  --vp-custom-block-tip-bg: var(--vp-c-brand-soft);
+  --vp-custom-block-tip-code-bg: var(--vp-c-brand-soft);
+}
+
+/**
+ * Component: Algolia
+ * -------------------------------------------------------------------------- */
+
+.DocSearch {
+  --docsearch-primary-color: var(--vp-c-brand-1) !important;
+}
+
+
+/* 网站根字体大小 */
+body {
+  font-size: 14px;
+}
+
+/* 代码字体 */
+code {
+  font-size: 15px !important;
+}
+
+
+/* 文档内表格样式 */
+.vp-doc tr:nth-child(2n) {
+  background: transparent;
+}
+.vp-doc tr {
+  transition: background-color 0.2s;
+}
+.vp-doc tr:hover {
+  background: var(--vp-c-bg-soft);
+}
+.vp-doc table {
+  display: table !important;
+  width: 100%;
+  border-left: 1px solid var(--vp-c-divider);
+  border-right: 1px solid var(--vp-c-divider);
+}
+.vp-doc th,
+.vp-doc td {
+  border: none;
+  border-top: 1px solid var(--vp-c-divider);
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
+
+/* 去除标题下划线 */
+.vp-doc h2 {
+  border: none;
+}
+
+/* 代码块加圆角 */
+.vp-doc div[class*='language-'], .vp-block {
+  margin: 16px 0px;
+  border-radius: 8px;
+}
+
+/* 行内代码颜色 */
+.vp-doc :not(pre, h1, h2, h3, h4, h5, h6) > code {
+  color: var(--vp-c-text-2);
+}
+
+/* 可能会覆盖组件样式的默认样式 */
+.vp-doc a {
+  color: unset;
+}

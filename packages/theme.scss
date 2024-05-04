@@ -1,0 +1,62 @@
+/*
+  组件主题颜色变量
+  浅色/深色 主题切换，在 html 标签上添加类名 dark
+*/
+
+:root {
+  // 默认颜色
+  --q-color-light: #FFFFFF;
+  --q-color-black: #101011;
+
+  // 边框颜色
+  --q-color-border: #ebecf4;
+  // 鼠标滑过颜色
+  --q-color-hover: #e6e7e9;
+  // 文本颜色
+  --qy-color-text-1: #303032;
+  --qy-color-text-2: #4f4f54;
+  --qy-color-text-3: #acadb7;
+  --qy-color-text-4: #26273680;
+
+  // 不同级别的颜色
+  --q-color-default: #f1f1f4;
+  --q-color-default-h: #ebebef;
+  --q-color-default-a: #d8d8db;
+  --q-color-default-l: #f1f1f4;
+  --q-color-default-l-h: #ebebef;
+  --q-color-default-l-a: #d8d8db;
+  --q-color-default-fill: #dddee0;
+
+  --q-color-primary: #337aff;
+  --q-color-primary-h: #4c8afe;
+  --q-color-primary-a: #2465df;
+  --q-color-primary-l: #e6edfe;
+  --q-color-primary-l-h: #dfe7ff;
+  --q-color-primary-l-a: #d3defa;
+  
+  --q-color-success: #44c26a;
+  --q-color-success-h: #51cb76;
+  --q-color-success-a: #32a655;
+  --q-color-success-l: #e6f6ea;
+  --q-color-success-l-h: #d9f2e3;
+  --q-color-success-l-a: #d0ecd8;
+  
+  --q-color-warning: #ff9123;
+  --q-color-warning-h: #fea042;
+  --q-color-warning-a: #da7816;
+  --q-color-warning-l: #fff3e6;
+  --q-color-warning-l-h: #fceddc;
+  --q-color-warning-l-a: #f9e5d0;
+  
+  --q-color-danger: #ff5d5d;
+  --q-color-danger-h: #ff7272;
+  --q-color-danger-a: #e44a4a;
+  --q-color-danger-l: #ffeaea;
+  --q-color-danger-l-h: #fee0e0;
+  --q-color-danger-l-a: #fcd8d8;
+}
+
+// 深色主题
+html.dark {
+  color-scheme: dark;
+}

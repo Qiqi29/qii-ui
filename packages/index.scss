@@ -1,0 +1,6 @@
+// 引入主题样式
+@import './theme.scss';
+
+// 引入每个组件的样式
+@import './components/Avatar/src/avatar.scss';
+@import './components/Button/src/button.scss';

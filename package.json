@@ -1,0 +1,25 @@
+{
+  "name": "qii-ui",
+  "private": false,
+  "version": "0.0.1-beta-1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "dependencies": {
+    "vue": "^3.4.21"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "sass": "^1.76.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0",
+    "vitepress": "^1.1.4",
+    "vue-tsc": "^2.0.6"
+  }
+}
