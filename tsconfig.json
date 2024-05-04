@@ -6,6 +6,9 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
 
+    // 关闭强制大小写一致性
+    "forceConsistentCasingInFileNames": false,
+
     /* Bundler mode */
     "moduleResolution": "Node",
     "allowImportingTsExtensions": true,

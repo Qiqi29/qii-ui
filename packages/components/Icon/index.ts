@@ -1,4 +1,7 @@
-import Icon from './src/Icon.vue'
-import { registerInstall } from '../../utils/registerInstall'
+import Icon from './src/icon.vue'
+import { withInstall } from '../../utils/install'
 
-export default registerInstall(Icon);
+/**
+ * 图标组件
+ */
+export default withInstall(Icon);

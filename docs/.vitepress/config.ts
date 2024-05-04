@@ -85,6 +85,15 @@ export default defineConfig({
       next: '下一页'
     },
 
+    // 最后更新时间
+    lastUpdated: {
+      text: '最后更新于',
+      formatOptions: {
+        dateStyle: 'medium',
+        timeStyle: 'short'
+      }
+    },
+
     // 主页页脚
     footer: {
       message: '根据 MIT 许可证发布。',
