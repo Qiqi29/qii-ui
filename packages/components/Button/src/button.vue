@@ -1,26 +1,24 @@
 <!-- 按钮组件 -->
 <template>
   <button
-    class="q-button"
-    :class="classList"
-    :style="styles"
+    :class="buttonClass"
+    :style="buttonStyle"
     :disabled="disabled"
     @click="__onClick"
     >
-    <div v-if="loading || icon" class="q-button__icon">
-      <!-- 加载图标 -->
-      <div v-if="loading" class="loading-icon">
-        <q-icon name="loading" size="1.34em" color="inherit"/>
-      </div>
-      <!-- 正常图标 -->
-      <q-icon v-if="!loading && icon" class="icon" :name="icon" size="1.34em" color="inherit"/>
-    </div>
+
+    <q-icon v-if="loading" size="1.34em"><loadIcon/></q-icon>
+    <q-icon v-if="!loading && icon" :name="icon" size="1.34em"/>
     <span class="q-button__text"><slot></slot></span>
+
   </button>
 </template>
 
 <script lang="ts" setup>
 import { computed, useSlots } from 'vue'
+import { useNS } from '../../../hooks/useNS'
+import loadIcon from '../../../styles/icons/loading.vue'
+
 const slots = useSlots()
 
 // 引入外部定义的类型
@@ -31,34 +29,38 @@ defineOptions({
   name: 'q-button',
   inheritAttrs: false
 })
-// 解构使用定义的Props
-const props = defineProps({ ...buttonProps })
 
-// 计算属性，类名
-const classList = computed(() => {
+// 解构配置属性
+const props = defineProps({ ...buttonProps })
+const emits = defineEmits({ ...buttonEmits })
+
+// 类名生成
+const ns = useNS('button')
+const buttonClass = computed(() => {
   return [
-    `q-button__${props.type}`,
-    `q-button-shape__${props.shape}`,
-    typeof props.size === 'string' ? `q-button-size__${props.size}` : '',
-    props.plain ? 'q-button-style__plain' : '',
-    props.text ? 'q-button-style__text' : '',
-    props.long ? 'q-button-style__long' : '',
-    props.loading ? 'q-button__loading' : '',
-    props.disabled || props.loading ? 'q-button__disabled' : '',
-    !slots.default ? 'is-empty' : '',
+    ns.nameSpace,
+    ns.n(props.type),
+    ns.n(props.shape),
+    ns.t(props.size, 'string'),
+    ns.is(props.plain, 'plain'),
+    ns.is(props.text, 'text'),
+    ns.is(props.long, 'long'),
+    ns.is(props.loading, 'loading'),
+    ns.is(props.disabled || props.loading, 'disabled'),
+    ns.is(!slots.default, 'empty'),
   ]
 })
+
+
 // 计算属性 样式
-const styles = computed(() => {
+const buttonStyle = computed(() => {
   return {
     height: typeof props.size === 'number' ? `${props.size}px` : '',
   }
 })
 
-// 解构使用定义的Emits
-const emits = defineEmits({ ...buttonEmits })
 
-// 点击事件
+// 点击事件，禁用或加载中阻止点击事件
 const __onClick = (event: MouseEvent) => {
   if (props.disabled) return;
   if (props.loading) return;

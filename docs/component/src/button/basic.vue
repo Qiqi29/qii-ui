@@ -1,5 +1,5 @@
 <template>
-  <q-space>
+  <q-space vertical>
     <q-space>
       <q-button type="default">默认按钮</q-button>
       <q-button type="primary">确定</q-button>

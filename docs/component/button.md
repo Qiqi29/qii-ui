@@ -14,7 +14,7 @@
 <demo src="./src/button/shape.vue"/>
 
 ## 图标
-使用 `icon` 属性设置按钮图标。
+使用 `icon` 属性设置按钮的图标。
 <demo src="./src/button/icon.vue"/>
 
 ## 大小

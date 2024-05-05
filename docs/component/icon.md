@@ -1,4 +1,6 @@
 # 图标 Icon
+我喜欢给各种东西都加上图标。
+
 qii-ui 使用 `symbolId` 格式的 SVG 图标，更加灵活方便。使用前需要配置 SVG 图标注册插件。
 
 qii-ui 推荐使用 [MingCute Icon](https://www.mingcute.com/) 图标库。
@@ -64,6 +66,11 @@ import 'virtual:svg-icons-register'
 ## 颜色与大小
 通过 `color` 和 `size` 属性可以设置图标颜色和大小。
 <demo src="./src/icon/color.vue"/>
+
+
+## 自定义图标
+默认插槽中可以传入 SVG 代码，（确保设定了 SVG 的 viewBox 属性）。
+<demo src="./src/icon/svg.vue"/>
 
 
 

@@ -1,15 +1,17 @@
 <!-- 按钮组件 -->
 <template>
-  <i class="q-icon" :style="iconStyle">
-    <svg>
+  <i :class="[$attrs.class, 'q-icon']" :style="iconStyle">
+    <slot></slot>
+    <svg v-if="!slots.default">
       <use :xlink:href="`#icon-${props.name}`"></use>
     </svg>
   </i>
 </template>
 
 <script lang="ts" setup>
-import { computed } from 'vue'
+import { computed, useSlots } from 'vue'
 import { iconProps } from './icon'
+const slots = useSlots()
 
 defineOptions({ 
   name: 'q-icon',
