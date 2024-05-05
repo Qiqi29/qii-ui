@@ -16,7 +16,7 @@ const props = defineProps({ ...avatarProps })
 // 计算属性，类名
 const classList = computed(() => {
   return [
-    typeof props.size === 'number' ? '' : `q-avatar__${props.size}`,
+    typeof props.size === 'string' ? `q-avatar__${props.size}` : '',
     props.round ? 'q-avatar__round' : '',
   ]
 })

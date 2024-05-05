@@ -4,6 +4,12 @@ import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import './style.css'
 
+
+// 引入组件库
+import Qii from '../../../es/index.mjs'
+import '../../../dist/index.css'
+
+
 export default {
   extends: DefaultTheme,
   Layout: () => {
@@ -12,6 +18,6 @@ export default {
     })
   },
   enhanceApp({ app, router, siteData }) {
-    // ...
+    app.use(Qii)
   }
 } satisfies Theme
