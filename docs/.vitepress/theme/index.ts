@@ -1,14 +1,14 @@
 // https://vitepress.dev/guide/custom-theme
 import { h } from 'vue'
-import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import './style.css'
-
 
 // 引入组件库
 import Qii from '../../../es/index.mjs'
 import '../../../dist/index.css'
 
+// 引入SVG图标注册器
+import 'virtual:svg-icons-register'
 
 export default {
   extends: DefaultTheme,
@@ -19,5 +19,5 @@ export default {
   },
   enhanceApp({ app, router, siteData }) {
     app.use(Qii)
-  }
-} satisfies Theme
+  },
+}

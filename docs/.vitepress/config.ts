@@ -1,6 +1,12 @@
 import { defineConfig } from 'vitepress'
 
 
+// 用于注册SVG图标
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+// 路径模块
+import { resolve } from "path"
+
+
 export default defineConfig({
   lang: "zh-CN",
   title: "Qii-UI",
@@ -12,6 +18,15 @@ export default defineConfig({
   head: [
     ['link', { rel: 'icon', href: '/favicon.svg' }]
   ],
+
+  vite: {
+    plugins: [
+      createSvgIconsPlugin({
+        iconDirs: [resolve(__dirname, '../../src/svg')],
+        symbolId: 'icon-[dir]-[name]',
+      })
+    ]
+  },
 
   // 主题配置
   themeConfig: {
