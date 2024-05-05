@@ -30,6 +30,8 @@
     "vue": "^3.4.21"
   },
   "devDependencies": {
+    "@ruabick/md-demo-plugins": "^0.3.3",
+    "@ruabick/vitepress-demo-block": "^0.3.3",
     "@vitejs/plugin-vue": "^5.0.4",
     "fast-glob": "^3.3.2",
     "gulp": "^5.0.0",

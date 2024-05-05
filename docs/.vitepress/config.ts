@@ -1,12 +1,14 @@
 import { defineConfig } from 'vitepress'
 
 
-// 用于注册SVG图标
+// 插件，注册SVG图标
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
-// 路径模块
 import { resolve } from "path"
 
+// 插件，markdown解析
+import { applyPlugins } from '@ruabick/md-demo-plugins'
 
+// 文档配置
 export default defineConfig({
   lang: "zh-CN",
   title: "Qii-UI",
@@ -33,8 +35,8 @@ export default defineConfig({
     logo: '/logo.svg',
     nav: [
       { text: '首页', link: '/' },
-      { text: '指南', link: '/guide/install' },
-      { text: '组件', link: '/component/button' },
+      { text: '指南', link: '/guide/install', activeMatch: '/guide/' },
+      { text: '组件', link: '/component/button', activeMatch: '/component/' },
       {
         text: '0.0.1-beta',
         items: [
@@ -53,12 +55,18 @@ export default defineConfig({
     sidebar: {
       '/guide/': [
         {
-          text: '开发指南',
+          text: '快速上手',
           items: [
-            { text: '快速上手', link: '/guide/install' },
-            { text: '深色模式', link: '/guide/theme' }
+            { text: '安装', link: '/guide/install' },
+            { text: '使用', link: '/guide/start' },
           ],
-        }
+        },
+        {
+          text: '指南',
+          items: [
+            { text: '深色主题', link: '/guide/theme' }
+          ],
+        },
       ],
       '/component/': [
         {
@@ -85,7 +93,7 @@ export default defineConfig({
 
     // 社交链接
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/Qiqi29/qii-ui' }
     ],
 
     // 文档大纲
@@ -104,7 +112,7 @@ export default defineConfig({
     lastUpdated: {
       text: '最后更新于',
       formatOptions: {
-        dateStyle: 'medium',
+        dateStyle: 'short',
         timeStyle: 'short'
       }
     },
@@ -114,5 +122,12 @@ export default defineConfig({
       message: '根据 MIT 许可证发布。',
       copyright: '版权所有 © 2024-至今 Qii UI'
     }
-  }
+  },
+
+  // markdown 配置
+  markdown: {
+    config: (md) => {
+      applyPlugins(md);
+    },
+  },
 })

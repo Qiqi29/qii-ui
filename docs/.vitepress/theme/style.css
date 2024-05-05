@@ -25,22 +25,22 @@
  * -'default'：纯粹用于微妙指示的颜色，没有任何
  * 附加到它的特殊含义，例如菜单悬停状态的bg颜色。
  * 
- * -'品牌'：用于原色品牌，如链接文本、按钮
+ * -'brand'：用于原色品牌，如链接文本、按钮
  * 品牌主题等。
  * 
- * -'提示'：用于指示有用的信息。默认主题使用
+ * -'tip'：用于指示有用的信息。默认主题使用
  * 默认情况下为此使用品牌颜色。
  * 
- * -'警告'：用于向用户指示警告。在自定义中使用
+ * -'warning'：用于向用户指示警告。在自定义中使用
  * 容器、徽章等。
  * 
- * -'危险'：用于向用户显示错误或危险信息。使用过
+ * -'danger'：用于向用户显示错误或危险信息。使用过
  * 在自定义容器、徽章等中。
  * --------------------------------------------------------------------------*/
 
 :root {
   --q-color-theme: #3380FF;
-  --q-color-theme-h: #1b59cd;
+  --q-color-theme-h: #1e5ed5;
 
   --vp-c-default-1: var(--vp-c-gray-1);
   --vp-c-default-2: var(--vp-c-gray-2);
@@ -69,7 +69,7 @@
 }
 
 /**
- * Component: Button
+ * 组件: 按钮
  * -------------------------------------------------------------------------- */
 
 :root {
@@ -86,7 +86,7 @@
 
 
 /**
- * Component: Home
+ * 组件: 首页
  * -------------------------------------------------------------------------- */
 
 
@@ -106,18 +106,18 @@
 
 
 /**
- * Component: Custom Block
+ * 组件: 自定义块
  * -------------------------------------------------------------------------- */
 
 :root {
   --vp-custom-block-tip-border: transparent;
   --vp-custom-block-tip-text: var(--vp-c-text-1);
-  --vp-custom-block-tip-bg: var(--vp-c-brand-soft);
+  --vp-custom-block-tip-bg: #3380ff20;
   --vp-custom-block-tip-code-bg: var(--vp-c-brand-soft);
 }
 
 /**
- * Component: Algolia
+ * 组件: Algolia
  * -------------------------------------------------------------------------- */
 
 .DocSearch {
@@ -132,7 +132,7 @@ body {
 
 /* 代码字体 */
 code {
-  font-size: 15px !important;
+  font-size: 14px !important;
 }
 
 
@@ -171,12 +171,42 @@ code {
   border-radius: 8px;
 }
 
-/* 行内代码颜色 */
+
+/* 行内代码 */
 .vp-doc :not(pre, h1, h2, h3, h4, h5, h6) > code {
-  color: var(--vp-c-text-2);
+  color: var(--vp-c-text-1);
+}
+.vp-doc :not(pre) > code {
+  padding: 2px 6px;
 }
 
 /* 可能会覆盖组件样式的默认样式 */
-.vp-doc a {
+/* .vp-doc a {
   color: unset;
+} */
+
+/* 首页加高 */
+.VPHomeHero .container .main {
+  margin-top: 24px;
+}
+
+
+/* 代码演示块 */
+.vitepress-demo {
+  border-radius: 8px !important;
+  border: 1px solid var(--vp-c-divider) !important;
+  overflow: hidden;
+}
+.vitepress-demo .demo-slot {
+  padding: 30px !important;
+}
+.vitepress-demo .demo-actions {
+  padding: 0 14px 0 8px !important;
+  border-top: 1px dashed var(--vp-c-divider) !important;
+}
+.vitepress-demo .extra-class {
+  border-top: 1px dashed var(--vp-c-divider) !important;
+}
+.vitepress-demo [class*=language-] code {
+  padding: 20px 22px !important;
 }

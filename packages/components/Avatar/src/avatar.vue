@@ -10,7 +10,10 @@ import { computed } from 'vue'
 import { avatarProps } from './avatar'
 
 // 组件配置
-defineOptions({ name: 'q-avatar' })
+defineOptions({ 
+  name: 'q-avatar',
+  inheritAttrs: false
+})
 const props = defineProps({ ...avatarProps })
 
 // 计算属性，类名

@@ -8,7 +8,11 @@
     @click="__onClick"
     >
     <div v-if="loading || icon" class="q-button__icon">
-      <q-icon v-if="loading" class="loadingIcon" name="loading" size="1.34em" color="inherit"/>
+      <!-- 加载图标 -->
+      <div v-if="loading" class="loading-icon">
+        <q-icon name="loading" size="1.34em" color="inherit"/>
+      </div>
+      <!-- 正常图标 -->
       <q-icon v-if="!loading && icon" class="icon" :name="icon" size="1.34em" color="inherit"/>
     </div>
     <span class="q-button__text"><slot></slot></span>
@@ -23,7 +27,10 @@ const slots = useSlots()
 import { buttonProps, buttonEmits } from './button'
 
 // 组件配置
-defineOptions({ name: 'q-button' })
+defineOptions({ 
+  name: 'q-button',
+  inheritAttrs: false
+})
 // 解构使用定义的Props
 const props = defineProps({ ...buttonProps })
 

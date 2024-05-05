@@ -1,0 +1,18 @@
+.q-space {
+  display: flex;
+  flex-wrap: wrap;
+}
+.q-space__item {
+  box-sizing: border-box;
+}
+
+// 预设间距
+.q-space__small {
+  gap: 6px;
+}
+.q-space__medium {
+  gap: 12px;
+}
+.q-space__large {
+  gap: 20px;
+}

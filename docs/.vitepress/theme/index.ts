@@ -10,6 +10,11 @@ import '../../../dist/index.css'
 // 引入SVG图标注册器
 import 'virtual:svg-icons-register'
 
+// demo 演示插件
+import DemoBlock from '@ruabick/vitepress-demo-block'
+import '@ruabick/vitepress-demo-block/dist/style.css'
+
+
 export default {
   extends: DefaultTheme,
   Layout: () => {
@@ -19,5 +24,6 @@ export default {
   },
   enhanceApp({ app, router, siteData }) {
     app.use(Qii)
+    app.component('demo', DemoBlock);
   },
 }

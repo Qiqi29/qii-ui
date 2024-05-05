@@ -11,7 +11,10 @@
 import { computed } from 'vue'
 import { iconProps } from './icon'
 
-defineOptions({ name: 'q-icon' })
+defineOptions({ 
+  name: 'q-icon',
+  inheritAttrs: false
+})
 const props = defineProps({ ...iconProps })
 
 const iconStyle = computed(() => {
