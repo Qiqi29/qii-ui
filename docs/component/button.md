@@ -8,19 +8,17 @@
 
 
 ## 形状
-通过 `shape` 属性改变按钮形状。
-
-默认是 `square` 矩形按钮，`round` 是圆角按钮，`circle` 是圆形按钮。
+通过 `shape` 属性改变按钮形状。`square` 矩形按钮，`round` 圆角按钮，`circle` 圆形按钮。
 <demo src="./src/button/shape.vue"/>
 
 ## 图标
-使用 `icon` 属性设置按钮的图标。
+使用 `icon` 属性设置按钮的图标。使用 `right-icon` 属性设置右侧图标。
 <demo src="./src/button/icon.vue"/>
 
 ## 大小
 通过 `size` 属性改变按钮的大小。
 
-提供了 `small`、`medium`、`large` 三种尺寸，也可以自定义大小。
+提供 `small`、`medium`、`large` 三种尺寸，也可以自定义大小。
 <demo src="./src/button/size.vue"/>
 
 
@@ -40,8 +38,12 @@
 将 `disabled` 属性设置为 `true`，按钮会被禁用。
 <demo src="./src/button/disabled.vue"/>
 
+## 按钮组
+可以把几个按钮放在一起，通过 `type` 和 `size` 属性统一控制按钮样式。
+<demo src="./src/button/group.vue"/>
 
 ## API
+### Button 属性
 | 属性 | 类型 | 默认值 | 说明 |
 | --- | --- | --- | --- |
 | type | `string` | default | 按钮类型 |
@@ -53,3 +55,23 @@
 | long | `boolean` | false | 是否为长按钮 |
 | loading | `boolean` | false | 加载状态 |
 | disabled | `boolean` | false | 禁用状态 |
+
+### Button 插槽
+| 名称 | 说明 |
+| --- | --- |
+| default | 自定义按钮文本 |
+
+### Button Group 属性
+| 属性 | 类型 | 默认值 | 说明 |
+| --- | --- | --- | --- |
+| type | `string` | default | 统一控制按钮类型 |
+| size | `string` | medium | 统一控制按钮大小 |
+
+### Button Group 插槽
+| 名称 | 说明 |
+| --- | --- |
+| default | 放置按钮组件 |
+
+
+## 贡献者
+<member></member>

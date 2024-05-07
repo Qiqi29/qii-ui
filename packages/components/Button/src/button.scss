@@ -119,12 +119,21 @@
   left: 50%;
   transform: translateX(-50%);
 }
+// 右侧图标
+.q-button .q-button__icon-right {
+  left: auto;
+  right: 12px;
+}
+// 右侧图标存在，修改文本边距
+.q-button.is-right-icon .q-button__text {
+  margin-right: 18px;
+}
 
 
 // 加载状态
 .q-button.is-loading {
   cursor: default !important;
-  .q-icon {
+  .q-button__icon-loading {
     animation: loading 1s linear infinite;
   }
 }

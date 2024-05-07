@@ -1,7 +1,11 @@
 <template>
-  <q-space vertical>
+  <q-space vertical direction="start">
     <q-space>
-      <q-button type="default" icon="close">取消</q-button>
+      <q-button type="primary" icon="star">左侧</q-button>
+      <q-button type="primary" right-icon="star">右侧</q-button>
+      <q-button type="primary" icon="star" right-icon="star">全都要</q-button>
+    </q-space>
+    <q-space>
       <q-button type="primary" icon="check">确定</q-button>
       <q-button type="success" icon="download">下载</q-button>
       <q-button type="warning" icon="notification"/>

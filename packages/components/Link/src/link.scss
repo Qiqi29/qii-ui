@@ -1,0 +1,42 @@
+.q-link {
+  text-decoration: none !important;
+  display: inline-flex;
+  align-items: center;
+  .q-icon {
+    margin-right: 3px;
+    margin-bottom: 1px;
+  }
+}
+
+
+// 链接类型
+@mixin linkType($type) {
+  color: var(--q-color-#{$type}) !important;
+  &:hover {
+    color: var(--q-color-#{$type}-a) !important;
+    &.has-line:not(.is-disabled) {
+      text-decoration: underline !important;
+      text-underline-offset: 3px !important;
+    }
+  }
+}
+.q-link__primary {
+  @include linkType('primary');
+}
+.q-link__success {
+  @include linkType('success');
+}
+.q-link__warning {
+  @include linkType('warning');
+}
+.q-link__danger {
+  @include linkType('danger');
+}
+
+
+
+// 禁用状态
+.q-link.is-disabled {
+  opacity: 0.6;
+  cursor: no-drop;
+}

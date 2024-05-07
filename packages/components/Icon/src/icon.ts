@@ -14,7 +14,7 @@ export const iconProps = {
    */
   size: {
     type: [String, Number] as PropType<string | number>,
-    default: "1.6em",
+    default: "1.5em",
   },
   /**
    * @description 图标颜色

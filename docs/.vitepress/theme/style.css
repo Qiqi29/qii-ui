@@ -160,6 +160,14 @@ code {
 }
 
 
+/* 标题去除粗体 */
+.vp-doc h1,
+.vp-doc h2,
+.vp-doc h3,
+.vp-doc h4 {
+  font-weight: normal;
+}
+
 /* 去除标题下划线 */
 .vp-doc h2 {
   border: none;
@@ -180,10 +188,6 @@ code {
   padding: 2px 6px;
 }
 
-/* 可能会覆盖组件样式的默认样式 */
-/* .vp-doc a {
-  color: unset;
-} */
 
 /* 首页加高 */
 .VPHomeHero .container .main {

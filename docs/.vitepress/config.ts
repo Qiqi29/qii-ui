@@ -40,8 +40,8 @@ export default defineConfig({
       {
         text: '0.0.1-beta',
         items: [
-          { text: '更新日志', link: '/1' },
-          { text: '参与贡献', link: '/2' }
+          { text: '更新日志', link: 'https://github.com/Qiqi29/qii-ui' },
+          { text: '参与贡献', link: 'https://github.com/Qiqi29/qii-ui' }
         ]
       }
     ],
@@ -55,29 +55,24 @@ export default defineConfig({
     sidebar: {
       '/guide/': [
         {
-          text: '快速上手',
+          text: '开发指南',
           items: [
-            { text: '安装', link: '/guide/install' },
-            { text: '使用', link: '/guide/start' },
-          ],
-        },
-        {
-          text: '指南',
-          items: [
+            { text: '快速上手', link: '/guide/install' },
             { text: '深色主题', link: '/guide/theme' }
           ],
-        },
+        }
       ],
       '/component/': [
         {
-          text: '通用',
+          text: '通用组件',
           items: [
             { text: '按钮 Button', link: '/component/button' },
             { text: '图标 Icon', link: '/component/icon' },
+            { text: '链接 Link', link: '/component/link' },
           ]
         },
         {
-          text: '数据展示',
+          text: '数据展示组件',
           items: [
             { text: '头像 Avatar', link: '/component/avatar' },
           ]

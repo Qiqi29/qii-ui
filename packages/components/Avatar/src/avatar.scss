@@ -1,13 +1,19 @@
 .q-avatar {
   box-sizing: border-box;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
+
   width: var(--q-avatar-size);
   height: var(--q-avatar-size);
   background: var(--q-color-default-fill);
-  border-radius: 8px;
   overflow: hidden;
   vertical-align: bottom;
+  color: #FFF;
+  font-size: 14px;
+  line-height: 1.2;
+  
   > img {
     width: 100%;
     height: 100%;
@@ -15,24 +21,34 @@
   }
 }
 
+
 // 不同的大小
+@mixin size($size) {
+  width: $size;
+  height: $size;
+}
 .q-avatar__small {
-  width: 24px;
-  height: 24px;
-  border-radius: 4.5px;
+  @include size(24px);
 }
 .q-avatar__medium {
-  width: 36px;
-  height: 36px;
-  border-radius: 6px;
+  @include size(36px);
 }
 .q-avatar__large {
-  width: 54px;
-  height: 54px;
-  border-radius: 8px;
+  @include size(54px);
 }
 
-// 圆形样式
+
+// 头像的形状
+.q-avatar__square {
+  border-radius: 5px;
+}
 .q-avatar__round {
   border-radius: 50%;
+}
+
+
+// 头像插槽内容
+.q-avatar__content {
+  display: flex;
+  text-wrap: nowrap;
 }

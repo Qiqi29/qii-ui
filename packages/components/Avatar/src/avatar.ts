@@ -1,6 +1,5 @@
 import { PropType } from "vue"
 
-// 定义组件的 Props 类型
 export const avatarProps = {
   /**
    * @description 头像地址
@@ -13,14 +12,21 @@ export const avatarProps = {
    * @description 头像大小
    */
   size: {
-    type: [String, Number] as PropType<string | number>,
+    type: [String, Number] as PropType<number | 'small' | 'medium' | 'large'>,
     default: 'medium'
   },
   /**
-   * @description 头像是否为圆形
+   * @description 头像的形状
    */
-  round: {
-    type: Boolean,
-    default: false
+  shape: {
+    type: String as PropType<'square' | 'round'>,
+    default: 'round'
+  },
+  /**
+   * @description 兼容自定义样式
+   */
+  style: {
+    type: Object,
+    default: () => ({})
   }
 }

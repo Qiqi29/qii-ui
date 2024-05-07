@@ -1,7 +1,5 @@
 // 默认命名空间
 const defaultNS = 'q'
-// 状态前缀
-const statusPrefix = 'is'
 
 
 /**
@@ -26,10 +24,17 @@ export const useNS = function (name: string) {
   }
 
   /**
-   * 参数为真，返回 => 状态前缀-参数
+   * 参数为真，返回 => is-参数
    */
   const is = (status: boolean | string, par: string) => {
-    return status ? `${statusPrefix}-${par}` : '';
+    return status ? `is-${par}` : '';
+  }
+
+  /**
+   * 参数为真，返回 => has-参数
+   */
+  const has = (status: boolean | string, par: string) => {
+    return status ? `has-${par}` : '';
   }
 
   return {
@@ -37,5 +42,6 @@ export const useNS = function (name: string) {
     n,
     t,
     is,
+    has
   }
 }

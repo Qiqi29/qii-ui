@@ -26,6 +26,7 @@ const styles = computed<CSSProperties>(() => {
     "flex-direction": props.vertical ? 'column' : 'row',
     "gap": typeof props.size === 'number' ? props.size + 'px' : '',
     "align-items": props.direction,
+    "width": props.fill ? '100%' : '',
   }
 })
 

@@ -7,9 +7,10 @@
     @click="__onClick"
     >
 
-    <q-icon v-if="loading" size="1.34em"><loadIcon/></q-icon>
-    <q-icon v-if="!loading && icon" :name="icon" size="1.34em"/>
+    <q-icon class="q-button__icon-loading" v-if="loading" size="1.4em"><loadIcon/></q-icon>
+    <q-icon v-if="!loading && icon" :name="icon" size="1.25em"/>
     <span class="q-button__text"><slot></slot></span>
+    <q-icon class="q-button__icon-right" :name="rightIcon" size="1.25em"/>
 
   </button>
 </template>
@@ -18,11 +19,8 @@
 import { computed, useSlots } from 'vue'
 import { useNS } from '../../../hooks/useNS'
 import loadIcon from '../../../styles/icons/loading.vue'
-
-const slots = useSlots()
-
-// 引入外部定义的类型
 import { buttonProps, buttonEmits } from './button'
+const slots = useSlots()
 
 // 组件配置
 defineOptions({ 
@@ -45,6 +43,7 @@ const buttonClass = computed(() => {
     ns.is(props.plain, 'plain'),
     ns.is(props.text, 'text'),
     ns.is(props.long, 'long'),
+    ns.is(props.rightIcon, 'right-icon'),
     ns.is(props.loading, 'loading'),
     ns.is(props.disabled || props.loading, 'disabled'),
     ns.is(!slots.default, 'empty'),

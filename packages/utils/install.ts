@@ -9,9 +9,8 @@ import { App, Component, Plugin } from "vue"
 type SFCWithInstall<T> = T & Plugin
 
 /**
- * 接受一个泛型参数 `T`，代表待注册的单文件组件。
- * 函数内部实现插件安装逻辑，并返回一个已注册安装方法的 SFCWithInstall 类型的组件。
- *
+ * 将单文件组件注册到 Vue 应用中
+ * 
  * @param comp - 待注册安装方法的单文件组件
  * @returns 已注册安装方法的 SFCWithInstall 类型的组件
  */

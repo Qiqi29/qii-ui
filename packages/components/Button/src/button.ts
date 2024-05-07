@@ -24,6 +24,13 @@ export const buttonProps = {
     default: ""
   },
   /**
+   * @description 按钮右侧图标
+   */
+  rightIcon: {
+    type: String,
+    default: ""
+  },
+  /**
    * @description 按钮形状
    */
   shape: {

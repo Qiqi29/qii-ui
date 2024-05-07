@@ -1,23 +1,21 @@
 # 图标 Icon
 我喜欢给各种东西都加上图标。
 
-qii-ui 使用 `symbolId` 格式的 SVG 图标，更加灵活方便。使用前需要配置 SVG 图标注册插件。
-
 qii-ui 推荐使用 [MingCute Icon](https://www.mingcute.com/) 图标库。
 
 
+
+
 ## 插件配置
-使用 npm 安装下面两个插件，用于自动注册 SVG 图标。
+图标组件使用 `symbolId` 格式的 SVG 图标。使用前需要安装配置 SVG 图标注册插件。
 ```bash
 npm i fast-glob@3.x -D
 npm i vite-plugin-svg-icons@2.x -D
 ```
 
-在 vite.config.ts 中配置 SVG 图标注册插件
+在 vite.config.ts 中配置 SVG 插件。
 ```ts
 // vite.config.ts
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
 
 // 引入图标注册插件与路径模块
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
@@ -31,10 +29,11 @@ export default defineConfig({
       symbolId: 'icon-[dir]-[name]'              // 配置symbolId格式
     })
   ]
+  ...
 })
 ```
 
-在 main.ts 中引入图标注册器
+在 main.ts 中引入图标注册器。
 ```ts
 // main.ts
 
@@ -42,7 +41,7 @@ export default defineConfig({
 import 'virtual:svg-icons-register'
 ```
 
-项目目录中放置自己的图标文件，目录位置可自定义。
+项目目录中存放图标文件，目录位置可自定义。
 ```
 .
 ├─ src
@@ -76,8 +75,17 @@ import 'virtual:svg-icons-register'
 
 ## API
 
+### Icon 属性
 | 属性 | 类型 | 默认值 | 说明 |
 | --- | --- | --- | --- |
 | name | `string` | qii | 图标名 |
 | color | `string` | 继承颜色 | 图标颜色 |
 | size | `string` | 继承字体大小 | 图标大小 |
+
+### Icon 插槽
+| 名称 | 说明 |
+| --- | --- |
+| default | 自定义图标 |
+
+## 贡献者
+<member></member>

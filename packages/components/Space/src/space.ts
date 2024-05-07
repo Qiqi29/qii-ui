@@ -21,7 +21,7 @@ export const SpaceProps = {
    */
   direction: {
     type: String as PropType<string>,
-    default: 'start',
+    default: 'center',
   },
   /**
    * @description 宽度是否占满父元素

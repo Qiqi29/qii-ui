@@ -1,6 +1,6 @@
 <!-- 按钮组件 -->
 <template>
-  <i :class="[$attrs.class, 'q-icon']" :style="iconStyle">
+  <i class="q-icon" :style="iconStyle">
     <slot></slot>
     <svg v-if="!slots.default">
       <use :xlink:href="`#icon-${props.name}`"></use>
@@ -15,7 +15,7 @@ const slots = useSlots()
 
 defineOptions({ 
   name: 'q-icon',
-  inheritAttrs: false
+  inheritAttrs: true
 })
 const props = defineProps({ ...iconProps })
 

@@ -1,5 +1,6 @@
 .q-space {
-  display: flex;
+  box-sizing: border-box;
+  display: inline-flex;
   flex-wrap: wrap;
 }
 .q-space__item {
