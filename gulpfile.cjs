@@ -1,5 +1,6 @@
 /**
- * 将 Sass 编译为 CSS，并打包压缩到指定目录
+ * @file gulpfile.cjs
+ * gulp 文件后缀改为 cjs，才可以在 vite 项目中使用
  */
 
 const gulp = require('gulp')                        // 引入 gulp
@@ -9,12 +10,14 @@ const rename = require('gulp-rename')               // 重命名文件
 const gulpIf = require('gulp-if')                   // 条件判断
 
 
-// 编译并压缩SCSS文件到dist/css目录
+// 编译并压缩 SCSS 文件到 dist/css 目录
 gulp.task('sass', function () {
   return gulp.src('./packages/**/*.scss')
     .pipe(sass())
     .pipe(cleanCSS())
+    // 去除文件名前面的文件夹路径名
     .pipe(rename((path) => { path.dirname = '' }))
+    // 条件判断，index.css 样式文件单独存放
     .pipe(gulpIf(file => file.basename === 'index.css', gulp.dest('dist')))
     .pipe(gulpIf(file => file.basename !== 'index.css', gulp.dest('dist/css')))
 })

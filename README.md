@@ -9,4 +9,4 @@ npm i qii-ui
 ```
 
 ## 文档
-查阅 [组件库文档]()，获取详细使用方法。
+查阅 [组件库文档](https://qiqi29.github.io/qii-ui-doc/)，获取详细使用方法。

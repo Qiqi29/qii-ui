@@ -1,6 +1,6 @@
 {
   "name": "qii-ui",
-  "description": "一个UI组件库",
+  "description": "一个 Vue3 组件库",
   "author": "qiqi29<sgq457@qq.com>",
   "version": "0.0.2-beta",
   "keywords": [

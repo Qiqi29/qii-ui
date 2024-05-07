@@ -8,27 +8,26 @@
 
     // 关闭强制大小写一致性
     "forceConsistentCasingInFileNames": false,
-
-    /* Bundler mode */
+    // 模块解析模式，修改为 Node，才可以使用 import 导入语句
     "moduleResolution": "Node",
+
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "preserve",
 
-    /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
+  // 指定要编译的文件，指定后，才会使用 Vite 进行打包
   "include": [
     "packages/**/*.ts",
     "packages/**/*.d.ts",
     "packages/**/*.tsx",
     "packages/**/*.vue",
-
     "index.ts"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]

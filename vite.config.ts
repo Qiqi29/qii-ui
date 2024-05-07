@@ -1,10 +1,14 @@
+/**
+ * @file Vite 配置文件
+ * 配置插件、打包，和需要在构建之前处理的任务
+ */
+
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
 
 // 用于注册SVG图标
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
-// 路径模块
 import { resolve } from "path"
 // 生成类型声明文件
 import dts from "vite-plugin-dts"
@@ -28,10 +32,8 @@ export default defineConfig({
   // 打包配置
   build: {
     lib: {
-      entry: "./packages/index.ts",     // 组件库的入口文件
       name: 'qii-ui',                   // 组件库名称
-      // fileName: 'qii-ui',
-      // formats: ["es", "umd", "cjs"],
+      entry: "./packages/index.ts",     // 组件库的入口文件
     },
     rollupOptions: {
       external: ["vue"],								// 声明外部依赖，不会被打包

@@ -14,11 +14,13 @@ export default defineConfig({
   title: "Qii-UI",
   description: "qii-ui 组件库文档",
   lastUpdated: true,
-  base: '/',
+
+  // 配置网站根目录
+  base: '/qii-ui-doc/',
 
   // 网站头部配置
   head: [
-    ['link', { rel: 'icon', href: '/favicon.svg' }]
+    ['link', { rel: 'icon', href: '/qii-ui-doc/favicon.svg' }]
   ],
 
   vite: {

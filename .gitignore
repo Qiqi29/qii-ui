@@ -1,4 +1,6 @@
-# Logs
+# git 仓库中忽略的文件
+
+# 日志文件
 logs
 *.log
 npm-debug.log*
@@ -7,6 +9,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# 构建文件
 node_modules
 dist
 es
@@ -14,7 +17,7 @@ lib
 dist-ssr
 *.local
 
-# Editor directories and files
+# 编辑器临时文件
 .vscode/*
 !.vscode/extensions.json
 .idea
