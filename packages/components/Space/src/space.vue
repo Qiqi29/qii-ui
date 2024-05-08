@@ -65,14 +65,10 @@ const processedSlots = computed(() => {
     }
     
     // 如果是组件类型，直接保存组件信息
-    if (vNode.component) {
-      return { component: vNode.component, props }
-    }
+    if (vNode.component) return { component: vNode.component, props }
     
     // 如果是普通VNode（如文本节点），创建一个匿名组件来包裹它
-    return { 
-      component: { render: () => vNode, props }
-    }
+    return { component: { render: () => vNode }, props }
   })
 })
 </script>
