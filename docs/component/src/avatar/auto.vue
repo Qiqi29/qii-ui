@@ -8,7 +8,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const list = ['O', '你好', 'World', '欢迎使用', 'Qii-UI']
+const list = ['你好','呀', '欢迎使用', 'Qii-UI', '组件库']
 const index = ref(0)
 
 const onClick = () => {

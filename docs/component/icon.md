@@ -13,10 +13,8 @@ npm i fast-glob@3.x -D
 npm i vite-plugin-svg-icons@2.x -D
 ```
 
-在 vite.config.ts 中配置 SVG 插件。
+在 `vite.config.ts` 中配置 SVG 插件。
 ```ts
-// vite.config.ts
-
 // 引入图标注册插件与路径模块
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import { resolve } from "path"
@@ -33,12 +31,13 @@ export default defineConfig({
 })
 ```
 
-在 main.ts 中引入图标注册器。
+在 `main.ts` 中引入图标注册器。
 ```ts
-// main.ts
+import { createApp } from 'vue'
 
 // 引入SVG图标注册器
 import 'virtual:svg-icons-register'
+...
 ```
 
 项目目录中存放图标文件，目录位置可自定义。

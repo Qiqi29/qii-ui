@@ -3,9 +3,9 @@
 
 ## 基本用法
 使用 `href` 属性指定 Link 地址。使用 `open` 属性指定跳转方式。
-- `newTab` 在新标签页打开
-- `replace` 替换当前页面，重定向，不会留下历史记录
-- `push` 直接修改当前页面URL，保留历史记录
+- `newTab` --- 在新标签页打开
+- `replace` -- 替换当前页面，重定向，不会留下历史记录
+- `push` ------ 直接修改当前页面URL，保留历史记录
 <demo src="./src/link/basic.vue"/>
 
 

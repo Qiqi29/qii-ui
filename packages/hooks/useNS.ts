@@ -1,12 +1,13 @@
-// 默认命名空间
+// 默认命名空间前缀
 const defaultNS = 'q'
-
 
 /**
  * 根据参数生成指定结构的组件类名
- * @param name 组件名称
+ * @param {string} name 组件名称
+ * @returns
  */
 export const useNS = function (name: string) {
+  // 命名空间
   const nameSpace = `${defaultNS}-${name}`
 
   /**

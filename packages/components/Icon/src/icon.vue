@@ -1,10 +1,14 @@
-<!-- 按钮组件 -->
+<!-- 图标组件 -->
 <template>
   <i class="q-icon" :style="iconStyle">
+    
+    <!-- 默认插槽，放置SVG代码 -->
     <slot></slot>
+    <!-- 主图标 -->
     <svg v-if="!slots.default">
       <use :xlink:href="`#icon-${props.name}`"></use>
     </svg>
+
   </i>
 </template>
 
@@ -17,8 +21,10 @@ defineOptions({
   name: 'q-icon',
   inheritAttrs: true
 })
+
 const props = defineProps({ ...iconProps })
 
+// 计算属性，样式
 const iconStyle = computed(() => {
   return {
     color: props.color,

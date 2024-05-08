@@ -40,7 +40,7 @@ export default defineConfig({
       { text: '指南', link: '/guide/install', activeMatch: '/guide/' },
       { text: '组件', link: '/component/button', activeMatch: '/component/' },
       {
-        text: '0.0.1-beta',
+        text: '0.0.2-beta',
         items: [
           { text: '更新日志', link: 'https://github.com/Qiqi29/qii-ui' },
           { text: '参与贡献', link: 'https://github.com/Qiqi29/qii-ui' }
@@ -57,10 +57,18 @@ export default defineConfig({
     sidebar: {
       '/guide/': [
         {
+          text: '介绍',
+          items: [
+            { text: 'Qii UI', link: '/guide/hello' },
+          ],
+        },
+        {
           text: '开发指南',
           items: [
             { text: '快速上手', link: '/guide/install' },
-            { text: '深色主题', link: '/guide/theme' }
+            { text: '深色主题', link: '/guide/theme' },
+            { text: '内置过渡动画', link: '/guide/transition' },
+            { text: '内置指令', link: '/guide/directive' },
           ],
         }
       ],
@@ -80,7 +88,13 @@ export default defineConfig({
           ]
         },
         {
-          text: '布局',
+          text: '表单组件',
+          items: [
+            { text: '输入框 Input', link: '/component/input' },
+          ]
+        },
+        {
+          text: '布局组件',
           items: [
             { text: '间距 Space', link: '/component/space' },
           ]

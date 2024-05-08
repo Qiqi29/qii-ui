@@ -7,10 +7,11 @@
     @click="__onClick"
     >
 
+    <!-- 加载图标、自定义图标、按钮文本、右侧图标 -->
     <q-icon class="q-button__icon-loading" v-if="loading" size="1.4em"><loadIcon/></q-icon>
     <q-icon v-if="!loading && icon" :name="icon" size="1.25em"/>
     <span class="q-button__text"><slot></slot></span>
-    <q-icon class="q-button__icon-right" :name="rightIcon" size="1.25em"/>
+    <q-icon class="q-button__icon-right" v-if="rightIcon" :name="rightIcon" size="1.25em"/>
 
   </button>
 </template>
@@ -50,14 +51,12 @@ const buttonClass = computed(() => {
   ]
 })
 
-
-// 计算属性 样式
+// 计算属性，样式
 const buttonStyle = computed(() => {
   return {
     height: typeof props.size === 'number' ? `${props.size}px` : '',
   }
 })
-
 
 // 点击事件，禁用或加载中阻止点击事件
 const __onClick = (event: MouseEvent) => {

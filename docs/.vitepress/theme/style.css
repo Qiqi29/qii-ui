@@ -1,46 +1,12 @@
 /**
- * 颜色
- * 
- * 每种颜色都有完全相同的色阶系统，有3个级别的固体
- * 不同亮度的颜色，1种柔和的颜色。
- *  
- * -'XXX-1'：主要用于彩色文本的最纯色。它必须
- * 满足'XXX-soft'顶部使用时的对比度。
- * 
- * -'XXX-2'：主要用于按钮悬停状态的颜色。
- * 
- * -'XXX-3'：纯色背景的颜色，例如按钮的bg颜色。
- * 它必须满足纯白色（#ffffff）文本的对比度
- * 顶部。
- * 
- * -'XXX-soft'：用于自定义容器等微妙背景的颜色
- * 或徽章。放置'XXX-1'颜色时必须满足对比度
- * 在它上面。
- * 
- * 柔和的颜色必须是半透明的Alpha通道。这是至关重要的
- * 因为它允许在彼此之上添加多个“软”颜色
- * 创建重音，例如当内部有内联代码块时
- * 自定义容器。
- * 
- * -'default'：纯粹用于微妙指示的颜色，没有任何
- * 附加到它的特殊含义，例如菜单悬停状态的bg颜色。
- * 
- * -'brand'：用于原色品牌，如链接文本、按钮
- * 品牌主题等。
- * 
- * -'tip'：用于指示有用的信息。默认主题使用
- * 默认情况下为此使用品牌颜色。
- * 
- * -'warning'：用于向用户指示警告。在自定义中使用
- * 容器、徽章等。
- * 
- * -'danger'：用于向用户显示错误或危险信息。使用过
- * 在自定义容器、徽章等中。
- * --------------------------------------------------------------------------*/
+ * .vitepress/theme/style.css
+ * 自定义文档网站的样式
+ * -------------------------------------------------------------------------- */
 
 :root {
   --q-color-theme: #3380FF;
   --q-color-theme-h: #1e5ed5;
+  --q-color-theme-alpha: #6f9ce318;
 
   --vp-c-default-1: var(--vp-c-gray-1);
   --vp-c-default-2: var(--vp-c-gray-2);
@@ -119,11 +85,15 @@
 /**
  * 组件: Algolia
  * -------------------------------------------------------------------------- */
-
+ 
 .DocSearch {
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
 
+
+/**
+ * 覆盖默认样式
+ * -------------------------------------------------------------------------- */
 
 /* 网站根字体大小 */
 body {
@@ -137,30 +107,36 @@ code {
 
 
 /* 文档内表格样式 */
+.vp-doc table {
+  display: table !important;
+  width: 100%;
+  outline: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  overflow: hidden;
+}
 .vp-doc tr:nth-child(2n) {
   background: transparent;
 }
 .vp-doc tr {
   transition: background-color 0.2s;
+  border: none;
+}
+.vp-doc thead tr {
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+.vp-doc tbody tr:not(:last-child) {
+  border-bottom: 1px solid var(--vp-c-divider);
 }
 .vp-doc tr:hover {
   background: var(--vp-c-bg-soft);
 }
-.vp-doc table {
-  display: table !important;
-  width: 100%;
-  border-left: 1px solid var(--vp-c-divider);
-  border-right: 1px solid var(--vp-c-divider);
-}
 .vp-doc th,
 .vp-doc td {
   border: none;
-  border-top: 1px solid var(--vp-c-divider);
-  border-bottom: 1px solid var(--vp-c-divider);
 }
 
 
-/* 标题去除粗体 */
+/* 去除标题的加粗 */
 .vp-doc h1,
 .vp-doc h2,
 .vp-doc h3,
@@ -168,7 +144,7 @@ code {
   font-weight: normal;
 }
 
-/* 去除标题下划线 */
+/* 去除标题的下划线 */
 .vp-doc h2 {
   border: none;
 }
@@ -180,7 +156,7 @@ code {
 }
 
 
-/* 行内代码 */
+/* 行内代码样式 */
 .vp-doc :not(pre, h1, h2, h3, h4, h5, h6) > code {
   color: var(--vp-c-text-1);
 }
@@ -195,7 +171,7 @@ code {
 }
 
 
-/* 代码演示块 */
+/* 代码演示块样式 */
 .vitepress-demo {
   border-radius: 8px !important;
   border: 1px solid var(--vp-c-divider) !important;
@@ -213,4 +189,37 @@ code {
 }
 .vitepress-demo [class*=language-] code {
   padding: 20px 22px !important;
+}
+
+
+/* 左侧边栏样式 */
+.VPSidebarItem > .item > .text {
+  margin-bottom: 6px;
+}
+.VPSidebarItem .items .VPSidebarItem {
+  margin-bottom: 6px;
+  border-radius: 8px;
+  transition: background 0.12s;
+}
+.VPSidebarItem .items .VPSidebarItem:hover {
+  background: var(--vp-c-default-soft);
+}
+.VPSidebarItem .items .VPSidebarItem .VPLink {
+  height: 40px;
+  padding-left: 16px;
+}
+.VPSidebarItem .items .VPSidebarItem.is-active {
+  background: var(--q-color-theme-alpha);
+}
+.VPSidebarItem .items .VPSidebarItem:hover:not(.is-active) .VPLink .text {
+  color: var(--vp-c-text-2) !important;
+}
+
+
+/* 文档右侧索引菜单 */
+.VPDocAside .content {
+  border-left: 1px solid var(--vp-c-divider);
+}
+.VPDocAside .outline-marker {
+  width: 3px;
 }

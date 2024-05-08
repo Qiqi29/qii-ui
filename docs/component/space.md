@@ -3,15 +3,8 @@
 
 
 ## 基本用法
-在 space 组件中放置的组件会自动加上间距。
+在 space 组件中放置的组件会加上间距。
 <demo src="./src/space/basic.vue"/>
-
-
-## 垂直排列
-添加 `vertical` 属性，可以让内部组件垂直排列。
-
-添加 `fill` 属性，可以让布局组件的宽度填满父组件。
-<demo src="./src/space/vertical.vue"/>
 
 
 ## 尺寸
@@ -19,6 +12,13 @@
 
 提供 `small`、`medium`、`large` 三种尺寸， 也可以自定义大小。
 <demo src="./src/space/size.vue"/>
+
+
+## 垂直排列
+添加 `vertical` 属性，可以让内部组件垂直排列。
+
+添加 `fill` 属性，可以让布局组件的宽度填满父组件。
+<demo src="./src/space/vertical.vue"/>
 
 
 ## 对齐

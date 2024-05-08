@@ -1,30 +1,26 @@
 /*
-  组件主题颜色变量
-  浅色/深色 主题切换，在 html 标签上添加类名 dark
-*/
+ * 组件主题颜色变量
+ * 浅色/深色 主题切换，在 html 标签上添加类名 dark
+ */
 
 :root {
   // 默认颜色
   --q-color-light: #FFFFFF;
   --q-color-black: #101011;
 
-  // 边框颜色
-  --q-color-border: #ebecf4;
-  // 鼠标滑过颜色
-  --q-color-hover: #e6e7e9;
   // 文本颜色
-  --qy-color-text-1: #303032;
-  --qy-color-text-2: #4f4f54;
-  --qy-color-text-3: #acadb7;
-  --qy-color-text-4: #26273680;
+  --q-color-text-1: #303032;
+  --q-color-text-2: #5a5a5f;
+  --q-color-text-3: #989aa2;
+  --q-color-text-4: #bbbcc4;
 
   // 不同级别的颜色
   --q-color-default: #f1f1f4;
   --q-color-default-h: #ebebef;
-  --q-color-default-a: #d8d8db;
+  --q-color-default-a: #e4e4e9;
   --q-color-default-l: #f1f1f4;
   --q-color-default-l-h: #ebebef;
-  --q-color-default-l-a: #d8d8db;
+  --q-color-default-l-a: #e4e4e9;
   --q-color-default-fill: #c9cacc;
 
   --q-color-primary: #337aff;
@@ -59,4 +55,51 @@
 // 深色主题
 html.dark {
   color-scheme: dark;
+
+  // 默认颜色
+  --q-color-light: #FFFFFF;
+  --q-color-black: #101011;
+
+  // 文本颜色
+  --q-color-text-1: #f0f0f0;
+  --q-color-text-2: #9e9da3;
+  --q-color-text-3: #6f6f73;
+  --q-color-text-4: #505053;
+
+  // 不同级别的颜色
+  --q-color-default: #29292C;
+  --q-color-default-h: #2f2f32;
+  --q-color-default-a: #29292C;
+  --q-color-default-l: #242427;
+  --q-color-default-l-h: #29292C;
+  --q-color-default-l-a: #242427;
+  --q-color-default-fill: #3b3b3E;
+
+  --q-color-primary: #337aff;
+  --q-color-primary-h: #4c8afe;
+  --q-color-primary-a: #2465df;
+  --q-color-primary-l: #337aff25;
+  --q-color-primary-l-h: #4284ff25;
+  --q-color-primary-l-a: #2b6eeb25;
+  
+  --q-color-success: #44c26a;
+  --q-color-success-h: #51cb76;
+  --q-color-success-a: #32a655;
+  --q-color-success-l: #44c26a25;
+  --q-color-success-l-h: #51d17825;
+  --q-color-success-l-a: #31a75425;
+  
+  --q-color-warning: #ff9123;
+  --q-color-warning-h: #fea042;
+  --q-color-warning-a: #da7816;
+  --q-color-warning-l: #ff912325;
+  --q-color-warning-l-h: #ffa04127;
+  --q-color-warning-l-a: #ea821925;
+  
+  --q-color-danger: #ff5d5d;
+  --q-color-danger-h: #ff7272;
+  --q-color-danger-a: #e44a4a;
+  --q-color-danger-l: #ff5d5d25;
+  --q-color-danger-l-h: #ff6b6b27;
+  --q-color-danger-l-a: #ea494925;
 }

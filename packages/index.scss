@@ -1,3 +1,8 @@
+/*
+ * @file index.scss
+ * 组件库的样式文件，打包后会将所有样式合并为一个文件。
+ */
+
 // 引入主题样式
 @import './theme.scss';
 
@@ -6,5 +11,6 @@
 @import './components/Button/src/button.scss';
 @import './components/Button-group/src/button-group.scss';
 @import './components/Icon/src/icon.scss';
+@import './components/Input/src/input.scss';
 @import './components/Space/src/space.scss';
 @import './components/Link/src/link.scss';

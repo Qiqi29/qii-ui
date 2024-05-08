@@ -94,10 +94,10 @@
   &.q-button__warning { color: var(--q-color-warning); }
   &.q-button__danger { color: var(--q-color-danger); }
   &:hover:not(.is-disabled) {
-    background: var(--q-color-default);
+    background: var(--q-color-default-l-h);
   }
   &:active:not(.is-disabled) {
-    background: var(--q-color-default-h);
+    background: var(--q-color-default-l-a);
   }
 }
 

@@ -1,5 +1,5 @@
 /**
- * @file Vite 配置文件
+ * @file Vite.config.ts
  * 配置插件、打包，和需要在构建之前处理的任务
  */
 
@@ -7,10 +7,10 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
 
-// 用于注册SVG图标
+// 引入SVG图标注册插件
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import { resolve } from "path"
-// 生成类型声明文件
+// 引入类型声明文件生成插件
 import dts from "vite-plugin-dts"
 
 
@@ -23,13 +23,13 @@ export default defineConfig({
       iconDirs: [resolve(__dirname, 'src/svg')], // 存放svg图标的目录
       symbolId: 'icon-[dir]-[name]'              // 配置symbolId格式
     }),
-    // 生成类型声明文件
+    // 配置需要生成的目录和ts配置文件
     dts({
       outDir: ['es', "lib", 'dist/@types'],
       tsconfigPath: resolve(__dirname, "tsconfig.json"),
     })
   ],
-  // 打包配置
+  // 组件库打包配置
   build: {
     lib: {
       name: 'qii-ui',                   // 组件库名称

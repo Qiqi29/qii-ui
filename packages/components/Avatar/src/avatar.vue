@@ -1,10 +1,15 @@
 <!-- 头像组件 -->
 <template>
   <div :class="avatarClass" :style="avatarStyle" ref="avatarRef">
+    
+    <!-- 默认插槽，显示自定义内容 -->
     <div class="q-avatar__content" ref="contentRef">
       <slot></slot>
     </div>
+    
+    <!-- 头像图片 -->
     <img v-if="src" :src="src" alt="">
+
   </div>
 </template>
 
@@ -52,7 +57,7 @@ const autoSize = () => {
   const textWidth = contentRef.value.clientWidth;
   const avatarWidth = avatarRef.value.clientWidth;
   const scale = avatarWidth / (textWidth + 10);  
-  contentRef.value.style.transform = `scale(${scale > 1.4 ? 1.4 : scale})`;
+  contentRef.value.style.transform = `scale(${scale > 1.3 ? 1.3 : scale})`;
 }
 
 // 监听组件内容更新，执行计算
