@@ -1,6 +1,7 @@
 /**
- * @file gulpfile.cjs
- * gulp 文件后缀改为 cjs，才可以在 vite 项目中使用
+ * gulp 任务配置
+ * 打包编译 CSS 文件
+ * 文件后缀改为 cjs，才可以在 vite 项目中使用 commonjs 模块
  */
 
 const gulp = require('gulp')                        // 引入 gulp

@@ -1,5 +1,4 @@
 /**
- * @file Vite.config.ts
  * 配置插件、打包，和需要在构建之前处理的任务
  */
 
@@ -56,4 +55,7 @@ export default defineConfig({
       ],
     }
   },
+  server: {
+    host: '0.0.0.0',
+  }
 })

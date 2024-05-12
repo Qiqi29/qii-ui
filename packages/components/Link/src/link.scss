@@ -14,7 +14,7 @@
   color: var(--q-color-#{$type}) !important;
   &:hover {
     color: var(--q-color-#{$type}-a) !important;
-    &.has-line:not(.is-disabled) {
+    &.is-has-line:not(.is-disabled) {
       text-decoration: underline !important;
       text-underline-offset: 3px !important;
     }

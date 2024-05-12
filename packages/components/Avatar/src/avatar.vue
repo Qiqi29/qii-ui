@@ -7,8 +7,8 @@
       <slot></slot>
     </div>
     
-    <!-- 头像图片 -->
-    <img v-if="src" :src="src" alt="">
+    <!-- 头像图片，地址存在并且没有自定义内容时才会显示 -->
+    <img v-if="src && !$slots.default" :src="src" alt="">
 
   </div>
 </template>
@@ -60,7 +60,7 @@ const autoSize = () => {
   contentRef.value.style.transform = `scale(${scale > 1.3 ? 1.3 : scale})`;
 }
 
-// 监听组件内容更新，执行计算
+// 监听组件内容更新，重新执行计算
 onMounted(() => autoSize())
 onUpdated(() => autoSize())
 watch(() => props.size, () => autoSize())

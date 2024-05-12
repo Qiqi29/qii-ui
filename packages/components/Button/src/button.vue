@@ -18,9 +18,9 @@
 
 <script lang="ts" setup>
 import { computed, useSlots } from 'vue'
+import { buttonProps, buttonEmits } from './button'
 import { useNS } from '../../../hooks/useNS'
 import loadIcon from '../../../styles/icons/loading.vue'
-import { buttonProps, buttonEmits } from './button'
 const slots = useSlots()
 
 // 组件配置
@@ -46,8 +46,8 @@ const buttonClass = computed(() => {
     ns.is(props.long, 'long'),
     ns.is(props.rightIcon, 'right-icon'),
     ns.is(props.loading, 'loading'),
-    ns.is(props.disabled || props.loading, 'disabled'),
     ns.is(!slots.default, 'empty'),
+    ns.is(props.disabled || props.loading, 'disabled'),
   ]
 })
 

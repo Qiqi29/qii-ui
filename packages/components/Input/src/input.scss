@@ -1,11 +1,106 @@
 .q-input {
-  width: 240px;
-  height: 32px;
-  background: var(--q-color-default);
-  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  
+  background: var(--q-color-default-l);
+  border: 1px solid transparent;
+  border-radius: 6px;
+  transition: all 0.15s;
+  cursor: text;
+
+  &:hover:not(.is-disabled) {
+    background: var(--q-color-default-l-h);
+  }
+  &:focus-within:not(.is-disabled),
+  &:active:not(.is-disabled) {
+    background: transparent;
+    border: 1px solid var(--q-color-primary);
+  }
+}
+
+// 组件中的输入框
+.q-input input {
+  font-size: 14px;
+  width: 100%;
+  height: 100%;
+  &::placeholder {
+    color: var(--q-color-text-3);
+  }
+  // 密码输入框样式
+  &[type="password"]:not(.is-empty) {
+    padding-top: 1px;
+    font-size: 18px;
+    letter-spacing: 4px;
+  }
+}
+
+
+// 输入框中的图标
+.q-input .input-icon {
+  color: var(--q-color-text-3) !important;
+  cursor: pointer;
+  transition: color 0.15s;
+  &:hover { 
+    color: var(--q-color-text-1) !important; 
+  }
+}
+// 清空按钮
+.q-input {
+  .icon-clear {
+    display: none;
+  }
+  &:hover .icon-clear {
+    display: block;
+  }
+}
+// 密码显示图标
+.q-input {
+  .icon-eye {
+    margin-left: 5px;
+  }
+}
+
+
+// 输入框大小
+@mixin inputSize($height, $padding, $font-size) {
+  height: $height;
+  padding: $padding;
+  font-size: $font-size;
   input {
-    font-size: 14px;
-    width: 100%;
-    height: 100%;
+    font-size: $font-size;
+  }
+}
+.q-input__small {
+  @include inputSize(24px, 0 10px, 12px);
+}
+.q-input__medium {
+  @include inputSize(32px, 0 12px, 14px);
+}
+.q-input__large {
+  @include inputSize(38px, 0 14px, 14px);
+}
+
+
+// 输入框前后缀
+.flex-center {
+  display: flex;
+  align-items: center;
+}
+.q-input__prepend {
+  @extend .flex-center;
+  margin-right: 6px;
+}
+.q-input__append {
+  @extend .flex-center;
+  margin-left: 6px
+}
+
+
+// 禁用状态
+.q-input.is-disabled {
+  cursor: not-allowed;
+  input {
+    cursor: not-allowed;
   }
 }

@@ -13,6 +13,7 @@ type SFCWithInstall<T> = T & Plugin
  * @returns 已注册安装方法的 SFCWithInstall 类型的组件
  */
 export const withInstall = function <T extends Component>(comp: T) {
+
   // 将传入的组件 comp 转换为 SFCWithInstall 类型，并为其添加 install 方法
   (comp as SFCWithInstall<T>).install = function (app: App) {
     // 检查当前应用实例中是否已经注册了该组件，若未注册则进行注册
@@ -20,6 +21,7 @@ export const withInstall = function <T extends Component>(comp: T) {
       app.component(comp.name!, comp)
     }
   }
+  
   // 返回已添加 install 方法的 SFCWithInstall 类型组件
   return comp as SFCWithInstall<T>;
 }

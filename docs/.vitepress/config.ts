@@ -1,12 +1,12 @@
 import { defineConfig } from 'vitepress'
 
-
 // 插件，注册SVG图标
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import { resolve } from "path"
 
 // 插件，markdown解析
 import { applyPlugins } from '@ruabick/md-demo-plugins'
+
 
 // 文档配置
 export default defineConfig({
@@ -23,13 +23,17 @@ export default defineConfig({
     ['link', { rel: 'icon', href: '/qii-ui-doc/favicon.svg' }]
   ],
 
+  // 配置 Vite 插件
   vite: {
     plugins: [
       createSvgIconsPlugin({
         iconDirs: [resolve(__dirname, '../../src/svg')],
         symbolId: 'icon-[dir]-[name]',
       })
-    ]
+    ],
+    server: {
+      host: '0.0.0.0',
+    }
   },
 
   // 主题配置
@@ -90,7 +94,8 @@ export default defineConfig({
         {
           text: '表单组件',
           items: [
-            { text: '输入框 Input', link: '/component/input' },
+            { text: '输入框 Input （制作中）', link: '/component/input' },
+            { text: '开关 Switch （制作中）', link: '/component/switch' },
           ]
         },
         {
@@ -130,7 +135,7 @@ export default defineConfig({
 
     // 主页页脚
     footer: {
-      message: '根据 MIT 许可证发布。',
+      message: '根据 MIT 许可证发布',
       copyright: '版权所有 © 2024-至今 Qii UI'
     }
   },

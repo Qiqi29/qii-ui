@@ -4,6 +4,7 @@
     
     <!-- 默认插槽，放置SVG代码 -->
     <slot></slot>
+    
     <!-- 主图标 -->
     <svg v-if="!slots.default">
       <use :xlink:href="`#icon-${props.name}`"></use>

@@ -12,6 +12,7 @@ import QButtonGroup from './components/Button-group/index'
 import QIcon from './components/Icon/index'
 import QInput from './components/Input/index'
 import QSpace from './components/Space/index'
+import QSwitch from './components/Switch/index'
 import QLink from './components/Link/index'
 
 // 单独导出组件，提供按需引入
@@ -22,6 +23,7 @@ export {
   QIcon,
   QInput,
   QSpace,
+  QSwitch,
   QLink,
 }
 
@@ -33,6 +35,7 @@ const components = [
   QIcon,
   QInput,
   QSpace,
+  QSwitch,
   QLink,
 ]
 // 批量注册组件

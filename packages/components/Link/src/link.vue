@@ -8,6 +8,7 @@
     <!-- icon 参数为空，显示自定义图标 -->
     <q-icon v-if="icon === ''" :name="icon" size="1em"><linkIcon/></q-icon>
     <q-icon v-if="icon" :name="icon" size="1em"/>
+    
     <!-- 默认插槽，链接文本 -->
     <slot></slot>
 
@@ -34,7 +35,7 @@ const linkClass = computed(() => {
     ns.nameSpace,
     ns.n(props.type),
     ns.is(props.disabled, 'disabled'),
-    ns.has(props.line, 'line')
+    ns.is(props.line, 'has-line')
   ]
 })
 
@@ -44,6 +45,7 @@ const linkClass = computed(() => {
  */
 const __onClick = () => {
   if (!props.href || props.disabled) return
+
   if (props.open === 'newTab') window.open(props.href);
   if (props.open === 'replace') window.location.replace(props.href);
   if (props.open === 'push') window.location.href = props.href;

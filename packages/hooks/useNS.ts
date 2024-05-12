@@ -2,47 +2,52 @@
 const defaultNS = 'q'
 
 /**
- * 根据参数生成指定结构的组件类名
- * @param {string} name 组件名称
- * @returns
+ * BEM 命名规范
+ * 
+ * 根据参数生成指定结构的类名：
+ * q-button、
+ * q-button__primary、
+ * is-disabled
  */
 export const useNS = function (name: string) {
-  // 命名空间
+  /**
+   * 返回组件命名空间
+   */
   const nameSpace = `${defaultNS}-${name}`
 
   /**
-   * 直接返回 => 命名空间__参数
+   * 返回格式：命名空间__参数
    */
   const n = (name: string) => {
     return `${nameSpace}__${name}`;
   }
 
   /**
-   * 参数类型为指定类型，返回 => 命名空间__参数
+   * 返回格式：参数类型为指定类型 => 命名空间__参数
    */
   const t = (par: string | number, type: string) => {
     return typeof par === type ? `${nameSpace}__${par}` : '';
   }
 
   /**
-   * 参数为真，返回 => is-参数
+   * 返回格式：参数为真 => 命名空间__参数
    */
-  const is = (status: boolean | string, par: string) => {
-    return status ? `is-${par}` : '';
+  const s = (status: boolean | string, par: string) => {
+    return status ? `${nameSpace}__${par}` : '';
   }
 
   /**
-   * 参数为真，返回 => has-参数
+   * 返回格式：参数为真 => is-参数
    */
-  const has = (status: boolean | string, par: string) => {
-    return status ? `has-${par}` : '';
+  const is = (status: boolean | string, par: string) => {
+    return status ? `is-${par}` : '';
   }
 
   return {
     nameSpace,
     n,
     t,
+    s,
     is,
-    has
   }
 }

@@ -1,12 +1,11 @@
 import { PropType } from "vue"
 
-
 export const SpaceProps = {
   /**
    * @description 间距大小
-  */
- size: {
-   type: [Number, String] as PropType<number | string>,
+   */
+  size: {
+   type: [Number, String] as PropType<number | 'small' | 'medium' | 'large'>,
    default: "medium",
   },
   /**

@@ -3,7 +3,7 @@
 
 
 ## 基本用法
-在 space 组件中放置的组件会加上间距。
+在 space 组件中放置的内容会加上间距。
 <demo src="./src/space/basic.vue"/>
 
 
