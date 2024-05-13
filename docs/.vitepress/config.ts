@@ -95,7 +95,7 @@ export default defineConfig({
           text: '表单组件',
           items: [
             { text: '输入框 Input （制作中）', link: '/component/input' },
-            { text: '开关 Switch （制作中）', link: '/component/switch' },
+            { text: '开关 Switch', link: '/component/switch' },
           ]
         },
         {

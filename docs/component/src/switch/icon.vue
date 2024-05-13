@@ -1,7 +1,7 @@
 <template>
   <q-space :size="22">
-    <q-switch/>
-    <q-switch v-model="value"/>
+    <q-switch v-model="value" checked-icon="check" unchecked-icon="close"/>
+    <q-switch v-model="value" checked-icon="moon" unchecked-icon="sun"/>
   </q-space>
 </template>
 

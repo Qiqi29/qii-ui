@@ -17,6 +17,34 @@ export const SwitchProps = {
    default: "medium",
   },
   /**
+   * @description 开关开启时的颜色
+   */
+  checkedColor: {
+   type: String,
+   default: "",
+  },
+  /**
+   * @description 开关关闭时的颜色
+   */
+  uncheckedColor: {
+   type: String,
+   default: "",
+  },
+  /**
+   * @description 开关开启时的图标
+   */
+  checkedIcon: {
+   type: String,
+   default: "",
+  },
+  /**
+   * @description 开关关闭时的图标
+   */
+  uncheckedIcon: {
+   type: String,
+   default: "",
+  },
+  /**
    * @description 开关是否加载中
    */
   loading: {
@@ -29,7 +57,11 @@ export const SwitchProps = {
   disabled: {
    type: Boolean,
    default: false,
-  }
+  },
+  /**
+   * @description 开关状态改变前的回调
+   */
+  beforeChange: Function as PropType<(newValue: string | number | boolean) => Promise<boolean | void> | boolean | void>
 } as const;
 
 

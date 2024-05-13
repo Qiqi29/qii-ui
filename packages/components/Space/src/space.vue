@@ -15,23 +15,25 @@ export default defineComponent({
       return [  
         ns.nameSpace,
         ns.t(props.size, 'string'),
+        ns.is(props.fill, 'fill'),
+        ns.is(props.vertical, 'vertical'),
       ]
     })
 
     // 计算属性，样式
     const spaceStyle = computed<CSSProperties>(() => {
       return {
+        "--q-space-size": typeof props.size === 'number' ? props.size + 'px' : '',
         "flex-direction": props.vertical ? 'column' : 'row',
-        "gap": typeof props.size === 'number' ? props.size + 'px' : '',
         "align-items": props.direction,
-        "width": props.fill ? '100%' : '',
+        // "width": props.fill ? '100%' : '',
       }
     })
 
     // 计算属性，子项样式
     const itemStyle = computed<CSSProperties>(() => {
       return {
-        "width": props.fill ? '100%' : '',
+        // "width": props.fill ? '100%' : '',
       }
     })
 

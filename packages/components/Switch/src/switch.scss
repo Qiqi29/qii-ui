@@ -1,12 +1,15 @@
 .q-switch {
   position: relative;
   display: inline-block;
-
+  font-size: 14px;
   // 隐藏 input 元素，使用自定义的样式
   input {
     opacity: 0;
     width: 0;
     height: 0;
+  }
+  .slider-button .loadIcon {
+    position: absolute;
   }
 }
 
@@ -21,11 +24,13 @@
     border-radius: 2em;
     transition: all 0.2s;
     cursor: pointer;
-    &:before {
-      content: "";
+    .slider-button {
       position: absolute;
       top: $space;
       left: $space;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       width: $slider;
       height: $slider;
       background-color: #FFFFFF;
@@ -36,7 +41,7 @@
   // 开关启用状态
   &.is-open .slider {
     background: var(--q-color-primary);
-    &:before {
+    .slider-button {
       left: calc(100% - #{$slider} - #{$space});
     }
   }
@@ -47,4 +52,16 @@
 }
 .q-switch__medium {
   @include switchSize(24px, 16px, 4px);
+}
+
+
+// 加载状态
+.q-switch.is-loading .slider {
+  cursor: default !important;
+}
+
+
+// 禁用状态
+.q-switch.is-disabled {
+  opacity: 0.7;
 }

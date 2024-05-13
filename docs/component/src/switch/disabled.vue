@@ -1,7 +1,7 @@
 <template>
   <q-space direction="center" :size="22">
-    <q-switch v-model="value" size="small" />
-    <q-switch v-model="value" size="medium" />
+    <q-switch disabled />
+    <q-switch v-model="value" :disabled="true" />
   </q-space>
 </template>
 

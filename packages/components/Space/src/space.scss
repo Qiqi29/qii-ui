@@ -1,20 +1,43 @@
 .q-space {
+  --q-space-size: 0px;
   box-sizing: border-box;
   display: inline-flex;
   flex-wrap: wrap;
-}
-.q-space__item {
-  box-sizing: border-box;
-  display: flex;
+  > .q-space__item {
+    box-sizing: border-box;
+    display: flex;
+  }
+  // 宽度占满父元素样式
+  &.is-fill {
+    width: 100%;
+    .q-space__item {
+      width: 100%;
+    }
+  }
 }
 
-// 预设间距
+// 混合，不同的间距
+@mixin spaceItem($margin) {
+  > .q-space__item:not(:first-child){
+    margin-left: $margin;
+    margin-top: 0;
+  }
+  &.is-vertical > .q-space__item:not(:first-child) {
+    margin-top: $margin;
+    margin-left: 0;
+  }
+}
+// 使用CSS变量自定义大小
+.q-space {
+  @include spaceItem(var(--q-space-size));
+}
+// 预设大小
 .q-space__small {
-  gap: 6px;
+  @include spaceItem(6px);
 }
 .q-space__medium {
-  gap: 12px;
+  @include spaceItem(12px);
 }
 .q-space__large {
-  gap: 20px;
+  @include spaceItem(20px);
 }
