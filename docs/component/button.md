@@ -8,18 +8,19 @@
 
 
 ## 形状
-通过 `shape` 属性改变按钮形状。`square` 矩形按钮，`round` 圆角按钮，`circle` 圆形按钮。
+通过 `shape` 属性改变按钮形状。`square` **矩形按钮**，`round` **圆角按钮**，`circle` **圆形按钮**。
 <demo src="./src/button/shape.vue"/>
 
-## 图标
-使用 `icon` 属性设置按钮的图标。使用 `right-icon` 属性设置右侧图标。
-<demo src="./src/button/icon.vue"/>
 
 ## 大小
 通过 `size` 属性改变按钮的大小。
 
 提供 `small`、`medium`、`large` 三种尺寸，也可以自定义大小。
 <demo src="./src/button/size.vue"/>
+
+## 图标
+使用 `icon` 属性设置按钮的图标。使用 `right-icon` 属性设置右侧图标。
+<demo src="./src/button/icon.vue"/>
 
 
 ## 加载中
@@ -47,19 +48,20 @@
 | 属性 | 类型 | 默认值 | 说明 |
 | --- | --- | --- | --- |
 | type | `string` | default | 按钮类型 |
-| size | `string` / `number` | medium | 按钮大小 |
-| icon | `string` | — | 按钮图标 |
 | shape | `string` | square | 按钮形状 |
+| size | `string` `number` | medium | 按钮大小 |
+| icon | `string` | — | 按钮图标 |
+| right-icon | `string` | — | 按钮右侧图标 |
 | plain | `boolean` | false | 是否为二级按钮 |
 | text | `boolean` | false | 是否为文字按钮 |
 | long | `boolean` | false | 是否为长按钮 |
-| loading | `boolean` | false | 加载状态 |
-| disabled | `boolean` | false | 禁用状态 |
+| loading | `boolean` | false | 按钮是否在加载 |
+| disabled | `boolean` | false | 按钮是否禁用 |
 
 ### Button 插槽
 | 名称 | 说明 |
 | --- | --- |
-| default | 自定义按钮文本 |
+| default | 自定义按钮内容 |
 
 ### Button Group 属性
 | 属性 | 类型 | 默认值 | 说明 |

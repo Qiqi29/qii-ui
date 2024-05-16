@@ -1,7 +1,5 @@
 # 图标 Icon
-我喜欢给各种东西都加上图标。
-
-qii-ui 推荐使用 [MingCute Icon](https://www.mingcute.com/) 图标库。
+我喜欢给各种东西都加上图标。qii-ui 推荐使用 [MingCute Icon](https://www.mingcute.com/) 图标库。
 
 
 
@@ -13,7 +11,7 @@ npm i fast-glob@3.x -D
 npm i vite-plugin-svg-icons@2.x -D
 ```
 
-在 `vite.config.ts` 中配置 SVG 插件。
+1. 在 `vite.config.ts` 中配置 SVG 插件。
 ```ts
 // 引入图标注册插件与路径模块
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
@@ -31,7 +29,7 @@ export default defineConfig({
 })
 ```
 
-在 `main.ts` 中引入图标注册器。
+2. 在 `main.ts` 中引入图标注册器。
 ```ts
 import { createApp } from 'vue'
 
@@ -84,7 +82,7 @@ import 'virtual:svg-icons-register'
 ### Icon 插槽
 | 名称 | 说明 |
 | --- | --- |
-| default | 自定义图标 |
+| default | 自定义图标代码 |
 
 ## 贡献者
 <member></member>

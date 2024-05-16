@@ -5,6 +5,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  vertical-align: middle;
   flex-shrink: 0;
 
   border: none;
@@ -17,7 +18,6 @@
   font-size: 14px;
   
   user-select: none;
-  vertical-align: middle;
   cursor: pointer;
 }
 
@@ -102,7 +102,7 @@
 }
 
 
-// 按钮图标
+// 按钮中的图标
 .q-button .q-icon {
   position: absolute;
   left: 12px;
@@ -125,14 +125,8 @@
   right: 12px;
 }
 // 右侧图标存在，修改文本边距
-.q-button.is-right-icon .q-button__text {
+.q-button.is-has-right-icon .q-button__text {
   margin-right: 18px;
-}
-
-
-// 加载状态
-.q-button.is-loading {
-  cursor: default !important;
 }
 
 // 圆角按钮
@@ -148,12 +142,15 @@
   }
 }
 
-
 // 长按钮
 .q-button.is-long {
   width: 100%;
 }
 
+// 加载状态
+.q-button.is-loading {
+  cursor: default !important;
+}
 
 // 禁用状态
 .q-button.is-disabled {

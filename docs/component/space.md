@@ -22,7 +22,7 @@
 
 
 ## 对齐
-使用 `direction` 属性，设置子元素的对齐方式，同 CSS `align-items` 属性。
+使用 `direction` 属性，设置子元素的对齐方式，同 <q-link href=https://developer.mozilla.org/zh-CN/docs/Web/CSS/align-items icon>align-items</q-link> 属性。
 <demo src="./src/space/direction.vue"/>
 
 
@@ -31,7 +31,7 @@
 ### Space 属性
 | 属性 | 类型 | 默认值 | 说明 |
 | --- | --- | --- | --- |
-| size | `string` / `number` | medium | 间距大小 |
+| size | `string` `number` | medium | 间距大小 |
 | vertical | `boolean` | false | 是否垂直排列 |
 | direction | `string` | center | 内部元素对齐方式 |
 | fill | `boolean` | false | 宽度是否填满父元素 |

@@ -39,12 +39,13 @@
 | type | `string` | primary | 链接类型 |
 | line | `boolean` | false | 鼠标移入时，是否显示下划线 |
 | icon | `string` | — | 链接的图标 |
-| disabled | `boolean` | false | 是否禁用链接 |
+| disabled | `boolean` | false | 链接是否禁用 |
 
 ### Link 插槽
 | 名称 | 说明 |
 | --- | --- |
-| default | 链接文案 |
+| default | 链接内容 |
+
 
 ## 贡献者
 <member></member>

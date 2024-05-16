@@ -21,12 +21,5 @@ export const avatarProps = {
   shape: {
     type: String as PropType<'square' | 'round'>,
     default: 'round'
-  },
-  /**
-   * @description 兼容自定义样式
-   */
-  style: {
-    type: Object,
-    default: () => ({})
   }
-}
+} as const;

@@ -5,9 +5,11 @@
     <label>
       <!-- 输入框，单选按钮样式，隐藏 -->
       <input type="checkbox">
+
       <!-- 自定义的开关，使用label绑定 -->
       <div class="slider" @click="onClick" :style="sliderStyle">
         <div class="slider-button">
+        
           <!-- 加载图标 -->
           <q-icon 
             v-if="_loadingState" 
@@ -16,12 +18,14 @@
             :color="iconColor">
             <loadIcon/>
           </q-icon>
+        
           <!-- 开启关闭时自定义图标 -->
           <q-icon v-if="modelValue && !_loadingState && checkedIcon" :name="checkedIcon" size="0.9em" :color="iconColor"/>
           <q-icon v-if="!modelValue && !_loadingState && uncheckedIcon" :name="uncheckedIcon" size="0.9em" :color="iconColor"/>
 
         </div>
       </div>
+
     </label>
 
   </div>
@@ -34,17 +38,15 @@ import { isFunction } from '../../../utils'
 import { SwitchProps, SwitchEmits } from './switch'
 import loadIcon from '../../../styles/icons/loading.vue'
 
-// 组件配置
+
 defineOptions({ 
   name: 'q-switch',
   inheritAttrs: false
 })
 
-// 引入外部定义的属性
 const props = defineProps({ ...SwitchProps })
 const emits = defineEmits({ ...SwitchEmits })
 
-// 类名生成
 const ns = useNS('switch')
 const switchClass = computed(() => {
   return [
@@ -57,11 +59,9 @@ const switchClass = computed(() => {
 })
 
 // 开关背景色，自定义
-const sliderStyle = computed(() => {
-  return {
-    backgroundColor: props.modelValue ? props.checkedColor : props.uncheckedColor,
-  }
-})
+const sliderStyle = computed(() => { return {
+  backgroundColor: props.modelValue ? props.checkedColor : props.uncheckedColor,
+}})
 
 // 开关图标颜色
 const iconColor = computed(() => {
@@ -72,6 +72,7 @@ const iconColor = computed(() => {
 // 加载状态
 const _loading = ref(props.loading)
 const _loadingState = computed(() => _loading.value || props.loading )
+
 
 // 切换开关状态
 const onChange = (checked: boolean) => {
@@ -96,7 +97,4 @@ const onClick = async () => {
     onChange(!props.modelValue)
   }
 }
-
-
-
 </script>

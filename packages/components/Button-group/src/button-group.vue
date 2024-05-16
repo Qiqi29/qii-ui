@@ -17,18 +17,16 @@ defineOptions({
 
 const props = defineProps({ ...buttonProps })
 
-// 类名生成
+
 const ns = useNS('button-group')
-const buttonGroupClass = computed(() => {
-  return [
-    ns.nameSpace,
-  ]
-})
+const buttonGroupClass = computed(() => [
+  ns.nameSpace,
+])
 
 
 /**
- * 添加类型类名
- * 遍历按钮组中的子元素，给每个元素加上类名，统一控制样式
+ * 统一控制按钮样式
+ * 遍历按钮组中的子元素，给每个元素加上类名
  */
 const buttonGroupRef = ref()
 

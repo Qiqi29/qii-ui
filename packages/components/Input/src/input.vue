@@ -2,7 +2,7 @@
 <template>
   <div 
     :class="inputClass" 
-    :style="{width: long ? '100%' : width + 'px'}"
+    :style="{ 'width': width }"
     @click="handleDivClick"
     > 
     
@@ -10,6 +10,8 @@
     <span v-if="$slots.prepend" class="q-input__prepend">
       <slot name="prepend"></slot>
     </span>
+    <!-- 左侧图标 -->
+    <q-icon v-if="icon" :name="icon" class="q-input__left-icon" size="1.3em" color="#909090"/>
 
     <!-- 输入框主体 -->
     <input 
@@ -19,7 +21,6 @@
       :type="inputType"
       :placeholder="placeholder"
       :maxlength="maxlength"
-      :minlength="minlength"
       :readonly="readonly"
       :disabled="disabled"
       @input="handleInput"
@@ -35,6 +36,13 @@
     <q-icon v-if="showPasswordBtn && passwordVisible" class="input-icon icon-eye" @click="switchPassword" size="1.3em"><iconEye /></q-icon>
     <q-icon v-if="showPasswordBtn && !passwordVisible" size="1.3em" class="input-icon icon-eye" @click="switchPassword"><iconEyeClose /></q-icon>
 
+    <!-- 字数统计 -->
+    <div v-if="maxlength && showWordLimit" class="q-input__word-limit">
+      {{ wordLimit }}
+    </div>
+
+    <!-- 右侧图标 -->
+    <q-icon v-if="rightIcon" :name="rightIcon" class="q-input__right-icon" size="1.3em" color="#909090"/>
     <!-- 插槽，输入框后置内容 -->
     <span v-if="$slots.append" class="q-input__append">
       <slot name="append"></slot>
@@ -47,10 +55,11 @@
 import { ref, computed, watch, onMounted } from 'vue'
 import { inputProps, inputEmits } from './input'
 import { useNS } from '../../../hooks/useNS'
-// 图标
+
 import iconClose from '../../../styles/icons/close.vue'
 import iconEye from '../../../styles/icons/eye.vue'
 import iconEyeClose from '../../../styles/icons/eye-close.vue'
+
 
 // 组件配置
 defineOptions({ 
@@ -58,11 +67,11 @@ defineOptions({
   inheritAttrs: false
 })
 
-// 引入属性
+// 使用外部定义的属性
 const props = defineProps({ ...inputProps })
 const emits = defineEmits({ ...inputEmits })
 
-// 类名生成
+// 组件命名空间
 const ns = useNS('input')
 const inputClass = computed(() => {
   return [
@@ -126,6 +135,21 @@ const onClear = () => {
   emits('clear')
 }
 
+/**
+ * 计算属性，返回字数长度
+ */
+const wordLimit = computed(() => {
+  return props.modelValue.length + '/' + props.maxlength;
+})
+// 判断字数是否超过限制，超出限制禁止输入
+watch(() => props.modelValue, (newValue, oldValue) => {
+  if (!props.maxlength) return;
+  if (newValue.length > props.maxlength) {
+    emits('update:modelValue', oldValue)
+    emits('input', oldValue)
+  }
+})
+
 
 
 /**
@@ -137,6 +161,8 @@ const handleInput = (e: Event) => {
   emits('update:modelValue', inputValue)
   emits('input', inputValue)
 }
+
+
 /**
  * 改变事件
  * 输入框值发生变化时触发

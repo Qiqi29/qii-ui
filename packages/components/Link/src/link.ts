@@ -1,6 +1,5 @@
 import { PropType } from "vue"
 
-
 export const linkProps = {
   /**
    * @description 链接类型
@@ -43,4 +42,4 @@ export const linkProps = {
     type: Boolean,
     default: false,
   },
-}
+} as const;

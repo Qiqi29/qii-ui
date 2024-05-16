@@ -3,17 +3,18 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  vertical-align: bottom;
   flex-shrink: 0;
 
   width: var(--q-avatar-size);
   height: var(--q-avatar-size);
   background: var(--q-color-default-fill);
-  overflow: hidden;
-  vertical-align: bottom;
   color: #FFF;
   font-size: 14px;
   line-height: 1.2;
-  
+  user-select: none;
+  overflow: hidden;
+
   > img {
     width: 100%;
     height: 100%;
@@ -47,8 +48,8 @@
 }
 
 
-// 头像插槽内容
-.q-avatar__content {
+// 头像插槽中的内容
+.q-avatar__slot {
   display: flex;
   text-wrap: nowrap;
 }

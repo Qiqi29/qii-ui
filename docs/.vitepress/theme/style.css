@@ -59,12 +59,6 @@
 :root {
   /* 首页标题文本 */
   --vp-home-hero-name-color: var(--q-color-theme);
-  /* --vp-home-hero-name-background: -webkit-linear-gradient(
-    120deg,
-    #bd34fe 30%,
-    #41d1ff
-  ); */
-
   /* 首页图像背景 */
   --vp-home-hero-image-background-image: linear-gradient(0deg, #3380FF30, #3380FF30);
   --vp-home-hero-image-filter: blur(65px);
@@ -183,7 +177,7 @@ code {
   overflow: hidden;
 }
 .vitepress-demo .demo-slot {
-  padding: 30px !important;
+  padding: 40px !important;
 }
 .vitepress-demo .demo-actions {
   padding: 0 14px 0 8px !important;
@@ -218,6 +212,11 @@ code {
 }
 .VPSidebarItem .items .VPSidebarItem:hover:not(.is-active) .VPLink .text {
   color: var(--vp-c-text-2) !important;
+}
+
+/* 去除侧边栏滚动条 */
+.VPSidebar::-webkit-scrollbar {
+  display: none;
 }
 
 

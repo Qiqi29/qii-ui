@@ -2,7 +2,7 @@
 <template>
   <i class="q-icon" :style="iconStyle">
     
-    <!-- 默认插槽，放置SVG代码 -->
+    <!-- 默认插槽 -->
     <slot></slot>
     
     <!-- 主图标 -->
@@ -26,10 +26,8 @@ defineOptions({
 const props = defineProps({ ...iconProps })
 
 // 计算属性，样式
-const iconStyle = computed(() => {
-  return {
-    color: props.color,
-    fontSize: props.size,
-  }
-})
+const iconStyle = computed(() => { return {
+  color: props.color,
+  fontSize: props.size,
+}})
 </script>

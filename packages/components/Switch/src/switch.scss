@@ -64,4 +64,7 @@
 // 禁用状态
 .q-switch.is-disabled {
   opacity: 0.7;
+  .slider {
+    cursor: not-allowed;
+  }
 }

@@ -1,7 +1,7 @@
 .q-input {
   display: flex;
   align-items: center;
-  padding: 0 12px;
+  padding: 0 10px;
   
   background: var(--q-color-default-l);
   border: 1px solid transparent;
@@ -45,7 +45,15 @@
     color: var(--q-color-text-1) !important; 
   }
 }
-// 清空按钮
+// 两侧图标
+.q-input__left-icon {
+  margin-right: 6px;
+}
+.q-input__right-icon {
+  margin-left: 6px;
+}
+
+// 清空图标
 .q-input {
   .icon-clear {
     display: none;
@@ -62,23 +70,33 @@
 }
 
 
+// 字数统计文本
+.q-input__word-limit {
+  margin-left: 4px;
+  color: var(--q-color-text-3);
+  font-size: 13px;
+  text-wrap: nowrap;
+}
+
+
 // 输入框大小
-@mixin inputSize($height, $padding, $font-size) {
+@mixin inputSize($height, $padding, $borr, $font-size) {
   height: $height;
   padding: $padding;
+  border-radius: $borr;
   font-size: $font-size;
   input {
     font-size: $font-size;
   }
 }
 .q-input__small {
-  @include inputSize(24px, 0 10px, 12px);
+  @include inputSize(24px, 0 8px, 5px, 12px);
 }
 .q-input__medium {
-  @include inputSize(32px, 0 12px, 14px);
+  @include inputSize(32px, 0 10px, 6px, 14px);
 }
 .q-input__large {
-  @include inputSize(38px, 0 14px, 14px);
+  @include inputSize(38px, 0 14px, 6px, 14px);
 }
 
 
@@ -89,11 +107,15 @@
 }
 .q-input__prepend {
   @extend .flex-center;
-  margin-right: 6px;
+  padding-right: 8px;
+  margin-right: 8px;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
 .q-input__append {
   @extend .flex-center;
-  margin-left: 6px
+  padding-left: 8px;
+  margin-left: 8px;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 

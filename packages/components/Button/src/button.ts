@@ -1,6 +1,5 @@
 import { PropType } from "vue"
 
-
 export const buttonProps = {
   /**
    * @description 按钮类型
@@ -72,8 +71,8 @@ export const buttonProps = {
     type: Boolean,
     default: false
   }
-}
+} as const;
 
 export const buttonEmits = {
   click: (event: MouseEvent) => event instanceof MouseEvent,
-}
+} as const;

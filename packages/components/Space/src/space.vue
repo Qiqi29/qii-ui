@@ -9,7 +9,7 @@ export default defineComponent({
   props: { ...SpaceProps },
   setup(props, { slots }) {
 
-    // 类名生成
+    // 组件命名空间
     const ns = useNS('space')
     const classList = computed(() => {
       return [  
@@ -21,21 +21,11 @@ export default defineComponent({
     })
 
     // 计算属性，样式
-    const spaceStyle = computed<CSSProperties>(() => {
-      return {
-        "--q-space-size": typeof props.size === 'number' ? props.size + 'px' : '',
-        "flex-direction": props.vertical ? 'column' : 'row',
-        "align-items": props.direction,
-        // "width": props.fill ? '100%' : '',
-      }
-    })
-
-    // 计算属性，子项样式
-    const itemStyle = computed<CSSProperties>(() => {
-      return {
-        // "width": props.fill ? '100%' : '',
-      }
-    })
+    const spaceStyle = computed<CSSProperties>(() => { return {
+      "--q-space-size": typeof props.size === 'number' ? props.size + 'px' : '',
+      "flex-direction": props.vertical ? 'column' : 'row',
+      "align-items": props.direction,
+    }})
 
     return () => {
       // 获取默认插槽中的内容
@@ -44,16 +34,9 @@ export default defineComponent({
       // 渲染 space 子节点
       const renderChildren = () => {
         // 遍历子节点，使用 h 函数渲染
-        return children?.map((child) => {
-          return h(
-            'div', 
-            {
-              class: `q-space__item`,
-              style: itemStyle.value
-            },
-            child
-          )
-        })
+        return children?.map((child) => { return h(
+          'div', { class: `q-space__item` }, child
+        )})
       }
 
       // 渲染 sapce 组件

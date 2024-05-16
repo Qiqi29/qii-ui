@@ -75,4 +75,4 @@ export const SwitchEmits = {
    */
   change: (value: Boolean) => isBoolean(value),
  
-}as const;
+} as const;

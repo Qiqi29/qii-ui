@@ -23,12 +23,11 @@ import linkIcon from '../../../styles/icons/link.vue'
 
 defineOptions({ 
   name: 'q-link',
-  inheritAttrs: true
+  inheritAttrs: false
 })
 
 const props = defineProps({ ...linkProps })
 
-// 类名生成
 const ns = useNS('link')
 const linkClass = computed(() => {
   return [

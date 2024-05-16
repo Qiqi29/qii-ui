@@ -1,20 +1,19 @@
-<!-- 头像组件 -->
 <template>
   <div :class="avatarClass" :style="avatarStyle" ref="avatarRef">
     
-    <!-- 默认插槽，显示自定义内容 -->
-    <div class="q-avatar__content" ref="contentRef">
+    <!-- 默认插槽 -->
+    <div class="q-avatar__slot" ref="slotRef">
       <slot></slot>
     </div>
     
-    <!-- 头像图片，地址存在并且没有自定义内容时才会显示 -->
+    <!-- 头像图片 -->
     <img v-if="src && !$slots.default" :src="src" alt="">
 
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref, computed, onMounted, watch, onUpdated } from 'vue'
+import { ref, computed, onMounted, onUpdated } from 'vue'
 import { useNS } from '../../../hooks/useNS'
 import { avatarProps } from './avatar'
 
@@ -24,44 +23,38 @@ defineOptions({
   inheritAttrs: true
 })
 
-// 引入外部定义的属性
+// 使用外部定义的属性
 const props = defineProps({ ...avatarProps })
 
-// 类名生成
+// 组件命名空间
 const ns = useNS('avatar')
-const avatarClass = computed(() => {
-  return [
-    ns.nameSpace,
-    ns.n(props.shape),
-    ns.t(props.size, 'string'),
-  ]
-})
+const avatarClass = computed(() => [
+  ns.nameSpace,
+  ns.n(props.shape),
+  ns.t(props.size, 'string'),
+])
 
 // 计算属性，样式
-const avatarStyle = computed(() => {
-  return {
-    '--q-avatar-size': typeof props.size === 'number' ? `${props.size}px` : '',
-    ...props.style,
-  }
-})
-
+const avatarStyle = computed(() => { return {
+  '--q-avatar-size': typeof props.size === 'number' ? `${props.size}px` : '',
+}})
 
 /**
  * 插槽内容自适应头像大小
- * 通过获取头像与文本的dom宽度，计算需要的缩放比例
+ * 使用 ref 绑定节点，获取头像与文本的dom宽度，计算响应的缩放比例。
  */
 const avatarRef = ref()
-const contentRef = ref()
-
+const slotRef = ref()
 const autoSize = () => {
-  const textWidth = contentRef.value.clientWidth;
+  const slotWidth = slotRef.value.clientWidth;
   const avatarWidth = avatarRef.value.clientWidth;
-  const scale = avatarWidth / (textWidth + 10);  
-  contentRef.value.style.transform = `scale(${scale > 1.3 ? 1.3 : scale})`;
+  const scale = avatarWidth / (slotWidth + 10);  
+  slotRef.value.style.transform = `scale(${scale > 1.3 ? 1.3 : scale})`;
 }
 
-// 监听组件内容更新，重新执行计算
+// 监听组件内容更新，重新计算
 onMounted(() => autoSize())
 onUpdated(() => autoSize())
-watch(() => props.size, () => autoSize())
+// watch(() => props.size, () => autoSize())
+
 </script>
