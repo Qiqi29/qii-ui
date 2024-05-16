@@ -65,11 +65,11 @@
 ### Input 事件
 | 名称 | 说明 | 类型 |
 | --- | --- | --- |
-| input | 输入框输入时触发 | `(value: String) => value` |
-| change | 绑定值改变时触发 | `(value: String) => value` |
-| focus | 输入框获得焦点时触发 | `(event: FocusEvent) => event` |
-| blur | 输入框失去焦点时触发 | `(event: FocusEvent) => event` |
-| clear | 点击清除按钮时触发 | `() => true` |
+| input | 输入框输入时触发 | (value: String) => value |
+| change | 绑定值改变时触发 | (value: String) => value |
+| focus | 输入框获得焦点时触发 | (event: FocusEvent) => event |
+| blur | 输入框失去焦点时触发 | (event: FocusEvent) => event |
+| clear | 点击清除按钮时触发 | () => true |
 
 ### Input 插槽
 | 名称 | 说明 |

@@ -8,7 +8,7 @@
 
 
 ## 大小
-使用 `size` 属性改变开关的大小，提供 `small`、`medium` 两种尺寸。
+使用 `size` 属性改变开关的大小，提供 `small`、`medium`、`large` 三种尺寸。
 <demo src="./src/switch/size.vue"/>
 
 

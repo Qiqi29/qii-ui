@@ -1,5 +1,5 @@
 import { PropType } from "vue"
-import { isString } from "@vue/shared"
+import { isString } from "../../../utils/types"
 
 // 配置组件属性
 export const inputProps = {

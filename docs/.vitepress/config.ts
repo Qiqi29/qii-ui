@@ -44,7 +44,7 @@ export default defineConfig({
       { text: '指南', link: '/guide/install', activeMatch: '/guide/' },
       { text: '组件', link: '/component/button', activeMatch: '/component/' },
       {
-        text: '0.0.2-beta',
+        text: '0.0.3-beta',
         items: [
           { text: '更新日志', link: 'https://github.com/Qiqi29/qii-ui' },
           { text: '参与贡献', link: 'https://github.com/Qiqi29/qii-ui' }
@@ -94,7 +94,7 @@ export default defineConfig({
         {
           text: '表单组件',
           items: [
-            { text: '输入框 Input （制作中）', link: '/component/input' },
+            { text: '输入框 Input', link: '/component/input' },
             { text: '开关 Switch', link: '/component/switch' },
           ]
         },
