@@ -222,8 +222,9 @@ code {
 
 /* 文档右侧索引菜单 */
 .VPDocAside .content {
-  border-left: 1px solid var(--vp-c-divider);
+  border-left: 0px solid var(--vp-c-divider);
 }
 .VPDocAside .outline-marker {
-  width: 3px;
+  width: 4px;
+  left: 0px;
 }

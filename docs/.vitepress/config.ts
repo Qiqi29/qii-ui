@@ -83,12 +83,14 @@ export default defineConfig({
             { text: '按钮 Button', link: '/component/button' },
             { text: '图标 Icon', link: '/component/icon' },
             { text: '链接 Link', link: '/component/link' },
+            { text: '滚动条 Scrollbar （开发中）', link: '/component/scrollbar' },
           ]
         },
         {
           text: '数据展示组件',
           items: [
             { text: '头像 Avatar', link: '/component/avatar' },
+            { text: '徽标 Badge', link: '/component/badge' },
           ]
         },
         {

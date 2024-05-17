@@ -1,0 +1,67 @@
+.q-scrollbar {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  &:hover .q-scrollbar__bar {
+    opacity: 1;
+  }
+  &.is-always-show {
+    .q-scrollbar__bar {
+      opacity: 1;
+    }
+  }
+}
+
+.q-scrollbar__wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.q-scrollbar__bar {
+  user-select: none;
+  opacity: 0;
+  position: absolute;
+  transition: all .3s ease;
+  background-color: transparent;
+  &.is-active {
+    opacity: 1;
+  }
+  &.is-vertical {
+    width: 6px;
+    height: 100%;
+    right: 2px;
+    top: 0;
+    &.is-outside {
+      right: -10px;
+    }
+  }
+  &.is-horizontal {
+    height: 6px;
+    height: 100%;
+    bottom: 2px;
+    left: 0;
+    &.is-outside {
+      bottom: -10px;
+    }
+  }
+  &.is-active {
+    .q-scrollbar__thumb {
+      background: #00000020;
+    }
+  }
+}
+
+// 滑块
+.q-scrollbar__thumb {
+  border-radius: 100px;
+  position: absolute;
+  width: 100%;
+  background: #00000010;
+  &:hover {
+    background: #00000020;
+  }
+}

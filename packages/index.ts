@@ -6,35 +6,41 @@ import { App } from 'vue'
 
 // 引入所有组件
 import QAvatar from './components/Avatar/index'
+import QBadge from './components/Badge/index'
 import QButton from './components/Button/index'
 import QButtonGroup from './components/Button-group/index'
 import QIcon from './components/Icon/index'
 import QInput from './components/Input/index'
 import QSpace from './components/Space/index'
 import QSwitch from './components/Switch/index'
+import QScrollbar from './components/Scrollbar/index'
 import QLink from './components/Link/index'
 
 // 单独导出组件，提供按需引入
 export {
   QAvatar,
+  QBadge,
   QButton,
   QButtonGroup,
   QIcon,
   QInput,
   QSpace,
   QSwitch,
+  QScrollbar,
   QLink,
 }
 
 // 配置组件列表
 const components = [
   QAvatar,
+  QBadge,
   QButton,
   QButtonGroup,
   QIcon,
   QInput,
   QSpace,
   QSwitch,
+  QScrollbar,
   QLink,
 ]
 // 批量注册组件

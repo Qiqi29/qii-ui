@@ -29,14 +29,12 @@ defineOptions({
 const props = defineProps({ ...linkProps })
 
 const ns = useNS('link')
-const linkClass = computed(() => {
-  return [
-    ns.nameSpace,
-    ns.n(props.type),
-    ns.is(props.disabled, 'disabled'),
-    ns.is(props.line, 'has-line')
-  ]
-})
+const linkClass = computed(() => [
+  ns.nameSpace,
+  ns.n(props.type),
+  ns.is(props.disabled, 'disabled'),
+  ns.is(props.line, 'has-line')
+])
 
 /**
  * 点击事件，如果链接为空或被禁用，不会跳转
