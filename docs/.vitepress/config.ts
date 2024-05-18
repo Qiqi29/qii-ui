@@ -83,7 +83,7 @@ export default defineConfig({
             { text: '按钮 Button', link: '/component/button' },
             { text: '图标 Icon', link: '/component/icon' },
             { text: '链接 Link', link: '/component/link' },
-            { text: '滚动条 Scrollbar （开发中）', link: '/component/scrollbar' },
+            { text: '滚动条 Scrollbar（开发中）', link: '/component/scrollbar' },
           ]
         },
         {
@@ -98,6 +98,7 @@ export default defineConfig({
           items: [
             { text: '输入框 Input', link: '/component/input' },
             { text: '开关 Switch', link: '/component/switch' },
+            { text: '单选框 Radio', link: '/component/radio' },
           ]
         },
         {

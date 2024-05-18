@@ -2,6 +2,13 @@ import { PropType } from "vue"
 
 export const scrollbarProps = {
   /**
+   * @description 滚动区域高度
+   */
+  height: {
+    type: String as PropType<string>,
+    default: '100%',
+  },
+  /**
    * @description 滚动条滑块是否显示在容器外
    */
   outside: {

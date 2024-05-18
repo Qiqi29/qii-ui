@@ -14,6 +14,8 @@ import QInput from './components/Input/index'
 import QSpace from './components/Space/index'
 import QSwitch from './components/Switch/index'
 import QScrollbar from './components/Scrollbar/index'
+import QRadio from './components/Radio/index'
+import QRadioGroup from './components/Radio-group/index'
 import QLink from './components/Link/index'
 
 // 单独导出组件，提供按需引入
@@ -27,6 +29,8 @@ export {
   QSpace,
   QSwitch,
   QScrollbar,
+  QRadio,
+  QRadioGroup,
   QLink,
 }
 
@@ -41,6 +45,8 @@ const components = [
   QSpace,
   QSwitch,
   QScrollbar,
+  QRadio,
+  QRadioGroup,
   QLink,
 ]
 // 批量注册组件

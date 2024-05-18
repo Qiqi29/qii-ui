@@ -1,5 +1,5 @@
 <template>
-  <div :class="scrollbarClass">
+  <div :class="scrollbarClass" :style="{'height': height}">
 
     <!-- 默认插槽 -->
     <div ref="wrap" :class="ns.n('wrapper')">

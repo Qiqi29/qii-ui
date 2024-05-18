@@ -1,39 +1,37 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-
-const loader = ref(false)
-const setLoader = () => {
-  loader.value = true
-  setTimeout(() => {
-    loader.value = false
-  }, 2000)
-}
-
-const input = ref('')
-const switch1 = ref(false)
+const count = ref(10)
 </script>
 
 <template>
   <div>
-    <h2>你好世界</h2>
-
-    <q-space>
-      <q-avatar>你</q-avatar>
-      <q-button type="primary">选项 1</q-button>
-      <q-button type="primary" icon="search">选项 2</q-button>
-      <q-icon name="box"/>
-      <q-link href="https://www.baidu.com">百度</q-link>
-      <q-link href="https://www.baidu.com" icon>百度</q-link>
-      <q-input v-model="input" placeholder="请输入内容" clearable/>
-      <q-input v-model="input" placeholder="请输入内容" icon="search"/>
-      <q-switch v-model="switch1"/>
-    </q-space>
-
+    <q-scrollbar height="100vh">
+      <div class="item" v-for="i in count" :key="i">
+        {{ i }}
+      </div>
+    </q-scrollbar>
   </div>
 </template>
 
 <style>
 :root {
   font-size: 14px;
+}
+body {
+  margin: 0;
+}
+
+.item {
+  width: 100%; 
+  height: 80px; 
+  line-height: 80px;
+  border-radius: 10px;
+  background: var(--q-color-primary-l);
+  color: var(--q-color-primary);
+  font-size: 18px;
+  text-align: center;
+}
+.item:not(:last-child) {
+  margin-bottom: 12px;
 }
 </style>

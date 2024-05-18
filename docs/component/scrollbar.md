@@ -3,5 +3,5 @@
 
 
 ## 基本用法
-
+使用 `height` 属性设置滚动区域高度。
 <demo src="./src/scrollbar/basic.vue"/>

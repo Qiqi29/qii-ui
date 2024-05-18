@@ -1,0 +1,27 @@
+.q-radio-group {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  .q-radio:not(:first-child) {
+    margin-left: 21px;
+  }
+  // 垂直排列
+  &.is-vertical {
+    flex-direction: column;
+    .q-radio:not(:first-child) {
+      margin-left: 0;
+      margin-top: 10px;
+    }
+  }
+}
+
+// 滑块样式
+.q-radio-group.is-button {
+  padding: 4px;
+  background: var(--q-color-default);
+  border-radius: 8px;
+
+  .q-radio:not(:first-child) {
+    margin-left: 4px;
+  }
+}

@@ -1,0 +1,65 @@
+.q-radio {
+  display: inline-flex;
+  align-items: center;
+  text-wrap: nowrap;
+  cursor: pointer;
+
+  input {
+    display: none;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+}
+
+
+// 选项按钮
+.q-radio__slider {
+  flex-shrink: 0;
+  margin-right: 6px;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--q-color-default-a) inset;
+  transition: all 0.12s;
+}
+
+// 选中状态
+.q-radio.is-checked .q-radio__slider {
+  box-shadow: 0 0 0 5.5px var(--q-color-primary) inset !important;
+}
+
+// 鼠标滑过选项
+.q-radio:hover:not(.is-disabled) .q-radio__slider {
+  box-shadow: 0 0 0 2px var(--q-color-primary-h) inset;
+}
+
+// 禁用状态
+.q-radio.is-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  .q-radio__slider {
+    box-shadow: 0 0 0 10px var(--q-color-default-a) inset;
+  }
+}
+
+
+// 按钮样式
+.q-radio.is-button {
+  height: 26px;
+  padding: 0 16px;
+  border-radius: 5px;
+  color: var(--q-color-text-3);
+  transition: all 0.12s;
+  &:hover:not(.is-disabled) {
+    background: var(--q-color-light);
+  }
+  &.is-checked {
+    color: var(--q-color-text-1);
+    background: var(--q-color-light);
+  }
+  .q-radio__slider {
+    display: none;
+  }
+}

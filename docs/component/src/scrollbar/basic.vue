@@ -3,7 +3,7 @@
     <q-button @click="addCount">增加</q-button>
     <q-button @click="deleteCount">减少</q-button>
   </q-space>
-  <q-scrollbar always outside style="height: 360px; width: 100%; margin-top: 20px;">
+  <q-scrollbar :height="400" always outside>
     <div class="item" v-for="i in count" :key="i">
       {{ i }}
     </div>
