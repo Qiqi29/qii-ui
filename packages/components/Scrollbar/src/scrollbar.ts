@@ -1,4 +1,6 @@
 import { PropType } from "vue"
+import { isNumber } from "../../../utils/types"
+
 
 export const scrollbarProps = {
   /**
@@ -6,14 +8,12 @@ export const scrollbarProps = {
    */
   height: {
     type: String as PropType<string>,
-    default: '100%',
   },
   /**
-   * @description 滚动条滑块是否显示在容器外
+   * @description 滚动区域最大高度
    */
-  outside: {
-    type: Boolean as PropType<boolean>,
-    default: false,
+  maxHeight: {
+    type: String as PropType<string>,
   },
   /**
    * @description 是否总是显示滚动条 
@@ -23,3 +23,11 @@ export const scrollbarProps = {
     default: false,
   }
 } as const;
+
+
+export const scrollbarEmits = {
+  /**
+   * @description 触发滚动事件的回调函数
+   */
+  scroll:(scrollLeft:number, scrollTop:number) => isNumber(scrollLeft) && isNumber(scrollTop)
+} as const

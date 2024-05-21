@@ -11,8 +11,8 @@
   // 文本颜色
   --q-color-text-1: #303032;
   --q-color-text-2: #5a5a5f;
-  --q-color-text-3: #8c8e94;
-  --q-color-text-4: #bbbcc4;
+  --q-color-text-3: #b9bcc2;
+  --q-color-text-4: #cdced5;
 
   // 不同级别的颜色
   --q-color-default: #f1f1f4;
@@ -50,6 +50,11 @@
   --q-color-danger-l: #ffeaea;
   --q-color-danger-l-h: #fee0e0;
   --q-color-danger-l-a: #fcd8d8;
+
+  // 滚动条颜色
+  --q-scrollbar-color: #93949c40;
+  --q-scrollbar-hover: #93949c50;
+  --q-scrollbar-active: #93949c70;
 }
 
 // 深色主题
@@ -63,8 +68,8 @@ html.dark {
   // 文本颜色
   --q-color-text-1: #f0f0f0;
   --q-color-text-2: #9e9da3;
-  --q-color-text-3: #757579;
-  --q-color-text-4: #505053;
+  --q-color-text-3: #606064;
+  --q-color-text-4: #525256;
 
   // 不同级别的颜色
   --q-color-default: #29292C;

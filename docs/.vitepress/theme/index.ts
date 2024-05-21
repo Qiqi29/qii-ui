@@ -22,13 +22,13 @@ import DemoBlock from '@ruabick/vitepress-demo-block'
 import '@ruabick/vitepress-demo-block/dist/style.css'
 
 
+// 引入自定义布局组件
+import Layout from './layout.vue'
+
+
 export default {
   extends: DefaultTheme,
-  Layout: () => {
-    return h(DefaultTheme.Layout, null, {
-      // https://vitepress.dev/guide/extending-default-theme#layout-slots
-    })
-  },
+  Layout: Layout,
   enhanceApp({ app, router, siteData }) {
     app.use(Qii)
     app.component('Member', Member);

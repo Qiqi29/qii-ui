@@ -1,4 +1,3 @@
-<!-- 图标组件 -->
 <template>
   <i class="q-icon" :style="iconStyle">
     
@@ -25,7 +24,6 @@ defineOptions({
 
 const props = defineProps({ ...iconProps })
 
-// 计算属性，样式
 const iconStyle = computed(() => { return {
   color: props.color,
   fontSize: props.size,

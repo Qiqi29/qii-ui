@@ -4,10 +4,10 @@
     
     <label>
       <!-- 输入框，单选按钮样式，隐藏 -->
-      <input type="checkbox">
+      <input type="checkbox" @change="onChange">
 
       <!-- 自定义的开关，使用label绑定 -->
-      <div class="slider" @click="onClick" :style="sliderStyle">
+      <div class="slider" :style="sliderStyle">
         <div class="slider-button">
         
           <!-- 加载图标 -->
@@ -41,7 +41,7 @@ import loadIcon from '../../../styles/icons/loading.vue'
 
 defineOptions({ 
   name: 'q-switch',
-  inheritAttrs: false
+  inheritAttrs: true
 })
 
 const props = defineProps({ ...SwitchProps })
@@ -68,16 +68,14 @@ const iconColor = computed(() => {
   return props.modelValue ? 'var(--q-color-primary)' : '#aaaaab';
 })
 
-
 // 加载状态
 const _loading = ref(props.loading)
 const _loadingState = computed(() => _loading.value || props.loading )
 
-
 // 切换开关状态
-const onChange = (checked: boolean) => {
-  emits('update:modelValue', checked)
-  emits('change', checked)
+const onUpdate = () => {
+  emits('update:modelValue', !props.modelValue)
+  emits('change', !props.modelValue)
 }
 
 /**
@@ -86,15 +84,15 @@ const onChange = (checked: boolean) => {
  * 函数返回 true ，执行 onChange，返回 false，不执行切换。
  * beforeChange 不为 function，直接执行 onChange
  */
-const onClick = async () => {
+const onChange = async () => {
   if (props.disabled || _loadingState.value) return;
   if (isFunction(props.beforeChange)) {
     _loading.value = true
     const result = await props.beforeChange(!props.modelValue)
-    if (result) onChange(!props.modelValue)
+    if (result) onUpdate()
     _loading.value = false
   } else {
-    onChange(!props.modelValue)
+    onUpdate()
   }
 }
 </script>

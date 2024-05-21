@@ -3,17 +3,21 @@
 
 
 ## 样式
-使用 `type` 属性改变按钮颜色。使用 `plain` 指定为二级按钮。使用 `text` 指定为文字按钮。
+使用 `type` 属性改变按钮类型，不同类型只在颜色上有区别。
+
+添加 `plain` 属性显示为 **二级按钮**。添加 `text` 属性显示为 **文字按钮**。
 <demo src="./src/button/basic.vue"/>
 
 
 ## 形状
-通过 `shape` 属性改变按钮形状。`square` **矩形按钮**，`round` **圆角按钮**，`circle` **圆形按钮**。
+使用 `shape` 属性改变按钮形状。
+
+默认是 `square` **矩形按钮**，`round` **圆角按钮**，`circle` **圆形按钮**。
 <demo src="./src/button/shape.vue"/>
 
 
 ## 大小
-通过 `size` 属性改变按钮的大小。
+使用 `size` 属性改变按钮的大小。
 
 提供 `small`、`medium`、`large` 三种尺寸，也可以自定义大小。
 <demo src="./src/button/size.vue"/>

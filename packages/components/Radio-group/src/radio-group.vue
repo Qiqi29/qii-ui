@@ -50,6 +50,7 @@ const updateValue = (val: string | number | boolean) => {
 provide('radioGroup', {
   modelValue: readonly(computed(() => props.modelValue)),
   isButton: readonly(computed(() => props.button)),
+  size: readonly(computed(() => props.size)),
   updateValue,
 })
 

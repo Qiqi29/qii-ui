@@ -1,4 +1,3 @@
-<!-- 间距组件 -->
 <script lang="ts">
 import { defineComponent, computed, h, CSSProperties } from 'vue'
 import { useNS } from '../../../hooks/useNS'
@@ -22,9 +21,10 @@ export default defineComponent({
 
     // 计算属性，样式
     const spaceStyle = computed<CSSProperties>(() => { return {
-      "--q-space-size": typeof props.size === 'number' ? props.size + 'px' : '',
+      "gap": typeof props.size === 'number' ? props.size + 'px' : '',
       "flex-direction": props.vertical ? 'column' : 'row',
       "align-items": props.direction,
+      "justify-content": props.justify,
     }})
 
     return () => {
@@ -41,8 +41,7 @@ export default defineComponent({
 
       // 渲染 sapce 组件
       return h(
-        'div', 
-        {
+        'div', {
           class: classList.value,
           style: spaceStyle.value,
         },

@@ -1,5 +1,5 @@
 <template>
-  <q-space :size="40">
+  <q-space :size="40" direction="center">
     <q-space size="large">
       <q-badge :count="1" type="primary"/>
       <q-badge :count="2" type="success"/>

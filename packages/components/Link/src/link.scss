@@ -14,14 +14,13 @@
   }
 }
 
-
 // 链接类型
 @mixin linkType($type) {
   color: var(--q-color-#{$type}) !important;
   &:hover {
     color: var(--q-color-#{$type}-a) !important;
     // 链接下划线样式
-    &.is-has-line:not(.is-disabled)::after {
+    &.is-has-underline:not(.is-disabled)::after {
       content: "";
       position: absolute;
       top: 0;

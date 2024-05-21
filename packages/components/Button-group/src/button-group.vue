@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, onUpdated } from 'vue'
+import { computed, provide, readonly } from 'vue'
 import { useNS } from '../../../hooks/useNS'
 import { buttonProps } from './button-group'
 
@@ -17,7 +17,6 @@ defineOptions({
 
 const props = defineProps({ ...buttonProps })
 
-
 const ns = useNS('button-group')
 const buttonGroupClass = computed(() => [
   ns.nameSpace,
@@ -26,20 +25,10 @@ const buttonGroupClass = computed(() => [
 
 /**
  * 统一控制按钮样式
- * 遍历按钮组中的子元素，给每个元素加上类名
+ * 使用 provide 传值 
  */
-const buttonGroupRef = ref()
-
-const addClassName = () => {
-  const buttons = buttonGroupRef.value.querySelectorAll('button')
-  buttons.forEach((button: HTMLElement) => {
-    button.classList.remove(`q-button__default`);
-    button.classList.remove(`q-button__medium`);
-    button.classList.add(`q-button__${props.type}`)
-    button.classList.add(`q-button__${props.size}`)
-  })
-}
-onMounted(() => addClassName())
-onUpdated(() => addClassName())
-
+provide('buttonGroup', {
+  type: readonly(computed(() => props.type)),
+  size: readonly(computed(() => props.size)),
+})
 </script>

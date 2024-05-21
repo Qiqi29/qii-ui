@@ -15,8 +15,8 @@
 
 
 ## 下划线
-添加 `line` 属性，鼠标移动到 Link 上，会显示下划线。
-<demo src="./src/link/line.vue"/>
+添加 `underline` 属性，鼠标移动到 Link 上，会显示下划线。
+<demo src="./src/link/underline.vue"/>
 
 
 ## 图标
@@ -37,7 +37,7 @@
 | href | `string` | — | 链接地址 |
 | open | `string` | newTab | 跳转方式 |
 | type | `string` | primary | 链接类型 |
-| line | `boolean` | false | 鼠标移入时，是否显示下划线 |
+| underline | `boolean` | false | 鼠标移入时，是否显示下划线 |
 | icon | `string` | — | 链接的图标 |
 | disabled | `boolean` | false | 链接是否禁用 |
 

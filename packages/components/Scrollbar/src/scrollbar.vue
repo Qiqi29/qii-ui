@@ -2,7 +2,7 @@
   <div :class="scrollbarClass" :style="{'height': height}">
 
     <!-- 默认插槽 -->
-    <div ref="wrap" :class="ns.n('wrapper')">
+    <div ref="wrap" :class="ns.n('wrapper')" :style="{'max-height': maxHeight}">
       <slot></slot>
     </div>
 
@@ -12,7 +12,6 @@
       :class="[
         ns.n('bar'), 
         ns.is(true, 'vertical'), 
-        ns.is(props.outside, 'outside'),
         ns.is(activeThumb == 'Y', 'active')
       ]">
       <div ref="thumbY" :class="ns.n('thumb')" :style="thumbYStyle"></div>
@@ -24,7 +23,6 @@
       :class="[
         ns.n('bar'), 
         ns.is(true, 'horizontal'), 
-        ns.is(props.outside, 'outside'),
         ns.is(activeThumb == 'X', 'active')
       ]">
       <div ref="thumbX" :class="ns.n('thumb')" :style="thumbXStyle"></div>
@@ -36,7 +34,7 @@
 <script lang="ts" setup>
 import { computed, onMounted, onBeforeUnmount, ref } from 'vue'
 import { useNS } from '../../../hooks/useNS'
-import { scrollbarProps } from './scrollbar'
+import { scrollbarProps, scrollbarEmits } from './scrollbar'
 
 defineOptions({ 
   name: 'q-scrollbar',
@@ -44,6 +42,7 @@ defineOptions({
 })
 
 const props = defineProps({ ...scrollbarProps })
+const emits = defineEmits({ ...scrollbarEmits })
 
 // 组件命名空间
 const ns = useNS('scrollbar')
@@ -175,8 +174,8 @@ const calcThumbSize = () => {
   }
 
   // 设置滑块大小
-  thumbYStyle.value.height = `${Math.max(30, thumbHeight)}px`
-  thumbXStyle.value.width = `${Math.max(30, thumbWidth)}px`
+  thumbYStyle.value.height = `${thumbHeight}px`
+  thumbXStyle.value.width = `${thumbWidth}px`
 }
 
 
@@ -205,78 +204,81 @@ const calcThumbPosition = () => {
 }
 
 
-/**
- * 添加监听器
- */
 
-// 创建一个 ResizeObserver 实例并传入处理函数
+// 事件，滑动内容区域
+const headleScroll = () => {
+  calcThumbPosition()
+  emits('scroll', wrap.value!.scrollTop, wrap.value!.scrollLeft)
+}
+
+// 事件，点击滚动条轨道
+const headleClickBarY = (e: MouseEvent) => {
+  flag = 'thumbY'
+  headleClick(e)
+}
+const headleClickBarX = (e: MouseEvent) => {
+  flag = 'thumbX'
+  headleClick(e)
+}
+
+// 使用 ResizeObserver 监听元素大小变化 
 const observer = new ResizeObserver(() => {
   calcThumbSize()
   calcThumbPosition()
 })
-// 创建一个 MutationObserver 观察器实例并传入处理函数
+
+// 使用 MutationObserver 监听元素变化 
 const mutationObserver = new MutationObserver(() => {
   calcThumbSize()
   calcThumbPosition()
 })
 
+// 事件，点击滚动条
+const headleClickThumbY = (e: MouseEvent) => {
+  down.y = e.clientY
+  origin.y = wrap.value!.scrollTop
+  flag = 'thumbY'
+  activeThumb.value = 'Y'
+  document.body.addEventListener('mousemove', handleMove)
+}
+const headleClickThumbX = (e: MouseEvent) => {
+  down.x = e.clientX
+  origin.x = wrap.value!.scrollLeft
+  flag = 'thumbX'
+  activeThumb.value = 'X'
+  document.body.addEventListener('mousemove', handleMove)
+}
+
+// 事件，鼠标抬起
+const headleMouseup = () => {
+  document.body.removeEventListener('mousemove', handleMove)
+  activeThumb.value = 'none'
+}
+
+
+// 注册事件，添加监听器
 onMounted(() => {
-  // 滑动内容区域
-  wrap.value!.addEventListener('scroll', () => {
-    calcThumbPosition()
-  })
-
-  // 点击滚动条轨道
-  barY.value!.addEventListener('click', (e: MouseEvent) => {
-    flag = 'thumbY'
-    headleClick(e)
-  })
-  barX.value!.addEventListener('click', (e: MouseEvent) => {
-    flag = 'thumbX'
-    headleClick(e)
-  })
-  
-  // 监听元素大小变化
+  wrap.value!.addEventListener('scroll', headleScroll)
+  barY.value!.addEventListener('click', headleClickBarY)
+  barX.value!.addEventListener('click', headleClickBarX)
   observer.observe(wrap.value!)
-
-  // 监听元素变化
   mutationObserver.observe(wrap.value!, { attributes: true, childList: true, subtree: true })
-
-  // 点击Y轴滚动条
-  thumbY.value!.addEventListener('mousedown', (e: MouseEvent) => {
-    down.y = e.clientY
-    origin.y = wrap.value!.scrollTop
-    flag = 'thumbY'
-    activeThumb.value = 'Y'
-    document.body.addEventListener('mousemove', handleMove)
-  })
-
-  // 点击X轴滚动条
-  thumbX.value!.addEventListener('mousedown', (e: MouseEvent) => {
-    down.x = e.clientX
-    origin.x = wrap.value!.scrollLeft
-    flag = 'thumbX'
-    activeThumb.value = 'X'
-    document.body.addEventListener('mousemove', handleMove)
-  })
-
-  // 鼠标抬起
-  document.body.addEventListener('mouseup', () => {
-    document.body.removeEventListener('mousemove', handleMove)
-    activeThumb.value = 'none'
-  })
+  thumbY.value!.addEventListener('mousedown', headleClickThumbY)
+  thumbX.value!.addEventListener('mousedown', headleClickThumbX)
+  document.body.addEventListener('mouseup', headleMouseup)
 })
 
 
-/**
- * 卸载监听器
- */
+// 卸载监听器
 onBeforeUnmount(() => {
-  thumbY.value!.removeEventListener('mousedown', () => {})
-  thumbX.value!.removeEventListener('mousedown', () => {})
-  document.body.removeEventListener('mouseup', () => {})
+  wrap.value!.removeEventListener('scroll', headleScroll)
+  barY.value!.removeEventListener('click', headleClickBarY)
+  barX.value!.removeEventListener('click', headleClickBarX)
   observer.unobserve(wrap.value!)
   mutationObserver.disconnect()
+  thumbY.value!.removeEventListener('mousedown', headleClickThumbY)
+  thumbX.value!.removeEventListener('mousedown', headleClickThumbX)
+  document.body.removeEventListener('mouseup', headleMouseup)
 })
 
 </script>

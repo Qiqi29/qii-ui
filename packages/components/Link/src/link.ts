@@ -25,7 +25,7 @@ export const linkProps = {
   /**
    * @description 是否显示下划线
    */
-  line: {
+  underline: {
     type: Boolean,
     default: false,
   },

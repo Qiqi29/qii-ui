@@ -2,9 +2,11 @@
   position: relative;
   width: 100%;
   height: 100%;
+  // 滑过滚动区域
   &:hover .q-scrollbar__bar {
     opacity: 1;
   }
+  // 始终显示滚动条
   &.is-always-show {
     .q-scrollbar__bar {
       opacity: 1;
@@ -12,6 +14,7 @@
   }
 }
 
+// 滚动条内容区域
 .q-scrollbar__wrapper {
   width: 100%;
   height: 100%;
@@ -21,6 +24,7 @@
   }
 }
 
+// 滚动条轨道
 .q-scrollbar__bar {
   user-select: none;
   opacity: 0;
@@ -30,27 +34,30 @@
   &.is-active {
     opacity: 1;
   }
+  // 垂直样式
   &.is-vertical {
     width: 6px;
     height: 100%;
-    right: 2px;
+    right: 0;
     top: 0;
-    &.is-outside {
-      right: -10px;
+    .q-scrollbar__thumb {
+      width: 6px;
     }
   }
+  // 水平样式
   &.is-horizontal {
     height: 6px;
-    height: 100%;
-    bottom: 2px;
+    width: 100%;
+    bottom: 0;
     left: 0;
-    &.is-outside {
-      bottom: -10px;
+    .q-scrollbar__thumb {
+      height: 6px;
     }
   }
+  // 是否点击
   &.is-active {
     .q-scrollbar__thumb {
-      background: #00000020;
+      background: var(--q-scrollbar-active);
     }
   }
 }
@@ -59,9 +66,9 @@
 .q-scrollbar__thumb {
   border-radius: 100px;
   position: absolute;
-  width: 100%;
-  background: #00000010;
+  left: 0;
+  background: var(--q-scrollbar-color);
   &:hover {
-    background: #00000020;
+    background: var(--q-scrollbar-hover);
   }
 }

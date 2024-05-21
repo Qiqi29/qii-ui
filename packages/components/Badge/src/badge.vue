@@ -37,6 +37,7 @@ const badgeClass = computed(() => [
   ns.is(!slots.default, 'empty'),
 ])
 
+// 最大值
 const badgeMaxCount = computed(() => {
   return props.count > props.maxCount ? `${props.maxCount}+` : props.count;
 })

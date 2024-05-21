@@ -1,7 +1,7 @@
 <template>
-  <q-space direction="start" vertical>
+  <q-space fill>
     <q-radio-group v-model="radioValue" :options="radioOptions" button/>
-    <q-space :size="radioValue">
+    <q-space :justify="radioValue">
       <q-button type="primary">选项 1</q-button>
       <q-button type="primary">选项 2</q-button>
       <q-button type="primary">选项 3</q-button>
@@ -12,11 +12,11 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const radioValue = ref('small')
+const radioValue = ref('start')
 const radioOptions = [
-  { label: 'small', value: 'small' },
-  { label: 'medium', value: 'medium' },
-  { label: 'large', value: 'large' },
-  { label: '40px', value: 40 },
+  { label: 'start', value: 'start' },
+  { label: 'center', value: 'center' },
+  { label: 'end', value: 'end' },
+  { label: 'space-between', value: 'space-between' },
 ]
 </script>

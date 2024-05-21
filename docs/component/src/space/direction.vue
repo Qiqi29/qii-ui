@@ -4,7 +4,7 @@
     <div class="block">
       <q-space :direction="radioValue">
         <span>direction: </span>
-        <q-button type="primary">对齐</q-button>
+        <q-button type="primary">按钮</q-button>
         <q-avatar size="large" shape="square"/>
       </q-space>
     </div>

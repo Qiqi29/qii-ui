@@ -196,7 +196,7 @@ code {
   margin-bottom: 6px;
 }
 .VPSidebarItem .items .VPSidebarItem {
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   border-radius: 8px;
   transition: background 0.12s;
 }
@@ -204,7 +204,7 @@ code {
   background: var(--vp-c-default-soft);
 }
 .VPSidebarItem .items .VPSidebarItem .VPLink {
-  height: 40px;
+  height: 36px;
   padding-left: 16px;
 }
 .VPSidebarItem .items .VPSidebarItem.is-active {

@@ -9,3 +9,4 @@ export const isBoolean = (val: any): val is boolean => typeof val === 'boolean'
 export const isFunction = (val: any): val is Function => typeof val === 'function'
 export const isArray = (val: any): val is Array<any> => Array.isArray(val)
 export const isUndefined = (val: any): val is undefined => val === undefined
+export const isEvent = (val: any): val is Event => val instanceof Event

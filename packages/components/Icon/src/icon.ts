@@ -7,7 +7,7 @@ export const iconProps = {
    */
   name: {
     type: String,
-    default: "qii",
+    default: "",
   },
   /**
    * @description 图标大小

@@ -1,4 +1,3 @@
-<!-- 链接组件 -->
 <template>
   <a 
     :class="linkClass" 
@@ -17,8 +16,8 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { linkProps } from './link'
 import { useNS } from '../../../hooks/useNS'
+import { linkProps } from './link'
 import linkIcon from '../../../styles/icons/link.vue'
 
 defineOptions({ 
@@ -33,7 +32,7 @@ const linkClass = computed(() => [
   ns.nameSpace,
   ns.n(props.type),
   ns.is(props.disabled, 'disabled'),
-  ns.is(props.line, 'has-line')
+  ns.is(props.underline, 'has-underline')
 ])
 
 /**

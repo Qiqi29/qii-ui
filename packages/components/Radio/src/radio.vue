@@ -41,6 +41,7 @@ const radioClass = computed(() => [
   ns.is(props.disabled, 'disabled'),
   ns.is(isChecked.value, 'checked'),
   ns.is(radioGroup.isButton.value, 'button'),
+  ns.n(radioGroup.size.value),
 ])
 
 

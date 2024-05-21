@@ -55,6 +55,5 @@ const autoSize = () => {
 // 监听组件内容更新，重新计算
 onMounted(() => autoSize())
 onUpdated(() => autoSize())
-// watch(() => props.size, () => autoSize())
 
 </script>

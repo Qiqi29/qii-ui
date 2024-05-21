@@ -1,5 +1,5 @@
 <template>
-  <q-scrollbar height="400px">
+  <q-scrollbar height="fit-content" always>
     <div class="content">
       <div class="item" v-for="i in count" :key="i">
         {{ i }}
@@ -15,20 +15,21 @@ const count = ref(10)
 
 <style scoped>
 .content {
-  width: 100%;
-  padding-right: 12px;
+  display: flex;
 }
 .item {
-  width: 100%; 
-  height: 80px; 
-  line-height: 80px;
+  flex-shrink: 0;
+  margin-bottom: 12px; 
+  width: 100px; 
+  height: 100px;
+  line-height: 100px;
   border-radius: 10px;
   background: var(--q-color-primary-l);
   color: var(--q-color-primary);
   font-size: 18px;
   text-align: center;
 }
-.item:not(:last-child) {
-  margin-bottom: 12px;
+.item:not(:first-child) {
+  margin-left: 12px;
 }
 </style>

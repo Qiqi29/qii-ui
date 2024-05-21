@@ -1,5 +1,7 @@
 # 图标 Icon
-我喜欢给各种东西都加上图标。qii-ui 推荐使用 [MingCute Icon](https://www.mingcute.com/) 图标库。
+我喜欢给各种东西都加上图标。
+
+推荐使用 [MingCute Icon](https://www.mingcute.com/) 图标库。
 
 
 
@@ -37,22 +39,10 @@ import { createApp } from 'vue'
 import 'virtual:svg-icons-register'
 ...
 ```
-
-项目目录中存放图标文件，目录位置可自定义。
-```
-.
-├─ src
-│   ├─ ...
-│   └─ svg
-│       ├─ add.svg
-│       ├─ more.svg
-│       └─ ...
-└─ ...
-```
+插件安装配置完成后，图标文件夹中的 SVG 图标将自动注册到 HTML 文档中。
 
 
 ## 使用图标
-插件安装配置完成后，图标文件夹中的 SVG 图标将自动注册到 HTML 文档中。
 
 在 `name` 属性中填入图标文件的名称，即可使用相应图标。
 
@@ -75,7 +65,7 @@ import 'virtual:svg-icons-register'
 ### Icon 属性
 | 属性 | 类型 | 默认值 | 说明 |
 | --- | --- | --- | --- |
-| name | `string` | qii | 图标名 |
+| name | `string` | — | 图标名 |
 | color | `string` | 继承颜色 | 图标颜色 |
 | size | `string` | 继承字体大小 | 图标大小 |
 
@@ -83,6 +73,7 @@ import 'virtual:svg-icons-register'
 | 名称 | 说明 |
 | --- | --- |
 | default | 自定义图标代码 |
+
 
 ## 贡献者
 <member></member>

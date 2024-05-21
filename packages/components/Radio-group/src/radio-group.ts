@@ -31,6 +31,13 @@ export const radioGroupProps = {
     default: false
   },
   /**
+   * @description 选项的大小
+   */
+  size: {
+    type: [String] as PropType<string>,
+    default: 'medium'
+  },
+  /**
    * @description 选项是否按钮样式
    */
   button: {

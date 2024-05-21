@@ -52,11 +52,6 @@ export default defineConfig({
       }
     ],
 
-    // 搜索
-    search: {
-      provider: 'local',
-    },
-
     // 侧边栏
     sidebar: {
       '/guide/': [
@@ -83,7 +78,7 @@ export default defineConfig({
             { text: '按钮 Button', link: '/component/button' },
             { text: '图标 Icon', link: '/component/icon' },
             { text: '链接 Link', link: '/component/link' },
-            { text: '滚动条 Scrollbar（开发中）', link: '/component/scrollbar' },
+            { text: '滚动条 Scrollbar', link: '/component/scrollbar' },
           ]
         },
         {
@@ -91,6 +86,7 @@ export default defineConfig({
           items: [
             { text: '头像 Avatar', link: '/component/avatar' },
             { text: '徽标 Badge', link: '/component/badge' },
+            { text: '无内容 Empty', link: '/component/empty' },
           ]
         },
         {
@@ -108,6 +104,11 @@ export default defineConfig({
           ]
         },
       ],
+    },
+
+    // 搜索
+    search: {
+      provider: 'local',
     },
 
     // 社交链接

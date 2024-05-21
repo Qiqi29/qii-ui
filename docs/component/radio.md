@@ -1,5 +1,5 @@
 # 单选框 Radio
-单选框真的很好用，不是吗？
+你是选我还是选他？
 
 
 ## 基本用法
@@ -24,6 +24,12 @@
 <demo src="./src/radio/button.vue"/>
 
 
+## 大小
+通过 `size` 属性改变单选框的大小。
+
+提供 `small`、`medium`、`large` 三种尺寸。
+<demo src="./src/radio/size.vue"/>
+
 
 ## API
 
@@ -45,6 +51,7 @@
 | options | `array` | — | 单选框组选项 |
 | vertical | `boolean` | false | 单选框组是否垂直排列 |
 | button | `boolean` | false | 单选框组是否为按钮样式 |
+| size | `string` | medium | 单选框按钮大小 |
 
 ### Radio Group 插槽
 | 名称 | 说明 |

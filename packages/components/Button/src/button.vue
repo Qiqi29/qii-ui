@@ -1,10 +1,9 @@
-<!-- 按钮组件 -->
 <template>
   <button
     :class="buttonClass"
     :style="buttonStyle"
     :disabled="disabled"
-    @click="__onClick"
+    @click="onClick"
     >
 
     <!-- 加载图标、自定义图标、按钮文本、右侧图标 -->
@@ -17,7 +16,7 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, useSlots } from 'vue'
+import { computed, useSlots, inject } from 'vue'
 import { useNS } from '../../../hooks/useNS'
 import { buttonProps, buttonEmits } from './button'
 import loadIcon from '../../../styles/icons/loading.vue'
@@ -29,17 +28,20 @@ defineOptions({
   inheritAttrs: false
 })
 
-// 使用外部定义的属性
+// 解构属性
 const props = defineProps({ ...buttonProps })
 const emits = defineEmits({ ...buttonEmits })
 
-// 组件命名空间
+// 接收父组件传值
+const buttonGroup: any = inject('buttonGroup', '')
+
+// 组件类名
 const ns = useNS('button')
 const buttonClass = computed(() => [
   ns.nameSpace,
-  ns.n(props.type),
+  ns.n(buttonGroup.type?.value || props.type),
   ns.n(props.shape),
-  ns.t(props.size, 'string'),
+  ns.t(buttonGroup.size?.value || props.size, 'string'),
   ns.is(props.plain, 'plain'),
   ns.is(props.text, 'text'),
   ns.is(props.long, 'long'),
@@ -55,7 +57,7 @@ const buttonStyle = computed(() => { return {
 }})
 
 // 点击事件
-const __onClick = (event: MouseEvent) => {
+const onClick = (event: MouseEvent) => {
   if (props.disabled || props.loading) return;
   emits('click', event)
 }

@@ -16,11 +16,18 @@ export const SpaceProps = {
     default: false,
   },
   /**
+   * @description 排列方式
+   */
+  justify: {
+    type: String as PropType<string>,
+    default: 'start',
+  },
+  /**
    * @description 对齐方向
    */
   direction: {
     type: String as PropType<string>,
-    default: 'center',
+    default: 'start',
   },
   /**
    * @description 宽度是否占满父元素
@@ -29,4 +36,4 @@ export const SpaceProps = {
     type: Boolean,
     default: false,
   },
-}
+} as const;

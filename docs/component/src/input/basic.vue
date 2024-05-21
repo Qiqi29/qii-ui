@@ -1,7 +1,7 @@
 <template>
-  <q-space size="large">
+  <q-space size="large" direction="center">
     <q-input v-model="text" placeholder="写点啥呢..."/>
-    <p>输入：{{ text }}</p>
+    <span>输入：{{ text }}</span>
   </q-space>
 </template>
 
