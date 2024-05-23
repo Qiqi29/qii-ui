@@ -21,6 +21,13 @@ export const scrollbarProps = {
   always: {
     type: Boolean as PropType<boolean>,
     default: false,
+  },
+  /**
+   * @description 是否使用原生滚动条 
+   */
+  native: {
+    type: Boolean as PropType<boolean>,
+    default: false,
   }
 } as const;
 

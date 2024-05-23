@@ -8,7 +8,7 @@
 
 
 ## 自定义
-使用 `text` 属性自定义提示文案， `icon slot` 插槽自定义图标。
+使用 `text` 属性自定义提示文案， `icon slot` 插槽自定义显示的内容。
 <demo src="./src/empty/custom.vue"/>
 
 
@@ -23,7 +23,7 @@
 ### Empty 插槽
 | 名称 | 说明 |
 | --- | --- |
-| icon | 放置提示图标/任何内容 |
+| icon | 图标 / 任何内容 |
 
 ## 贡献者
 <member></member>

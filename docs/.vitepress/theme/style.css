@@ -8,6 +8,8 @@
   --q-color-theme-h: #1e5ed5;
   --q-color-theme-alpha: #6f9ce318;
 
+  --vp-c-bg: #FFFFFF;
+
   --vp-c-default-1: var(--vp-c-gray-1);
   --vp-c-default-2: var(--vp-c-gray-2);
   --vp-c-default-3: var(--vp-c-gray-3);
@@ -33,6 +35,11 @@
   --vp-c-danger-3: var(--vp-c-red-3);
   --vp-c-danger-soft: var(--vp-c-red-soft);
 }
+
+.dark {
+  --vp-c-bg: #141418;
+}
+
 
 /**
  * 组件: 按钮
@@ -98,6 +105,23 @@
 body {
   font-size: 14px;
 }
+
+/* 页面滚动条样式 */
+body::-webkit-scrollbar {
+  width: 6px;
+  display: unset;
+}
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--q-scrollbar-color);
+}
+body::-webkit-scrollbar-thumb:hover {
+  background-color: var(--q-scrollbar-hover);
+}
+body::-webkit-scrollbar-thumb:active {
+  background-color: var(--q-scrollbar-active);
+}
+
 
 /* 代码字体 */
 code {
@@ -192,6 +216,13 @@ code {
 
 
 /* 左侧边栏样式 */
+.curtain[data-v-6750ea26] {
+  background-color: var(--vp-c-bg);
+}
+.VPSidebar[data-v-6750ea26] {
+  background-color: var(--vp-c-bg);
+  border-right: 1px solid var(--vp-c-gutter);
+}
 .VPSidebarItem > .item > .text {
   margin-bottom: 6px;
 }

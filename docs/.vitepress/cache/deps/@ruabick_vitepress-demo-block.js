@@ -6,21 +6,19 @@ import {
   createVNode,
   defineComponent,
   mergeProps,
+  normalizeClass,
   openBlock,
   reactive,
   ref,
   renderSlot,
   resolveComponent,
+  toDisplayString,
   toRefs,
   unref,
   vShow,
   withCtx,
   withDirectives
-} from "./chunk-UY5NFZR3.js";
-import {
-  normalizeClass,
-  toDisplayString
-} from "./chunk-EE4GVKNI.js";
+} from "./chunk-RU6JHMWN.js";
 
 // node_modules/@ruabick/vitepress-demo-block/dist/vitepress-demo-block.js
 var w = (e, o) => {

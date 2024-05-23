@@ -1,67 +1,58 @@
 {
-  "hash": "004ad3f3",
+  "hash": "94beca25",
   "configHash": "31e91f03",
-  "lockfileHash": "ad02d2e0",
-  "browserHash": "bcae85be",
+  "lockfileHash": "132b2bf1",
+  "browserHash": "67c3f938",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "e8efa854",
+      "fileHash": "d411c4e3",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../../node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "13df5f6e",
+      "fileHash": "9790cad0",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
       "src": "../../../../node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "13eae950",
+      "fileHash": "f16f3b62",
       "needsInterop": false
     },
     "vitepress > @vueuse/integrations/useFocusTrap": {
       "src": "../../../../node_modules/@vueuse/integrations/useFocusTrap.mjs",
       "file": "vitepress___@vueuse_integrations_useFocusTrap.js",
-      "fileHash": "c023c2e5",
+      "fileHash": "f67d744e",
       "needsInterop": false
     },
     "vitepress > mark.js/src/vanilla.js": {
       "src": "../../../../node_modules/mark.js/src/vanilla.js",
       "file": "vitepress___mark__js_src_vanilla__js.js",
-      "fileHash": "8c43c285",
+      "fileHash": "6854d900",
       "needsInterop": false
     },
     "vitepress > minisearch": {
       "src": "../../../../node_modules/minisearch/dist/es/index.js",
       "file": "vitepress___minisearch.js",
-      "fileHash": "13dcad03",
+      "fileHash": "d7e0f823",
       "needsInterop": false
     },
     "@ruabick/vitepress-demo-block": {
       "src": "../../../../node_modules/@ruabick/vitepress-demo-block/dist/vitepress-demo-block.js",
       "file": "@ruabick_vitepress-demo-block.js",
-      "fileHash": "4cb4a177",
-      "needsInterop": false
-    },
-    "@vue/shared": {
-      "src": "../../../../node_modules/@vue/shared/dist/shared.esm-bundler.js",
-      "file": "@vue_shared.js",
-      "fileHash": "d9dc25e9",
+      "fileHash": "f374be41",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-ZPT47Q6W": {
-      "file": "chunk-ZPT47Q6W.js"
+    "chunk-PBABKT5T": {
+      "file": "chunk-PBABKT5T.js"
     },
-    "chunk-UY5NFZR3": {
-      "file": "chunk-UY5NFZR3.js"
-    },
-    "chunk-EE4GVKNI": {
-      "file": "chunk-EE4GVKNI.js"
+    "chunk-RU6JHMWN": {
+      "file": "chunk-RU6JHMWN.js"
     }
   }
 }

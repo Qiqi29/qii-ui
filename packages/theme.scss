@@ -34,8 +34,8 @@
   --q-color-success-h: #51cb76;
   --q-color-success-a: #32a655;
   --q-color-success-l: #e6f6ea;
-  --q-color-success-l-h: #d9f2e3;
-  --q-color-success-l-a: #d0ecd8;
+  --q-color-success-l-h: #def3e7;
+  --q-color-success-l-a: #d5eedd;
   
   --q-color-warning: #ff9123;
   --q-color-warning-h: #fea042;
@@ -55,6 +55,10 @@
   --q-scrollbar-color: #93949c40;
   --q-scrollbar-hover: #93949c50;
   --q-scrollbar-active: #93949c70;
+
+  // 消息背景色
+  --q-message-bg: #FFFFFF;
+  --q-message-border: #e4e4e9;
 }
 
 // 深色主题
@@ -107,6 +111,10 @@ html.dark {
   --q-color-danger-l: #ff5d5d25;
   --q-color-danger-l-h: #ff6b6b27;
   --q-color-danger-l-a: #ea494925;
+
+  // 消息背景色
+  --q-message-bg: #303032;
+  --q-message-border: #404043;
 }
 
 

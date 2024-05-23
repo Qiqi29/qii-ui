@@ -23,7 +23,7 @@ defineOptions({
   inheritAttrs: false
 })
 
-const props = defineProps({ ...emptyProps })
+defineProps({ ...emptyProps })
 
 const ns = useNS('empty')
 const emptyClass = computed(() => [

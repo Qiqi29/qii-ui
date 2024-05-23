@@ -6,28 +6,30 @@
       <slot></slot>
     </div>
 
-    <!-- Y轴滚动条 -->
-    <div 
-      ref="barY" 
-      :class="[
-        ns.n('bar'), 
-        ns.is(true, 'vertical'), 
-        ns.is(activeThumb == 'Y', 'active')
-      ]">
-      <div ref="thumbY" :class="ns.n('thumb')" :style="thumbYStyle"></div>
-    </div>
+    <!-- 如果启用 native，隐藏自定义滚动条  -->
+    <template v-if="!native">
+      <!-- Y轴滚动条 -->
+      <div 
+        ref="barY" 
+        :class="[
+          ns.n('bar'), 
+          ns.is(true, 'vertical'), 
+          ns.is(activeThumb == 'Y', 'active')
+        ]">
+        <div ref="thumbY" :class="ns.n('thumb')" :style="thumbYStyle"></div>
+      </div>
+      <!-- X轴滚动条 -->
+      <div 
+        ref="barX" 
+        :class="[
+          ns.n('bar'), 
+          ns.is(true, 'horizontal'), 
+          ns.is(activeThumb == 'X', 'active')
+        ]">
+        <div ref="thumbX" :class="ns.n('thumb')" :style="thumbXStyle"></div>
+      </div>
+    </template>
 
-    <!-- X轴滚动条 -->
-    <div 
-      ref="barX" 
-      :class="[
-        ns.n('bar'), 
-        ns.is(true, 'horizontal'), 
-        ns.is(activeThumb == 'X', 'active')
-      ]">
-      <div ref="thumbX" :class="ns.n('thumb')" :style="thumbXStyle"></div>
-    </div>
-    
   </div>
 </template>
 
@@ -49,14 +51,15 @@ const ns = useNS('scrollbar')
 const scrollbarClass = computed(() => [
   ns.nameSpace,
   ns.is(props.always, 'always-show'),
+  ns.is(props.native, 'native'),
 ])
 
 // 绑定dom节点
-const wrap = ref<HTMLElement>()
-const barY = ref<HTMLElement>()
-const thumbY = ref<HTMLElement>()
-const barX = ref<HTMLElement>()
-const thumbX = ref<HTMLElement>()
+const wrap = ref<HTMLElement | undefined>(undefined)
+const barY = ref<HTMLElement | undefined>(undefined)
+const thumbY = ref<HTMLElement | undefined>(undefined)
+const barX = ref<HTMLElement | undefined>(undefined)
+const thumbX = ref<HTMLElement | undefined>(undefined)
 
 // 滚动条状态
 let flag: 'thumbX' | 'thumbY'
@@ -146,6 +149,7 @@ const headleClick = (e: MouseEvent) => {
  * 计算滑块大小
  */
 const calcThumbSize = () => {
+  if (props.native) return;
 
   // 获取滚动条数据
   const barHeight = barY.value!.offsetHeight
@@ -183,7 +187,8 @@ const calcThumbSize = () => {
  * 计算滑块位置
  */
 const calcThumbPosition = () => {
-  
+  if (props.native) return;
+
   // 获取滚动条数据
   const barHeight = barY.value!.offsetHeight
   const barWidth = barX.value!.offsetWidth
@@ -259,26 +264,30 @@ const headleMouseup = () => {
 // 注册事件，添加监听器
 onMounted(() => {
   wrap.value!.addEventListener('scroll', headleScroll)
-  barY.value!.addEventListener('click', headleClickBarY)
-  barX.value!.addEventListener('click', headleClickBarX)
-  observer.observe(wrap.value!)
-  mutationObserver.observe(wrap.value!, { attributes: true, childList: true, subtree: true })
-  thumbY.value!.addEventListener('mousedown', headleClickThumbY)
-  thumbX.value!.addEventListener('mousedown', headleClickThumbX)
-  document.body.addEventListener('mouseup', headleMouseup)
+  if (!props.native) {
+    barY.value!.addEventListener('click', headleClickBarY)
+    barX.value!.addEventListener('click', headleClickBarX)
+    observer.observe(wrap.value!)
+    mutationObserver.observe(wrap.value!, { attributes: true, childList: true, subtree: true })
+    thumbY.value!.addEventListener('mousedown', headleClickThumbY)
+    thumbX.value!.addEventListener('mousedown', headleClickThumbX)
+    document.body.addEventListener('mouseup', headleMouseup)
+  }
 })
 
 
 // 卸载监听器
 onBeforeUnmount(() => {
   wrap.value!.removeEventListener('scroll', headleScroll)
-  barY.value!.removeEventListener('click', headleClickBarY)
-  barX.value!.removeEventListener('click', headleClickBarX)
-  observer.unobserve(wrap.value!)
-  mutationObserver.disconnect()
-  thumbY.value!.removeEventListener('mousedown', headleClickThumbY)
-  thumbX.value!.removeEventListener('mousedown', headleClickThumbX)
-  document.body.removeEventListener('mouseup', headleMouseup)
+  if (!props.native) {
+    barY.value!.removeEventListener('click', headleClickBarY)
+    barX.value!.removeEventListener('click', headleClickBarX)
+    observer.unobserve(wrap.value!)
+    mutationObserver.disconnect()
+    thumbY.value!.removeEventListener('mousedown', headleClickThumbY)
+    thumbX.value!.removeEventListener('mousedown', headleClickThumbX)
+    document.body.removeEventListener('mouseup', headleMouseup)
+  }
 })
 
 </script>

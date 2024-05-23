@@ -17,6 +17,11 @@
 <demo src="./src/scrollbar/maxheight.vue"/>
 
 
+## 原生
+添加 `native` 属性，将会使用原生滚动条。
+<demo src="./src/scrollbar/native.vue"/>
+
+
 ## API
 
 ### Scrollbar 属性
@@ -25,6 +30,7 @@
 | height | `string` | — | 滚动区域高度 |
 | max-hieght | `string` | — | 滚动区域最大高度 |
 | always | `boolean` | false | 是否总是显示滚动条 |
+| native | `boolean` | false | 是否使用原生滚动条 |
 
 ### Scrollbar 事件
 | 名称 | 说明 | 类型 |

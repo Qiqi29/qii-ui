@@ -12,6 +12,23 @@
       opacity: 1;
     }
   }
+  // 修改原生滚动条样式
+  &.is-native .q-scrollbar__wrapper {
+    &::-webkit-scrollbar {
+      width: 6px;
+      display: unset;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-color: var(--q-scrollbar-color);
+      &:hover {
+        background-color: var(--q-scrollbar-hover);
+      }
+      &:active {
+        background-color: var(--q-scrollbar-active);
+      }
+    }
+  }
 }
 
 // 滚动条内容区域
