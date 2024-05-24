@@ -1,13 +1,26 @@
 .q-icon {
-  box-sizing: border-box;
   display: inline-flex;
-  width: 1em;
-  height: 1em;
-  fill: currentColor;
   vertical-align: middle;
-  svg {
-    fill: inherit;
-    width: inherit;
-    height: inherit;
+  flex-shrink: 0;
+  i {
+    width: 1em;
+    height: 1em; 
+    fill: currentColor;
+    svg {
+      fill: inherit;
+      width: inherit;
+      height: inherit;
+    }
   }
+}
+
+
+// 图标旋转状态
+.q-icon.is-spin i {
+  animation: loading 0.8s linear infinite;
+}
+
+@keyframes loading {
+  from { transform: rotate(0deg) }
+  to { transform: rotate(360deg) }
 }

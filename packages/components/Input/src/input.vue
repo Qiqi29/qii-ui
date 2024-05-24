@@ -11,7 +11,7 @@
       <slot name="prepend"></slot>
     </span>
     <!-- 左侧图标 -->
-    <q-icon v-if="icon" :name="icon" class="q-input__left-icon" size="1.3em" color="#909090"/>
+    <q-icon v-if="icon" :name="icon" class="q-input__left-icon" size="1.3em" color="#aaa"/>
 
     <!-- 输入框主体 -->
     <input 
@@ -42,7 +42,7 @@
     </div>
 
     <!-- 右侧图标 -->
-    <q-icon v-if="rightIcon" :name="rightIcon" class="q-input__right-icon" size="1.3em" color="#909090"/>
+    <q-icon v-if="rightIcon" :name="rightIcon" class="q-input__right-icon" size="1.3em" color="#aaa"/>
     <!-- 插槽，输入框后置内容 -->
     <span v-if="$slots.append" class="q-input__append">
       <slot name="append"></slot>
@@ -56,6 +56,7 @@ import { ref, computed, watch, onMounted } from 'vue'
 import { inputProps, inputEmits } from './input'
 import { useNS } from '../../../hooks/useNS'
 
+import QIcon from '../../Icon'
 import iconClose from '../../../styles/icons/close.vue'
 import iconEye from '../../../styles/icons/eye.vue'
 import iconEyeClose from '../../../styles/icons/eye-close.vue'

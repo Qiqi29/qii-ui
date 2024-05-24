@@ -6,9 +6,10 @@ import App from './App.vue'
 import 'virtual:svg-icons-register'
 
 
-import Qii from '../packages/index'
+// 引入组件库
+import { QButton } from '../packages/index'
 import '../packages/index.scss'
 
 const app = createApp(App)
-app.use(Qii)
+app.use(QButton)
 app.mount('#app')

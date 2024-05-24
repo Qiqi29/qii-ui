@@ -1,13 +1,13 @@
 <template>
   <div :class="badgeClass">
     
-    <!-- 默认插槽 -->
+    <!-- 默认插槽，放置绑定组件 -->
     <slot></slot>
 
     <!-- 徽标 -->
     <div 
       v-if="count !== 0 || text" 
-      class="q-badge__mark"
+      :class="ns.n('mark')"
       :style="badgeStyle"
       >
       <span v-if="text">{{ text }}</span>
@@ -19,8 +19,8 @@
 
 <script lang="ts" setup>
 import { computed, useSlots } from 'vue'
-import { useNS } from '../../../hooks/useNS'
 import { badgeProps } from './badge'
+import { useNS } from '../../../hooks/useNS'
 const slots = useSlots()
 
 defineOptions({ 

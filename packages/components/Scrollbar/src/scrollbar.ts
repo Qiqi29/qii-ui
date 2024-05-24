@@ -1,5 +1,5 @@
 import { PropType } from "vue"
-import { isNumber } from "../../../utils/types"
+import { isNumber } from "../../../utils"
 
 
 export const scrollbarProps = {

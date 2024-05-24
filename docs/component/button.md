@@ -58,6 +58,7 @@
 | right-icon | `string` | — | 按钮右侧图标 |
 | plain | `boolean` | false | 是否为二级按钮 |
 | text | `boolean` | false | 是否为文字按钮 |
+| bg | `boolean` | false | 文字按钮是否显示背景 |
 | long | `boolean` | false | 是否为长按钮 |
 | loading | `boolean` | false | 按钮是否在加载 |
 | disabled | `boolean` | false | 按钮是否禁用 |

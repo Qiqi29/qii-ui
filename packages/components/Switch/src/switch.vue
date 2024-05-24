@@ -13,9 +13,10 @@
           <!-- 加载图标 -->
           <q-icon 
             v-if="_loadingState" 
-            class="loadIcon q-is-loading" 
+            class="loadIcon" 
             size="1.02em" 
-            :color="iconColor">
+            :color="iconColor"
+            spin >
             <loadIcon/>
           </q-icon>
         
@@ -36,6 +37,7 @@ import { ref, computed } from 'vue'
 import { useNS } from '../../../hooks/useNS'
 import { isFunction } from '../../../utils'
 import { SwitchProps, SwitchEmits } from './switch'
+import QIcon from '../../Icon'
 import loadIcon from '../../../styles/icons/loading.vue'
 
 

@@ -1,9 +1,7 @@
 # 图标 Icon
 我喜欢给各种东西都加上图标。
 
-推荐使用 [MingCute Icon](https://www.mingcute.com/) 图标库。
-
-
+qii-ui 推荐使用 [MingCute Icon](https://www.mingcute.com/) 图标库。
 
 
 ## 插件配置
@@ -21,10 +19,10 @@ import { resolve } from "path"
 
 export default defineConfig({
   plugins: [
-    // 自动处理 SVG 图标的引入和注册
+    // 配置SVG图标注册插件
     createSvgIconsPlugin({
-      iconDirs: [resolve(__dirname, 'src/svg')], // 存放svg图标的目录
-      symbolId: 'icon-[dir]-[name]'              // 配置symbolId格式
+      iconDirs: [resolve(__dirname, 'src/svg')], // 存放图标的目录
+      symbolId: 'icon-[dir]-[name]'              // symbolId 的格式
     })
   ]
   ...
@@ -50,13 +48,18 @@ import 'virtual:svg-icons-register'
 
 
 ## 颜色与大小
-通过 `color` 和 `size` 属性可以设置图标颜色和大小。
+通过 `color` 和 `size` 属性可以设置图标的颜色和大小。
 <demo src="./src/icon/color.vue"/>
 
 
 ## 自定义图标
-默认插槽中可以传入 SVG 代码，（确保设定了 SVG 的 viewBox 属性）。
+默认插槽中可以传入 SVG 代码（确保设定了 SVG 的 viewBox 属性）。
 <demo src="./src/icon/svg.vue"/>
+
+
+## 旋转
+添加 `spin` 属性，可以将图标设置为旋转状态。或者使用 `rotate` 属性自定义旋转角度。
+<demo src="./src/icon/spin.vue"/>
 
 
 
@@ -68,6 +71,8 @@ import 'virtual:svg-icons-register'
 | name | `string` | — | 图标名 |
 | color | `string` | 继承颜色 | 图标颜色 |
 | size | `string` | 继承字体大小 | 图标大小 |
+| spin | `boolean` | false | 图标是否为旋转状态 |
+| rotate | `number` | 0 | 图标的旋转角度 |
 
 ### Icon 插槽
 | 名称 | 说明 |

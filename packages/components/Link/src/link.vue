@@ -18,6 +18,7 @@
 import { computed } from 'vue'
 import { useNS } from '../../../hooks/useNS'
 import { linkProps } from './link'
+import QIcon from '../../Icon'
 import linkIcon from '../../../styles/icons/link.vue'
 
 defineOptions({ 

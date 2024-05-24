@@ -17,10 +17,10 @@ import dts from "vite-plugin-dts"
 export default defineConfig({
   plugins: [
     vue(),
-    // 自动处理 SVG 图标的引入和注册
+    // 配置SVG图标注册插件
     createSvgIconsPlugin({
-      iconDirs: [resolve(__dirname, 'src/svg')], // 存放svg图标的目录
-      symbolId: 'icon-[dir]-[name]'              // 配置symbolId格式
+      iconDirs: [resolve(__dirname, 'src/svg')], // 存放图标的目录
+      symbolId: 'icon-[dir]-[name]'              // symbolId 的格式
     }),
     // 配置需要生成的目录和ts配置文件
     dts({
@@ -56,6 +56,6 @@ export default defineConfig({
     }
   },
   server: {
-    port: 5177
+    port: 5178
   }
 })

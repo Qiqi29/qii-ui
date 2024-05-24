@@ -7,8 +7,8 @@
     <!-- 使用 options -->
     <q-radio 
       v-else-if="options"
-      v-for="item in options" 
-      :key="item" 
+      v-for="(item, index) in options" 
+      :key="index" 
       :value="item.value"
       :disabled="item.disabled"
       >
@@ -22,6 +22,8 @@
 import { computed, provide, readonly } from 'vue'
 import { radioGroupProps, radioGroupEmits } from './radio-group'
 import { useNS } from '../../../hooks/useNS'
+import QRadio from '../../Radio'
+
 
 // 组件配置
 defineOptions({ 
@@ -37,6 +39,7 @@ const emits = defineEmits({ ...radioGroupEmits })
 const ns = useNS('radio-group')
 const radioGroupClass = computed(() => [
   ns.nameSpace,
+  ns.n(props.size),
   ns.is(props.vertical, 'vertical'),
   ns.is(props.button, 'button'),
 ])

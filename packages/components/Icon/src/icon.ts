@@ -23,4 +23,18 @@ export const iconProps = {
     type: String,
     default: "currentColor",
   },
+  /**
+   * @description 图标是否为旋转状态
+   */
+  spin: {
+    type: Boolean,
+    default: false,
+  },
+  /**
+   * @description 图标的旋转角度
+   */
+  rotate: {
+    type: Number,
+    default: 0,
+  },
 }

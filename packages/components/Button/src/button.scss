@@ -15,8 +15,8 @@
 
   padding: 0 20px;
   border-radius: 6px;
+
   font-size: 14px;
-  
   user-select: none;
   cursor: pointer;
 }
@@ -56,15 +56,11 @@
   }
   &:hover:not(.is-disabled) {
     background: var(--q-color-#{$type}-h);
-    &.is-plain {
-      background: var(--q-color-#{$type}-l-h);
-    }
+    &.is-plain { background: var(--q-color-#{$type}-l-h);}
   }
   &:active:not(.is-disabled) {
     background: var(--q-color-#{$type}-a);
-    &.is-plain {
-      background: var(--q-color-#{$type}-l-a);
-    }
+    &.is-plain { background: var(--q-color-#{$type}-l-a);}
   }
 }
 
@@ -72,62 +68,63 @@
   @include buttonType("default", var(--q-color-text-1));
   &.is-plain { color: var(--q-color-text-1);}
 }
-.q-button__primary {
-  @include buttonType("primary", #FFFFFF);
-}
-.q-button__success {
-  @include buttonType("success", #FFFFFF);
-}
-.q-button__warning {
-  @include buttonType("warning", #FFFFFF);
-}
-.q-button__danger {
-  @include buttonType("danger", #FFFFFF);
-}
+.q-button__primary { @include buttonType("primary", #FFFFFF);}
+.q-button__success { @include buttonType("success", #FFFFFF);}
+.q-button__warning { @include buttonType("warning", #FFFFFF);}
+.q-button__danger { @include buttonType("danger", #FFFFFF);}
 
 
 // 文字按钮
 .q-button.is-text {
   background: transparent;
+  &.is-has-bg { background: var(--q-color-default-l) }
+
   &.q-button__primary { color: var(--q-color-primary); }
   &.q-button__success { color: var(--q-color-success); }
   &.q-button__warning { color: var(--q-color-warning); }
   &.q-button__danger { color: var(--q-color-danger); }
+  
   &:hover:not(.is-disabled) {
     background: var(--q-color-default-l);
+    &.is-has-bg { background: var(--q-color-default-l-h) }
   }
   &:active:not(.is-disabled) {
     background: var(--q-color-default-l-h);
+    &.is-has-bg { background: var(--q-color-default-l-a) }
   }
 }
 
 
-// 按钮中的图标
-.q-button .q-icon {
-  position: absolute;
-  left: 12px;
+.q-button {
+  // 两侧图标
+  .q-icon {
+    position: absolute;
+    left: 12px;
+  }
+  .q-button__icon-right {
+    position: absolute;
+    left: auto;
+    right: 12px;
+  }
+  // 两侧图标存在，修改文本边距
+  .q-icon + .q-button__text {
+    margin-left: 18px;
+  }
+  &.is-has-right-icon .q-button__text {
+    margin-right: 18px;
+  }
+  // 按钮文本
+  .q-button__text {
+    transition: all 0.2s;
+  }
+  // 按钮文本为空，图标居中
+  &.is-empty .q-icon {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
 }
-.q-button .q-button__text {
-  transition: all 0.2s;
-}
-// 图标存在，修改文本边距
-.q-button .q-icon + .q-button__text {
-  margin-left: 18px;
-}
-// 文本为空，图标居中
-.q-button.is-empty .q-icon {
-  left: 50%;
-  transform: translateX(-50%);
-}
-// 右侧图标
-.q-button .q-button__icon-right {
-  left: auto;
-  right: 12px;
-}
-// 右侧图标存在，修改文本边距
-.q-button.is-has-right-icon .q-button__text {
-  margin-right: 18px;
-}
+
 
 // 圆角按钮
 .q-button__round {

@@ -1,4 +1,4 @@
 import Empth from './src/empty.vue'
-import { withInstall } from '../../utils/install'
+import { withInstall } from '../../utils'
 
 export default withInstall(Empth)

@@ -1,7 +1,7 @@
-// 导出工具函数
+/**
+ * 导出所有工具类函数
+ */
 
+export * from './install'
 export * from './types'
 
-export * from './decorator/singleTon'
-export * from './manager/IndexManager'
-export * from './manager/LayoutManager'

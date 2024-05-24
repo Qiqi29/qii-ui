@@ -25,3 +25,10 @@
     margin-left: 2px;
   }
 }
+
+// 不同大小
+.q-radio-group__large {
+  &.is-vertical .q-radio:not(:first-child) {
+    margin-top: 12px;
+  }
+} 

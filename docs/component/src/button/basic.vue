@@ -15,8 +15,8 @@
       <q-button type="danger" plain>危险</q-button>
     </q-space>
     <q-space>
-      <q-button type="default" text>文字按钮</q-button>
-      <q-button type="primary" text>确定</q-button>
+      <q-button type="default" text bg>文字按钮</q-button>
+      <q-button type="primary" text bg>确定</q-button>
       <q-button type="success" text>成功</q-button>
       <q-button type="warning" text>警告</q-button>
       <q-button type="danger" text>危险</q-button>

@@ -6,11 +6,10 @@
     @click="onClick"
     >
 
-    <!-- 加载图标、自定义图标、按钮文本、右侧图标 -->
-    <q-icon class="q-button__icon-loading q-is-loading" v-if="loading" size="1.4em"><loadIcon/></q-icon>
-    <q-icon v-if="!loading && icon" :name="icon" size="1.25em"/>
-    <span class="q-button__text"><slot></slot></span>
-    <q-icon class="q-button__icon-right" v-if="rightIcon" :name="rightIcon" size="1.25em"/>
+    <q-icon :class="[ns.n('icon-loading')]" v-if="loading" size="1.35em" spin><loadIcon/></q-icon>
+    <q-icon :class="ns.n('icon-left')" v-if="!loading && icon" :name="icon" size="1.25em"/>
+    <span :class="ns.n('text')"><slot></slot></span>
+    <q-icon :class="ns.n('icon-right')" v-if="rightIcon" :name="rightIcon" size="1.25em"/>
 
   </button>
 </template>
@@ -19,8 +18,11 @@
 import { computed, useSlots, inject } from 'vue'
 import { useNS } from '../../../hooks/useNS'
 import { buttonProps, buttonEmits } from './button'
-import loadIcon from '../../../styles/icons/loading.vue'
 const slots = useSlots()
+// 引入依赖组件
+import QIcon from '../../Icon'
+import loadIcon from '../../../styles/icons/loading.vue'
+
 
 // 组件配置
 defineOptions({ 
@@ -44,6 +46,7 @@ const buttonClass = computed(() => [
   ns.t(buttonGroup.size?.value || props.size, 'string'),
   ns.is(props.plain, 'plain'),
   ns.is(props.text, 'text'),
+  ns.is(props.bg, 'has-bg'),
   ns.is(props.long, 'long'),
   ns.is(props.rightIcon, 'has-right-icon'),
   ns.is(props.loading, 'loading'),

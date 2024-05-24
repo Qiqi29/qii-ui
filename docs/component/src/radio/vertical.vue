@@ -1,5 +1,5 @@
 <template>
-  <q-radio-group v-model="radioValue" :options="radioOptions" vertical/>
+  <q-radio-group v-model="radioValue" :options="radioOptions" size="large" vertical/>
 </template>
 
 <script setup lang="ts">

@@ -33,7 +33,7 @@ export const linkProps = {
    * @description 链接的图标
    */
   icon: {
-    type: [String, Boolean] as PropType<string | boolean>,
+    type: [String] as PropType<string>,
   },
   /**
    * @description 是否禁用链接

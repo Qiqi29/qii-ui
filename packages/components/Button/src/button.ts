@@ -51,6 +51,13 @@ export const buttonProps = {
     default: false
   },
   /**
+   * @description 文字按钮是否显示背景
+   */
+  bg: {
+    type: Boolean,
+    default: false
+  },
+  /**
    * @description 是否为长按钮
    */
   long: {

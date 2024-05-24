@@ -13,7 +13,7 @@
     <!-- 自定义 radio 样式 -->
     <span :class="[ns.n('slider')]"></span>
     <!-- 标签文本 -->
-    <span :class="[ns.n('lable')]"><slot/></span>
+    <span :class="[ns.n('label')]"><slot/></span>
 
   </label>
 </template>

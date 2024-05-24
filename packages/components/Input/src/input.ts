@@ -1,5 +1,5 @@
 import { PropType } from "vue"
-import { isString } from "../../../utils/types"
+import { isString } from "../../../utils"
 
 // 配置组件属性
 export const inputProps = {

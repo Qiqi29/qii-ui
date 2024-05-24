@@ -116,13 +116,3 @@ html.dark {
   --q-message-bg: #303032;
   --q-message-border: #404043;
 }
-
-
-// 预设加载动画
-.q-is-loading {
-  animation: loading 1s linear infinite;
-}
-@keyframes loading {
-  0% { transform: rotate(0deg) }
-  100% { transform: rotate(360deg) }
-}
