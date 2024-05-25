@@ -7,7 +7,7 @@
   <div class="layout">
     <h3>组件测试</h3>
 
-    <q-button type="primary" icon="add">你好</q-button>
+    <q-button type="primary" icon="add">你好，世界</q-button>
 
   </div>
 </template>
