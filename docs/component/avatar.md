@@ -3,7 +3,7 @@
 
 
 ## 基本用法
-使用 `src` 属性指定头像的图片地址，或者嵌入文本和图标。
+使用 `src` 属性指定头像图片的地址，也可以嵌入文本或图标。
 <demo src="./src/avatar/basic.vue"/>
 
 
@@ -17,6 +17,11 @@
 ## 内容自适应
 在插槽中嵌入的内容，会自动调整大小，适应头像大小。
 <demo src="./src/avatar/auto.vue"/>
+
+
+## 头像组
+可以把多个头像放在一起，通过 `size` 和 `shape` 属性统一控制样式，也可以使用 `max` 属性限制最大显示数量。
+<demo src="./src/avatar/group.vue"/>
 
 
 ## API

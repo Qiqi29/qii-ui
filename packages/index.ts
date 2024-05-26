@@ -6,6 +6,7 @@ import { App } from 'vue'
 
 // 引入所有组件
 import QAvatar from './components/Avatar/index'
+import QAvatarGroup from './components/Avatar-group/index'
 import QBadge from './components/Badge/index'
 import QButton from './components/Button/index'
 import QButtonGroup from './components/Button-group/index'
@@ -22,6 +23,7 @@ import QEmpty from './components/Empty/index'
 // 单独导出组件，提供按需引入
 export {
   QAvatar,
+  QAvatarGroup,
   QBadge,
   QButton,
   QButtonGroup,
@@ -40,6 +42,7 @@ export {
 // 配置组件列表
 const components = [
   QAvatar,
+  QAvatarGroup,
   QBadge,
   QButton,
   QButtonGroup,

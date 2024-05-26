@@ -13,7 +13,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, computed, onMounted, onUpdated } from 'vue'
+import { ref, computed, onMounted, onUpdated, inject } from 'vue'
 import { avatarProps } from './avatar'
 import { useNS } from '@qii-ui/hooks'
 
@@ -23,20 +23,28 @@ defineOptions({
   inheritAttrs: true
 })
 
-// 使用外部定义的属性
+// 解构属性
 const props = defineProps({ ...avatarProps })
 
-// 组件命名空间
+// 接收父组件传值
+const avatarGroup: any = inject('avatarGroup', '')
+// 计算属性，优先使用父组件的值
+const avatarSize = computed(() => {
+  return avatarGroup.size?.value || props.size
+})
+
+// 组件类名
 const ns = useNS('avatar')
 const avatarClass = computed(() => [
   ns.nameSpace,
-  ns.n(props.shape),
-  ns.t(props.size, 'string'),
+  ns.n(avatarGroup.shape?.value || props.shape),
+  ns.t(avatarSize.value, 'string'),
 ])
 
-// 计算属性，样式
+
+// 组件样式
 const avatarStyle = computed(() => { return {
-  '--q-avatar-size': typeof props.size === 'number' ? `${props.size}px` : '',
+  '--q-avatar-size': typeof avatarSize.value === 'number' ? `${avatarSize.value}px` : '',
 }})
 
 /**
@@ -48,7 +56,7 @@ const slotRef = ref()
 const autoSize = () => {
   const slotWidth = slotRef.value.clientWidth;
   const avatarWidth = avatarRef.value.clientWidth;
-  const scale = avatarWidth / (slotWidth + 10);  
+  const scale = avatarWidth / (slotWidth + 12);  
   slotRef.value.style.transform = `scale(${scale > 1.3 ? 1.3 : scale})`;
 }
 

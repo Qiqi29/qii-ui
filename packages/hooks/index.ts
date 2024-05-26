@@ -3,3 +3,4 @@
  */
 
 export * from './useNS'
+export * from './useFN'

@@ -1,0 +1,25 @@
+.q-avatar-group {
+  display: inline-flex;
+}
+
+// 内部头像样式
+.q-avatar-group > .q-avatar {
+  border: 2px solid var(--q-color-light);
+}
+
+// 不同大小的间距
+@mixin leftSize($size) {
+  > .q-avatar:not(:first-child) {
+    margin-left: $size;
+  }
+}
+
+.q-avatar-group__small {
+  @include leftSize(-8px);
+}
+.q-avatar-group__medium {
+  @include leftSize(-10px);
+}
+.q-avatar-group__large {
+  @include leftSize(-12px);
+}

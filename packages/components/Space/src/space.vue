@@ -1,25 +1,23 @@
 <script lang="ts">
 import { defineComponent, computed, h, CSSProperties } from 'vue'
 import { SpaceProps } from './space'
-import { useNS } from '@qii-ui/hooks'
+import { useNS, useFilterNodes } from '@qii-ui/hooks'
 
 export default defineComponent({
   name: 'q-space',
   props: { ...SpaceProps },
   setup(props, { slots }) {
 
-    // 组件命名空间
+    // 组件类名
     const ns = useNS('space')
-    const classList = computed(() => {
-      return [  
-        ns.nameSpace,
-        ns.t(props.size, 'string'),
-        ns.is(props.fill, 'fill'),
-        ns.is(props.vertical, 'vertical'),
-      ]
-    })
+    const classList = computed(() => [  
+      ns.nameSpace,
+      ns.t(props.size, 'string'),
+      ns.is(props.fill, 'fill'),
+      ns.is(props.vertical, 'vertical'),
+    ])
 
-    // 计算属性，样式
+    // 组件样式
     const spaceStyle = computed<CSSProperties>(() => { return {
       "gap": typeof props.size === 'number' ? props.size + 'px' : '',
       "flex-direction": props.vertical ? 'column' : 'row',
@@ -29,7 +27,7 @@ export default defineComponent({
 
     return () => {
       // 获取默认插槽中的内容
-      const children = slots.default?.()
+      const children = useFilterNodes(slots.default?.())
 
       // 渲染 space 子节点
       const renderChildren = () => {

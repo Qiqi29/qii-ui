@@ -9,6 +9,7 @@
   width: var(--q-avatar-size);
   height: var(--q-avatar-size);
   background: var(--q-color-default-fill);
+  border-radius: 6px;
   
   color: #FFF;
   font-size: 14px;
@@ -25,25 +26,25 @@
 
 
 // 不同的大小
-@mixin size($size) {
+@mixin size($size, $radius) {
   width: $size;
   height: $size;
+  &.q-avatar__square {
+    border-radius: $radius;
+  }
 }
 .q-avatar__small {
-  @include size(24px);
+  @include size(24px, 4px);
 }
 .q-avatar__medium {
-  @include size(36px);
+  @include size(36px, 5px);
 }
 .q-avatar__large {
-  @include size(54px);
+  @include size(54px, 6px);
 }
 
 
-// 头像的形状
-.q-avatar__square {
-  border-radius: 5px;
-}
+// 圆形的形状
 .q-avatar__round {
   border-radius: 50%;
 }

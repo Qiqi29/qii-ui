@@ -8,7 +8,7 @@
 
     // 模块解析模式，修改为 Node，才可以使用 import 导入语句
     "moduleResolution": "Node",
-    // 是否强制大小写一致性
+    // 是否忽略强制大小写一致性
     "forceConsistentCasingInFileNames": false,
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,

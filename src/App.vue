@@ -6,8 +6,10 @@
 <template>
   <div class="layout">
     <h3>组件测试</h3>
-
-    <q-button type="primary" icon="add">你好</q-button>
+    
+    <q-space>
+      <q-button v-for="item in 3" :key="item" type="primary" icon="add">你好</q-button>
+    </q-space>
 
   </div>
 </template>

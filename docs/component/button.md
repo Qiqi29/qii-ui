@@ -44,7 +44,7 @@
 <demo src="./src/button/disabled.vue"/>
 
 ## 按钮组
-可以把几个按钮放在一起，通过 `type` 和 `size` 属性统一控制按钮样式。
+可以把多个按钮放在一起，通过 `type` 和 `size` 属性统一控制样式。
 <demo src="./src/button/group.vue"/>
 
 ## API

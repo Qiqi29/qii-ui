@@ -4,9 +4,7 @@
     <q-avatar :style="{ background: '#3280FF' }">
       <q-icon name="user" size="1em"/>
     </q-avatar>
-    <q-avatar :style="{ background: '#fa80a0' }">
-      Qii-UI
-    </q-avatar>
+    <q-avatar :style="{ background: '#fa80a0' }"> Qii-UI </q-avatar>
     <q-avatar> 你好 </q-avatar>
   </q-space>
 </template>
