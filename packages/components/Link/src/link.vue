@@ -16,10 +16,10 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { useNS } from '../../../hooks/useNS'
+import { useNS } from '@qii-ui/hooks'
 import { linkProps } from './link'
+import { linkIcon } from '../../../styles/icons'
 import QIcon from '../../Icon'
-import linkIcon from '../../../styles/icons/link.vue'
 
 defineOptions({ 
   name: 'q-link',

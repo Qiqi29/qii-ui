@@ -8,7 +8,7 @@
 <script setup lang="ts">
 import { computed, provide, readonly } from 'vue'
 import { buttonProps } from './button-group'
-import { useNS } from '../../../hooks/useNS'
+import { useNS } from '@qii-ui/hooks'
 
 defineOptions({ 
   name: 'q-button-group',

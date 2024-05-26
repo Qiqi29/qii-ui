@@ -5,8 +5,8 @@
       <!-- 默认插槽，放置SVG图标 -->
       <slot></slot>
       
-      <!-- 插槽无内容，使用 name 属性图标 -->
-      <svg v-if="!slots.default">
+      <!-- 插槽为空，使用 name 属性 -->
+      <svg v-if="!$slots.default">
         <use :xlink:href="`#icon-${props.name}`"></use>
       </svg>
   
@@ -15,25 +15,28 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, useSlots } from 'vue'
+import { computed, CSSProperties } from 'vue'
 import { iconProps } from './icon'
-import { useNS } from '../../../hooks/useNS'
-const slots = useSlots()
+import { useNS } from '@qii-ui/hooks'
 
+// 组件配置
 defineOptions({ 
   name: 'q-icon',
   inheritAttrs: true
 })
 
+// 解构属性
 const props = defineProps({ ...iconProps })
 
+// 组件类名
 const ns = useNS('icon')
 const iconClass = computed(() => [
   ns.nameSpace,
   ns.is(props.spin, 'spin'),
 ])
 
-const iconStyle = computed(() => { return {
+// 组件样式
+const iconStyle = computed<CSSProperties>(() => { return {
   color: props.color,
   fontSize: props.size,
   transform: `rotate(${props.rotate}deg)`,

@@ -1,5 +1,5 @@
 import { PropType } from "vue"
-import { isBoolean } from '../../../utils'
+import { isBoolean } from '@qii-ui/utils'
 
 export const SwitchProps = {
   /**

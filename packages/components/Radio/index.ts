@@ -1,4 +1,5 @@
 import Radio from './src/radio.vue'
-import { withInstall } from '../../utils'
+import { withInstall } from '@qii-ui/utils'
 
-export default withInstall(Radio)
+export const QRadio = withInstall(Radio)
+export default QRadio

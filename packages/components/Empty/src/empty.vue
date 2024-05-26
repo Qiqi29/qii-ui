@@ -14,7 +14,7 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { useNS } from '../../../hooks/useNS'
+import { useNS } from '@qii-ui/hooks'
 import { emptyProps } from './empty'
 import QIcon from '../../Icon'
 import emptyIcon from '../../../styles/icons/emipy.vue'

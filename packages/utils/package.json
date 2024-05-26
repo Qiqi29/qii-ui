@@ -1,0 +1,10 @@
+{
+  "name": "@qii-ui/utils",
+  "description": "封装一些常用的工具方法",
+  "private": true,
+  "license": "MIT",
+  "main": "index.ts",
+  "peerDependencies": {
+    "vue": "^3.2.0"
+  }
+}

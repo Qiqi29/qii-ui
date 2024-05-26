@@ -6,23 +6,24 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
 
-    // 关闭强制大小写一致性
-    "forceConsistentCasingInFileNames": false,
     // 模块解析模式，修改为 Node，才可以使用 import 导入语句
     "moduleResolution": "Node",
-
+    // 是否强制大小写一致性
+    "forceConsistentCasingInFileNames": false,
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "preserve",
 
-    "strict": true,
+    // 是否在未读取局部变量时启用错误报告
     "noUnusedLocals": true,
+    "strict": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
   },
-  // 指定要编译的文件，指定后，才会使用 Vite 进行打包
+
+  // 指定要编译的文件，指定后才会使用 Vite 进行打包
   "include": [
     "packages/**/*.ts",
     "packages/**/*.d.ts",

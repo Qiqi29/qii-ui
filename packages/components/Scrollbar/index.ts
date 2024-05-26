@@ -1,4 +1,5 @@
 import Scrollbar from './src/scrollbar.vue'
-import { withInstall } from '../../utils'
+import { withInstall } from '@qii-ui/utils'
 
-export default withInstall(Scrollbar)
+export const QScrollbar = withInstall(Scrollbar)
+export default QScrollbar

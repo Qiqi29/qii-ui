@@ -1,7 +1,7 @@
 import { PropType } from "vue"
 
 // 定义使用 options 的interface
-interface RadioGroupOptions {
+export interface IRadioGroupOptions {
   label: string;
   value: string | number | boolean;
   disabled: boolean;
@@ -20,7 +20,7 @@ export const radioGroupProps = {
    * @description 选项列表
    */
   options: {
-    type: Array as PropType<Array<RadioGroupOptions>>,
+    type: Array as PropType<Array<IRadioGroupOptions>>,
     default: () => []
   },
   /**

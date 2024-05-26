@@ -6,7 +6,7 @@
     @click="onClick"
     >
 
-    <q-icon :class="[ns.n('icon-loading')]" v-if="loading" size="1.35em" spin><loadIcon/></q-icon>
+    <q-icon :class="[ns.n('icon-loading')]" v-if="loading" size="1.35em" spin><loadingIcon/></q-icon>
     <q-icon :class="ns.n('icon-left')" v-if="!loading && icon" :name="icon" size="1.25em"/>
     <span :class="ns.n('text')"><slot></slot></span>
     <q-icon :class="ns.n('icon-right')" v-if="rightIcon" :name="rightIcon" size="1.25em"/>
@@ -16,12 +16,12 @@
 
 <script lang="ts" setup>
 import { computed, useSlots, inject } from 'vue'
-import { useNS } from '../../../hooks/useNS'
 import { buttonProps, buttonEmits } from './button'
+import { useNS } from '@qii-ui/hooks'
 const slots = useSlots()
 // 引入依赖组件
-import QIcon from '../../Icon'
-import loadIcon from '../../../styles/icons/loading.vue'
+import { QIcon } from '../../Icon' 
+import { loadingIcon } from '../../../styles/icons'
 
 
 // 组件配置
@@ -42,16 +42,16 @@ const ns = useNS('button')
 const buttonClass = computed(() => [
   ns.nameSpace,
   ns.n(buttonGroup.type?.value || props.type),
-  ns.n(props.shape),
   ns.t(buttonGroup.size?.value || props.size, 'string'),
+  ns.n(props.shape),
   ns.is(props.plain, 'plain'),
   ns.is(props.text, 'text'),
   ns.is(props.bg, 'has-bg'),
   ns.is(props.long, 'long'),
   ns.is(props.rightIcon, 'has-right-icon'),
   ns.is(props.loading, 'loading'),
-  ns.is(!slots.default, 'empty'),
   ns.is(props.disabled || props.loading, 'disabled'),
+  ns.is(!slots.default, 'empty'),
 ])
 
 // 计算属性，样式

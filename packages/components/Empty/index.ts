@@ -1,4 +1,5 @@
 import Empth from './src/empty.vue'
-import { withInstall } from '../../utils'
+import { withInstall } from '@qii-ui/utils'
 
-export default withInstall(Empth)
+export const QEmpty = withInstall(Empth)
+export default QEmpty

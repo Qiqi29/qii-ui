@@ -35,7 +35,7 @@
 
 <script lang="ts" setup>
 import { computed, onMounted, onBeforeUnmount, ref } from 'vue'
-import { useNS } from '../../../hooks/useNS'
+import { useNS } from '@qii-ui/hooks'
 import { scrollbarProps, scrollbarEmits } from './scrollbar'
 
 defineOptions({ 

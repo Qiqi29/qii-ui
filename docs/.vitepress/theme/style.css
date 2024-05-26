@@ -150,9 +150,9 @@ code {
 .vp-doc tbody tr:not(:last-child) {
   border-bottom: 1px solid var(--vp-c-divider);
 }
-.vp-doc tr:hover {
+/* .vp-doc tr:hover {
   background: var(--vp-c-bg-soft);
-}
+} */
 .vp-doc th,
 .vp-doc td {
   border: none;

@@ -20,7 +20,7 @@
 <script lang="ts" setup>
 import { computed, useSlots } from 'vue'
 import { badgeProps } from './badge'
-import { useNS } from '../../../hooks/useNS'
+import { useNS } from '@qii-ui/hooks'
 const slots = useSlots()
 
 defineOptions({ 

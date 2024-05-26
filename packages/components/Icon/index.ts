@@ -1,4 +1,5 @@
 import Icon from './src/icon.vue'
-import { withInstall } from '../../utils'
+import { withInstall } from '@qii-ui/utils'
 
-export default withInstall(Icon)
+export const QIcon = withInstall(Icon)
+export default QIcon;

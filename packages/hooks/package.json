@@ -1,0 +1,10 @@
+{
+  "name": "@qii-ui/hooks",
+  "description": "封装 hooks 钩子函数",
+  "private": true,
+  "license": "MIT",
+  "main": "index.ts",
+  "peerDependencies": {
+    "vue": "^3.2.0"
+  }
+}

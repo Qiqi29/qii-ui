@@ -1,4 +1,5 @@
 import Input from './src/input.vue'
-import { withInstall } from '../../utils'
+import { withInstall } from '@qii-ui/utils'
 
-export default withInstall(Input)
+export const QInput = withInstall(Input)
+export default QInput

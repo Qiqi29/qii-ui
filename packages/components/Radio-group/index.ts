@@ -1,4 +1,5 @@
 import RadioGroup from './src/radio-group.vue'
-import { withInstall } from '../../utils'
+import { withInstall } from '@qii-ui/utils'
 
-export default withInstall(RadioGroup)
+export const QRadioGroup = withInstall(RadioGroup)
+export default QRadioGroup

@@ -14,8 +14,8 @@
 
 <script lang="ts" setup>
 import { ref, computed, onMounted, onUpdated } from 'vue'
-import { useNS } from '../../../hooks/useNS'
 import { avatarProps } from './avatar'
+import { useNS } from '@qii-ui/hooks'
 
 // 组件配置
 defineOptions({ 

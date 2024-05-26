@@ -1,4 +1,5 @@
 import Avatar from './src/avatar.vue'
-import { withInstall } from '../../utils'
+import { withInstall } from '@qii-ui/utils'
 
-export default withInstall(Avatar)
+export const QAvatar = withInstall(Avatar)
+export default QAvatar

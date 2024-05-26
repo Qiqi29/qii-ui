@@ -54,7 +54,7 @@
 <script lang="ts" setup>
 import { ref, computed, watch, onMounted } from 'vue'
 import { inputProps, inputEmits } from './input'
-import { useNS } from '../../../hooks/useNS'
+import { useNS } from '@qii-ui/hooks'
 
 import QIcon from '../../Icon'
 import iconClose from '../../../styles/icons/close.vue'

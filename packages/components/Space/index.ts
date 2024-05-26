@@ -1,4 +1,5 @@
 import Space from './src/space.vue'
-import { withInstall } from '../../utils'
+import { withInstall } from '@qii-ui/utils'
 
-export default withInstall(Space)
+export const QSpace = withInstall(Space)
+export default QSpace

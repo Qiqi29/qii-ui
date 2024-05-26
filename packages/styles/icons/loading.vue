@@ -4,3 +4,10 @@
     <path opacity="0.2" d='m12 1.9c5.6 0 10.1 4.5 10.1 10.1 0 5.6-4.5 10.1-10.1 10.1-5.6 0-10.1-4.5-10.1-10.1 0-5.6 4.5-10.1 10.1-10.1zm-7.9 10.1c0 4.3 3.6 7.9 7.9 7.9 4.3 0 7.9-3.6 7.9-7.9 0-4.3-3.6-7.9-7.9-7.9-4.3 0-7.9 3.6-7.9 7.9zz'/>
   </svg>
 </template>
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+export default defineComponent({
+  name: 'loadingIcon',
+})
+</script>

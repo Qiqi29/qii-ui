@@ -1,19 +1,14 @@
-/**
- * 配置插件、打包，和需要在构建之前处理的任务
- */
-
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-
 
 // 引入SVG图标注册插件
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import { resolve } from "path"
-// 引入类型声明文件生成插件
+
+// 引入类型声明文件插件
 import dts from "vite-plugin-dts"
 
 
-// Vite 配置
 export default defineConfig({
   plugins: [
     vue(),
@@ -28,6 +23,7 @@ export default defineConfig({
       tsconfigPath: resolve(__dirname, "tsconfig.json"),
     })
   ],
+
   // 组件库打包配置
   build: {
     lib: {
@@ -55,7 +51,11 @@ export default defineConfig({
       ],
     }
   },
+
+  // 开发服务器配置
   server: {
+    host: '0.0.0.0',
     port: 5178
-  }
+  },
+  
 })

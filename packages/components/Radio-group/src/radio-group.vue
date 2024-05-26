@@ -21,7 +21,7 @@
 <script lang="ts" setup>
 import { computed, provide, readonly } from 'vue'
 import { radioGroupProps, radioGroupEmits } from './radio-group'
-import { useNS } from '../../../hooks/useNS'
+import { useNS } from '@qii-ui/hooks'
 import QRadio from '../../Radio'
 
 

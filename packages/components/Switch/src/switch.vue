@@ -34,8 +34,8 @@
 
 <script lang="ts" setup>
 import { ref, computed } from 'vue'
-import { useNS } from '../../../hooks/useNS'
-import { isFunction } from '../../../utils'
+import { useNS } from '@qii-ui/hooks'
+import { isFunction } from '@qii-ui/utils'
 import { SwitchProps, SwitchEmits } from './switch'
 import QIcon from '../../Icon'
 import loadIcon from '../../../styles/icons/loading.vue'

@@ -21,7 +21,7 @@
 <script lang="ts" setup>
 import { computed, inject } from 'vue'
 import { radioProps } from './radio'
-import { useNS } from '../../../hooks/useNS'
+import { useNS } from '@qii-ui/hooks'
 
 // 组件配置
 defineOptions({ 

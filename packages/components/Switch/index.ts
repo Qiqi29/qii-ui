@@ -1,4 +1,5 @@
 import Switch from './src/switch.vue'
-import { withInstall } from '../../utils'
+import { withInstall } from '@qii-ui/utils'
 
-export default withInstall(Switch)
+export const QSwitch = withInstall(Switch)
+export default QSwitch

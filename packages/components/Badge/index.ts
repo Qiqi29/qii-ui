@@ -1,4 +1,5 @@
 import Badge from './src/badge.vue'
-import { withInstall } from '../../utils'
+import { withInstall } from '@qii-ui/utils'
 
-export default withInstall(Badge)
+export const QBadge = withInstall(Badge)
+export default QBadge

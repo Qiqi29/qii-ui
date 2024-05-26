@@ -26,10 +26,16 @@
     "docs:preview": "vitepress preview docs",
     "build:css": "npx gulp sass"
   },
+  "workspaces": [
+    "packages/*",
+    "docs"
+  ],
   "dependencies": {
     "vue": "^3.4.21"
   },
   "devDependencies": {
+    "@qii-ui/utils": "workspace:*",
+    "@qii-ui/hooks": "workspace:*",
     "@ruabick/md-demo-plugins": "^0.3.3",
     "@ruabick/vitepress-demo-block": "^0.3.3",
     "@vitejs/plugin-vue": "^5.0.4",

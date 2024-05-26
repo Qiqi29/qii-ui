@@ -4,40 +4,46 @@
 qii-ui 推荐使用 [MingCute Icon](https://www.mingcute.com/) 图标库。
 
 
-## 插件配置
-图标组件使用 `symbolId` 格式的 SVG 图标。使用前需要安装配置 SVG 图标注册插件。
+## 组件配置
+图标组件使用 `symbolId` 格式的 SVG 图标，使用前需要安装 SVG 图标注册插件。
 ```bash
-npm i fast-glob@3.x -D
-npm i vite-plugin-svg-icons@2.x -D
+npm i vite-plugin-svg-icons -D
+npm i fast-glob -D
 ```
 
-1. 在 `vite.config.ts` 中配置 SVG 插件。
+1. 在 `vite.config.ts` 中配置插件。
 ```ts
-// 引入图标注册插件与路径模块
+// 引入插件与路径模块
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import { resolve } from "path"
 
 export default defineConfig({
   plugins: [
-    // 配置SVG图标注册插件
     createSvgIconsPlugin({
       iconDirs: [resolve(__dirname, 'src/svg')], // 存放图标的目录
       symbolId: 'icon-[dir]-[name]'              // symbolId 的格式
     })
   ]
-  ...
 })
 ```
 
-2. 在 `main.ts` 中引入图标注册器。
+2. 在项目入口文件 `main.ts` 中引入图标注册器。
 ```ts
-import { createApp } from 'vue'
-
-// 引入SVG图标注册器
+// 引入图标注册器
 import 'virtual:svg-icons-register'
-...
 ```
-插件安装配置完成后，图标文件夹中的 SVG 图标将自动注册到 HTML 文档中。
+
+插件配置完成后，文件夹中的 SVG 图标将自动注册到 HTML 文档中。
+```
+·
+├─ src
+│   └─ svg
+│       ├─ star.svg
+│       └─ more.svg
+└─ vite.config.ts
+```
+
+
 
 
 ## 使用图标
@@ -57,7 +63,7 @@ import 'virtual:svg-icons-register'
 <demo src="./src/icon/svg.vue"/>
 
 
-## 旋转
+## 旋转状态
 添加 `spin` 属性，可以将图标设置为旋转状态。或者使用 `rotate` 属性自定义旋转角度。
 <demo src="./src/icon/spin.vue"/>
 

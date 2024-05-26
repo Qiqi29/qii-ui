@@ -1,40 +1,39 @@
 import { PropType } from "vue"
 
-
 export const iconProps = {
   /**
    * @description 图标名称
    */
   name: {
-    type: String,
+    type: String as PropType<string>,
     default: "",
   },
   /**
    * @description 图标大小
    */
   size: {
-    type: [String, Number] as PropType<string | number>,
+    type: String as PropType<string>,
     default: "1.5em",
   },
   /**
    * @description 图标颜色
    */
   color: {
-    type: String,
+    type: String as PropType<string>,
     default: "currentColor",
   },
   /**
    * @description 图标是否为旋转状态
    */
   spin: {
-    type: Boolean,
+    type: Boolean as PropType<boolean>,
     default: false,
   },
   /**
    * @description 图标的旋转角度
    */
   rotate: {
-    type: Number,
+    type: Number as PropType<number>,
     default: 0,
   },
-}
+} as const;

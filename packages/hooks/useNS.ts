@@ -3,11 +3,7 @@ const defaultNS = 'q'
 
 /**
  * BEM 命名规范
- * 
- * 根据参数生成指定结构的类名：
- * q-button、
- * q-button__primary、
- * is-disabled
+ * 根据参数生成指定结构的类名
  */
 export const useNS = function (name: string) {
   /**

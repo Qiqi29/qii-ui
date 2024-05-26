@@ -1,7 +1,7 @@
 <script lang="ts">
 import { defineComponent, computed, h, CSSProperties } from 'vue'
-import { useNS } from '../../../hooks/useNS'
 import { SpaceProps } from './space'
+import { useNS } from '@qii-ui/hooks'
 
 export default defineComponent({
   name: 'q-space',
