@@ -37,6 +37,17 @@
 | --- | --- |
 | default | 自定义展示内容 |
 
+### Avatar Group 属性
+| 属性 | 类型 | 默认值 | 说明 |
+| --- | --- | --- | --- |
+| size | `string` `number` | medium | 统一控制头像大小 |
+| shape | `string` | round | 统一控制头像形状 |
+| max | `number` | 99 | 头像组最多显示的数量 |
+
+### Avatar Group 插槽
+| 名称 | 说明 |
+| --- | --- |
+| default | 放置头像组件 |
 
 ## 贡献者
 <member></member>

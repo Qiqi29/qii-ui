@@ -11,7 +11,7 @@ export const badgeProps = {
   /**
    * @description 徽标最大值
    */
-  maxCount: {
+  max: {
     type: Number as PropType<number>,
     default: 99
   },

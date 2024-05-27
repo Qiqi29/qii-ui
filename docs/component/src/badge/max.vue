@@ -1,5 +1,5 @@
 <template>
-  <q-space :size="30">
+  <q-space size="large">
     <q-badge :count="0">
       <q-avatar shape="square"/>
     </q-badge>

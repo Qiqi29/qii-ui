@@ -4,9 +4,10 @@
     :href="href" 
     @click.prevent="__onClick">
 
-    <!-- icon 参数为空，显示自定义图标 -->
-    <q-icon v-if="icon === ''" :name="icon" size="1em"><linkIcon/></q-icon>
+    <!-- icon 参数为真，显示自定义图标 -->
     <q-icon v-if="icon" :name="icon" size="1em"/>
+    <!-- icon 参数为真，但值为空，显示默认图标 -->
+    <q-icon v-if="icon === ''" :name="icon" size="1em"><linkIcon/></q-icon>
     
     <!-- 默认插槽，链接文本 -->
     <slot></slot>
@@ -16,10 +17,10 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { useNS } from '@qii-ui/hooks'
 import { linkProps } from './link'
+import { useNS } from '@qii-ui/hooks'
+import { QIcon } from '../../Icon'
 import { linkIcon } from '../../../styles/icons'
-import QIcon from '../../Icon'
 
 defineOptions({ 
   name: 'q-link',

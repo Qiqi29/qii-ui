@@ -27,19 +27,23 @@ export default defineComponent({
 
     return () => {
       // 遍历插槽内容，返回 max 属性限制数量的节点
-      const avatarArray = children.filter((_, index) => {
-        return index < props.max;
-      })
-      // 判断是否超出最大数量，超出添加显示超出数量的组件
+      const avatarNodes = children.filter((_, index) => index < props.max )
+      // 判断是否添加显示超出数量的组件
       if (children.length > props.max) {
-        avatarArray.push(h(QAvatar, {}, () => `+${children.length - props.max}`))
+        avatarNodes.push(
+          h(QAvatar, {style: {paddingLeft: '3px'}}, () => `+${children.length - props.max}`)
+        )
       }
-
+      // 遍历新节点数组，给每个节点添加倒序的z-index
+      avatarNodes.forEach((node, index) => {
+        node.props!.style = {
+          zIndex: children.length - index,
+          ...node.props!.style,
+        }
+      })
       // 渲染组件
-      return h('div', {class: avatarGroupClass.value}, avatarArray)
+      return h('div', {class: avatarGroupClass.value}, avatarNodes)
     }
   }
 })
-
-
 </script>

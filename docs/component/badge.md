@@ -13,7 +13,7 @@
 
 
 ## 最大值
-使用 `max-count` 属性，限制徽标显示的最大值，超出会加上 `+` 后缀。
+使用 `max` 属性，限制徽标显示的最大值，超出会显示后缀 `+`。
 <demo src="./src/badge/max.vue"/>
 
 
@@ -38,7 +38,7 @@
 | 属性 | 类型 | 默认值 | 说明 |
 | --- | --- | --- | --- |
 | count | `number` | 0 | 徽标计数 |
-| max-count | `number` | 99 | 徽标最大值 |
+| max | `number` | 99 | 徽标最大值 |
 | text | `string` | — | 徽标文本 |
 | type | `string` | — | 徽标类型 |
 | color | `string` | — | 自定义徽标颜色 |

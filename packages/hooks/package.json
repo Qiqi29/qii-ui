@@ -1,6 +1,6 @@
 {
   "name": "@qii-ui/hooks",
-  "description": "封装 hooks 钩子函数",
+  "description": "封装与vue相关的，可复用的逻辑代码",
   "private": true,
   "license": "MIT",
   "main": "index.ts",

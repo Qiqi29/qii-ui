@@ -17,33 +17,21 @@
 // 链接类型
 @mixin linkType($type) {
   color: var(--q-color-#{$type}) !important;
-  &:hover {
+  &:hover:not(.is-disabled) {
     color: var(--q-color-#{$type}-a) !important;
     // 链接下划线样式
     &.is-has-underline:not(.is-disabled)::after {
       content: "";
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 2px;
+      top: 0; left: 0; right: 0; bottom: 2px;
       border-bottom: 1px solid var(--q-color-#{$type}-a);
     }
   }
 }
-.q-link__primary {
-  @include linkType('primary');
-}
-.q-link__success {
-  @include linkType('success');
-}
-.q-link__warning {
-  @include linkType('warning');
-}
-.q-link__danger {
-  @include linkType('danger');
-}
-
+.q-link__primary { @include linkType('primary') }
+.q-link__success { @include linkType('success') }
+.q-link__warning { @include linkType('warning') }
+.q-link__danger { @include linkType('danger') }
 
 
 // 禁用状态

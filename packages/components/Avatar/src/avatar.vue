@@ -2,7 +2,7 @@
   <div :class="avatarClass" :style="avatarStyle" ref="avatarRef">
     
     <!-- 默认插槽 -->
-    <div class="q-avatar__slot" ref="slotRef">
+    <div :class="ns.n('slot')" ref="slotRef">
       <slot></slot>
     </div>
     
@@ -41,7 +41,6 @@ const avatarClass = computed(() => [
   ns.t(avatarSize.value, 'string'),
 ])
 
-
 // 组件样式
 const avatarStyle = computed(() => { return {
   '--q-avatar-size': typeof avatarSize.value === 'number' ? `${avatarSize.value}px` : '',
@@ -49,7 +48,7 @@ const avatarStyle = computed(() => { return {
 
 /**
  * 插槽内容自适应头像大小
- * 使用 ref 绑定节点，获取头像与文本的dom宽度，计算响应的缩放比例。
+ * 使用 ref 绑定节点，获取头像与文本的dom宽度，计算相应的缩放比例
  */
 const avatarRef = ref()
 const slotRef = ref()

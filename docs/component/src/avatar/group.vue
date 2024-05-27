@@ -26,6 +26,6 @@ const avatars = [
   { src: '', name: 'B', color: '#7BC616' },
   { src: '', name: 'C', color: '#3280FF' },
   { src: '', name: 'D', color: '#6149E8' },
-  { src: '', name: 'E', color: '#FF7D00' }
+  { src: '', name: 'E', color: '#FF7D00' },
 ]
 </script>

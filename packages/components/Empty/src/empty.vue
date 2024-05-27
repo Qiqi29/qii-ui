@@ -2,12 +2,21 @@
   <div :class="emptyClass">
 
     <!-- 具名插槽，图标或图片 -->
-    <slot name="icon">
-      <q-icon name="more" size="3em"><emptyIcon/></q-icon>
-    </slot>
-
+    <div :class="ns.n('icon')">
+      <slot name="icon">
+        <q-icon name="more" size="3em"><emptyIcon/></q-icon>
+      </slot>
+    </div>
+    
     <!-- 提示文本 -->
-    <p class="q-empty__text">{{ text }}</p>
+    <div :class="ns.n('text')">
+      <span>{{ text }}</span>
+    </div>
+    
+    <!-- 具名插槽，底部内容 -->
+    <div :class="ns.n('extra')">
+      <slot name="extra"></slot>
+    </div>
 
   </div>
 </template>
@@ -16,7 +25,7 @@
 import { computed } from 'vue'
 import { useNS } from '@qii-ui/hooks'
 import { emptyProps } from './empty'
-import QIcon from '../../Icon'
+import { QIcon } from '../../Icon'
 import emptyIcon from '../../../styles/icons/emipy.vue'
 
 defineOptions({ 

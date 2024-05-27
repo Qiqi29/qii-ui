@@ -23,7 +23,7 @@
     "noFallthroughCasesInSwitch": true,
   },
 
-  // 指定要编译的文件，指定后才会使用 Vite 进行打包
+  // 需要编译的文件，指定后Vite才会打包这些文件
   "include": [
     "packages/**/*.ts",
     "packages/**/*.d.ts",

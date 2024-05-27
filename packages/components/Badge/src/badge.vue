@@ -4,7 +4,7 @@
     <!-- 默认插槽，放置绑定组件 -->
     <slot></slot>
 
-    <!-- 徽标 -->
+    <!-- 右上角徽标 -->
     <div 
       v-if="count !== 0 || text" 
       :class="ns.n('mark')"
@@ -37,13 +37,12 @@ const badgeClass = computed(() => [
   ns.is(!slots.default, 'empty'),
 ])
 
-// 最大值
-const badgeMaxCount = computed(() => {
-  return props.count > props.maxCount ? `${props.maxCount}+` : props.count;
-})
-
 const badgeStyle = computed(() => { return {
   background: props.color ? props.color : `var(--q-color-${props.type})`
 }})
 
+// 判断是否超过最大值
+const badgeMaxCount = computed(() => {
+  return props.count > props.max ? `${props.max}+` : props.count;
+})
 </script>

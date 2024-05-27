@@ -47,15 +47,9 @@
   }
 }
 
-.q-switch__small {
-  @include switchSize(18px, 12px, 3px);
-}
-.q-switch__medium {
-  @include switchSize(24px, 16px, 4px);
-}
-.q-switch__large {
-  @include switchSize(28px, 18px, 5px);
-}
+.q-switch__small { @include switchSize(18px, 12px, 3px) }
+.q-switch__medium { @include switchSize(24px, 16px, 4px) }
+.q-switch__large { @include switchSize(28px, 18px, 5px) }
 
 
 // 加载状态

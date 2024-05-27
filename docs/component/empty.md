@@ -8,7 +8,7 @@
 
 
 ## 自定义
-使用 `text` 属性自定义提示文案， `icon slot` 插槽自定义显示的内容。
+使用 `text` 属性自定义提示文案，`icon slot` 插槽自定义显示的内容，`extra slot` 插槽自定义底部内容。
 <demo src="./src/empty/custom.vue"/>
 
 
@@ -24,6 +24,7 @@
 | 名称 | 说明 |
 | --- | --- |
 | icon | 图标 / 任何内容 |
+| extra | 底部额外内容 |
 
 ## 贡献者
 <member></member>

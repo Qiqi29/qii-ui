@@ -1,5 +1,6 @@
 /**
- * 组件库的入口文件，用于注册并导出每个组件，以便在 Vue 应用中使用。
+ * 组件库入口文件
+ * 注册并导出每个组件，以便在 Vue 应用中使用。
  */
 
 import { App } from 'vue'
@@ -19,6 +20,7 @@ import QRadio from './components/Radio/index'
 import QRadioGroup from './components/Radio-group/index'
 import QLink from './components/Link/index'
 import QEmpty from './components/Empty/index'
+
 
 // 单独导出组件，提供按需引入
 export {
@@ -57,13 +59,11 @@ const components = [
   QEmpty,
 ]
 
-// 批量注册组件
+// 批量注册组件的方法
 const install = function (app: App) {
   components.forEach(component => {
     app.component(component.name as string, component)
   })
 }
-
-
-// 导出完整安装的方法，调用后，会安装所有组件
+// 导出安装方法，使用 app.use() 即可完整引入组件库
 export default { install }

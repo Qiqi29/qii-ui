@@ -1,9 +1,8 @@
 <!-- 开关组件 -->
 <template>
   <div :class="switchClass">
-    
     <label>
-      <!-- 输入框，单选按钮样式，隐藏 -->
+      <!-- 原生输入框-->
       <input type="checkbox" @change="onChange">
 
       <!-- 自定义的开关，使用label绑定 -->
@@ -28,16 +27,15 @@
       </div>
 
     </label>
-
   </div>
 </template>
 
 <script lang="ts" setup>
 import { ref, computed } from 'vue'
-import { useNS } from '@qii-ui/hooks'
-import { isFunction } from '@qii-ui/utils'
 import { SwitchProps, SwitchEmits } from './switch'
-import QIcon from '../../Icon'
+import { isFunction } from '@qii-ui/utils'
+import { useNS } from '@qii-ui/hooks'
+import { QIcon } from '../../Icon'
 import loadIcon from '../../../styles/icons/loading.vue'
 
 

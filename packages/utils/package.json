@@ -1,6 +1,6 @@
 {
   "name": "@qii-ui/utils",
-  "description": "封装一些常用的工具方法",
+  "description": "封装一些常用的工具函数",
   "private": true,
   "license": "MIT",
   "main": "index.ts",

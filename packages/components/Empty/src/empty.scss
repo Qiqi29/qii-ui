@@ -2,12 +2,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  justify-content: center;
+  height: 100%;
   color: var(--q-color-text-3);
 }
 
 .q-empty__text {
-  line-height: normal !important;
-  margin: 0 !important;
-  margin-top: 10px !important;
+  margin-top: 8px;
+}
+.q-empty__extra {
+  margin-top: 12px;
 }
