@@ -2,7 +2,7 @@ import { App, Component, Plugin } from "vue"
 
 /**
  * 组件泛型
- * @param T - 待注册的单文件组件
+ * @param T 待注册的单文件组件
  * 合并 Plugin 接口。让类型具有单文件组件的功能和Vue插件的能力
  */
 type SFCWithInstall<T> = T & Plugin

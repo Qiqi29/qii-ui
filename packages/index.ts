@@ -59,11 +59,14 @@ const components = [
   QEmpty,
 ]
 
-// 批量注册组件的方法
+/**
+ * 完整引入组件库
+ * 使用 app.use(**)，即可把所有组件注册到项目中
+ */
 const install = function (app: App) {
   components.forEach(component => {
     app.component(component.name as string, component)
   })
 }
-// 导出安装方法，使用 app.use() 即可完整引入组件库
+// 导出安装方法
 export default { install }

@@ -1,5 +1,6 @@
 /**
- * 导出所有工具类函数
+ * utils
+ * 导出所有工具函数
  */
 
 export * from './install'

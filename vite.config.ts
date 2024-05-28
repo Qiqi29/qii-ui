@@ -1,29 +1,26 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
-// 引入SVG图标注册插件
-import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
-import { resolve } from "path"
+// 引入插件
+import { resolve } from "path"                                // 路径处理
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'  // SVG 图标注册
+import dts from "vite-plugin-dts"                             // TS 类型文件生成
 
-// 引入类型声明文件插件
-import dts from "vite-plugin-dts"
-
-
+// Vite 配置
 export default defineConfig({
   plugins: [
     vue(),
-    // 配置SVG图标注册插件
+    // 配置 SVG 图标注册插件
     createSvgIconsPlugin({
       iconDirs: [resolve(__dirname, 'src/svg')], // 存放图标的目录
       symbolId: 'icon-[dir]-[name]'              // symbolId 的格式
     }),
-    // 配置需要生成的目录和ts配置文件
+    // 配置需要生成的目录和 TS 配置文件
     dts({
-      outDir: ['es', "lib", 'dist/@types'],
+      outDir: ['es', "lib"],
       tsconfigPath: resolve(__dirname, "tsconfig.json"),
     })
   ],
-
   // 组件库打包配置
   build: {
     lib: {
@@ -35,7 +32,7 @@ export default defineConfig({
       input: './packages/index.ts',			// 组件库的入口文件
       output: [
         {
-          format: "es",									// 打包为 es 格式
+          format: "es",									// 打包为 ES 格式
           entryFileNames: "[name].mjs",	// 文件名格式
           preserveModules: true,				// 保留原文件结构
           exports: "named",							// 使用具名导出
@@ -51,11 +48,9 @@ export default defineConfig({
       ],
     }
   },
-
   // 开发服务器配置
   server: {
     host: '0.0.0.0',
     port: 5178
   },
-  
 })

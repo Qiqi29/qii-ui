@@ -1,13 +1,12 @@
 {
   "name": "qii-ui",
   "description": "一个 Vue3 组件库",
-  "author": "qiqi29<sgq457@qq.com>",
   "version": "0.0.4-beta",
-  "keywords": [
-    "qii-ui",
-    "vue",
-    "ui"
-  ],
+  "keywords": ["qii-ui","qii","vue","ui"],
+  "author": {
+    "name": "qiqi29",
+    "email": "sgq457@qq.com"
+  },
   "files": [
     "dist",
     "es",
@@ -23,8 +22,7 @@
     "preview": "vite preview",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs",
-    "build:css": "npx gulp sass"
+    "docs:preview": "vitepress preview docs"
   },
   "workspaces": [
     "packages/*",

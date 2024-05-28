@@ -6,30 +6,33 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
 
-    // 模块解析模式，修改为 Node，才可以使用 import 导入语句
+    // 模块解析模式
     "moduleResolution": "Node",
-    // 是否忽略强制大小写一致性
-    "forceConsistentCasingInFileNames": false,
+
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "preserve",
-
-    // 是否在未读取局部变量时启用错误报告
-    "noUnusedLocals": true,
+    
+    // 是否启用严格类型检查
     "strict": true,
+    // 错误检查: 强制大小写一致性
+    "forceConsistentCasingInFileNames": false,
+    // 错误检查: 未读取局部变量
+    "noUnusedLocals": true,
+    // 错误检查: 未使用的函数参数
     "noUnusedParameters": true,
+    // 错误检查: 未定义的变量
     "noFallthroughCasesInSwitch": true,
   },
 
-  // 需要编译的文件，指定后Vite才会打包这些文件
+  // 打包时需要编译的文件
   "include": [
     "packages/**/*.ts",
     "packages/**/*.d.ts",
     "packages/**/*.tsx",
     "packages/**/*.vue",
-    
     "index.ts"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]

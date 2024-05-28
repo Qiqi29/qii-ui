@@ -1,7 +1,7 @@
 /*
- * 组件主题颜色变量
- * 浅色/深色 主题切换，在 html 标签上添加类名 dark
- */
+* 组件主题颜色变量
+* 主题切换只需要在 <html> 标签上添加类名 dark
+*/
 
 :root {
   // 默认颜色
@@ -10,8 +10,8 @@
 
   // 文本颜色
   --q-color-text-1: #303032;
-  --q-color-text-2: #5a5a5f;
-  --q-color-text-3: #b9bcc2;
+  --q-color-text-2: #76767c;
+  --q-color-text-3: #aeb0b6;
   --q-color-text-4: #cdced5;
 
   // 不同级别的颜色
@@ -55,10 +55,6 @@
   --q-scrollbar-color: #93949c40;
   --q-scrollbar-hover: #93949c50;
   --q-scrollbar-active: #93949c70;
-
-  // 消息背景色
-  --q-message-bg: #FFFFFF;
-  --q-message-border: #e4e4e9;
 }
 
 
@@ -112,8 +108,4 @@ html.dark {
   --q-color-danger-l: #ff5d5d25;
   --q-color-danger-l-h: #ff6b6b27;
   --q-color-danger-l-a: #ea494925;
-
-  // 消息背景色
-  --q-message-bg: #303032;
-  --q-message-border: #404043;
 }
