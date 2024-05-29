@@ -13,7 +13,7 @@
 
     <!-- 加载图标 -->
     <div v-if="loading" :class="ns.n('loading')">
-      <q-icon size="1em" spin><loadingIcon/></q-icon>
+      <q-icon size="1.1em" spin><loadingIcon/></q-icon>
     </div>
 
     <!-- 关闭按钮 -->

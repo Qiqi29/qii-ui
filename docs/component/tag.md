@@ -56,7 +56,6 @@
 | bordered | `boolean` | false | 是否显示边框 |
 | round | `boolean` | false | 是否为圆角样式 |
 | fill | `boolean` | false | 是否填充背景色 |
-| fill | `boolean` | false | 是否填充背景色 |
 | closable | `boolean` | false | 标签是否可以关闭 |
 | loading | `boolean` | false | 标签是为加载状态 |
 | disabled | `boolean` | false | 标签是否禁用 |
