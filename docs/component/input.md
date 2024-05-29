@@ -16,6 +16,11 @@
 <demo src="./src/input/password.vue"/>
 
 
+## 默认选中
+添加 `autofocus` 属性，输入框默认自动获取焦点。
+<demo src="./src/input/autofocus.vue"/>
+
+
 ## 大小
 使用 `size` 属性改变输入框的大小，提供 `small`、`medium`、`large` 三种尺寸。
 
@@ -55,6 +60,7 @@
 | placeholder | `string` | — | 输入框提示文件 |
 | icon | `string` | — | 输入框图标 |
 | right-icon | `string` | — | 输入框右侧图标 |
+| autofocus | `boolean` | false | 是否默认聚焦输入框 |
 | clearable | `boolean` | false | 是否显示清除按钮 |
 | show-password | `boolean` | false | 是否显示密码切换按钮 |
 | maxlength | `number` | — | 输入框字数限制 |

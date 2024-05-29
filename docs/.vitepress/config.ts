@@ -88,6 +88,7 @@ export default defineConfig({
             { text: '头像 Avatar', link: '/component/avatar' },
             { text: '徽标 Badge', link: '/component/badge' },
             { text: '无内容 Empty', link: '/component/empty' },
+            { text: '标签 Tag', link: '/component/tag' },
           ]
         },
         {

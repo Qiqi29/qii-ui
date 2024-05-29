@@ -29,12 +29,12 @@ defineOptions({
   inheritAttrs: false
 })
 
-// 解构属性
+// 组件属性
 const props = defineProps({ ...radioProps })
 // 接收父组件传值
 const radioGroup: any = inject('radioGroup', '')
 
-// 组件命名空间
+// 组件类名
 const ns = useNS('radio')
 const radioClass = computed(() => [
   ns.nameSpace,

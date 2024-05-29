@@ -36,4 +36,4 @@ export const iconProps = {
     type: Number as PropType<number>,
     default: 0,
   },
-} as const;
+} as const

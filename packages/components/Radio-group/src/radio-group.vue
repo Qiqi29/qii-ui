@@ -4,7 +4,7 @@
     <!-- 默认插槽 -->
     <slot v-if="$slots.default"></slot>
     
-    <!-- 使用 options -->
+    <!-- options 属性为真，渲染子组件 -->
     <q-radio 
       v-else-if="options"
       v-for="(item, index) in options" 
@@ -31,11 +31,11 @@ defineOptions({
   inheritAttrs: false
 })
 
-// 解构属性
+// 组件属性
 const props = defineProps({ ...radioGroupProps })
 const emits = defineEmits({ ...radioGroupEmits })
 
-// 组件命名空间
+// 组件类名
 const ns = useNS('radio-group')
 const radioGroupClass = computed(() => [
   ns.nameSpace,

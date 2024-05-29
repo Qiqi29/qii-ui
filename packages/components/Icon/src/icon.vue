@@ -1,16 +1,13 @@
 <template>
   <span :class="iconClass" >
+
     <i :style="iconStyle">
-      
-      <!-- 默认插槽，放置SVG图标 -->
-      <slot></slot>
-      
-      <!-- 插槽为空，使用 name 属性 -->
-      <svg v-if="!$slots.default">
-        <use :xlink:href="`#icon-${props.name}`"></use>
-      </svg>
-  
+      <!-- 默认插槽，放置自定义SVG图标，内容为空显示默认值 -->
+      <slot>
+        <svg><use :xlink:href="`#icon-${name}`"></use></svg>
+      </slot>
     </i>
+    
   </span>
 </template>
 
@@ -25,7 +22,7 @@ defineOptions({
   inheritAttrs: true
 })
 
-// 解构属性
+// 组件属性
 const props = defineProps({ ...iconProps })
 
 // 组件类名
@@ -41,5 +38,4 @@ const iconStyle = computed<CSSProperties>(() => { return {
   fontSize: props.size,
   transform: `rotate(${props.rotate}deg)`,
 }})
-
 </script>

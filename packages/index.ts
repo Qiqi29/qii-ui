@@ -20,6 +20,7 @@ import QRadio from './components/Radio/index'
 import QRadioGroup from './components/Radio-group/index'
 import QLink from './components/Link/index'
 import QEmpty from './components/Empty/index'
+import QTag from './components/Tag/index'
 
 
 // 单独导出组件，提供按需引入
@@ -38,6 +39,7 @@ export {
   QRadioGroup,
   QLink,
   QEmpty,
+  QTag,
 }
 
 
@@ -57,6 +59,7 @@ const components = [
   QRadioGroup,
   QLink,
   QEmpty,
+  QTag,
 ]
 
 /**

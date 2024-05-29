@@ -1,7 +1,7 @@
 <template>
   <div :class="avatarClass" :style="avatarStyle" ref="avatarRef">
     
-    <!-- 默认插槽 -->
+    <!-- 默认插槽，放置自定义内容 -->
     <div :class="ns.n('slot')" ref="slotRef">
       <slot></slot>
     </div>
@@ -23,7 +23,7 @@ defineOptions({
   inheritAttrs: true
 })
 
-// 解构属性
+// 组件属性
 const props = defineProps({ ...avatarProps })
 
 // 接收父组件传值

@@ -20,7 +20,7 @@
     // 错误检查: 强制大小写一致性
     "forceConsistentCasingInFileNames": false,
     // 错误检查: 未读取局部变量
-    "noUnusedLocals": true,
+    "noUnusedLocals": false,
     // 错误检查: 未使用的函数参数
     "noUnusedParameters": true,
     // 错误检查: 未定义的变量

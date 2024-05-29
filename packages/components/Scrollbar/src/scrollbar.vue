@@ -1,12 +1,12 @@
 <template>
   <div :class="scrollbarClass" :style="{'height': height}">
 
-    <!-- 默认插槽 -->
+    <!-- 默认插槽，放置滚动内容 -->
     <div ref="wrap" :class="ns.n('wrapper')" :style="{'max-height': maxHeight}">
       <slot></slot>
     </div>
 
-    <!-- 如果启用 native，隐藏自定义滚动条  -->
+    <!-- native 为真，隐藏自定义滚动条  -->
     <template v-if="!native">
       <!-- Y轴滚动条 -->
       <div 
@@ -14,7 +14,7 @@
         :class="[
           ns.n('bar'), 
           ns.is(true, 'vertical'), 
-          ns.is(activeThumb == 'Y', 'active')
+          ns.is(activeThumb == 'thumbY', 'active')
         ]">
         <div ref="thumbY" :class="ns.n('thumb')" :style="thumbYStyle"></div>
       </div>
@@ -24,7 +24,7 @@
         :class="[
           ns.n('bar'), 
           ns.is(true, 'horizontal'), 
-          ns.is(activeThumb == 'X', 'active')
+          ns.is(activeThumb == 'thumbX', 'active')
         ]">
         <div ref="thumbX" :class="ns.n('thumb')" :style="thumbXStyle"></div>
       </div>
@@ -35,18 +35,20 @@
 
 <script lang="ts" setup>
 import { computed, onMounted, onBeforeUnmount, ref } from 'vue'
-import { useNS } from '@qii-ui/hooks'
 import { scrollbarProps, scrollbarEmits } from './scrollbar'
+import { useNS } from '@qii-ui/hooks'
 
+// 组件配置
 defineOptions({ 
   name: 'q-scrollbar',
   inheritAttrs: true
 })
 
+// 组件属性
 const props = defineProps({ ...scrollbarProps })
 const emits = defineEmits({ ...scrollbarEmits })
 
-// 组件命名空间
+// 组件类名
 const ns = useNS('scrollbar')
 const scrollbarClass = computed(() => [
   ns.nameSpace,
@@ -54,36 +56,66 @@ const scrollbarClass = computed(() => [
   ns.is(props.native, 'native'),
 ])
 
-// 绑定dom节点
+
+// 绑定滚动条的dom节点
 const wrap = ref<HTMLElement | undefined>(undefined)
 const barY = ref<HTMLElement | undefined>(undefined)
 const thumbY = ref<HTMLElement | undefined>(undefined)
 const barX = ref<HTMLElement | undefined>(undefined)
 const thumbX = ref<HTMLElement | undefined>(undefined)
 
-// 滚动条状态
-let flag: 'thumbX' | 'thumbY'
-// 点击滚动条
-const activeThumb = ref('none')
+// 当前活跃的滚动条
+const activeThumb = ref<'thumbX'|'thumbY'|'none'>('none')
+// 当前操作的滚动条
+let flag: 'thumbX'|'thumbY'
 
-// 垂直滑块的大小位置
+// 滑块的位置和大小
 const thumbYStyle = ref({ top: '0', right: '0', height: '0' })
-// 水平滑块的大小位置
 const thumbXStyle = ref({ bottom: '0', left: '0', width: '0' })
-// 记录滑块移动的偏移量
-const offset = { x: 0, y: 0 }
-// 记录点击的坐标
-const down = { x: 0, y: 0 }
-// 记录移动距离
-const move = { x: 0, y: 0 }
-// 记录滑块原本位置
-const origin = { x: 0, y: 0 }
+
+const offset = { x: 0, y: 0 }       // 记录滑块移动的偏移量
+const down = { x: 0, y: 0 }         // 记录点击的坐标
+const move = { x: 0, y: 0 }         // 记录移动距离
+const origin = { x: 0, y: 0 }       // 记录滑块原本位置
+
+
+/**
+ * 事件：点击滚动条轨道
+ * 控制内容区域滚动到相应位置
+ * 阻止事件冒泡，点击内部滑块不会执行
+ */
+const headleClick = (e: MouseEvent) => {
+  if (e.target !== e.currentTarget) return;
+  e.stopPropagation()
+
+  // 获取滚动条数据
+  const wrapHeight = wrap.value!.scrollHeight
+  const wrapWidth = wrap.value!.scrollWidth
+  const barHeight = barY.value!.offsetHeight
+  const barWidth = barX.value!.offsetWidth
+
+  // 计算偏移量
+  offset.y = e.clientY - barY.value!.getBoundingClientRect().top - thumbY.value!.offsetHeight / 2;
+  offset.x = e.clientX - barX.value!.getBoundingClientRect().left - thumbX.value!.offsetWidth / 2;
+
+  // 限制偏移量
+  offset.y = Math.min(Math.max(0, offset.y), barY.value!.offsetHeight - thumbY.value!.offsetHeight)
+  offset.x = Math.min(Math.max(0, offset.x), barX.value!.offsetWidth - thumbX.value!.offsetWidth)
+
+  // 移动内容区域
+  if (flag === 'thumbY') {
+    wrap.value!.scrollTo({ top: wrapHeight * offset.y / barHeight, behavior: 'smooth' })
+  }
+  if (flag === 'thumbX') {
+    wrap.value!.scrollTo({ left: wrapWidth * offset.x / barWidth, behavior: 'smooth' })
+  }
+}
 
 /**
  * 滚动条移动事件
  */
 const handleMove = (e: MouseEvent) => {
-  // 记录点击坐标
+  // 获取移动的坐标
   move.x = e.clientX
   move.y = e.clientY
 
@@ -99,51 +131,12 @@ const handleMove = (e: MouseEvent) => {
 
   // 移动内容区域
   if (flag === 'thumbY') {
-    wrap.value!.scrollTop = wrapHeight * offset.y / barHeight + origin.y;
+    wrap.value!.scrollTop = wrapHeight * offset.y / barHeight + origin.y
   }
   if (flag === 'thumbX') {
-    wrap.value!.scrollLeft = wrapWidth * offset.x / barWidth + origin.x;
+    wrap.value!.scrollLeft = wrapWidth * offset.x / barWidth + origin.x
   }
 }
-
-
-/**
- * 滚动条点击事件
- */
-const headleClick = (e: MouseEvent) => {
-  // 阻止事件冒泡
-  if (e.target !== e.currentTarget) return;
-  e.stopPropagation()
-
-  // 获取滚动条数据
-  const wrapHeight = wrap.value!.scrollHeight
-  const wrapWidth = wrap.value!.scrollWidth
-  const barHeight = barY.value!.offsetHeight
-  const barWidth = barX.value!.offsetWidth
-
-  // 记录点击坐标
-  offset.y = e.clientY - barY.value!.getBoundingClientRect().top - thumbY.value!.offsetHeight / 2;
-  offset.x = e.clientX - barX.value!.getBoundingClientRect().left - thumbX.value!.offsetWidth / 2;
-
-  // 限制偏移量
-  offset.y = Math.min(Math.max(0, offset.y), barY.value!.offsetHeight - thumbY.value!.offsetHeight)
-  offset.x = Math.min(Math.max(0, offset.x), barX.value!.offsetWidth - thumbX.value!.offsetWidth)
-
-  // 移动内容区域
-  if (flag === 'thumbY') {
-    wrap.value!.scrollTo({
-      top: wrapHeight * offset.y / barHeight,
-      behavior: 'smooth'
-    })
-  }
-  if (flag === 'thumbX') {
-    wrap.value!.scrollTo({
-      left: wrapWidth * offset.x / barWidth,
-      behavior: 'smooth'
-    })
-  }
-}
-
 
 /**
  * 计算滑块大小
@@ -208,8 +201,6 @@ const calcThumbPosition = () => {
 	thumbXStyle.value.left = `${thumbOffsetX}px`;
 }
 
-
-
 // 事件，滑动内容区域
 const headleScroll = () => {
   calcThumbPosition()
@@ -242,22 +233,22 @@ const mutationObserver = new MutationObserver(() => {
 const headleClickThumbY = (e: MouseEvent) => {
   down.y = e.clientY
   origin.y = wrap.value!.scrollTop
+  activeThumb.value = 'thumbY'
   flag = 'thumbY'
-  activeThumb.value = 'Y'
   document.body.addEventListener('mousemove', handleMove)
 }
 const headleClickThumbX = (e: MouseEvent) => {
   down.x = e.clientX
   origin.x = wrap.value!.scrollLeft
+  activeThumb.value = 'thumbX'
   flag = 'thumbX'
-  activeThumb.value = 'X'
   document.body.addEventListener('mousemove', handleMove)
 }
 
 // 事件，鼠标抬起
 const headleMouseup = () => {
-  document.body.removeEventListener('mousemove', handleMove)
   activeThumb.value = 'none'
+  document.body.removeEventListener('mousemove', handleMove)
 }
 
 

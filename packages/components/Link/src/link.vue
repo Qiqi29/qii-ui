@@ -2,14 +2,14 @@
   <a 
     :class="linkClass" 
     :href="href" 
-    @click.prevent="__onClick">
+    @click.prevent="onClick">
 
     <!-- icon 参数为真，显示自定义图标 -->
     <q-icon v-if="icon" :name="icon" size="1em"/>
     <!-- icon 参数为真，但值为空，显示默认图标 -->
     <q-icon v-if="icon === ''" :name="icon" size="1em"><linkIcon/></q-icon>
     
-    <!-- 默认插槽，链接文本 -->
+    <!-- 默认插槽，链接文案 -->
     <slot></slot>
 
   </a>
@@ -38,10 +38,11 @@ const linkClass = computed(() => [
 ])
 
 /**
- * 点击事件，如果链接为空或被禁用，不会跳转
+ * 点击事件
+ * 如果链接为空或被禁用，不会跳转
  * 根据 open 属性，执行指定跳转方式
  */
-const __onClick = () => {
+const onClick = () => {
   if (!props.href || props.disabled) return
 
   if (props.open === 'newTab') window.open(props.href);

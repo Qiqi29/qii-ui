@@ -53,6 +53,13 @@ export const inputProps = {
     default: ''
   },
   /**
+   * @description 是否默认聚焦输入框
+   */
+  autofocus: {
+    type: Boolean,
+    default: false
+  },
+  /**
    * @description 是否显示清除按钮
    */
   clearable: {

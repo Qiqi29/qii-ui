@@ -9,7 +9,7 @@ export default defineComponent({
   props: { ...avatarGroupProps },
   setup(props, { slots }) {
     
-    // 组件命名空间
+    // 组件类名
     const ns = useNS('avatar-group')
     const avatarGroupClass = computed(() => [
       ns.nameSpace,

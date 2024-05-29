@@ -1,4 +1,3 @@
-<!-- 开关组件 -->
 <template>
   <div :class="switchClass">
     <label>
@@ -48,15 +47,13 @@ const props = defineProps({ ...SwitchProps })
 const emits = defineEmits({ ...SwitchEmits })
 
 const ns = useNS('switch')
-const switchClass = computed(() => {
-  return [
-    ns.nameSpace,
-    ns.n(props.size),
-    ns.is(props.modelValue, 'open'),
-    ns.is(props.loading, 'loading'),
-    ns.is(props.disabled || _loadingState.value, 'disabled'),
-  ]
-})
+const switchClass = computed(() => [
+  ns.nameSpace,
+  ns.n(props.size),
+  ns.is(props.modelValue, 'open'),
+  ns.is(props.loading, 'loading'),
+  ns.is(props.disabled || _loadingState.value, 'disabled'),
+])
 
 // 开关背景色，自定义
 const sliderStyle = computed(() => { return {

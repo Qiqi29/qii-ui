@@ -18,7 +18,7 @@
 
 
 ## 原生
-添加 `native` 属性，将会使用原生滚动条。
+添加 `native` 属性，将会使用美化后的原生滚动条。
 <demo src="./src/scrollbar/native.vue"/>
 
 
@@ -35,7 +35,7 @@
 ### Scrollbar 事件
 | 名称 | 说明 | 类型 |
 | --- | --- | --- |
-| scroll | 触发滚动事件的回调函数 | (scrollLeft:number, scrollTop:number) => void |
+| scroll | 滚动时触发 | (scrollLeft:number, scrollTop:number) => scrollLeft && scrollTop |
 
 ### Scrollbar 插槽
 | 名称 | 说明 |

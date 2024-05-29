@@ -1,7 +1,7 @@
 <template>
   <div :class="emptyClass">
 
-    <!-- 具名插槽，图标或图片 -->
+    <!-- icon 插槽，自定义顶部内容 -->
     <div :class="ns.n('icon')">
       <slot name="icon">
         <q-icon name="more" size="3em"><emptyIcon/></q-icon>
@@ -13,7 +13,7 @@
       <span>{{ text }}</span>
     </div>
     
-    <!-- 具名插槽，底部内容 -->
+    <!-- extra 插槽，在底部添加额外内容 -->
     <div :class="ns.n('extra')">
       <slot name="extra"></slot>
     </div>

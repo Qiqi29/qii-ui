@@ -6,10 +6,11 @@
     @click="handleDivClick"
     > 
     
-    <!-- 插槽，输入框前置内容 -->
+    <!-- prepend 插槽，输入框前置内容 -->
     <span v-if="$slots.prepend" class="q-input__prepend">
       <slot name="prepend"></slot>
     </span>
+
     <!-- 左侧图标 -->
     <q-icon v-if="icon" :name="icon" class="q-input__left-icon" size="1.3em" color="#aaa"/>
 
@@ -43,7 +44,8 @@
 
     <!-- 右侧图标 -->
     <q-icon v-if="rightIcon" :name="rightIcon" class="q-input__right-icon" size="1.3em" color="#aaa"/>
-    <!-- 插槽，输入框后置内容 -->
+
+    <!-- append 插槽，输入框后置内容 -->
     <span v-if="$slots.append" class="q-input__append">
       <slot name="append"></slot>
     </span>
@@ -68,11 +70,11 @@ defineOptions({
   inheritAttrs: false
 })
 
-// 使用外部定义的属性
+// 组件属性
 const props = defineProps({ ...inputProps })
 const emits = defineEmits({ ...inputEmits })
 
-// 组件命名空间
+// 组件类名
 const ns = useNS('input')
 const inputClass = computed(() => {
   return [
@@ -81,7 +83,6 @@ const inputClass = computed(() => {
     ns.is(props.disabled, 'disabled'),
   ]
 })
-
 
 // 绑定输入框
 const inputRef = ref<HTMLInputElement | null>(null)
@@ -185,4 +186,11 @@ const handleBlur = (e: FocusEvent) => {
 const handleDivClick = () => {
   inputRef.value?.focus()
 }
+
+// 默认聚焦输入框
+onMounted(() => {
+  if (props.autofocus) {
+    inputRef.value?.focus()
+  }
+})
 </script>

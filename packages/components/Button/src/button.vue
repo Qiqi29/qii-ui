@@ -30,7 +30,7 @@ defineOptions({
   inheritAttrs: false
 })
 
-// 解构属性
+// 组件属性
 const props = defineProps({ ...buttonProps })
 const emits = defineEmits({ ...buttonEmits })
 
