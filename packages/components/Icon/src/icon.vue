@@ -2,7 +2,6 @@
   <span :class="iconClass" >
 
     <i :style="iconStyle">
-      <!-- 默认插槽，放置自定义SVG图标，内容为空显示默认值 -->
       <slot>
         <svg><use :xlink:href="`#icon-${name}`"></use></svg>
       </slot>

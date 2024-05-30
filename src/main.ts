@@ -8,6 +8,7 @@ import 'virtual:svg-icons-register'
 import Qii from '../packages/index'
 import '../packages/styles/index.scss'
 
+
 const app = createApp(App)
 app.use(Qii)
 app.mount('#app')

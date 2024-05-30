@@ -17,14 +17,12 @@
     
     // 是否启用严格类型检查
     "strict": true,
-    // 错误检查: 强制大小写一致性
-    "forceConsistentCasingInFileNames": false,
-    // 错误检查: 未读取局部变量
-    "noUnusedLocals": false,
-    // 错误检查: 未使用的函数参数
-    "noUnusedParameters": true,
-    // 错误检查: 未定义的变量
-    "noFallthroughCasesInSwitch": true,
+    
+    // 错误检查
+    "forceConsistentCasingInFileNames": false,  // 强制大小写一致性
+    "noUnusedLocals": false,                    // 未读取的局部变量
+    "noUnusedParameters": true,                 // 未使用的函数参数
+    "noFallthroughCasesInSwitch": true,         // 未定义的变量
   },
 
   // 打包时需要编译的文件

@@ -12,4 +12,3 @@ export { default as linkIcon } from './src/link.vue';
 export { default as loadingIcon } from './src/loading.vue';
 export { default as successIcon } from './src/success.vue';
 export { default as warningIcon } from './src/warning.vue';
-

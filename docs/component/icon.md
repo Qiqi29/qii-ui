@@ -1,7 +1,7 @@
 # 图标 Icon
 图标组件使用 `symbol` 格式的 SVG 图标，因此你可以很方便的自定义图标。
 
-推荐使用 [MingCute Icon](https://www.mingcute.com/) 图标库。
+Qii-UI 推荐使用 [MingCute Icon](https://www.mingcute.com/) 图标库。
 
 
 ## 插件配置
@@ -33,7 +33,6 @@ import 'virtual:svg-icons-register'
 ```
 
 
-
 ## 使用图标
 
 在 `name` 属性中填入图标文件的名称，即可使用相应图标。
@@ -58,7 +57,6 @@ import 'virtual:svg-icons-register'
 
 
 ## API
-
 ### Icon 属性
 | 属性 | 类型 | 默认值 | 说明 |
 | --- | --- | --- | --- |
