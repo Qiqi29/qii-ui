@@ -43,7 +43,7 @@
     "@ruabick/md-demo-plugins": "^0.3.3",
     "@ruabick/vitepress-demo-block": "^0.3.3",
     "@vitejs/plugin-vue": "^5.0.4",
-    "del": "^7.1.0",
+    "del": "^5.1.0",
     "fast-glob": "^3.3.2",
     "gulp": "^5.0.0",
     "gulp-clean-css": "^4.3.0",
