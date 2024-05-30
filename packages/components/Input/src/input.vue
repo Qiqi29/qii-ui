@@ -31,11 +31,11 @@
     >
 
     <!-- 清除按钮 -->
-    <q-icon v-if="showClear" @click="onClear" class="input-icon icon-clear" size="1.3em"><iconClose /></q-icon>
+    <q-icon v-if="showClear" @click="onClear" class="input-icon icon-clear" size="1.3em"><closeIcon/></q-icon>
     
     <!-- 密码显示隐藏按钮 -->
-    <q-icon v-if="showPasswordBtn && passwordVisible" class="input-icon icon-eye" @click="switchPassword" size="1.3em"><iconEye /></q-icon>
-    <q-icon v-if="showPasswordBtn && !passwordVisible" size="1.3em" class="input-icon icon-eye" @click="switchPassword"><iconEyeClose /></q-icon>
+    <q-icon v-if="showPasswordBtn && passwordVisible" class="input-icon icon-eye" @click="switchPassword" size="1.3em"><eyeIcon/></q-icon>
+    <q-icon v-if="showPasswordBtn && !passwordVisible" size="1.3em" class="input-icon icon-eye" @click="switchPassword"><eyeCloseIcon/></q-icon>
 
     <!-- 字数统计 -->
     <div v-if="maxlength && showWordLimit" class="q-input__word-limit">
@@ -57,11 +57,8 @@
 import { ref, computed, watch, onMounted } from 'vue'
 import { inputProps, inputEmits } from './input'
 import { useNS } from '@qii-ui/hooks'
-
-import QIcon from '../../Icon'
-import iconClose from '../../../styles/icons/close.vue'
-import iconEye from '../../../styles/icons/eye.vue'
-import iconEyeClose from '../../../styles/icons/eye-close.vue'
+import { QIcon } from '../../Icon'
+import { closeIcon, eyeIcon, eyeCloseIcon } from '@qii-ui/icons'
 
 
 // 组件配置

@@ -20,7 +20,7 @@ import { computed } from 'vue'
 import { linkProps } from './link'
 import { useNS } from '@qii-ui/hooks'
 import { QIcon } from '../../Icon'
-import { linkIcon } from '../../../styles/icons'
+import { linkIcon } from '@qii-ui/icons'
 
 defineOptions({ 
   name: 'q-link',

@@ -29,7 +29,7 @@ import { computed, CSSProperties } from 'vue'
 import { tagProps, tagEmits } from './tag'
 import { useNS } from '@qii-ui/hooks'
 import { QIcon } from '../../Icon'
-import { closeIcon, loadingIcon } from '../../../styles/icons/index'
+import { closeIcon, loadingIcon } from '@qii-ui/icons'
 
 
 // 组件配置

@@ -1,0 +1,10 @@
+{
+  "name": "@qii-ui/icons",
+  "description": "组件库内置的一些图标",
+  "private": true,
+  "license": "MIT",
+  "main": "index.ts",
+  "peerDependencies": {
+    "vue": "^3.2.0"
+  }
+}

@@ -26,7 +26,7 @@ import { computed } from 'vue'
 import { useNS } from '@qii-ui/hooks'
 import { emptyProps } from './empty'
 import { QIcon } from '../../Icon'
-import emptyIcon from '../../../styles/icons/emipy.vue'
+import { emptyIcon } from '@qii-ui/icons'
 
 defineOptions({ 
   name: 'q-empty',

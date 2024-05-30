@@ -21,7 +21,7 @@ import { useNS } from '@qii-ui/hooks'
 const slots = useSlots()
 // 引入依赖组件
 import { QIcon } from '../../Icon' 
-import { loadingIcon } from '../../../styles/icons'
+import { loadingIcon } from '@qii-ui/icons'
 
 
 // 组件配置

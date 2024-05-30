@@ -1,19 +1,19 @@
 # 图标 Icon
-我喜欢给各种东西都加上图标。
+图标组件使用 `symbol` 格式的 SVG 图标，因此你可以很方便的自定义图标。
 
-qii-ui 推荐使用 [MingCute Icon](https://www.mingcute.com/) 图标库。
+推荐使用 [MingCute Icon](https://www.mingcute.com/) 图标库。
 
 
-## 组件配置
-图标组件使用 `symbolId` 格式的 SVG 图标，使用前需要安装 SVG 图标注册插件。
+## 插件配置
+1. 安装图标插件，插件会把 SVG 文件自动注册到 HTML 文档中。
 ```bash
 npm i vite-plugin-svg-icons -D
 npm i fast-glob -D
 ```
 
-1. 在 `vite.config.ts` 中配置插件。
+2. 在 `vite.config.ts` 中引入插件并配置目录。
 ```ts
-// 引入插件与路径模块
+// 引入图标插件
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import { resolve } from "path"
 
@@ -27,22 +27,10 @@ export default defineConfig({
 })
 ```
 
-2. 在项目入口文件 `main.ts` 中引入图标注册器。
+3. 在入口文件 `main.ts` 中引入图标注册器。
 ```ts
-// 引入图标注册器
 import 'virtual:svg-icons-register'
 ```
-
-插件配置完成后，文件夹中的 SVG 图标将自动注册到 HTML 文档中。
-```
-·
-├─ src
-│   └─ svg
-│       ├─ star.svg
-│       └─ more.svg
-└─ vite.config.ts
-```
-
 
 
 
@@ -59,7 +47,7 @@ import 'virtual:svg-icons-register'
 
 
 ## 自定义图标
-默认插槽中可以传入 SVG 代码（确保设定了 SVG 的 viewBox 属性）。
+默认插槽中可以传入 SVG 代码（需设置 SVG 的 viewBox 属性）。
 <demo src="./src/icon/svg.vue"/>
 
 

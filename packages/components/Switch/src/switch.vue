@@ -15,7 +15,7 @@
             size="1.02em" 
             :color="iconColor"
             spin >
-            <loadIcon/>
+            <loadingIcon/>
           </q-icon>
         
           <!-- 开启关闭时自定义图标 -->
@@ -35,7 +35,7 @@ import { SwitchProps, SwitchEmits } from './switch'
 import { isFunction } from '@qii-ui/utils'
 import { useNS } from '@qii-ui/hooks'
 import { QIcon } from '../../Icon'
-import loadIcon from '../../../styles/icons/loading.vue'
+import { loadingIcon } from '@qii-ui/icons'
 
 
 defineOptions({ 
