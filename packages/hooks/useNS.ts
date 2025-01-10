@@ -2,12 +2,12 @@
 const defaultNS = 'q'
 
 /**
- * BEM 命名规范
- * 根据参数生成指定结构的类名
+ * 生成指定结构的类名
+ * @param name - 组件名称
  */
 export const useNS = function (name: string) {
   /**
-   * 返回组件命名空间
+   * 组件命名空间
    */
   const nameSpace = `${defaultNS}-${name}`
 

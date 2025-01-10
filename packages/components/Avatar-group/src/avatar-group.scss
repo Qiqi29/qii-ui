@@ -1,16 +1,18 @@
 .q-avatar-group {
   display: inline-flex;
+  
   > .q-avatar {
-    border: 2px solid var(--q-color-light);
+    margin-left: -10px;
+    border: 3px solid var(--q-color-light);
   }
 }
 
-// 不同大小的间距
-@mixin leftSize($size) {
+// 不同大小的位移距离
+@mixin marginSize($size) {
   > .q-avatar:not(:first-child) {
     margin-left: $size;
   }
 }
-.q-avatar-group__small { @include leftSize(-8px) }
-.q-avatar-group__medium { @include leftSize(-10px) }
-.q-avatar-group__large { @include leftSize(-12px) }
+.q-avatar-group__small { @include marginSize(-8px) }
+.q-avatar-group__medium { @include marginSize(-10px) }
+.q-avatar-group__large { @include marginSize(-14px) }

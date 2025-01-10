@@ -1,11 +1,10 @@
 ---
-# 网站首页配置
+# 首页标题
+# title: 一个 Vue3 组件库
 
-# 页面标题，显示在标签页上
-title: 一个 Vue3 组件库
-
-# 页面布局
+# 首页布局
 layout: home
+
 hero:
   name: Qii-UI
   text: 一个 Vue3 组件库
@@ -18,17 +17,17 @@ hero:
       text: 开始使用
       link: /guide/install
     - theme: alt
-      text: 组件文档
+      text: 阅读组件文档
       link: /component/button
 
 features:
-  - icon: 😎
+  - icon: ⬆️
     title: TypeScript
     details: 使用TS开发，类型安全。
   - icon: 🚀
     title: 小，更小
     details: 支持按需引入，减少代码体积。
-  - icon: 👔
+  - icon: 🌈
     title: 外观
     details: 简洁、现代化的设计，各种场景都能胜任。
 ---

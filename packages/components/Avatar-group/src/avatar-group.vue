@@ -31,16 +31,17 @@ export default defineComponent({
       // 判断是否添加显示超出数量的组件
       if (children.length > props.max) {
         avatarNodes.push(
-          h(QAvatar, {style: {paddingLeft: '3px'}}, () => `+${children.length - props.max}`)
+          h(QAvatar, {}, () => `+${children.length - props.max}`)
         )
       }
       // 遍历新节点数组，给每个节点添加倒序的z-index
-      avatarNodes.forEach((node, index) => {
-        node.props!.style = {
-          zIndex: children.length - index,
-          ...node.props!.style,
-        }
-      })
+      // avatarNodes.forEach((node, index) => {
+      //   node.props!.style = {
+      //     zIndex: children.length - index,
+      //     ...node.props!.style,
+      //   }
+      // })
+      
       // 渲染组件
       return h('div', {class: avatarGroupClass.value}, avatarNodes)
     }

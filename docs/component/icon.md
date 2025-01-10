@@ -1,11 +1,11 @@
 # 图标 Icon
-图标组件使用 `symbol` 格式的 SVG 图标，因此你可以很方便的自定义图标。
+图标组件使用 `symbol` 格式的 SVG 图标，因此你可以很方便的使用自己的图标。
 
 Qii-UI 推荐使用 [MingCute Icon](https://www.mingcute.com/) 图标库。
 
 
 ## 插件配置
-1. 安装图标插件，插件会把 SVG 文件自动注册到 HTML 文档中。
+1. 安装插件，插件会把 SVG 图标自动注册到 HTML 文档中。
 ```bash
 npm i vite-plugin-svg-icons -D
 npm i fast-glob -D
@@ -32,29 +32,21 @@ export default defineConfig({
 import 'virtual:svg-icons-register'
 ```
 
-
-## 使用图标
-
+## 使用
 在 `name` 属性中填入图标文件的名称，即可使用相应图标。
-
-<demo src="./src/icon/use.vue"/>
-
+<demo src="./demo/icon/basic.vue"/>
 
 ## 颜色与大小
-通过 `color` 和 `size` 属性可以设置图标的颜色和大小。
-<demo src="./src/icon/color.vue"/>
-
+使用 `color` 和 `size` 属性设置图标的颜色和大小。
+<demo src="./demo/icon/color.vue"/>
 
 ## 自定义图标
 默认插槽中可以传入 SVG 代码（需设置 SVG 的 viewBox 属性）。
-<demo src="./src/icon/svg.vue"/>
-
+<demo src="./demo/icon/svg.vue"/>
 
 ## 旋转状态
 添加 `spin` 属性，可以将图标设置为旋转状态。或者使用 `rotate` 属性自定义旋转角度。
-<demo src="./src/icon/spin.vue"/>
-
-
+<demo src="./demo/icon/spin.vue"/>
 
 ## API
 ### Icon 属性
@@ -64,7 +56,7 @@ import 'virtual:svg-icons-register'
 | color | `string` | 继承颜色 | 图标颜色 |
 | size | `string` | 继承字体大小 | 图标大小 |
 | spin | `boolean` | false | 图标是否为旋转状态 |
-| rotate | `number` | 0 | 图标的旋转角度 |
+| rotate | `number` | 0 | 自定义图标的旋转角度 |
 
 ### Icon 插槽
 | 名称 | 说明 |

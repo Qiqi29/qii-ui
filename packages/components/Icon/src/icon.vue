@@ -1,18 +1,19 @@
 <template>
-  <span :class="iconClass" >
-
+  <span :class="iconClass">
+    
     <i :style="iconStyle">
       <slot>
         <svg><use :xlink:href="`#icon-${name}`"></use></svg>
       </slot>
     </i>
-    
+
   </span>
 </template>
 
 <script lang="ts" setup>
 import { computed, CSSProperties } from 'vue'
 import { iconProps } from './icon'
+// 这个报错不用管
 import { useNS } from '@qii-ui/hooks'
 
 // 组件配置
@@ -32,9 +33,9 @@ const iconClass = computed(() => [
 ])
 
 // 组件样式
-const iconStyle = computed<CSSProperties>(() => { return {
+const iconStyle = computed<CSSProperties>(() =>  ({
   color: props.color,
   fontSize: props.size,
-  transform: `rotate(${props.rotate}deg)`,
-}})
+  transform: props.rotate ? `rotate(${props.rotate}deg)` : undefined,
+}))
 </script>

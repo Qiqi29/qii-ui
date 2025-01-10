@@ -1,10 +1,10 @@
 {
-  "name": "@qii-ui/utils",
-  "description": "封装一些常用的工具函数",
-  "private": true,
-  "license": "MIT",
-  "main": "index.ts",
-  "peerDependencies": {
-    "vue": "^3.2.0"
-  }
+    "name": "@qii-ui/utils",
+    "description": "一些常用的工具函数，通过 @qii-ui/utils 就可以导入使用",
+    "private": true,
+    "main": "index.ts",
+    "peerDependencies": {
+        "vue": "^3.2.0"
+    },
+    "license": "MIT"
 }

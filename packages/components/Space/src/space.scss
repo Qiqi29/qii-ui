@@ -3,10 +3,8 @@
   vertical-align: middle;
   flex-wrap: wrap;
   width: 100%;
-  > .q-space__item {
-    display: flex;
-  }
 }
+
 
 // 预设间距
 .q-space__small {
@@ -20,7 +18,13 @@
 }
 
 
-// 宽度占满父元素样式
-.q-space.is-fill > .q-space__item {
-  width: 100%;
+// 布局子项，宽度不占满父元素
+.q-space__item {
+  display: flex;
 }
+
+
+// 宽度占满父元素样式
+// .q-space.is-fill > .q-space__item {
+//   width: 100%;
+// }

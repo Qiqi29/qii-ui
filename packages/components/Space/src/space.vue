@@ -13,7 +13,7 @@ export default defineComponent({
     const classList = computed(() => [  
       ns.nameSpace,
       ns.t(props.size, 'string'),
-      ns.is(props.fill, 'fill'),
+      // ns.is(props.fill, 'fill'),
       ns.is(props.vertical, 'vertical'),
     ])
 
@@ -29,9 +29,8 @@ export default defineComponent({
       // 获取默认插槽中的内容
       const children = useFilterNodes(slots.default?.())
 
-      // 渲染 space 子节点
+      // 遍历子节点，使用 h 包裹渲染
       const renderChildren = () => {
-        // 遍历子节点，使用 h 函数渲染
         return children?.map((child) => { return h(
           'div', { class: `q-space__item` }, child
         )})

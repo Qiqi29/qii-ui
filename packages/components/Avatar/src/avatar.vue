@@ -8,12 +8,12 @@
     
     <!-- 头像图片 -->
     <img v-if="src && !$slots.default" :src="src" alt="">
-
+  
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref, computed, onMounted, onUpdated, inject } from 'vue'
+import { ref, computed, onMounted, onUpdated, inject, CSSProperties } from 'vue'
 import { avatarProps } from './avatar'
 import { useNS } from '@qii-ui/hooks'
 
@@ -42,25 +42,23 @@ const avatarClass = computed(() => [
 ])
 
 // 组件样式
-const avatarStyle = computed(() => { return {
-  '--q-avatar-size': typeof avatarSize.value === 'number' ? `${avatarSize.value}px` : '',
-}})
+const avatarStyle = computed<CSSProperties>(() => ({
+  width: avatarSize.value + 'px',
+  height: avatarSize.value + 'px',
+}))
 
 /**
  * 插槽内容自适应头像大小
- * 使用 ref 绑定节点，获取头像与文本的dom宽度，计算相应的缩放比例
+ * 使用 ref 绑定节点，获取头像与插槽的dom宽度，计算相应的缩放比例
  */
-const avatarRef = ref()
-const slotRef = ref()
+const avatarRef = ref<HTMLElement>()
+const slotRef = ref<HTMLElement>()
 const autoSize = () => {
-  const slotWidth = slotRef.value.clientWidth;
-  const avatarWidth = avatarRef.value.clientWidth;
-  const scale = avatarWidth / (slotWidth + 12);  
-  slotRef.value.style.transform = `scale(${scale > 1.3 ? 1.3 : scale})`;
+  const scale = avatarRef.value!.clientWidth / (slotRef.value!.clientWidth + 12);  
+  slotRef.value!.style.transform = `scale(${scale > 1.3 ? 1.3 : scale})`;
 }
 
 // 监听组件内容更新，重新计算
 onMounted(() => autoSize())
 onUpdated(() => autoSize())
-
 </script>

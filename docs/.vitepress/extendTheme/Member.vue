@@ -1,4 +1,3 @@
-<!-- 贡献者成员块 -->
 <script setup lang="ts">
 
 interface IMember {
@@ -34,6 +33,7 @@ const members: IMember[] = [
   flex-wrap: wrap;
 }
 .q-mumber-item {
+  margin-right: 24px;
   display: flex;
   align-items: center;
   text-decoration: none;

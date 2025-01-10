@@ -1,5 +1,5 @@
 /**
- * 导出所有图标文件
+ * 导出所有图标
  */
 
 export { default as closeIcon } from './src/close.vue';

@@ -6,7 +6,6 @@ export const avatarProps = {
    */
   src: {
     type: String,
-    default: ''
   },
   /**
    * @description 头像大小

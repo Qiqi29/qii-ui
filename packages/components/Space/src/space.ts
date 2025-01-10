@@ -9,7 +9,7 @@ export const SpaceProps = {
    default: "medium",
   },
   /**
-   * @description 是否为垂直方向
+   * @description 是否为垂直排列
    */
   vertical: {
     type: Boolean,
@@ -32,8 +32,8 @@ export const SpaceProps = {
   /**
    * @description 宽度是否占满父元素
    */
-  fill: {
-    type: Boolean,
-    default: false,
-  },
+  // fill: {
+  //   type: Boolean,
+  //   default: false,
+  // },
 } as const;

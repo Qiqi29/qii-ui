@@ -1,29 +1,32 @@
 import { defineConfig } from 'vitepress'
 
-// 插件，注册SVG图标
+// 引入插件，注册SVG图标
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import { resolve } from "path"
 
-// 插件，markdown解析
+// 插件，代码演示 markdown解析
 import { applyPlugins } from '@ruabick/md-demo-plugins'
 
-
-// 文档配置
+// VitePress 配置
 export default defineConfig({
-  lang: "zh-CN",
+
+  // 网站标题、描述、语言
   title: "Qii-UI",
   description: "qii-ui 组件库文档",
-  lastUpdated: true,
+  lang: "zh",
 
-  // 配置网站根目录
+  // 网站根目录，url中的路径
   base: '/qii-ui-doc/',
 
-  // 网站头部配置
+  // 网站头部配置，head标签中的内容
   head: [
     ['link', { rel: 'icon', href: '/qii-ui-doc/favicon.svg' }]
   ],
 
-  // 配置 Vite 插件
+  // 启用最后更新时间
+  lastUpdated: true,
+
+  // Vite 配置
   vite: {
     plugins: [
       createSvgIconsPlugin({
@@ -33,27 +36,29 @@ export default defineConfig({
     ],
     server: {
       host: '0.0.0.0',
-      port: 5177,
+      port: 5777,
     }
   },
 
-  // 主题配置
   themeConfig: {
+    // 首页logo
     logo: '/logo.svg',
+
+    // 顶栏配置
     nav: [
       { text: '首页', link: '/' },
       { text: '指南', link: '/guide/install', activeMatch: '/guide/' },
       { text: '组件', link: '/component/button', activeMatch: '/component/' },
       {
-        text: '0.0.4-beta',
+        text: '0.0.5-beta',
         items: [
-          { text: '更新日志', link: 'https://github.com/Qiqi29/qii-ui' },
-          { text: '参与贡献', link: 'https://github.com/Qiqi29/qii-ui' }
+          { text: '更新日志', link: '/11' },
+          { text: '参与贡献', link: '/22' }
         ]
       }
     ],
 
-    // 侧边栏
+    // 侧边栏配置
     sidebar: {
       '/guide/': [
         {
@@ -68,7 +73,6 @@ export default defineConfig({
             { text: '快速上手', link: '/guide/install' },
             { text: '深色主题', link: '/guide/theme' },
             { text: '内置过渡动画', link: '/guide/transition' },
-            { text: '内置指令', link: '/guide/directive' },
           ],
         }
       ],
@@ -78,25 +82,12 @@ export default defineConfig({
           items: [
             { text: '按钮 Button', link: '/component/button' },
             { text: '图标 Icon', link: '/component/icon' },
-            { text: '链接 Link', link: '/component/link' },
-            { text: '滚动条 Scrollbar', link: '/component/scrollbar' },
           ]
         },
         {
           text: '数据展示组件',
           items: [
             { text: '头像 Avatar', link: '/component/avatar' },
-            { text: '徽标 Badge', link: '/component/badge' },
-            { text: '无内容 Empty', link: '/component/empty' },
-            { text: '标签 Tag', link: '/component/tag' },
-          ]
-        },
-        {
-          text: '表单组件',
-          items: [
-            { text: '输入框 Input', link: '/component/input' },
-            { text: '开关 Switch', link: '/component/switch' },
-            { text: '单选框 Radio', link: '/component/radio' },
           ]
         },
         {
@@ -105,26 +96,46 @@ export default defineConfig({
             { text: '间距 Space', link: '/component/space' },
           ]
         },
-        {
-          text: '反馈组件',
-          items: [
-            { text: '消息 Message（开发中）', link: '/component/message' },
-          ]
-        },
       ],
     },
 
-    // 搜索
+    // 顶栏搜索框
     search: {
       provider: 'local',
+      options: {
+        locales: {
+          root: {
+            translations: {
+              button: {
+                buttonText: '搜索文档',
+                buttonAriaLabel: '搜索'
+              },
+              modal: {
+                noResultsText: '无法找到相关结果',
+                resetButtonTitle: '清除查询条件',
+                footer: {
+                  selectText: '选择',
+                  navigateText: '切换',
+                  closeText: '关闭'
+                }
+              }
+            }
+          }
+        }
+      }
     },
 
-    // 社交链接
+    // 顶栏右侧社交链接
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/Qiqi29/qii-ui' }
+      { icon: 'github', link: '' }
     ],
 
-    // 文档大纲
+    // 中文化
+    darkModeSwitchLabel: '切换主题',
+    sidebarMenuLabel: '菜单',
+    returnToTopLabel: '回到顶部',
+
+    // 文档大纲右侧标题
     outline: {
       label: '本页内容',
       level: [2, 3]
@@ -136,7 +147,7 @@ export default defineConfig({
       next: '下一页'
     },
 
-    // 最后更新时间
+    // 文章底部最后更新时间
     lastUpdated: {
       text: '最后更新于',
       formatOptions: {
@@ -145,13 +156,13 @@ export default defineConfig({
       }
     },
 
-    // 主页页脚
+    // 首页页脚内容
     footer: {
       message: '根据 MIT 许可证发布',
-      copyright: '版权所有 © 2024-至今 Qii UI'
+      copyright: '版权所有 © 2024-至今 Qii-UI'
     }
   },
-
+  
   // markdown 配置
   markdown: {
     config: (md) => {

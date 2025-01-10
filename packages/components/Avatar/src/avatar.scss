@@ -1,21 +1,22 @@
 .q-avatar {
   box-sizing: border-box;
+  user-select: none;
+  overflow: hidden;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
   vertical-align: bottom;
   flex-shrink: 0;
 
-  width: var(--q-avatar-size);
-  height: var(--q-avatar-size);
-  background: var(--q-color-default-fill);
+  width: 36px;
+  height: 36px;
+  background: var(--q-color-avatar-default);
   border-radius: 6px;
-  
+
   color: #FFF;
   font-size: 14px;
   line-height: 1.2;
-  user-select: none;
-  overflow: hidden;
 
   > img {
     width: 100%;
@@ -44,13 +45,13 @@
 }
 
 
-// 圆形的形状
+// 形状：圆形
 .q-avatar__round {
   border-radius: 50%;
 }
 
 
-// 头像插槽中的内容
+// 默认插槽中的内容
 .q-avatar__slot {
   display: flex;
   text-wrap: nowrap;

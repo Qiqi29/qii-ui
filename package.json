@@ -1,62 +1,61 @@
 {
-  "name": "qii-ui",
-  "description": "一个 Vue3 组件库",
-  "version": "0.0.4-beta",
-  "keywords": [
-    "qii-ui",
-    "qii",
-    "vue",
-    "ui"
-  ],
-  "author": {
-    "name": "qiqi29",
-    "email": "sgq457@qq.com"
-  },
-  "files": [
-    "dist",
-    "es",
-    "lib"
-  ],
-  "type": "module",
-  "main": "lib/index.js",
-  "module": "es/index.mjs",
-  "types": "es/index.d.ts",
-  "scripts": {
-    "dev": "vite",
-    "build": "npx gulp clean && vue-tsc && vite build && npx gulp sass",
-    "preview": "vite preview",
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
-  },
-  "workspaces": [
-    "packages/*",
-    "docs"
-  ],
-  "dependencies": {
-    "vue": "^3.4.21"
-  },
-  "devDependencies": {
-    "@qii-ui/hooks": "workspace:*",
-    "@qii-ui/icons": "workspace:*",
-    "@qii-ui/utils": "workspace:*",
-    "@ruabick/md-demo-plugins": "^0.3.3",
-    "@ruabick/vitepress-demo-block": "^0.3.3",
-    "@vitejs/plugin-vue": "^5.0.4",
-    "del": "^5.1.0",
-    "fast-glob": "^3.3.2",
-    "gulp": "^5.0.0",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-if": "^3.0.0",
-    "gulp-rename": "^2.0.0",
-    "gulp-sass": "^5.1.0",
-    "sass": "^1.76.0",
-    "typescript": "^5.2.2",
-    "vite": "^5.2.0",
-    "vite-plugin-dts": "^3.9.0",
-    "vite-plugin-svg-icons": "^2.0.1",
-    "vitepress": "^1.1.4",
-    "vue-tsc": "^2.0.6"
-  },
-  "license": "MIT"
+    "name": "qii-ui",
+    "description": "一个 Vue3 组件库",
+    "version": "0.0.5-beta",
+    "keywords": [
+        "qii-ui",
+        "qii",
+        "vue",
+        "ui"
+    ],
+    "author": {
+        "name": "qiqi29",
+        "email": "sgq457@qq.com"
+    },
+    "files": [
+        "dist",
+        "es",
+        "lib"
+    ],
+    "type": "module",
+    "main": "lib/index.js",
+    "module": "es/index.mjs",
+    "types": "es/index.d.ts",
+    "scripts": {
+        "dev": "vite",
+        "build": "npx gulp clean && vue-tsc && vite build && npx gulp sass",
+        "preview": "vite preview",
+        "docs:dev": "vitepress dev docs",
+        "docs:build": "vitepress build docs",
+        "docs:preview": "vitepress preview docs"
+    },
+    "workspaces": [
+        "packages/*",
+        "docs"
+    ],
+    "dependencies": {
+        "vue": "^3.4.21"
+    },
+    "devDependencies": {
+        "@qii-ui/hooks": "workspace:*",
+        "@qii-ui/icons": "workspace:*",
+        "@qii-ui/utils": "workspace:*",
+        "@ruabick/md-demo-plugins": "^0.3.3",
+        "@ruabick/vitepress-demo-block": "^0.3.3",
+        "@vitejs/plugin-vue": "^5.0.4",
+        "del": "^5.1.0",
+        "fast-glob": "^3.3.2",
+        "gulp": "^5.0.0",
+        "gulp-clean-css": "^4.3.0",
+        "gulp-if": "^3.0.0",
+        "gulp-rename": "^2.0.0",
+        "gulp-sass": "^5.1.0",
+        "sass": "^1.77.4",
+        "typescript": "^5.2.2",
+        "vite": "^5.2.0",
+        "vite-plugin-dts": "^3.9.1",
+        "vite-plugin-svg-icons": "^2.0.1",
+        "vitepress": "^1.2.2",
+        "vue-tsc": "^2.0.6"
+    }
 }

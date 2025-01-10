@@ -6,7 +6,6 @@ export const iconProps = {
    */
   name: {
     type: String as PropType<string>,
-    default: "",
   },
   /**
    * @description 图标大小
@@ -30,10 +29,9 @@ export const iconProps = {
     default: false,
   },
   /**
-   * @description 图标的旋转角度
+   * @description 自定义图标的旋转角度
    */
   rotate: {
     type: Number as PropType<number>,
-    default: 0,
   },
-} as const
+} as const;
