@@ -2,7 +2,6 @@
 
 </script>
 
-<!-- 这里主要用来测试插件 -->
 <template>
     <div>
         <q-icon name="emoji" />

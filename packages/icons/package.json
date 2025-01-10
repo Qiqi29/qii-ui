@@ -1,6 +1,6 @@
 {
   "name": "@qii-ui/icons",
-  "description": "Qii-UI 组件库内置的一些图标",
+  "description": "Qii-UI 组件库内置的一些图标（测试中）",
   "private": false,
   "main": "index.ts",
   "peerDependencies": {

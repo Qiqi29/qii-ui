@@ -2,20 +2,21 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
 // 引入插件
-import { resolve } from "path"                                // 路径处理
-import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'  // SVG 图标注册
-import dts from "vite-plugin-dts"                             // TS 类型文件生成
+import { resolve } from "path"
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+import dts from "vite-plugin-dts"
+
 
 // Vite 配置
 export default defineConfig({
     plugins: [
         vue(),
-        // 图标注册插件
+        // SVG 图标注册插件
         createSvgIconsPlugin({
-            iconDirs: [resolve(__dirname, 'src/svg')], // 存放图标的目录
-            symbolId: 'icon-[dir]-[name]'              // symbolId 的格式
+            iconDirs: [resolve(__dirname, 'src/svg')],
+            symbolId: 'icon-[dir]-[name]'
         }),
-        // TS类型文件
+        // TS 类型文件生成插件
         dts({
             outDir: ['es', "lib"],
             tsconfigPath: resolve(__dirname, "tsconfig.json"),

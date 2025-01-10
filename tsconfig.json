@@ -9,6 +9,7 @@
             "DOM.Iterable"
         ],
         "skipLibCheck": true,
+
         // 模块解析模式
         "moduleResolution": "Node",
         "allowImportingTsExtensions": true,
@@ -16,14 +17,17 @@
         "isolatedModules": true,
         "noEmit": true,
         "jsx": "preserve",
+        
         // 启用严格类型检查
         "strict": true,
+        
         // 错误检查
         "forceConsistentCasingInFileNames": false,  // 强制大小写一致性
         "noUnusedLocals": false,                    // 未读取的局部变量
         "noUnusedParameters": true,                 // 未使用的函数参数
         "noFallthroughCasesInSwitch": true,         // 未定义的变量
     },
+
     // 打包时需要编译的文件
     "include": [
         "packages/**/*.ts",
@@ -32,6 +36,7 @@
         "packages/**/*.vue",
         "index.ts"
     ],
+    
     "references": [
         {
             "path": "./tsconfig.node.json"

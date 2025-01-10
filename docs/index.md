@@ -1,10 +1,11 @@
 ---
-# 首页标题
-# title: 一个 Vue3 组件库
+# 标签页上显示的标题
+title: 一个 Vue3 组件库
 
-# 首页布局
+# 布局样式
 layout: home
 
+# 首页内容配置
 hero:
   name: Qii-UI
   text: 一个 Vue3 组件库
@@ -20,6 +21,7 @@ hero:
       text: 阅读组件文档
       link: /component/button
 
+# 卡片列表
 features:
   - icon: ⬆️
     title: TypeScript

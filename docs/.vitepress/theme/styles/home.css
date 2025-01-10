@@ -1,22 +1,22 @@
 /* 首页样式 */
 .VPHome {
-  margin-top: 35px;
+    margin-top: 35px;
 }
 .VPHero .container .name .clip {
-  margin-left: -3px;
-  font-size: 1.2em;
-  font-weight: 500;
+    margin-left: -3px;
+    font-size: 1.2em;
+    font-weight: 500;
 }
 .VPHero .container .text {
-  font-weight: 500;
+    font-weight: 500;
 }
 
 
 /* 首页底部卡片 */
 .VPHomeFeatures .VPFeature {
-  border-radius: 16px;
+    border-radius: 16px;
 }
 .VPHomeFeatures .VPFeature .title {
-  font-size: 20px;
-  line-height: 30px;
+    font-size: 20px;
+    line-height: 30px;
 }
