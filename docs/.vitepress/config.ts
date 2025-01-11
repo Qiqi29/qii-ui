@@ -39,15 +39,15 @@ export default defineConfig({
     },
 
     themeConfig: {
-        // 首页显示的 Logo
+        // 顶栏左侧LOGO
         logo: '/logo.svg',
 
         nav: [
             { text: '首页', link: '/' },
-            { text: '指南', link: '/guide/install', activeMatch: '/guide/' },
+            { text: '指北', link: '/guide/install', activeMatch: '/guide/' },
             { text: '组件', link: '/component/button', activeMatch: '/component/' },
             {
-                text: '0.0.5-beta',
+                text: '0.0.6-beta',
                 items: [
                     { text: '更新日志', link: '/11' },
                     { text: '参与贡献', link: '/22' }

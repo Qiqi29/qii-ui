@@ -18,7 +18,7 @@ import {
   vShow,
   withCtx,
   withDirectives
-} from "./chunk-RY5ODQAQ.js";
+} from "./chunk-LW4I4DCF.js";
 
 // node_modules/@ruabick/vitepress-demo-block/dist/vitepress-demo-block.js
 var w = (e, o) => {

@@ -1,8 +1,8 @@
 # 间距 Space
 紧挨在一起可不好。
 
-::: info 兼容性💡
-Space 组件使用 [gap](https://developer.mozilla.org/zh-CN/docs/Web/CSS/gap) 属性实现间距控制，对一些老版本浏览器存在兼容性问题。
+::: info 兼容性
+Space 组件使用 [gap](https://developer.mozilla.org/zh-CN/docs/Web/CSS/gap) 属性实现间距控制，对一些老版本浏览器可能存在兼容性问题。
 :::
 
 ## 基本用法
