@@ -28,5 +28,5 @@ dist-ssr
 *.sln
 *.sw?
 
-# VP 缓存
-.vitepress/cache/
+# VitePress 缓存
+/docs/.vitepress/cache/

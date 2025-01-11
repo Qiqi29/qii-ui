@@ -8,7 +8,7 @@ interface IMember {
 
 const members: IMember[] = [
     {
-        name: 'qiqi29',
+        name: 'Qiqi29',
         avatar: 'https://avatars.githubusercontent.com/u/112358908?s=400&u=f62082a523eb174c35c9dadf2cc505b30aed46a9&v=4',
         link: 'https://github.com/Qiqi29',
     },
