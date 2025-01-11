@@ -2,6 +2,7 @@
  * 组件库入口
  * 注册并导出每个组件，提供按需引入和完整引入
  */
+
 import { App } from 'vue'
 
 // 引入所有组件
@@ -27,17 +28,12 @@ const components = [
 ]
 
 /**
- * install 方法
- * 遍历组件列表，注册为 Vue 组件
+ * 遍历组件列表，注册为 Vue 组件，
+ * 可以通过 app.use(QiiUI) 完整安装组件库
  */
 const install = (app: App) => {
     components.forEach(component => {
         app.component(component.name as string, component)
     })
 }
-
-/**
- * 导出 install 方法
- * 可以通过 app.use(QiiUI) 完整安装组件库
- */
 export default install
