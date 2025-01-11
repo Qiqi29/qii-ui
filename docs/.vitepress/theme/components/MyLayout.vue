@@ -6,23 +6,20 @@ const { isDark } = useData()
 
 
 // 兼容性检查，部分浏览器不支持新的过渡API
-const enableTransitions = () =>
-    'startViewTransition' in document &&
-    window.matchMedia('(prefers-reduced-motion: no-preference)').matches
+const enableTransitions = () => 'startViewTransition' in document && window.matchMedia('(prefers-reduced-motion: no-preference)').matches
 
 // 发送事件，触发过渡
 provide('toggle-appearance', async () => {
-    // 如果不支持API，直接切换主题
-    if (!enableTransitions()) isDark.value = !isDark.value;
+    if (!enableTransitions()) isDark.value = !isDark.value
 
-    // 定义过渡元素的关键帧
+    // 过渡的关键帧
     const clipPath = [
-        `polygon(-6% 0%, 100% 0%, 100% 100%, 0% 100%)`,
-        `polygon(106% 0%, 100% 0%, 100% 100%, 100% 100%)`,
+        `polygon(-14% 0%, 100% 0%, 100% 100%, 0% 100%)`,
+        `polygon(114% 0%, 100% 0%, 100% 100%, 100% 100%)`,
     ]
 
-    // 等待过渡元素准备完毕再执行过渡（忽略这个报错）
-    await document.startViewTransition(async () => {
+    // 等待过渡元素准备完毕再执行过渡
+    await (document as any).startViewTransition(async () => {
         isDark.value = !isDark.value
         await nextTick()
     }).ready

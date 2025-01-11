@@ -1,28 +1,25 @@
 .q-space {
-  display: inline-flex;
-  vertical-align: middle;
-  flex-wrap: wrap;
-  width: 100%;
+    display: inline-flex;
+    vertical-align: middle;
+    flex-wrap: wrap;
+    width: 100%;
 }
-
 
 // 预设间距
 .q-space__small {
-  gap: 6px;
+    gap: 6px;
 }
 .q-space__medium {
-  gap: 12px;
+    gap: 12px;
 }
 .q-space__large {
-  gap: 24px;
+    gap: 24px;
 }
-
 
 // 布局子项，宽度不占满父元素
 .q-space__item {
-  display: flex;
+    display: flex;
 }
-
 
 // 宽度占满父元素样式
 // .q-space.is-fill > .q-space__item {

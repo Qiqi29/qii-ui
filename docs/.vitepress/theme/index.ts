@@ -1,4 +1,3 @@
-import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 
@@ -20,14 +19,10 @@ import DemoBlock from '@ruabick/vitepress-demo-block'
 import '@ruabick/vitepress-demo-block/dist/style.css'
 
 
-// VitePress 网站布局配置
+// VitePress 主题和布局配置
 export default {
     extends: DefaultTheme,
-    Layout() {
-        return h(MyLayout, null, {
-            // 'home-hero-image': () => h('div', { class: 'image-src' }, h()),
-        })
-    },
+    Layout: MyLayout,
     enhanceApp({ app, router, siteData }) {
         app.use(QiiUI)
         app.component('member', Member)
