@@ -1,10 +1,10 @@
 {
-  "name": "@qii-ui/hooks",
-  "description": "封装与vue相关的，可复用的代码",
-  "private": true,
-  "main": "index.ts",
-  "peerDependencies": {
-    "vue": "^3.2.0"
-  },
-  "license": "MIT"
+    "name": "@qii-ui/hooks",
+    "description": "封装与vue相关的可复用的代码",
+    "private": true,
+    "main": "index.ts",
+    "peerDependencies": {
+        "vue": "^3.2.0"
+    },
+    "license": "MIT"
 }
