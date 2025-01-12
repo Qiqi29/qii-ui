@@ -4,7 +4,7 @@
     </a>
 </p>
 
-<p style="font-size: 30px; font-weight: bold; text-align: center">Qii-UI</p>
+<h1 align="center">Qii-UI</h1>
 
 
 一个轻量级、现代化，使用 TypeScript 编写的 Vue3 组件库。
