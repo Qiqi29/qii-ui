@@ -1,6 +1,6 @@
 <p align="center">
     <a href="https://qiqi29.github.io/qii-ui-doc/" target="_blank" rel="noopener noreferrer">
-        <img width="160" src="https://qiqi29.github.io/qii-ui-doc/favicon.svg" alt="logo">
+        <img width="150" src="https://qiqi29.github.io/qii-ui-doc/favicon.svg" alt="logo">
     </a>
 </p>
 
@@ -11,7 +11,6 @@
 
 - ⬆️ 支持按需引入
 - ✨ 现代化设计
-- 🌤️ 轻量级架构
 - 🌈 支持自定义
 
 

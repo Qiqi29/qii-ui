@@ -12,13 +12,14 @@
 
         // 模块解析模式
         "moduleResolution": "Node",
+
         "allowImportingTsExtensions": true,
         "resolveJsonModule": true,
         "isolatedModules": true,
         "noEmit": true,
         "jsx": "preserve",
         
-        // 启用严格类型检查
+        // 严格类型检查
         "strict": true,
         
         // 错误检查
@@ -38,8 +39,6 @@
     ],
     
     "references": [
-        {
-            "path": "./tsconfig.node.json"
-        }
+        { "path": "./tsconfig.node.json" }
     ]
 }
