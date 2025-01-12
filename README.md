@@ -1,10 +1,11 @@
 <p align="center">
     <a href="https://qiqi29.github.io/qii-ui-doc/" target="_blank" rel="noopener noreferrer">
-        <img width="200" src="https://qiqi29.github.io/qii-ui-doc/logo.svg" alt="logo">
+        <img width="160" src="https://qiqi29.github.io/qii-ui-doc/favicon.svg" alt="logo">
     </a>
 </p>
 
-<h1 align="center">Qii-UI</h1>
+<p style="font-size: 30px; font-weight: bold; text-align: center">Qii-UI</p>
+
 
 一个轻量级、现代化，使用 TypeScript 编写的 Vue3 组件库。
 
@@ -27,11 +28,3 @@ npm i qii-ui
 
 ### 许可证
 根据 [MIT](LICENSE) 许可证发布。
-
-
-### 源码结构
-```
-.
-├─ docs 文档网站
-└─ packages 组件库源码
-```

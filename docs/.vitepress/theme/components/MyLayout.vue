@@ -4,6 +4,8 @@ import { useData } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 const { isDark } = useData()
 
+import QiiUiLogo from './QiiUiLogo.vue'
+
 
 // 兼容性检查，部分浏览器不支持新的过渡API
 const enableTransitions = () => 'startViewTransition' in document && window.matchMedia('(prefers-reduced-motion: no-preference)').matches
@@ -37,7 +39,11 @@ provide('toggle-appearance', async () => {
 </script>
 
 <template>
-    <DefaultTheme.Layout />
+    <DefaultTheme.Layout>
+        <template #home-hero-image>
+            <QiiUiLogo />
+        </template>
+    </DefaultTheme.Layout>
 </template>
 
 <style>
