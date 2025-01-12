@@ -1,9 +1,9 @@
 import { defineConfig } from 'vitepress'
 
 // 引入插件
-import { resolve } from "path"                                // 路径解析
-import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'  // 注册 SVG 图标
-import { applyPlugins } from '@ruabick/md-demo-plugins'       // 代码演示块
+import path from "path"                                         // 路径解析
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'    // 注册 SVG 图标
+import { applyPlugins } from '@ruabick/md-demo-plugins'         // 代码演示块
 
 
 // VitePress 配置
@@ -28,7 +28,7 @@ export default defineConfig({
     vite: {
         plugins: [
             createSvgIconsPlugin({
-                iconDirs: [resolve(__dirname, '../../src/svg')],
+                iconDirs: [path.resolve(__dirname, '../../src/svg')],
                 symbolId: 'icon-[dir]-[name]',
             })
         ],
@@ -69,6 +69,12 @@ export default defineConfig({
                         { text: '快速上手', link: '/guide/install' },
                         { text: '深色主题', link: '/guide/theme' },
                         { text: '内置过渡动画', link: '/guide/transition' },
+                    ],
+                },
+                {
+                    text: '版本',
+                    items: [
+                        { text: '更新日志', link: '/guide/changelog' },
                     ],
                 }
             ],
@@ -154,8 +160,8 @@ export default defineConfig({
 
         // 页脚内容
         footer: {
-            message: '根据 MIT 许可证发布',
-            copyright: '版权所有 © 2024-至今 Qii-UI'
+            message: '',
+            copyright: 'Qii-UI · Made by Qiqi &nbsp;&nbsp; 根据 MIT 许可证发布'
         }
     },
     

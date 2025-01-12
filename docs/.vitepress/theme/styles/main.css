@@ -4,9 +4,9 @@
 /* 颜色变量 */
 :root {
     /* 主色 */
-    --q-color-theme: #337aff;
-    --q-color-theme-h: #4c8afe;
-    --q-color-theme-a: #2465df;
+    --q-color-theme: #3280FF;
+    --q-color-theme-h: #4693ff;
+    --q-color-theme-a: #2268ea;
     --q-color-theme-alpha: #2465df18;
 
     /* 主文本颜色 */
@@ -30,7 +30,7 @@
 }
 
 .dark {
-    --q-color-theme: #3e82ff;
+    --q-color-theme: #3280FF;
     --q-color-theme-alpha: #2871f820;
 
     --vp-c-bg: #0c0c0e;
@@ -115,11 +115,19 @@ body::-webkit-scrollbar-thumb:active {
     padding: 2px 6px;
 }
 
-/* 代码块样式 */
+/* 代码块 */
 .vp-doc div[class*='language-'],
 .vp-block {
     margin: 16px 0px;
     border-radius: 8px;
+}
+
+
+/* 代码组标题栏 */
+.vp-code-group .tabs {
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 8px 8px 0 0;
 }
 
 

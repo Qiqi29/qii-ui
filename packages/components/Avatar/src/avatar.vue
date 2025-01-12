@@ -1,15 +1,13 @@
 <template>
-  <div :class="avatarClass" :style="avatarStyle" ref="avatarRef">
-    
-    <!-- 默认插槽，放置自定义内容 -->
-    <div :class="ns.n('slot')" ref="slotRef">
-      <slot></slot>
+    <div :class="avatarClass" :style="avatarStyle" ref="avatarRef">
+
+        <div :class="ns.n('slot')" ref="slotRef">
+            <slot></slot>
+        </div>
+
+        <img v-if="src && !$slots.default" :src="src" alt="">
+
     </div>
-    
-    <!-- 头像图片 -->
-    <img v-if="src && !$slots.default" :src="src" alt="">
-  
-  </div>
 </template>
 
 <script lang="ts" setup>
@@ -18,9 +16,9 @@ import { avatarProps } from './avatar'
 import { useNS } from '@qii-ui/hooks'
 
 // 组件配置
-defineOptions({ 
-  name: 'q-avatar',
-  inheritAttrs: true
+defineOptions({
+    name: 'q-avatar',
+    inheritAttrs: true
 })
 
 // 组件属性
@@ -28,23 +26,23 @@ const props = defineProps({ ...avatarProps })
 
 // 接收父组件传值
 const avatarGroup: any = inject('avatarGroup', '')
-// 计算属性，优先使用父组件的值
+// 计算属性：优先使用父组件的值
 const avatarSize = computed(() => {
-  return avatarGroup.size?.value || props.size
+    return avatarGroup.size?.value || props.size
 })
 
 // 组件类名
 const ns = useNS('avatar')
 const avatarClass = computed(() => [
-  ns.nameSpace,
-  ns.n(avatarGroup.shape?.value || props.shape),
-  ns.t(avatarSize.value, 'string'),
+    ns.nameSpace,
+    ns.n(avatarGroup.shape?.value || props.shape),
+    ns.t(avatarSize.value, 'string'),
 ])
 
 // 组件样式
 const avatarStyle = computed<CSSProperties>(() => ({
-  width: avatarSize.value + 'px',
-  height: avatarSize.value + 'px',
+    width: avatarSize.value + 'px',
+    height: avatarSize.value + 'px',
 }))
 
 /**
@@ -54,8 +52,8 @@ const avatarStyle = computed<CSSProperties>(() => ({
 const avatarRef = ref<HTMLElement>()
 const slotRef = ref<HTMLElement>()
 const autoSize = () => {
-  const scale = avatarRef.value!.clientWidth / (slotRef.value!.clientWidth + 12);  
-  slotRef.value!.style.transform = `scale(${scale > 1.3 ? 1.3 : scale})`;
+    const scale = avatarRef.value!.clientWidth / (slotRef.value!.clientWidth + 12);
+    slotRef.value!.style.transform = `scale(${scale > 1.3 ? 1.3 : scale})`;
 }
 
 // 监听组件内容更新，重新计算

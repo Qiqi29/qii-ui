@@ -1,24 +1,19 @@
 <template>
-  <q-space :size="40" direction="center">
-    
-    <q-avatar-group size="large" :max="3">
-      <q-avatar 
-        v-for="(item, index) in 23" 
-        :key="index" 
-        :src="avatar"
-        >
-      </q-avatar>
-    </q-avatar-group>
-    
-    <q-avatar-group size="medium" shape="round">
-      <q-avatar :src="avatar" />
-      <q-avatar :src="avatar" />
-      <q-avatar :src="avatar" />
-      <q-avatar :src="avatar" />
-      <q-avatar :src="avatar" />
-    </q-avatar-group>
-  
-  </q-space>
+    <q-space :size="40" direction="center">
+
+        <q-avatar-group size="large" :max="3">
+            <q-avatar v-for="(item, index) in 20" :key="index" :src="avatar" />
+        </q-avatar-group>
+
+        <q-avatar-group size="medium" shape="round">
+            <q-avatar :src="avatar" />
+            <q-avatar :src="avatar" />
+            <q-avatar :src="avatar" />
+            <q-avatar :src="avatar" />
+            <q-avatar :src="avatar" />
+        </q-avatar-group>
+
+    </q-space>
 </template>
 
 <script lang="ts" setup>

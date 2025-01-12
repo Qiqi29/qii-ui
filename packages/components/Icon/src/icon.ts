@@ -8,18 +8,18 @@ export const iconProps = {
         type: String as PropType<string>,
     },
     /**
+     * @description 图标颜色
+    */
+    color: {
+       type: String as PropType<string>,
+       default: "currentColor",
+    },
+    /**
      * @description 图标大小
      */
     size: {
         type: String as PropType<string>,
         default: "1.5em",
-    },
-    /**
-     * @description 图标颜色
-     */
-    color: {
-        type: String as PropType<string>,
-        default: "currentColor",
     },
     /**
      * @description 图标是否为旋转状态

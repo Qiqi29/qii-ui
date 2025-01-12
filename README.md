@@ -1,26 +1,37 @@
-# Qii-UI
+<p align="center">
+    <a href="https://qiqi29.github.io/qii-ui-doc/" target="_blank" rel="noopener noreferrer">
+        <img width="200" src="https://qiqi29.github.io/qii-ui-doc/logo.svg" alt="logo">
+    </a>
+</p>
 
-> 当前为测试版本
+<h1 align="center">Qii-UI</h1>
 
-一个轻量级、现代化，使用 TypeScript 编写的 Vue3 组件库，支持按需引入。
+一个轻量级、现代化，使用 TypeScript 编写的 Vue3 组件库。
+
+- ⬆️ 支持按需引入
+- ✨ 现代化设计
+- 🌤️ 轻量级架构
+- 🌈 支持自定义
 
 
 ### 安装
+使用 npm 命令快速安装组件库。
 ```npm
 npm i qii-ui
 ```
 
 
 ### 文档
-<!-- 查阅 [组件库文档](https://qiqi29.github.io/qii-ui-doc/)，获取详细使用方法。 -->
+请查阅 [Qii-UI 组件库文档](https://qiqi29.github.io/qii-ui-doc/)。
+
+
+### 许可证
+根据 [MIT](LICENSE) 许可证发布。
 
 
 ### 源码结构
-
-- docs: 文档网站
-- packages: 组件库源码
-
-
-### 为何开发
-
-我这个人很喜欢把学习到的东西都记录下来，防止过两天就忘了（（ 同时也是检验自己所学知识的好方法。
+```
+.
+├─ docs 文档网站
+└─ packages 组件库源码
+```
