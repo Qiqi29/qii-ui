@@ -33,3 +33,28 @@ features:
     title: 外观
     details: 简洁、现代化的设计，各种场景都能胜任。
 ---
+
+
+<script setup>
+import { VPTeamMembers } from 'vitepress/theme'
+
+const members = [
+  {
+    name: '琦琦',
+    title: '创建者',
+    avatar: 'https://avatars.githubusercontent.com/u/112358908?v=4',
+    links: [
+      { icon: 'github', link: 'https://github.com/Qiqi29' },
+      { icon: 'bilibili', link: 'https://space.bilibili.com/401652755' }
+    ]
+  },
+]
+</script>
+
+<br><br><br>
+
+# 开发团队
+
+现在只有我一个人 QAQ
+
+<VPTeamMembers size="medium" :members="members" />

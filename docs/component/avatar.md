@@ -37,7 +37,7 @@
 ### Avatar Group 属性
 | 属性 | 类型 | 默认值 | 说明 |
 | --- | --- | --- | --- |
-| max | `number` | 3 | 头像组最多显示的数量 |
+| max | `number` | 10 | 头像组最多显示的数量 |
 | shape | `string` | round | 统一控制头像形状 |
 | size | `string` `number` | medium | 统一控制头像大小 |
 

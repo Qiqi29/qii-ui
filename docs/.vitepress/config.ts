@@ -40,7 +40,7 @@ export default defineConfig({
 
     themeConfig: {
         // 顶栏左侧LOGO
-        logo: '/logo.svg',
+        logo: '/favicon.svg',
 
         nav: [
             { text: '首页', link: '/' },
@@ -129,7 +129,7 @@ export default defineConfig({
 
         // 顶栏右侧社交链接
         socialLinks: [
-            { icon: 'github', link: '' }
+            { icon: 'github', link: 'https://github.com/Qiqi29/qii-ui' }
         ],
 
         // 中文化

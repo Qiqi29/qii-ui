@@ -20,6 +20,6 @@ export const avatarGroupProps = {
      */
     max: {
         type: Number,
-        default: 3
+        default: 10
     }
 } as const;
