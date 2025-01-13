@@ -6,9 +6,10 @@
   <div>
 
     <p>图标组件</p>
-    <q-icon name="emoji" spin />
-    <q-icon name="box" />
-    <q-icon name="delete" />
+    <div style="width: 100px; height: 32px; border: 1px solid #CCC; display: flex; align-items: center; justify-content: center;">
+      <q-icon name="delete" />
+      <span>删除</span>
+    </div>
 
     <p>头像组件</p>
     <q-space>

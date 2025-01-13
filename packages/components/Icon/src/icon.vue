@@ -11,7 +11,7 @@
 <script lang="ts" setup>
 import { computed, CSSProperties } from 'vue'
 import { iconProps } from './icon'
-// 这个报错不用管
+// @ts-ignore
 import { useNS } from '@qii-ui/hooks'
 
 // 组件配置

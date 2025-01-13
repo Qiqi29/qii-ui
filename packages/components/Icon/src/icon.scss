@@ -1,12 +1,11 @@
 .q-icon {
   display: inline-flex;
-  vertical-align: middle;
   flex-shrink: 0;
-
-  display: inline-flex;
+  vertical-align: middle;
   width: 1em;
   height: 1em;
   fill: currentColor;
+  user-select: none;
 }
 
 .q-icon.is-spin > svg {

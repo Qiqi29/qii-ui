@@ -51,14 +51,14 @@ src
 <demo src="./demo/icon/color.vue"/>
 
 
-## 自定义图标
-默认插槽中可以传入 SVG 代码（确保设置了 SVG 的 viewBox 属性）。
-<demo src="./demo/icon/svg.vue"/>
-
-
 ## 旋转状态
 添加 `spin` 属性，可以将图标设置为旋转状态。或者使用 `rotate` 属性自定义旋转角度。
 <demo src="./demo/icon/spin.vue"/>
+
+
+## 自定义图标
+默认插槽中可以传入 SVG 代码（确保设置了 SVG 的 viewBox 属性）。
+<demo src="./demo/icon/svg.vue"/>
 
 
 ## API
@@ -67,11 +67,11 @@ src
 | --- | --- | --- | --- |
 | name    | `string`  | —             | 图标名 |
 | color   | `string`  | currentColor  | 图标颜色 |
-| size    | `string`  | 1.5em         | 图标大小 |
+| size    | `string`  | 1.8em         | 图标大小 |
 | spin    | `boolean` | false         | 图标是否为旋转状态 |
 | rotate  | `number`  | 0             | 自定义旋转角度 |
 
 ### Icon 插槽
 | 名称 | 说明 |
 | --- | --- |
-| default | 自定义 SVG 图标 |
+| default | 自定义 SVG 图标代码 |
