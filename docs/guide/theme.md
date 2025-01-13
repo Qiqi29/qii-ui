@@ -5,6 +5,6 @@
 只需要在 `html` 标签上添加 `dark` 类名，就可以切换为深色主题。
 ```html
 <html class="dark">
-    ...
+  ...
 </html>
 ```

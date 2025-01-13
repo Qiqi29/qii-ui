@@ -1,49 +1,59 @@
 .q-avatar {
-    box-sizing: border-box;
-    user-select: none;
-    overflow: hidden;
+  box-sizing: border-box;
+  user-select: none;
+  overflow: hidden;
 
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    vertical-align: bottom;
-    flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: bottom;
+  flex-shrink: 0;
 
-    width: 36px;
-    height: 36px;
-    background: var(--q-color-avatar-default);
-    border-radius: 6px;
+  width: 36px;
+  height: 36px;
+  background: var(--q-color-avatar-default);
+  border-radius: 6px;
 
-    color: #FFF;
-    font-size: 14px;
-    line-height: 1.2;
+  color: #FFF;
+  font-size: 14px;
+  line-height: 1.2;
 
-    > img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+  >img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 // 不同的大小
 @mixin size($size, $radius) {
-    width: $size;
-    height: $size;
-    &.q-avatar__square {
-        border-radius: $radius;
-    }
+  width: $size;
+  height: $size;
+
+  &.q-avatar__square {
+    border-radius: $radius;
+  }
 }
-.q-avatar__small { @include size(24px, 4px) }
-.q-avatar__medium { @include size(36px, 5px) }
-.q-avatar__large { @include size(54px, 6px) }
+
+.q-avatar__small {
+  @include size(24px, 4px)
+}
+
+.q-avatar__medium {
+  @include size(36px, 5px)
+}
+
+.q-avatar__large {
+  @include size(54px, 6px)
+}
 
 // 形状：圆形
 .q-avatar__round {
-    border-radius: 50%;
+  border-radius: 50%;
 }
 
 // 默认插槽中的内容
 .q-avatar__slot {
-    display: flex;
-    text-wrap: nowrap;
+  display: flex;
+  text-wrap: nowrap;
 }

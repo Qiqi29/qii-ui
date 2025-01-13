@@ -8,8 +8,8 @@ layout: home
 # 首页内容配置
 hero:
   name: Qii-UI
-  text: 一个 Vue3 组件库
-  tagline: 轻量级、现代化，使用 TypeScript。
+  text: 大道至简
+  tagline: 轻量级、现代化的 Vue3 组件库。
   image:
     src: /logo.svg
     alt: logo

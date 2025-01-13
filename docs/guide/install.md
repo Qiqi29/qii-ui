@@ -25,8 +25,9 @@ npm i qii-ui
 ## 引入
 
 ### 按需引入 <Badge type="tip" text="推荐" />
-支持单独引入需要的组件，你可以全局安装在 Vue 中，或者在 `.vue` 文件中引入。
-```ts [main.ts]
+支持单独引入需要的组件，你可以全局安装在 Vue 中，或者在 vue 组件中引入。
+```ts
+// main.ts
 import { QButton, QIcon } from 'qii-ui'
 import 'qii-ui/dist/index.css'
 
@@ -35,7 +36,7 @@ app.use(QIcon)
 ```
 
 ### 完整引入
-如果你不在乎打包后的代码大小，那么完整引入会很方便。
+也可以一次性引入所有组件（如果你不在乎打包后的体积）
 ```ts 
 // main.ts
 import QiiUI from 'qii-ui'
@@ -46,9 +47,9 @@ app.use(QiiUI)
 
 
 ## 使用
-安装引入完成后，就可以在项目任意位置使用组件了，每个组件都有对应的 [组件介绍文档](/component/button)。
+引入完成后，就可以在项目中使用组件啦！继续查看 [组件介绍文档](/component/button)。
 ```html
 <template>
-    <q-button>你好，世界</q-button>
+  <q-button>你好，世界</q-button>
 </template>
 ```

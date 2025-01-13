@@ -3,114 +3,114 @@
 */
 
 :root {
-    // 默认颜色
-    --q-color-light: #FFFFFF;
-    --q-color-black: #101011;
+  // 默认颜色
+  --q-color-light: #FFFFFF;
+  --q-color-black: #101011;
 
-    // 文本颜色
-    --q-color-text-1: #303032;
-    --q-color-text-2: #5d5f60;
-    --q-color-text-3: #aeb0b6;
-    --q-color-text-4: #cdced5;
+  // 文本颜色
+  --q-color-text-1: #303032;
+  --q-color-text-2: #5d5f60;
+  --q-color-text-3: #aeb0b6;
+  --q-color-text-4: #cdced5;
 
-    // 头像组件颜色
-    --q-color-avatar-default: #a1a3aa;
+  // 头像组件颜色
+  --q-color-avatar-default: #a1a3aa;
 
-    // 不同级别的颜色
-    --q-color-default: #f1f1f4;
-    --q-color-default-h: #ebebef;
-    --q-color-default-a: #e4e4e9;
-    --q-color-default-l: #f4f4f7;
-    --q-color-default-l-h: #ededf0;
-    --q-color-default-l-a: #e8e8ec;
-    --q-color-default-fill: #d2d3d7;
+  // 不同级别的颜色
+  --q-color-default: #f1f1f4;
+  --q-color-default-h: #ebebef;
+  --q-color-default-a: #e4e4e9;
+  --q-color-default-l: #f4f4f7;
+  --q-color-default-l-h: #ededf0;
+  --q-color-default-l-a: #e8e8ec;
+  --q-color-default-fill: #d2d3d7;
 
-    --q-color-primary: #3280FF;
-    --q-color-primary-h: #4c8afe;
-    --q-color-primary-a: #2465df;
-    --q-color-primary-l: #e6f0fe;
-    --q-color-primary-l-h: #dfebff;
-    --q-color-primary-l-a: #d8e6fc;
+  --q-color-primary: #3280FF;
+  --q-color-primary-h: #4c8afe;
+  --q-color-primary-a: #2465df;
+  --q-color-primary-l: #e6f0fe;
+  --q-color-primary-l-h: #dfebff;
+  --q-color-primary-l-a: #d8e6fc;
 
-    --q-color-success: #44c26a;
-    --q-color-success-h: #51cb76;
-    --q-color-success-a: #32a655;
-    --q-color-success-l: #e6f6ea;
-    --q-color-success-l-h: #def3e7;
-    --q-color-success-l-a: #d5eedd;
+  --q-color-success: #44c26a;
+  --q-color-success-h: #51cb76;
+  --q-color-success-a: #32a655;
+  --q-color-success-l: #e6f6ea;
+  --q-color-success-l-h: #def3e7;
+  --q-color-success-l-a: #d5eedd;
 
-    --q-color-warning: #ff9123;
-    --q-color-warning-h: #fea042;
-    --q-color-warning-a: #da7816;
-    --q-color-warning-l: #fff3e6;
-    --q-color-warning-l-h: #fceddc;
-    --q-color-warning-l-a: #f9e5d0;
+  --q-color-warning: #ff9123;
+  --q-color-warning-h: #fea042;
+  --q-color-warning-a: #da7816;
+  --q-color-warning-l: #fff3e6;
+  --q-color-warning-l-h: #fceddc;
+  --q-color-warning-l-a: #f9e5d0;
 
-    --q-color-danger: #ff5d5d;
-    --q-color-danger-h: #ff7272;
-    --q-color-danger-a: #e44a4a;
-    --q-color-danger-l: #ffeaea;
-    --q-color-danger-l-h: #fee0e0;
-    --q-color-danger-l-a: #fcd8d8;
+  --q-color-danger: #ff5d5d;
+  --q-color-danger-h: #ff7272;
+  --q-color-danger-a: #e44a4a;
+  --q-color-danger-l: #ffeaea;
+  --q-color-danger-l-h: #fee0e0;
+  --q-color-danger-l-a: #fcd8d8;
 
-    // 滚动条颜色
-    --q-scrollbar-color: #93949c40;
-    --q-scrollbar-hover: #93949c50;
-    --q-scrollbar-active: #93949c70;
+  // 滚动条颜色
+  --q-scrollbar-color: #93949c40;
+  --q-scrollbar-hover: #93949c50;
+  --q-scrollbar-active: #93949c70;
 }
 
 
 // 深色主题
 html.dark {
-    color-scheme: dark;
+  color-scheme: dark;
 
-    // 默认颜色
-    --q-color-light: #101011;
-    --q-color-black: #FAFAFA;
+  // 默认颜色
+  --q-color-light: #101011;
+  --q-color-black: #FAFAFA;
 
-    // 文本颜色
-    --q-color-text-1: #f0f0f0;
-    --q-color-text-2: #bdbdbf;
-    --q-color-text-3: #606064;
-    --q-color-text-4: #525256;
+  // 文本颜色
+  --q-color-text-1: #f0f0f0;
+  --q-color-text-2: #bdbdbf;
+  --q-color-text-3: #606064;
+  --q-color-text-4: #525256;
 
-    // 头像组件颜色
-    --q-color-avatar-default: #4a4b52;
+  // 头像组件颜色
+  --q-color-avatar-default: #4a4b52;
 
-    // 不同级别的颜色
-    --q-color-default: #29292C;
-    --q-color-default-h: #2f2f32;
-    --q-color-default-a: #29292C;
-    --q-color-default-l: #242427;
-    --q-color-default-l-h: #29292C;
-    --q-color-default-l-a: #242427;
-    --q-color-default-fill: #3b3b3E;
+  // 不同级别的颜色
+  --q-color-default: #29292C;
+  --q-color-default-h: #2f2f32;
+  --q-color-default-a: #29292C;
+  --q-color-default-l: #242427;
+  --q-color-default-l-h: #29292C;
+  --q-color-default-l-a: #242427;
+  --q-color-default-fill: #3b3b3E;
 
-    --q-color-primary: #3280FF;
-    --q-color-primary-h: #4693ff;
-    --q-color-primary-a: #2268ea;
-    --q-color-primary-l: #3280FF25;
-    --q-color-primary-l-h: #4284ff25;
-    --q-color-primary-l-a: #2b6eeb25;
+  --q-color-primary: #3280FF;
+  --q-color-primary-h: #4693ff;
+  --q-color-primary-a: #2268ea;
+  --q-color-primary-l: #3280FF25;
+  --q-color-primary-l-h: #4284ff25;
+  --q-color-primary-l-a: #2b6eeb25;
 
-    --q-color-success: #44c26a;
-    --q-color-success-h: #51cb76;
-    --q-color-success-a: #32a655;
-    --q-color-success-l: #44c26a25;
-    --q-color-success-l-h: #51d17825;
-    --q-color-success-l-a: #31a75425;
+  --q-color-success: #44c26a;
+  --q-color-success-h: #51cb76;
+  --q-color-success-a: #32a655;
+  --q-color-success-l: #44c26a25;
+  --q-color-success-l-h: #51d17825;
+  --q-color-success-l-a: #31a75425;
 
-    --q-color-warning: #ff9123;
-    --q-color-warning-h: #fea042;
-    --q-color-warning-a: #da7816;
-    --q-color-warning-l: #ff912325;
-    --q-color-warning-l-h: #ffa04127;
-    --q-color-warning-l-a: #ea821925;
+  --q-color-warning: #ff9123;
+  --q-color-warning-h: #fea042;
+  --q-color-warning-a: #da7816;
+  --q-color-warning-l: #ff912325;
+  --q-color-warning-l-h: #ffa04127;
+  --q-color-warning-l-a: #ea821925;
 
-    --q-color-danger: #ff5d5d;
-    --q-color-danger-h: #ff7272;
-    --q-color-danger-a: #e44a4a;
-    --q-color-danger-l: #ff5d5d25;
-    --q-color-danger-l-h: #ff6b6b27;
-    --q-color-danger-l-a: #ea494925;
+  --q-color-danger: #ff5d5d;
+  --q-color-danger-h: #ff7272;
+  --q-color-danger-a: #e44a4a;
+  --q-color-danger-l: #ff5d5d25;
+  --q-color-danger-l-h: #ff6b6b27;
+  --q-color-danger-l-a: #ea494925;
 }

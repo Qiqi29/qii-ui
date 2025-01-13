@@ -13,20 +13,20 @@ const del = require('del')                          // 用于删除文件
 
 // 清理上次打包的文件
 gulp.task('clean', function () {
-    return del(['dist', 'es', 'lib'])
+  return del(['dist', 'es', 'lib'])
 })
 
 
 // 编译 SCSS 文件
 gulp.task('sass', function () {
-    return gulp.src('./packages/**/*.scss')
-        .pipe(sass())
-        .pipe(cleanCSS())
-        // 去除文件名中的路径，不保留原目录格式
-        .pipe(rename((path) => { path.dirname = '' }))
-        // 单独存放 index.css 文件
-        .pipe(gulpIf(file => file.basename === 'index.css', gulp.dest('dist')))
-        .pipe(gulpIf(file => file.basename !== 'index.css', gulp.dest('dist/css')))
+  return gulp.src('./packages/**/*.scss')
+    .pipe(sass())
+    .pipe(cleanCSS())
+    // 去除文件名中的路径，不保留原目录格式
+    .pipe(rename((path) => { path.dirname = '' }))
+    // 单独存放 index.css 文件
+    .pipe(gulpIf(file => file.basename === 'index.css', gulp.dest('dist')))
+    .pipe(gulpIf(file => file.basename !== 'index.css', gulp.dest('dist/css')))
 })
 
 

@@ -1,8 +1,8 @@
 <template>
-    <q-space size="large" direction="center">
-        <q-avatar :src="avatar" shape="round" />
-        <q-avatar :src="avatar" shape="square" />
-    </q-space>
+  <q-space size="large" direction="center">
+    <q-avatar :src="avatar" shape="round" />
+    <q-avatar :src="avatar" shape="square" />
+  </q-space>
 </template>
 
 <script lang="ts" setup>

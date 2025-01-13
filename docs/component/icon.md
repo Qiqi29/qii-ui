@@ -1,5 +1,7 @@
 # 图标 Icon
-图标组件使用 `symbol` 格式的 SVG 图标。推荐使用 [MingCute Icon](https://www.mingcute.com/) 图标库。
+图标组件使用 `symbol` 格式的 SVG 图标，只需要输入图标的名称就可以使用。
+
+Qii-UI 所使用的图标来自 [MingCute Icon](https://www.mingcute.com/) 图标库。
 
 
 ## 安装插件
@@ -20,17 +22,17 @@ import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import path from "path"
 
 export default defineConfig({
-    plugins: [
-        createSvgIconsPlugin({
-            iconDirs: [path.resolve(__dirname, 'src/icons')], // 存放图标的目录
-            symbolId: 'icon-[dir]-[name]'
-        })
-    ]
+  plugins: [
+    createSvgIconsPlugin({
+      iconDirs: [path.resolve(__dirname, 'src/icons')], // 存放图标的目录
+      symbolId: 'icon-[dir]-[name]'
+    })
+  ]
 })
 ```
 
 4. 配置完成后，把你的图标放入 `src/icons` 目录下，就可以使用啦！
-```tree
+```
 src
  └─ icons
       ├─ add.svg

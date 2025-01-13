@@ -1,7 +1,7 @@
 <p align="center">
-    <a href="https://qiqi29.github.io/qii-ui-doc/" target="_blank" rel="noopener noreferrer">
-        <img width="150" src="https://qiqi29.github.io/qii-ui-doc/favicon.svg" alt="logo">
-    </a>
+  <a href="https://qiqi29.github.io/qii-ui-doc/" target="_blank" rel="noopener noreferrer">
+    <img width="150" src="https://qiqi29.github.io/qii-ui-doc/favicon.svg" alt="logo">
+  </a>
 </p>
 
 <h1 align="center">Qii-UI</h1>

@@ -21,11 +21,11 @@ import '@ruabick/vitepress-demo-block/dist/style.css'
 
 // VitePress 主题和布局配置
 export default {
-    extends: DefaultTheme,
-    Layout: MyLayout,
-    enhanceApp({ app, router, siteData }) {
-        app.use(QiiUI)
-        app.component('member', Member)
-        app.component('demo', DemoBlock)
-    }
+  extends: DefaultTheme,
+  Layout: MyLayout,
+  enhanceApp({ app, router, siteData }) {
+    app.use(QiiUI)
+    app.component('member', Member)
+    app.component('demo', DemoBlock)
+  }
 } satisfies Theme

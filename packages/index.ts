@@ -13,18 +13,18 @@ import QAvatarGroup from './components/Avatar-group/index'
 
 // 单独导出组件，提供按需引入
 export {
-    QIcon,
-    QSpace,
-    QAvatar,
-    QAvatarGroup,
+  QIcon,
+  QSpace,
+  QAvatar,
+  QAvatarGroup,
 }
 
 // 组件列表
 const components = [
-    QIcon,
-    QSpace,
-    QAvatar,
-    QAvatarGroup,
+  QIcon,
+  QSpace,
+  QAvatar,
+  QAvatarGroup,
 ]
 
 /**
@@ -32,8 +32,8 @@ const components = [
  * 可以通过 app.use(QiiUI) 完整安装组件库
  */
 const install = (app: App) => {
-    components.forEach(component => {
-        app.component(component.name as string, component)
-    })
+  components.forEach(component => {
+    app.component(component.name as string, component)
+  })
 }
 export default install

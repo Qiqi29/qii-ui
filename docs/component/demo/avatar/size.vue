@@ -1,10 +1,10 @@
 <template>
-    <q-space size="large" direction="center">
-        <q-avatar :src="avatar" shape="square" size="small" />
-        <q-avatar :src="avatar" shape="square" size="medium" />
-        <q-avatar :src="avatar" shape="square" size="large" />
-        <q-avatar :src="avatar" shape="square" :size="68" />
-    </q-space>
+  <q-space size="large" direction="center">
+    <q-avatar :src="avatar" shape="square" size="small" />
+    <q-avatar :src="avatar" shape="square" size="medium" />
+    <q-avatar :src="avatar" shape="square" size="large" />
+    <q-avatar :src="avatar" shape="square" :size="68" />
+  </q-space>
 </template>
 
 <script lang="ts" setup>
