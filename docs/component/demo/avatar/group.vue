@@ -1,16 +1,14 @@
 <template>
   <q-space :size="40" direction="center">
 
-    <q-avatar-group size="large" :max="3">
-      <q-avatar v-for="(item, index) in 8" :key="index" :src="avatar" />
+    <q-avatar-group size="large" shape="square">
+      <q-avatar :src="avatar" />
+      <q-avatar :src="avatar" />
+      <q-avatar :src="avatar" />
     </q-avatar-group>
 
-    <q-avatar-group size="medium" shape="round">
-      <q-avatar :src="avatar" />
-      <q-avatar :src="avatar" />
-      <q-avatar :src="avatar" />
-      <q-avatar :src="avatar" />
-      <q-avatar :src="avatar" />
+    <q-avatar-group :max="4">
+      <q-avatar v-for="(item, index) in 10" :key="index" :src="avatar" />
     </q-avatar-group>
 
   </q-space>

@@ -1,9 +1,10 @@
 .q-avatar-group {
   display: inline-flex;
 
+  // 给头像添加边框
   > .q-avatar {
     margin-left: -10px;
-    border: 3px solid var(--q-color-light);
+    outline: 3px solid var(--q-color-light);
   }
 }
 
