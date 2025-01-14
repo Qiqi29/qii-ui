@@ -44,8 +44,8 @@ provide('toggle-appearance', async () => {
 /**
  * 切换路由时显示进度条
  */
- NProgress.configure({
-  minimum: 0.1,
+NProgress.configure({
+  minimum: 0.2,
   easing: 'ease',
   speed: 500,
   trickleSpeed: 200,
