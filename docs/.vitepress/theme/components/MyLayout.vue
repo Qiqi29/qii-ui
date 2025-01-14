@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import { nextTick, provide } from 'vue'
-import { useData } from 'vitepress'
+import { useData, useRouter } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 const { isDark } = useData()
-
+const router = useRouter()
 // @ts-ignore
 import QiiUiLogo from './QiiUiLogo.vue'
+// @ts-ignore
+import NProgress from 'nprogress'
 
 
 // 兼容性检查，部分浏览器不支持新的过渡API
@@ -37,13 +39,34 @@ provide('toggle-appearance', async () => {
     }
   )
 })
+
+
+/**
+ * 切换路由时显示进度条
+ */
+ NProgress.configure({
+  minimum: 0.1,
+  easing: 'ease',
+  speed: 500,
+  trickleSpeed: 200,
+  showSpinner: false
+})
+router.onBeforeRouteChange = () => {
+  NProgress.start()
+}
+router.onAfterPageLoad = () => {
+  NProgress.done()
+}
+
 </script>
 
 <template>
   <DefaultTheme.Layout>
+
     <template #home-hero-image>
       <QiiUiLogo />
     </template>
+
   </DefaultTheme.Layout>
 </template>
 

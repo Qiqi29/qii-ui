@@ -342,3 +342,17 @@ body::-webkit-scrollbar-thumb:active {
 .prev-next[data-v-29ec59c0] {
   border-top: 1px solid transparent;
 }
+
+
+/* 更改 NProgress 进度条的样式 */
+#nprogress {
+  position: absolute;
+  z-index: 1000;
+}
+#nprogress .bar {
+  background: var(--q-color-theme);
+  height: 3px;
+}
+#nprogress .peg {
+  box-shadow: 0 0 10px var(--q-color-theme), 0 0 5px var(--q-color-theme);
+}

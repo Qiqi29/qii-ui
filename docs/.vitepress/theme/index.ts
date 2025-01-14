@@ -2,6 +2,7 @@ import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 
 // 样式文件
+import 'nprogress/nprogress.css'
 import './styles/main.css'
 import './styles/home.css'
 
