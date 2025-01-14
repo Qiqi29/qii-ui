@@ -1,5 +1,5 @@
 # 图标 Icon
-图标组件使用 `symbol` 格式的 SVG 图标，只需要输入图标的名称就可以使用。
+图标组件使用 `symbol` 格式的 SVG 图标，只需要输入图标的名称就可以快速使用。
 
 Qii-UI 所使用的图标来自 [MingCute Icon](https://www.mingcute.com/) 图标库。
 
@@ -52,7 +52,7 @@ src
 
 
 ## 旋转状态
-添加 `spin` 属性，可以将图标设置为旋转状态。或者使用 `rotate` 属性自定义旋转角度。
+添加 `spin` 属性可以让图标旋转起来。也可以使用 `rotate` 属性自定义旋转角度。
 <demo src="./demo/icon/spin.vue"/>
 
 

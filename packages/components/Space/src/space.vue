@@ -1,7 +1,7 @@
 <script lang="ts">
 import { defineComponent, computed, h, CSSProperties } from 'vue'
-import { SpaceProps } from './space'
 import { useNS, useFilterNodes } from '@qii-ui/hooks'
+import { SpaceProps } from './space'
 
 export default defineComponent({
   name: 'q-space',
@@ -18,14 +18,12 @@ export default defineComponent({
     ])
 
     // 组件样式
-    const spaceStyle = computed<CSSProperties>(() => {
-      return {
-        "gap": typeof props.size === 'number' ? props.size + 'px' : '',
-        "flex-direction": props.vertical ? 'column' : 'row',
-        "align-items": props.direction,
-        "justify-content": props.justify,
-      }
-    })
+    const spaceStyle = computed<CSSProperties>(() => { return {
+      "gap": typeof props.size === 'number' ? props.size + 'px' : '',
+      "flex-direction": props.vertical ? 'column' : 'row',
+      "align-items": props.direction,
+      "justify-content": props.justify,
+    }})
 
     return () => {
       // 获取默认插槽中的内容
@@ -34,18 +32,14 @@ export default defineComponent({
       // 遍历子节点，使用 h 包裹渲染
       const renderChildren = () => {
         return children?.map((child) => {
-          return h(
-            'div', { class: `q-space__item` }, child
-          )
+          return h('div', { class: `q-space__item` }, child)
         })
       }
 
       // 渲染 sapce 组件
       return h(
-        'div', {
-        class: classList.value,
-        style: spaceStyle.value,
-      },
+        'div', 
+        { class: classList.value, style: spaceStyle.value },
         renderChildren()
       )
     }

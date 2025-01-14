@@ -1,7 +1,7 @@
 <template>
-  <q-space>
-    <button>按钮1</button>
-    <button>按钮2</button>
-    <button>按钮3</button>
+  <q-space size="medium">
+    <q-button type="primary">按钮1</q-button>
+    <q-button type="primary">按钮2</q-button>
+    <q-button type="primary">按钮3</q-button>
   </q-space>
 </template>

@@ -6,15 +6,9 @@
 }
 
 // 预设间距
-.q-space__small {
-  gap: 6px;
-}
-.q-space__medium {
-  gap: 12px;
-}
-.q-space__large {
-  gap: 24px;
-}
+.q-space__small { gap: 6px }
+.q-space__medium { gap: 12px }
+.q-space__large { gap: 24px }
 
 // 布局子项，宽度不占满父元素
 .q-space__item {

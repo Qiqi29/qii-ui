@@ -9,7 +9,7 @@ export const SpaceProps = {
     default: "medium",
   },
   /**
-   * @zh 是否为垂直排列
+   * @zh 垂直排列
    */
   vertical: {
     type: Boolean,

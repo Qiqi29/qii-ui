@@ -6,7 +6,7 @@ export const buttonProps = {
    */
   type: {
     type: String as PropType<"default" | "primary" | "success" | "warning" | "danger">,
-    default: "primary",
+    default: "default",
   },
   /**
    * @zh 按钮大小

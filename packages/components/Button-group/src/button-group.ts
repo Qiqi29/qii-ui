@@ -6,7 +6,7 @@ export const buttonProps = {
    */
   type: {
     type: String,
-    default: "primary",
+    default: "default",
   },
   /**
    * @zh 统一控制按钮大小

@@ -11,7 +11,7 @@ hero:
   text: 大道至简
   tagline: 轻量级、现代化的 Vue3 组件库。
   image:
-    src: /logo.svg
+    src: /favicon.svg
     alt: logo
   actions:
     - theme: brand

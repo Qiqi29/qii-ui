@@ -1,5 +1,5 @@
 <template>
-  <q-space direction="center" size="large">
+  <q-space size="large" direction="center">
     <q-avatar :style="{ background: '#3280FF' }">{{ list[index] }}</q-avatar>
     <q-button @click="onClick">切换</q-button>
   </q-space>
