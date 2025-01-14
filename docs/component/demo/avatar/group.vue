@@ -2,7 +2,7 @@
   <q-space :size="40" direction="center">
 
     <q-avatar-group size="large" :max="3">
-      <q-avatar v-for="(item, index) in 20" :key="index" :src="avatar" />
+      <q-avatar v-for="(item, index) in 8" :key="index" :src="avatar" />
     </q-avatar-group>
 
     <q-avatar-group size="medium" shape="round">

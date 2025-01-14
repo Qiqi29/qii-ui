@@ -43,6 +43,7 @@ const avatarClass = computed(() => [
 const avatarStyle = computed<CSSProperties>(() => ({
   width: avatarSize.value + 'px',
   height: avatarSize.value + 'px',
+  borderRadius: avatarSize.value / 12 + 2 + 'px',
 }))
 
 /**

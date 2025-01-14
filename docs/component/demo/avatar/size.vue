@@ -3,7 +3,7 @@
     <q-avatar :src="avatar" shape="square" size="small" />
     <q-avatar :src="avatar" shape="square" size="medium" />
     <q-avatar :src="avatar" shape="square" size="large" />
-    <q-avatar :src="avatar" shape="square" :size="68" />
+    <q-avatar :src="avatar" shape="square" :size="60" />
   </q-space>
 </template>
 

@@ -13,8 +13,9 @@
 
     <p>头像组件</p>
     <q-space>
-      <q-avatar size="large" src="https://img.picgo.net/2024/06/06/12324555e32e049f8305.png" />
-      <q-avatar shape="square" size="large">你好</q-avatar>
+      <q-avatar size="medium" src="https://img.picgo.net/2024/06/06/12324555e32e049f8305.png" />
+      <q-avatar shape="square" size="50">你好</q-avatar>
+      <q-avatar shape="square">你好</q-avatar>
     </q-space>
 
   </div>
