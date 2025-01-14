@@ -10,6 +10,14 @@ const handleClick = () => {
   <div>
 
     <h2>按钮组件</h2>
+
+    <!-- <q-space direction="center">
+      <q-button size="small">确定</q-button>
+      <q-button size="medium">按钮</q-button>
+      <q-button size="large">取消</q-button>
+    </q-space> -->
+
+
     <q-space vertical>
       <q-space>
         <q-button type="default">默认按钮</q-button>

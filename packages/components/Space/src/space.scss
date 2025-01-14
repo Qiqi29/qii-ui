@@ -22,6 +22,6 @@
 }
 
 // 宽度占满父元素样式
-// .q-space.is-fill > .q-space__item {
-//   width: 100%;
-// }
+.q-space.is-fill > .q-space__item {
+  width: 100%;
+}

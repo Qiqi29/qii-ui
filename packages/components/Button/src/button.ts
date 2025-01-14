@@ -6,28 +6,14 @@ export const buttonProps = {
    */
   type: {
     type: String as PropType<"default" | "primary" | "success" | "warning" | "danger">,
-    default: "default",
+    default: "primary",
   },
   /**
-   * @zh 按钮尺寸
+   * @zh 按钮大小
    */
   size: {
     type: [String, Number] as PropType<number | "small" | "medium" | "large">,
     default: "medium"
-  },
-  /**
-   * @zh 按钮图标
-   */
-  icon: {
-    type: String,
-    default: ""
-  },
-  /**
-   * @zh 按钮右侧图标
-   */
-  rightIcon: {
-    type: String,
-    default: ""
   },
   /**
    * @zh 按钮形状
@@ -72,12 +58,26 @@ export const buttonProps = {
     default: false
   },
   /**
-   * @zh 按钮是否禁用
+   * @zh 按钮是否被禁用
    */
   disabled: {
     type: Boolean,
     default: false
-  }
+  },
+  /**
+   * @zh 左侧图标
+   */
+  icon: {
+    type: String,
+    default: ""
+  },
+  /**
+   * @zh 右侧图标
+   */
+  rightIcon: {
+    type: String,
+    default: ""
+  },
 } as const
 
 export const buttonEmits = {

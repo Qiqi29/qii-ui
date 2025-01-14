@@ -28,7 +28,7 @@
   padding: 0.5px $padding 0px $padding;
   font-size: $fontSize;
   border-radius: $borderRadius;
-  // 文字为空 或 形状为圆形
+  // 文字为空，或形状为圆形
   &.is-empty, &.q-button__circle {
     padding: none;
     width: $height;
@@ -36,61 +36,49 @@
 }
 .q-button__small { @include buttonSize(24px, 10px, 12px, 4.5px) }
 .q-button__medium { @include buttonSize(30px, 16px, 14px, 6px) }
-.q-button__large { @include buttonSize(38px, 20px, 14px, 6px) }
+.q-button__large { @include buttonSize(36px, 20px, 15px, 6px) }
 
 
 // 混合：不同类型的按钮
-@mixin buttonType($type, $color) {
+@mixin buttonType($type) {
   background: var(--q-color-#{$type});
-  color: $color;
+  color: if($type == "default", var(--q-color-text-1), #FFFFFF);
+  // 二级按钮
   &.is-plain {
     background: var(--q-color-#{$type}-l);
-    color: var(--q-color-#{$type});
+    color: if($type == "default", var(--q-color-text-1), var(--q-color-#{$type}));
   }
-  &:hover:not(.is-disabled) {
+  // 文字按钮
+  &.is-text {
+    background: transparent;
+    color: if($type == "default", var(--q-color-text-1), var(--q-color-#{$type}));
+    &.is-has-bg { background: var(--q-color-default-l) }
+  }
+  &:hover:not(.is-disabled) { 
     background: var(--q-color-#{$type}-h);
     &.is-plain { background: var(--q-color-#{$type}-l-h) }
+    &.is-text { background: var(--q-color-default-l) }
+    &.is-text.is-has-bg { background: var(--q-color-default-l-h) }
   }
-  &:active:not(.is-disabled) {
+  &:active:not(.is-disabled) { 
     transition: all 0.05s;
     background: var(--q-color-#{$type}-a);
     &.is-plain { background: var(--q-color-#{$type}-l-a) }
-  }
-}
-.q-button__default {
-  @include buttonType("default", var(--q-color-text-1));
-  &.is-plain { color: var(--q-color-text-1) }
-}
-.q-button__primary { @include buttonType("primary", #FFFFFF) }
-.q-button__success { @include buttonType("success", #FFFFFF) }
-.q-button__warning { @include buttonType("warning", #FFFFFF) }
-.q-button__danger { @include buttonType("danger", #FFFFFF) }
-
-
-// 文字按钮
-.q-button.is-text {
-  background: transparent;
-  &.is-has-bg { background: var(--q-color-default-l) }
-
-  &.q-button__primary { color: var(--q-color-primary); }
-  &.q-button__success { color: var(--q-color-success); }
-  &.q-button__warning { color: var(--q-color-warning); }
-  &.q-button__danger { color: var(--q-color-danger); }
-  
-  &:hover:not(.is-disabled) {
-    background: var(--q-color-default-l);
-    &.is-has-bg { background: var(--q-color-default-l-h) }
-  }
-  &:active:not(.is-disabled) {
-    background: var(--q-color-default-l-h);
-    &.is-has-bg { background: var(--q-color-default-l-a) }
+    &.is-text { background: var(--q-color-default-l-h) }
+    &.is-text.is-has-bg { background: var(--q-color-default-l-a) }
   }
 }
 
+// 生成按钮类名
+$buttonTypes: ("default", "primary", "success", "warning", "danger");
+@each $type in $buttonTypes {
+  .q-button__#{$type} { @include buttonType($type) }
+}
 
-// 处理不同布局
+
+// 其他适配
 .q-button {
-  // 两侧图标
+  // 两侧按钮
   .q-icon {
     position: absolute;
     left: 12px;
@@ -100,7 +88,7 @@
     left: auto;
     right: 12px;
   }
-  // 两侧图标存在，修改文本边距
+  // 文本和图标的间距
   .q-icon + .q-button__text {
     margin-left: 18px;
   }
@@ -111,7 +99,7 @@
   .q-button__text {
     transition: all 0.2s;
   }
-  // 按钮文本为空，图标居中
+  // 如果文本为空，让图标居中
   &.is-empty .q-icon {
     left: 50%;
     right: auto;
@@ -120,12 +108,12 @@
 }
 
 
-// 圆角矩形按钮
+// 圆角按钮
 .q-button__round {
   border-radius: 500px;
 }
 
-// 圆形按钮
+// 圆形按钮（隐藏文本，只显示图标）
 .q-button__circle {
   padding: 0;
   border-radius: 50%;
@@ -139,12 +127,12 @@
   width: 100%;
 }
 
-// 按钮加载状态
+// 加载状态
 .q-button.is-loading {
   cursor: default !important;
 }
 
-// 按钮禁用状态
+// 禁用状态
 .q-button.is-disabled {
   opacity: 0.7;
   cursor: not-allowed;

@@ -3,10 +3,9 @@
     :class="buttonClass" 
     :style="buttonStyle"
     :disabled="disabled"
-    @click="onClick"
-    >
+    @click="onClick">
 
-    <q-icon :class="[ns.n('icon-loading')]" v-if="loading" size="1.35em" spin><loadingIcon/></q-icon>
+    <q-icon :class="ns.n('icon-loading')" v-if="loading" size="1.35em" spin><loadingIcon/></q-icon>
     <q-icon :class="ns.n('icon-left')" v-if="!loading && icon" :name="icon" size="1.25em"/>
     <span :class="ns.n('text')"><slot></slot></span>
     <q-icon :class="ns.n('icon-right')" v-if="rightIcon" :name="rightIcon" size="1.25em"/>
@@ -15,13 +14,13 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, useSlots, CSSProperties } from 'vue'
+import { computed, useSlots, CSSProperties, inject } from 'vue'
 import { buttonProps, buttonEmits } from './button'
 import { useNS } from '@qii-ui/hooks'
 const slots = useSlots()
 
+// 引入图标
 import { QIcon } from '../../Icon'
-// @ts-ignore
 import { loadingIcon } from '@qii-ui/icons'
 
 
@@ -35,13 +34,16 @@ defineOptions({
 const props = defineProps({ ...buttonProps })
 const emits = defineEmits({ ...buttonEmits })
 
+// 接收按钮组属性
+const buttonGroup: any = inject('buttonGroup', '')
+
 // 组件类名
 const ns = useNS('button')
 const buttonClass = computed(() => [
   ns.nameSpace,
-  ns.n(props.type),
+  ns.n(buttonGroup.type?.value || props.type),
+  ns.t(buttonGroup.size?.value || props.size, 'string'),
   ns.n(props.shape),
-  ns.t(props.size, 'string'),
   ns.is(props.plain, 'plain'),
   ns.is(props.text, 'text'),
   ns.is(props.bg, 'has-bg'),
@@ -49,7 +51,7 @@ const buttonClass = computed(() => [
   ns.is(props.rightIcon, 'has-right-icon'),
   ns.is(props.loading, 'loading'),
   ns.is(props.disabled || props.loading, 'disabled'),
-  ns.is(!slots.default, 'empty')
+  ns.is(!slots.default, 'empty'),
 ])
 
 // 组件样式

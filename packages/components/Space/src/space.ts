@@ -32,8 +32,8 @@ export const SpaceProps = {
   /**
    * @zh 宽度是否占满父元素
    */
-  // fill: {
-  //   type: Boolean,
-  //   default: false,
-  // },
+  fill: {
+    type: Boolean,
+    default: false,
+  },
 } as const

@@ -13,7 +13,7 @@ export default defineComponent({
     const classList = computed(() => [
       ns.nameSpace,
       ns.t(props.size, 'string'),
-      // ns.is(props.fill, 'fill'),
+      ns.is(props.fill, 'fill'),
       ns.is(props.vertical, 'vertical'),
     ])
 
