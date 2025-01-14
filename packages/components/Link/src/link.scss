@@ -1,0 +1,47 @@
+.q-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: top;
+
+  transition: all 0.1s !important;
+  text-decoration: none !important;
+
+  .q-icon {
+    margin-right: 1px;
+    transform: translateX(-1px);
+  }
+}
+
+
+// 混合：不同的链接类型
+@mixin linkType($type) {
+  color: var(--q-color-#{$type}) !important;
+  // 下划线
+  &.is-has-line::after {
+    content: "";
+    position: absolute; left: 0; bottom: 2px;
+    width: 100%;
+    height: 1px;
+    background-color: var(--q-color-#{$type}-a);
+    transition: transform 0.25s ease;
+    transform: scale(0);
+  }
+  &:hover:not(.is-disabled) {
+    color: var(--q-color-#{$type}-a) !important;
+    &.is-has-line::after { transform: scale(1) }
+  }
+}
+
+// 生成链接类名
+$lineTypes: ("primary", "success", "warning", "danger");
+@each $type in $buttonTypes {
+  .q-link__#{$type} { @include linkType($type) }
+}
+
+
+// 禁用状态
+.q-link.is-disabled {
+  opacity: 0.6;
+  cursor: no-drop;
+}

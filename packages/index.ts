@@ -12,6 +12,7 @@ import QAvatar from './components/Avatar/index'
 import QAvatarGroup from './components/Avatar-group/index'
 import QButton from './components/Button/index'
 import QButtonGroup from './components/Button-group/index'
+import QLink from './components/Link/index'
 
 // 单独导出组件，提供按需引入
 export {
@@ -21,6 +22,7 @@ export {
   QAvatarGroup,
   QButton,
   QButtonGroup,
+  QLink,
 }
 
 // 组件列表
@@ -31,6 +33,7 @@ const components = [
   QAvatarGroup,
   QButton,
   QButtonGroup,
+  QLink,
 ]
 
 /**

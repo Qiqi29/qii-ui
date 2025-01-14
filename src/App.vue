@@ -9,38 +9,9 @@ const handleClick = () => {
 <template>
   <div>
 
-    <h2>按钮组件</h2>
+    <h2>链接组件</h2>
 
-    <!-- <q-space direction="center">
-      <q-button size="small">确定</q-button>
-      <q-button size="medium">按钮</q-button>
-      <q-button size="large">取消</q-button>
-    </q-space> -->
-
-
-    <q-space vertical>
-      <q-space>
-        <q-button type="default">默认按钮</q-button>
-        <q-button type="primary" loading>确定</q-button>
-        <q-button type="success">成功</q-button>
-        <q-button type="warning">警告</q-button>
-        <q-button type="danger">危险</q-button>
-      </q-space>
-      <q-space>
-        <q-button type="default" plain>二级按钮</q-button>
-        <q-button type="primary" plain>确定</q-button>
-        <q-button type="success" plain>成功</q-button>
-        <q-button type="warning" plain>警告</q-button>
-        <q-button type="danger" plain>危险</q-button>
-      </q-space>
-      <q-space>
-        <q-button type="default" text bg>文字按钮</q-button>
-        <q-button type="primary" text bg>确定</q-button>
-        <q-button type="success" text>成功</q-button>
-        <q-button type="warning" text>警告</q-button>
-        <q-button type="danger" text>危险</q-button>
-      </q-space>
-    </q-space>
+    <q-link line>点击打开</q-link>
 
   </div>
 </template>
