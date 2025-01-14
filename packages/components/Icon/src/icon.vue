@@ -1,9 +1,11 @@
 <template>
-  <span :class="iconClass" :style="iconStyle">
+  <span :class="iconClass">
 
-    <slot>
-      <svg><use :xlink:href="`#icon-${name}`"></use></svg>
-    </slot>
+    <i :style="iconStyle">
+      <slot>
+        <svg><use :xlink:href="`#icon-${name}`"></use></svg>
+      </slot>
+    </i>
 
   </span>
 </template>

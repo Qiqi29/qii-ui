@@ -1,14 +1,22 @@
 .q-icon {
   display: inline-flex;
-  flex-shrink: 0;
   vertical-align: middle;
-  width: 1em;
-  height: 1em;
-  fill: currentColor;
-  user-select: none;
+  flex-shrink: 0;
+  i {
+    display: inline-flex;
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+    user-select: none;
+    svg {
+      width: inherit;
+      height: inherit;
+      fill: inherit;
+    }
+  }
 }
 
-.q-icon.is-spin > svg {
+.q-icon.is-spin > i {
   animation: loading 0.8s linear infinite;
 }
 

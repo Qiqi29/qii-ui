@@ -1,0 +1,151 @@
+.q-button {
+  position: relative;
+  box-sizing: border-box;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  flex-shrink: 0;
+
+  padding: 0 20px;
+  border: none;
+  border-radius: 6px;
+  transition: all 0.1s;
+  
+  font-size: 14px;
+  line-height: normal;
+  text-decoration: none;
+
+  user-select: none;
+  cursor: pointer;
+}
+
+
+// 混合：不同大小的按钮
+@mixin buttonSize($height, $padding, $fontSize, $borderRadius) {
+  height: $height;
+  padding: 0.5px $padding 0px $padding;
+  font-size: $fontSize;
+  border-radius: $borderRadius;
+  // 文字为空 或 形状为圆形
+  &.is-empty, &.q-button__circle {
+    padding: none;
+    width: $height;
+  }
+}
+.q-button__small { @include buttonSize(24px, 10px, 12px, 4.5px) }
+.q-button__medium { @include buttonSize(30px, 16px, 14px, 6px) }
+.q-button__large { @include buttonSize(38px, 20px, 14px, 6px) }
+
+
+// 混合：不同类型的按钮
+@mixin buttonType($type, $color) {
+  background: var(--q-color-#{$type});
+  color: $color;
+  &.is-plain {
+    background: var(--q-color-#{$type}-l);
+    color: var(--q-color-#{$type});
+  }
+  &:hover:not(.is-disabled) {
+    background: var(--q-color-#{$type}-h);
+    &.is-plain { background: var(--q-color-#{$type}-l-h) }
+  }
+  &:active:not(.is-disabled) {
+    transition: all 0.05s;
+    background: var(--q-color-#{$type}-a);
+    &.is-plain { background: var(--q-color-#{$type}-l-a) }
+  }
+}
+.q-button__default {
+  @include buttonType("default", var(--q-color-text-1));
+  &.is-plain { color: var(--q-color-text-1) }
+}
+.q-button__primary { @include buttonType("primary", #FFFFFF) }
+.q-button__success { @include buttonType("success", #FFFFFF) }
+.q-button__warning { @include buttonType("warning", #FFFFFF) }
+.q-button__danger { @include buttonType("danger", #FFFFFF) }
+
+
+// 文字按钮
+.q-button.is-text {
+  background: transparent;
+  &.is-has-bg { background: var(--q-color-default-l) }
+
+  &.q-button__primary { color: var(--q-color-primary); }
+  &.q-button__success { color: var(--q-color-success); }
+  &.q-button__warning { color: var(--q-color-warning); }
+  &.q-button__danger { color: var(--q-color-danger); }
+  
+  &:hover:not(.is-disabled) {
+    background: var(--q-color-default-l);
+    &.is-has-bg { background: var(--q-color-default-l-h) }
+  }
+  &:active:not(.is-disabled) {
+    background: var(--q-color-default-l-h);
+    &.is-has-bg { background: var(--q-color-default-l-a) }
+  }
+}
+
+
+// 处理不同布局
+.q-button {
+  // 两侧图标
+  .q-icon {
+    position: absolute;
+    left: 12px;
+  }
+  .q-button__icon-right {
+    position: absolute;
+    left: auto;
+    right: 12px;
+  }
+  // 两侧图标存在，修改文本边距
+  .q-icon + .q-button__text {
+    margin-left: 18px;
+  }
+  &.is-has-right-icon .q-button__text {
+    margin-right: 18px;
+  }
+  // 按钮文本
+  .q-button__text {
+    transition: all 0.2s;
+  }
+  // 按钮文本为空，图标居中
+  &.is-empty .q-icon {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+}
+
+
+// 圆角矩形按钮
+.q-button__round {
+  border-radius: 500px;
+}
+
+// 圆形按钮
+.q-button__circle {
+  padding: 0;
+  border-radius: 50%;
+  .q-button__text {
+    display: none;
+  }
+}
+
+// 长按钮
+.q-button.is-long {
+  width: 100%;
+}
+
+// 按钮加载状态
+.q-button.is-loading {
+  cursor: default !important;
+}
+
+// 按钮禁用状态
+.q-button.is-disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}

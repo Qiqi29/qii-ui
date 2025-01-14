@@ -1,5 +1,5 @@
 <template>
-  <q-space size="large" direction="center">
+  <q-space size="large">
     <q-avatar :src="avatar" shape="round" />
     <q-avatar :src="avatar" shape="square" />
   </q-space>

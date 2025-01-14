@@ -9,21 +9,29 @@ const handleClick = () => {
 <template>
   <div>
 
-    <p>图标组件</p>
-    <div style="width: 100px; height: 32px; border: 1px solid #CCC; display: flex; align-items: center; justify-content: center;">
-      <q-icon name="delete"/>
-      <span>删除</span>
-    </div>
-
-    <p>头像组件</p>
-    <q-space>
-      <q-avatar-group size="large">
-        <q-avatar src="https://img.picgo.net/2024/06/06/12324555e32e049f8305.png" />
-        <q-avatar>你好</q-avatar>
-        <q-avatar>你好</q-avatar>
-        <q-avatar>你好</q-avatar>
-      </q-avatar-group>
-      <q-avatar size="large" shape="square">你好</q-avatar>
+    <h2>按钮组件</h2>
+    <q-space vertical>
+      <q-space>
+        <q-button type="default">默认按钮</q-button>
+        <q-button type="primary" loading>确定</q-button>
+        <q-button type="success">成功</q-button>
+        <q-button type="warning">警告</q-button>
+        <q-button type="danger">危险</q-button>
+      </q-space>
+      <q-space>
+        <q-button type="default" plain>二级按钮</q-button>
+        <q-button type="primary" plain>确定</q-button>
+        <q-button type="success" plain>成功</q-button>
+        <q-button type="warning" plain>警告</q-button>
+        <q-button type="danger" plain>危险</q-button>
+      </q-space>
+      <q-space>
+        <q-button type="default" text bg>文字按钮</q-button>
+        <q-button type="primary" text bg>确定</q-button>
+        <q-button type="success" text>成功</q-button>
+        <q-button type="warning" text>警告</q-button>
+        <q-button type="danger" text>危险</q-button>
+      </q-space>
     </q-space>
 
   </div>

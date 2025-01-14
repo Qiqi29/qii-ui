@@ -24,9 +24,8 @@ defineOptions({
 // 组件属性
 const props = defineProps({ ...avatarProps })
 
-// 接收父组件传值
+// 接收父组件传值，优先使用头像组的参数
 const avatarGroup: any = inject('avatarGroup', '')
-// 计算属性：优先使用父组件的参数
 const avatarSize = computed(() => avatarGroup.size?.value || props.size)
 const avatarShape = computed(() => avatarGroup.shape?.value || props.shape)
 

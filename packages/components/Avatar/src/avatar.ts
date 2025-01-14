@@ -21,4 +21,4 @@ export const avatarProps = {
     type: String as PropType<'square' | 'round'>,
     default: 'round'
   }
-} as const;
+} as const
