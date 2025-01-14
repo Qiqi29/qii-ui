@@ -1,0 +1,19 @@
+.q-button-group {
+  display: inline-flex;
+}
+
+.q-button-group > .q-button {
+  border-radius: 0;
+  &:first-child {
+    border-radius: 6px 0 0 6px;
+  }
+  &:last-child {
+    border-radius: 0 6px 6px 0;
+  }
+  &:not(:last-child) {
+    border-right: 1px solid #ffffff40;
+  }
+  &.q-button__default:not(:last-child) {
+    border-right: 1px solid #00000010;
+  }
+}
