@@ -11,7 +11,13 @@ const handleClick = () => {
 
     <h3>链接组件</h3>
 
-    <q-link line>点击打开</q-link>
+    
+    <q-badge :count="20">
+      <q-button type="primary">点击打开</q-button>
+    </q-badge>
+
+    <br><br>
+    <q-badge :count="2" dot/>
 
   </div>
 </template>
@@ -19,7 +25,5 @@ const handleClick = () => {
 <style lang="scss">
 body {
   padding: 30px;
-  font-size: 14px;
-  line-height: 24px;
 }
 </style>
