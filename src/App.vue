@@ -9,7 +9,7 @@ const handleClick = () => {
 <template>
   <div>
 
-    <h2>链接组件</h2>
+    <h3>链接组件</h3>
 
     <q-link line>点击打开</q-link>
 
@@ -20,5 +20,6 @@ const handleClick = () => {
 body {
   padding: 30px;
   font-size: 14px;
+  line-height: 24px;
 }
 </style>

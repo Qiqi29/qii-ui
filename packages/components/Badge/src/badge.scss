@@ -1,0 +1,46 @@
+.q-badge {
+  position: relative;
+  display: inline-flex;
+}
+
+// 徽标红点样式
+.q-badge .q-badge__mark {
+  position: absolute; top: 0; right: 0;
+  transform: translate(40%, -40%);
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  padding: 0 5.5px 0 5.5px;
+  min-width: 22px;
+  height: 22px;
+
+  background: var(--q-color-danger);
+  border: 2px solid var(--q-color-light);
+  border-radius: 100px;
+
+  color: #FFFFFF;
+  font-size: 12px;
+  text-wrap: nowrap;
+}
+
+// 自定义文本
+.q-badge__text {
+  transform: scale(0.9);
+}
+
+// 点点样式
+.q-badge.is-dot .q-badge__mark {
+  padding: 0;
+  width: 10px;
+  height: 10px;
+  min-width: 10px;
+}
+
+// 默认插槽为空，独立显示
+.q-badge.is-empty .q-badge__mark{
+  position: relative;
+  transform: translate(0%, 0%);
+}

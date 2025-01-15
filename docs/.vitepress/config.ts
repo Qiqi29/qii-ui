@@ -91,6 +91,7 @@ export default defineConfig({
           text: '数据展示组件',
           items: [
             { text: '头像 Avatar', link: '/component/avatar' },
+            { text: '徽标 Badge', link: '/component/badge' },
           ]
         },
         {
