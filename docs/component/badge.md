@@ -7,11 +7,6 @@
 <demo src="./demo/badge/basic.vue"/>
 
 
-## 独立使用
-`default slot` 默认插槽为空时，徽标可以独立使用。
-<demo src="./demo/badge/alone.vue"/>
-
-
 ## 最大值
 使用 `max` 属性，限制徽标显示的最大值，超出会显示后缀 `+`。
 <demo src="./demo/badge/max.vue"/>
@@ -20,6 +15,11 @@
 ## 文本
 使用 `text` 属性，可以自定义徽标显示的文本。
 <demo src="./demo/badge/text.vue"/>
+
+
+## 独立使用
+`default slot` 默认插槽为空时，徽标可以独立使用。
+<demo src="./demo/badge/alone.vue"/>
 
 
 ## 类型
