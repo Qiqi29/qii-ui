@@ -23,20 +23,20 @@
 
 
 // 混合：不同大小的按钮
-@mixin buttonSize($height, $padding, $fontSize, $borderRadius) {
+@mixin buttonSize($size, $height, $padding, $fontSize, $borderRadius) {
   height: $height;
-  padding: 0.5px $padding 0px $padding;
+  padding: if($size == "small", 0px $padding, 0.5px $padding 0px $padding);
   font-size: $fontSize;
   border-radius: $borderRadius;
-  // 文字为空，或形状为圆形
+  // 文字为空，形状为圆形
   &.is-empty, &.q-button__circle {
     padding: none;
     width: $height;
   }
 }
-.q-button__small { @include buttonSize(24px, 10px, 12px, 4.5px) }
-.q-button__medium { @include buttonSize(30px, 16px, 14px, 6px) }
-.q-button__large { @include buttonSize(36px, 20px, 15px, 6px) }
+.q-button__small { @include buttonSize("small", 24px, 10px, 12px, 5px) }
+.q-button__medium { @include buttonSize("medium", 30px, 16px, 14px, 6px) }
+.q-button__large { @include buttonSize("large", 36px, 20px, 15px, 6px) }
 
 
 // 混合：不同类型的按钮
@@ -57,19 +57,17 @@
   &:hover:not(.is-disabled) { 
     background: var(--q-color-#{$type}-h);
     &.is-plain { background: var(--q-color-#{$type}-l-h) }
-    &.is-text { background: var(--q-color-default-l) }
-    &.is-text.is-has-bg { background: var(--q-color-default-l-h) }
+    &.is-text { background: var(--q-color-default-l-h) }
   }
   &:active:not(.is-disabled) { 
     transition: all 0.05s;
     background: var(--q-color-#{$type}-a);
     &.is-plain { background: var(--q-color-#{$type}-l-a) }
-    &.is-text { background: var(--q-color-default-l-h) }
-    &.is-text.is-has-bg { background: var(--q-color-default-l-a) }
+    &.is-text { background: var(--q-color-default-l-a) }
   }
 }
 
-// 生成按钮类名
+// 遍历生成按钮类型
 $buttonTypes: ("default", "primary", "success", "warning", "danger");
 @each $type in $buttonTypes {
   .q-button__#{$type} { @include buttonType($type) }

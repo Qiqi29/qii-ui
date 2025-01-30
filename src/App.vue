@@ -9,15 +9,16 @@ const handleClick = () => {
 <template>
   <div>
 
-    <h3>链接组件</h3>
+    <p class="title">按钮</p>
 
-    
-    <q-badge :count="20">
-      <q-button type="primary">点击打开</q-button>
-    </q-badge>
-
-    <br><br>
-    <q-badge :count="2" dot/>
+    <q-space>
+      <q-button type="default">默认样式</q-button>
+      <q-button type="primary">主要按钮</q-button>
+      <q-button type="danger">危险按钮</q-button>
+      <q-button type="danger" loading>加载</q-button>
+      <q-button type="primary" icon="add"></q-button>
+      <q-button type="success" icon="delete"></q-button>
+    </q-space>
 
   </div>
 </template>
@@ -25,5 +26,10 @@ const handleClick = () => {
 <style lang="scss">
 body {
   padding: 30px;
+}
+.title {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
 }
 </style>

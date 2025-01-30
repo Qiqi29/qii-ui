@@ -1,7 +1,7 @@
 # 图标 Icon
 图标组件使用 `symbol` 格式的 SVG 图标，只需要输入图标的名称就可以快速使用。
 
-Qii-UI 所使用的图标来自 [MingCute Icon](https://www.mingcute.com/) 图标库。
+Qii-UI 使用的图标来自 [MingCute Icon](https://www.mingcute.com/) 图标库。
 
 
 ## 安装插件
@@ -24,14 +24,14 @@ import path from "path"
 export default defineConfig({
   plugins: [
     createSvgIconsPlugin({
-      iconDirs: [path.resolve(__dirname, 'src/icons')], // 存放图标的目录
-      symbolId: 'icon-[dir]-[name]'
+      iconDirs: [path.resolve(__dirname, 'src/icons')],  // 存放图标的目录
+      symbolId: 'icon-[dir]-[name]'                      // symbolId 的格式
     })
   ]
 })
 ```
 
-4. 配置完成后，把你的图标放入 `src/icons` 目录下，就可以使用啦！
+4. 配置完成后，把你的图标放入图标目录 `src/icons` 里面，就可以使用啦！
 ```
 src
  └─ icons
@@ -57,7 +57,7 @@ src
 
 
 ## 自定义图标
-默认插槽中可以传入 SVG 代码（确保设置了 SVG 的 viewBox 属性）。
+默认插槽中可以传入 SVG 代码来自定义图标。
 <demo src="./demo/icon/svg.vue"/>
 
 
