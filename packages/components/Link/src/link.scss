@@ -25,13 +25,11 @@
     height: 1px;
     background-color: var(--q-color-#{$type}-a);
     transition: transform 0.25s ease;
-    transform-origin: 100% 0%;
     transform: scale(0, 1);
   }
   &:hover:not(.is-disabled) {
     color: var(--q-color-#{$type}-a) !important;
     &.is-has-line::after { 
-      transform-origin: 0% 0%;
       transform: scale(1, 1); 
     }
   }

@@ -19,8 +19,8 @@ export const linkProps = {
    * @zh 链接的跳转方式
    */
   open: {
-    type: String as PropType<'newTab' | 'replace' | 'push'>,
-    default: "newTab",
+    type: String as PropType<'new' | 'replace' | 'push'>,
+    default: "new",
   },
   /**
    * @zh 链接图标

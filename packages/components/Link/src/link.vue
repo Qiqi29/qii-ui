@@ -47,9 +47,9 @@ const linkClass = computed(() => [
  const handleClick = () => {
   if (!props.href || props.disabled) return
 
-  if (props.open === 'newTab') window.open(props.href);
-  if (props.open === 'replace') window.location.replace(props.href);
-  if (props.open === 'push') window.location.href = props.href;
+  if (props.open === 'new') window.open(props.href)
+  if (props.open === 'replace') window.location.replace(props.href)
+  if (props.open === 'push') window.location.href = props.href
 }
 </script>
 
