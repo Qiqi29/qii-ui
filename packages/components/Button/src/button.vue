@@ -14,10 +14,10 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, useSlots, CSSProperties, inject } from 'vue'
+import { computed, useSlots, Slots, CSSProperties, inject } from 'vue'
 import { buttonProps, buttonEmits } from './button'
 import { useNS } from '@qii-ui/hooks'
-const slots = useSlots()
+const slots = useSlots() as Slots
 
 // 引入图标
 import { QIcon } from '../../Icon'

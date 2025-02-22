@@ -135,11 +135,11 @@ body::-webkit-scrollbar-thumb:active {
 }
 
 
-/* 按钮样式 */
+/* 首页按钮样式 */
 .VPButton.medium.brand,
 .VPButton.medium.alt {
-  padding: 1px 36px 0 36px;
-  line-height: 50px;
+  padding: 2px 40px 0 40px;
+  line-height: 54px;
   border-radius: 100px;
   font-size: 1.2em;
 }
