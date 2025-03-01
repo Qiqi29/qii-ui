@@ -8,6 +8,7 @@ Qii-UI 使用的图标来自 [MingCute Icon](https://www.mingcute.com/) 图标�
 1. 安装 [vite-plugin-svg-icons](https://github.com/vbenjs/vite-plugin-svg-icons) 插件（用来把 SVG 图标自动注册到 HTML 中）
 ```bash
 npm i vite-plugin-svg-icons -D
+npm i fast-glob@3.x -D
 ```
 
 2. 在入口文件 `main.ts` 中引入图标注册器。

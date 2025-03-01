@@ -1,0 +1,14 @@
+{
+  "q-button/type": {
+    "description": "按钮的类型",
+    "options": ["default", "primary", "success", "warning", "danger"]
+  },
+  "q-button/size": {
+    "description": "按钮的大小",
+    "options": ["small", "medium", "large"]
+  },
+  "q-button/shape": {
+    "description": "按钮的形状",
+    "options": ["square", "round", "circle"]
+  }
+}

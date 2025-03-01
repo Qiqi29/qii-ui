@@ -40,12 +40,17 @@ const components = [
 ]
 
 /**
- * 遍历组件列表，注册为 Vue 组件，
- * 可以通过 app.use(QiiUI) 完整安装组件库
+ * 组件库的 install 方法
+ * 
+ * @example
+ * ```ts
+ * import QiiUI from 'qii-ui'
+ * app.use(QiiUI)
+ * ```
  */
 const install = (app: App) => {
   components.forEach(component => {
     app.component(component.name as string, component)
   })
 }
-export default install
+export default install;

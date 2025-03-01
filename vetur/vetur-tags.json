@@ -1,0 +1,6 @@
+{
+  "q-button": {
+    "description": "Qii UI - 按钮组件",
+    "attributes": ["type", "size", "shape", "plain", "text", "bg", "long", "loading", "disabled", "icon", "rightIcon"]
+  }
+}

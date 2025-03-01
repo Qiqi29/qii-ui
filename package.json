@@ -5,8 +5,17 @@
   "author": {
     "name": "qiqi"
   },
-  "keywords": ["qii-ui", "qii", "vue", "ui"],
-  "files": ["dist", "lib", "es"],
+  "keywords": [
+    "qii-ui",
+    "qii",
+    "vue",
+    "ui"
+  ],
+  "files": [
+    "dist",
+    "lib",
+    "es"
+  ],
   "main": "lib/index.js",
   "module": "es/index.mjs",
   "types": "es/index.d.ts",
@@ -48,6 +57,10 @@
     "vite-plugin-svg-icons": "^2.0.1",
     "vitepress": "^1.5.0",
     "vue-tsc": "^2.0.6"
+  },
+  "vetur": {
+    "tags": "vetur/vetur-tags.json",
+    "attributes": "vetur/vetur-attributes.json"
   },
   "type": "module",
   "license": "MIT"

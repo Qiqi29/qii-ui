@@ -3,14 +3,14 @@
  */
 
 // 引入主题颜色
-@import './theme.scss';
+@use './theme.scss';
 
 // 引入每个组件的样式
-@import '../components/Icon/src/icon.scss';
-@import '../components/Space/src/space.scss';
-@import '../components/Avatar/src/avatar.scss';
-@import '../components/Avatar-group/src/avatar-group.scss';
-@import '../components/Button/src/button.scss';
-@import '../components/Button-group/src/button-group.scss';
-@import '../components/Link/src/link.scss';
-@import '../components/Badge/src/badge.scss';
+@use '../components/Icon/src/icon.scss';
+@use '../components/Space/src/space.scss';
+@use '../components/Avatar/src/avatar.scss';
+@use '../components/Avatar-group/src/avatar-group.scss';
+@use '../components/Button/src/button.scss';
+@use '../components/Button-group/src/button-group.scss';
+@use '../components/Link/src/link.scss';
+@use '../components/Badge/src/badge.scss';

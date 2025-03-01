@@ -1,6 +1,6 @@
 /**
  * gulp 任务系统
- * 用来一键执行重复性的操作
+ * 用来一键自动化执行各种繁杂的操作
  */
 
 const gulp = require('gulp')                        // 引入 gulp 模块
@@ -13,20 +13,21 @@ const del = require('del')                          // 用于删除文件
 
 // 清理上次打包的文件
 gulp.task('clean', function () {
-  return del(['dist', 'es', 'lib'])
+  return del(['output'])
 })
 
 
-// 编译 SCSS 文件
+// 编译 CSS 样式文件
 gulp.task('sass', function () {
   return gulp.src('./packages/**/*.scss')
+    // 编译 SCSS 并压缩 
     .pipe(sass())
     .pipe(cleanCSS())
-    // 去除文件名中的路径，不保留原目录格式
+    // 去除文件名中的路径，即不保留原目录格式
     .pipe(rename((path) => { path.dirname = '' }))
     // 单独存放 index.css 文件
-    .pipe(gulpIf(file => file.basename === 'index.css', gulp.dest('dist')))
-    .pipe(gulpIf(file => file.basename !== 'index.css', gulp.dest('dist/css')))
+    .pipe(gulpIf(file => file.basename === 'index.css', gulp.dest('output/dist')))
+    .pipe(gulpIf(file => file.basename !== 'index.css', gulp.dest('output/dist/css')))
 })
 
 

@@ -7,7 +7,6 @@ import dts from "vite-plugin-dts"
 import path from "path"
 
 
-// Vite 配置
 export default defineConfig({
   plugins: [
     vue(),
@@ -16,12 +15,13 @@ export default defineConfig({
       iconDirs: [path.resolve(__dirname, 'src/svg')],
       symbolId: 'icon-[dir]-[name]'
     }),
-    // TS 类型文件生成插件
+    // TS 类型生成插件
     dts({
-      outDir: ['es', "lib"],
+      outDir: ['output/es', "output/lib"],
       tsconfigPath: path.resolve(__dirname, "tsconfig.json"),
     })
   ],
+
   // 组件库打包配置
   build: {
     lib: {
@@ -37,18 +37,19 @@ export default defineConfig({
           entryFileNames: "[name].mjs",	// 文件名格式
           preserveModules: true,			  // 保留原文件结构
           exports: "named",				      // 使用具名导出
-          dir: "es",						        // 打包后的文件位置
+          dir: "output/es",						  // 打包后的文件位置
         },
         {
           format: "cjs",					      // 打包为 CommonJS 格式
           entryFileNames: "[name].js",
           preserveModules: true,
           exports: "named",
-          dir: "lib",
+          dir: "output/lib",
         },
       ],
     }
   },
+  
   // 开发服务器配置
   server: {
     host: '0.0.0.0',

@@ -17,7 +17,8 @@ const handleClick = () => {
       <q-button type="danger">危险按钮</q-button>
       <q-button type="danger" loading>加载</q-button>
       <q-button type="primary" icon="add"></q-button>
-      <q-button type="success" icon="delete"></q-button>
+      <q-button type="danger" icon="delete"></q-button>
+
     </q-space>
 
   </div>

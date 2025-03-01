@@ -47,7 +47,7 @@ export default defineConfig({
       { text: '指北', link: '/guide/install', activeMatch: '/guide/' },
       { text: '组件', link: '/component/button', activeMatch: '/component/' },
       {
-        text: '0.0.6',
+        text: '0.1.0',
         items: [
           { text: '更新日志', link: '/guide/changelog' },
           { text: '参与贡献', link: '/' }

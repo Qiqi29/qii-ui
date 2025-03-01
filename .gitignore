@@ -11,6 +11,7 @@ lerna-debug.log*
 
 # 构建文件
 node_modules
+output
 dist
 es
 lib

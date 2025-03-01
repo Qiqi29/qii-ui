@@ -37,7 +37,7 @@
 
 // 生成链接类名
 $lineTypes: ("primary", "success", "warning", "danger");
-@each $type in $buttonTypes {
+@each $type in $lineTypes {
   .q-link__#{$type} { @include linkType($type) }
 }
 
