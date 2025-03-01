@@ -68,7 +68,7 @@ src
 | --- | --- | --- | --- |
 | name    | `string`  | —             | 图标名 |
 | color   | `string`  | currentColor  | 图标颜色 |
-| size    | `string`  | 1.8em         | 图标大小 |
+| size    | `string`  | 1.5em         | 图标大小 |
 | spin    | `boolean` | false         | 图标是否为旋转状态 |
 | rotate  | `number`  | 0             | 自定义旋转角度 |
 

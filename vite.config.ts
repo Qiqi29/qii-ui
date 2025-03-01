@@ -49,6 +49,15 @@ export default defineConfig({
       ],
     }
   },
+
+  // CSS 样式配置
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: 'modern-compiler',
+      }
+    }
+  },
   
   // 开发服务器配置
   server: {

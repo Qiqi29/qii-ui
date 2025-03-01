@@ -19,7 +19,7 @@ export const iconProps = {
    */
   size: {
     type: String as PropType<string>,
-    default: "1.8em",
+    default: "1.5em",
   },
   /**
    * @zh 图标是否为旋转状态

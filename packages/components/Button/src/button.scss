@@ -35,8 +35,8 @@
   }
 }
 .q-button__small { @include buttonSize("small", 24px, 10px, 12px, 5px) }
-.q-button__medium { @include buttonSize("medium", 30px, 16px, 14px, 7px) }
-.q-button__large { @include buttonSize("large", 36px, 20px, 15px, 8px) }
+.q-button__medium { @include buttonSize("medium", 30px, 16px, 14px, 6px) }
+.q-button__large { @include buttonSize("large", 36px, 20px, 15px, 7px) }
 
 
 // 混合：不同类型的按钮

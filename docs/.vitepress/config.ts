@@ -8,7 +8,6 @@ import { applyPlugins } from '@ruabick/md-demo-plugins'         // 代码演示�
 
 // VitePress 配置
 export default defineConfig({
-
   title: "Qii-UI",
   description: "qii-ui 组件库文档",
   lang: "zh",
@@ -32,10 +31,17 @@ export default defineConfig({
         symbolId: 'icon-[dir]-[name]',
       })
     ],
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: 'modern-compiler',
+        }
+      }
+    },
     server: {
       host: '0.0.0.0',
       port: 5777,
-    }
+    },
   },
 
   themeConfig: {

@@ -33,13 +33,13 @@
   --q-color-theme: #3280FF;
   --q-color-theme-alpha: #2871f820;
 
-  --vp-c-bg: #0c0c0e;
-  --vp-c-gutter: #222223;
+  --vp-c-bg: #121214;
+  --vp-c-gutter: #222224;
   --vp-c-bg-soft: #1a1b1f;
-  --q-docs-nav-bg: #141418dd;
-  --q-docs-scrollbar-color: #434346;
-  --q-docs-scrollbar-hover: #49494d;
-  --q-docs-scrollbar-active: #5e5e63;
+  --q-docs-nav-bg: #141416DF;
+  --q-docs-scrollbar-color: #424244;
+  --q-docs-scrollbar-hover: #48484C;
+  --q-docs-scrollbar-active: #5E5E63;
 
   /* 代码块 */
   --vp-code-block-bg: #ffffff08;
@@ -66,6 +66,12 @@
 * {
   /* 去除移动端点击高亮样式 */
   -webkit-tap-highlight-color: transparent;
+}
+
+/* 鼠标选中文本样式 */
+::selection {
+  background-color: #3080FF60;
+  color: inherit;
 }
 
 
