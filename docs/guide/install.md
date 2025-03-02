@@ -11,7 +11,7 @@ Qii UI 使用 Vue3 开发， 请在同样使用 Vue3 的项目中使用。
 
 ::: code-group
 ```sh [npm]
-npm i qii-ui
+npm install qii-ui
 ```
 ```sh [yarn]
 * 施工中..

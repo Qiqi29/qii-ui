@@ -8,10 +8,8 @@ import { App } from 'vue'
 // 引入所有组件
 import QIcon from './components/Icon/index'
 import QSpace from './components/Space/index'
-import QAvatar from './components/Avatar/index'
-import QAvatarGroup from './components/Avatar-group/index'
-import QButton from './components/Button/index'
-import QButtonGroup from './components/Button-group/index'
+import { QAvatar, QAvatarGroup } from './components/Avatar/index'
+import { QButton, QButtonGroup } from './components/Button/index'
 import QLink from './components/Link/index'
 import QBadge from './components/Badge/index'
 
