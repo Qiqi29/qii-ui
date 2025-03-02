@@ -18,7 +18,7 @@ import { useNameSpace } from '@qii-ui/hooks'
 // 组件配置
 defineOptions({
   name: 'q-avatar',
-  inheritAttrs: true
+  inheritAttrs: true,
 })
 
 // 组件属性

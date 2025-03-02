@@ -24,21 +24,18 @@ export default defineComponent({
 
     // 获取默认插槽内容
     const children = useFilterNodes(slots.default?.())
-
-    return () => {
-      // 遍历插槽内容，返回 max 属性限制数量的节点
-      const avatarNodes = children.filter((_, index) => index < props.max)
-      
-        // 判断是否添加显示超出数量提示
-      if (children.length > props.max) {
-        avatarNodes.push(
-          h(QAvatar, { style: { padding: '0 3px 0 2px' } }, () => `+${children.length - props.max}`)
-        )
-      }
-
-      // 渲染组件
-      return h('div', { class: avatarGroupClass.value }, avatarNodes)
+    // 遍历插槽内容，返回 max 属性限制的节点
+    const avatarNodes = children.filter((_, index) => index < props.max)
+  
+    // 判断是否添加显示超出数量提示
+    if (children.length > props.max) {
+      avatarNodes.push(
+        h(QAvatar, {style: {padding: '0 3px 0 2px'}}, () => `+${children.length - props.max}`)
+      )
     }
+
+    // 渲染头像组件
+    return () => h('div', { class: avatarGroupClass.value }, avatarNodes)
   }
 })
 </script>

@@ -19,7 +19,6 @@ import { buttonProps, buttonEmits } from './button'
 import { useNameSpace } from '@qii-ui/hooks'
 const slots = useSlots() as Slots
 
-// 引入图标
 import { QIcon } from '../../Icon'
 // @ts-ignore
 import { loadingIcon } from '@qii-ui/icons'
@@ -28,7 +27,7 @@ import { loadingIcon } from '@qii-ui/icons'
 // 组件配置
 defineOptions({ 
   name: 'q-button',
-  inheritAttrs: false
+  inheritAttrs: false,
 })
 
 // 组件属性

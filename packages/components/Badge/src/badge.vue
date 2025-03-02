@@ -13,7 +13,7 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, useSlots, Slots } from 'vue'
+import { computed, useSlots, Slots, CSSProperties } from 'vue'
 import { badgeProps } from './badge'
 import { useNameSpace } from '@qii-ui/hooks'
 const slots = useSlots() as Slots
@@ -21,7 +21,7 @@ const slots = useSlots() as Slots
 // 组件配置
 defineOptions({ 
   name: 'q-badge',
-  inheritAttrs: true
+  inheritAttrs: true,
 })
 
 // 组件属性
@@ -36,9 +36,9 @@ const badgeClass = computed(() => [
 ])
 
 // 组件样式
-const badgeStyle = computed(() => { return {
+const badgeStyle = computed<CSSProperties>(() => ({
   background: props.color ? props.color : `var(--q-color-${props.type})`
-}})
+}))
 
 // 计算属性：判断是否超过最大值
 const badgeMaxCount = computed(() => {

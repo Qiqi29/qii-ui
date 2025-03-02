@@ -1,14 +1,28 @@
 {
   "q-button/type": {
-    "description": "按钮的类型",
-    "options": ["default", "primary", "success", "warning", "danger"]
+    "description": "按钮类型",
+    "options": ["default","primary","success","warning","danger"]
   },
   "q-button/size": {
-    "description": "按钮的大小",
-    "options": ["small", "medium", "large"]
+    "description": "按钮大小",
+    "options": ["small","medium","large"]
   },
   "q-button/shape": {
-    "description": "按钮的形状",
-    "options": ["square", "round", "circle"]
+    "description": "按钮形状",
+    "options": ["square","round","circle"]
+  },
+
+  "q-space/size": {
+    "description": "间距大小",
+    "options": ["mini","small","medium","large"]
+  },
+  "q-space/justify": {
+    "description": "内部元素排列方式",
+    "options": ["start","center","end"]
+  },
+  "q-space/direction": {
+    "description": "内部元素对齐方向",
+    "options": ["start","center","end"]
   }
+  
 }

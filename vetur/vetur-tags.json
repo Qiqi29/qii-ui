@@ -1,6 +1,14 @@
 {
   "q-button": {
     "description": "Qii UI - 按钮组件",
-    "attributes": ["type", "size", "shape", "plain", "text", "bg", "long", "loading", "disabled", "icon", "rightIcon"]
+    "attributes": ["type","size","shape","plain","text","bg","long","loading","disabled","icon","rightIcon"]
+  },
+  "q-icon": {
+    "description": "Qii UI - 图标组件",
+    "attributes": ["name","color","size","spin","rotate"]
+  },
+  "q-space": {
+    "description": "Qii UI - 间距组件",
+    "attributes": ["size","vertical","justify","direction","fill"]
   }
 }

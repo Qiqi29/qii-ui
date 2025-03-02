@@ -1,5 +1,5 @@
 # 间距 Space
-特殊时期，请不要前往人员密集区域，保持社交距离。
+有时候还是保持一点距离比较好。
 
 ::: info 兼容性
 Space 组件使用 [gap](https://developer.mozilla.org/zh-CN/docs/Web/CSS/gap) 属性实现间距控制，对一些老版本浏览器可能存在兼容性问题。
@@ -47,7 +47,7 @@ Space 组件使用 [gap](https://developer.mozilla.org/zh-CN/docs/Web/CSS/gap) �
 | size      | `string`  | medium  | 间距大小 |
 | vertical  | `boolean` | false   | 是否垂直排列 |
 | justify   | `string`  | start   | 内部元素排列方式 |
-| direction | `string`  | start   | 内部元素对齐方式 |
+| direction | `string`  | start   | 内部元素对齐方向 |
 | fill      | `boolean` | false   | 宽度是否填满父元素 |
 
 ### Space 插槽
