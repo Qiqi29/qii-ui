@@ -1,17 +1,17 @@
 # 图标 Icon
-图标组件使用 `symbol` 格式的 SVG 图标，只需要输入图标的名称就可以快速使用。
+图标组件使用 `symbol` 格式的 SVG 图标，输入图标的名称就可以使用本地图标。
 
 Qii-UI 使用的图标来自 [MingCute Icon](https://www.mingcute.com/) 图标库。
 
 
 ## 安装插件
-1. 安装 [vite-plugin-svg-icons](https://github.com/vbenjs/vite-plugin-svg-icons) 插件（用来把 SVG 图标自动注册到 HTML 中）
+1. 安装下面的两个插件。（用来把 SVG 图标自动注册到 HTML 中）
 ```bash
 npm i vite-plugin-svg-icons -D
 npm i fast-glob@3.x -D
 ```
 
-2. 在入口文件 `main.ts` 中引入图标注册器。
+2. 在 `main.ts` 中引入图标注册器。
 ```ts
 import 'virtual:svg-icons-register'
 ```
@@ -32,7 +32,7 @@ export default defineConfig({
 })
 ```
 
-4. 配置完成后，把你的图标放入图标目录 `src/icons` 里面，就可以使用啦！
+4. 配置完成后，把你的图标放入设置的目录 `src/icons` 里面，就可以使用啦！
 ```
 src
  └─ icons
@@ -43,7 +43,7 @@ src
 
 
 ## 使用图标
-在 `name` 属性中填入图标文件的名称，即可使用图标。
+在组件的 `name` 属性中填入图标文件的名称，即可使用图标。
 <demo src="./demo/icon/basic.vue"/>
 
 
@@ -75,4 +75,4 @@ src
 ### Icon 插槽
 | 名称 | 说明 |
 | --- | --- |
-| default | 自定义 SVG 图标代码 |
+| default | 自定义图标 |

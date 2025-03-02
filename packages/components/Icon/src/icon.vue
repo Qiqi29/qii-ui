@@ -1,12 +1,8 @@
 <template>
-  <i :class="iconClass">
-
-    <span :style="iconStyle">
-      <slot>
-        <svg><use :xlink:href="`#icon-${name}`"></use></svg>
-      </slot>
-    </span>
-
+  <i :class="iconClass" :style="iconStyle">
+    <slot>
+      <svg><use :xlink:href="`#icon-${name}`"></use></svg>
+    </slot>
   </i>
 </template>
 
@@ -19,7 +15,7 @@ import { useNameSpace } from '@qii-ui/hooks'
 // 组件配置
 defineOptions({
   name: 'q-icon',
-  inheritAttrs: true
+  inheritAttrs: true,
 })
 
 // 组件属性
@@ -36,6 +32,6 @@ const iconClass = computed(() => [
 const iconStyle = computed<CSSProperties>(() => ({
   color: props.color,
   fontSize: props.size,
-  transform: `rotate(${props.rotate}deg)`,
+  "--q-icon-rotate": props.rotate + "deg"
 }))
 </script>

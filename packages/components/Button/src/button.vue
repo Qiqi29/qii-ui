@@ -21,6 +21,7 @@ const slots = useSlots() as Slots
 
 // 引入图标
 import { QIcon } from '../../Icon'
+// @ts-ignore
 import { loadingIcon } from '@qii-ui/icons'
 
 

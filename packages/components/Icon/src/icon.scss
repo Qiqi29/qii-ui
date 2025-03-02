@@ -2,17 +2,13 @@
   display: inline-flex;
   vertical-align: middle;
   flex-shrink: 0;
-  > span {
-    display: inline-flex;
+  > svg {
     width: 1em;
     height: 1em;
     fill: currentColor;
-    > svg {
-      width: inherit;
-      height: inherit;
-    }
+    transform: rotate(var(--q-icon-rotate));
   }
-  &.is-spin > span {
+  &.is-spin > svg {
     animation: iconSpinAnim 0.8s linear infinite;
   }
 }

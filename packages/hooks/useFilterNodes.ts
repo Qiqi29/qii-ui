@@ -1,7 +1,7 @@
 import { VNode, Fragment } from 'vue'
 
 /**
- * 过滤节点
+ * 过滤移除空节点
  * @param children - VNode 数组
  */
 export const useFilterNodes = function (children: VNode[] = []) {

@@ -6,6 +6,7 @@ export const iconProps = {
    */
   name: {
     type: String,
+    default: "",
   },
   /**
    * @zh 图标颜色

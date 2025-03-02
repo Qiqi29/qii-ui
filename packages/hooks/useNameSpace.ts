@@ -1,5 +1,5 @@
 /**
- * 生成指定结构的类名
+ * 生成命名空间类名
  * @param elementName - 组件名称
  */
 export const useNameSpace = function (elementName: string) {
