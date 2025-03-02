@@ -8,9 +8,15 @@ const handleClick = () => {
 
 <template>
   <div>
+    
+    <p class="title">链接</p>
+    <q-space size="medium">
+      <q-link href="https://www.baidu.com" line>百度官网</q-link>
+      <q-link href="https://www.baidu.com" line>这是链接</q-link>
+    </q-space>
 
     <p class="title">图标</p>
-    <q-space size="mini" direction="end" vertical fill>
+    <q-space size="mini" direction="end">
       <q-icon name="qii" color="#3080FF"/>
       <q-icon name="emoji" spin/>
       <q-icon name="moon" :rotate="180"/>
@@ -32,6 +38,7 @@ const handleClick = () => {
 <style lang="scss">
 body {
   padding: 30px;
+  font-size: 16px;
 }
 .title {
   margin-top: 20px;
