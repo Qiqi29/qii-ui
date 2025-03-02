@@ -1,0 +1,78 @@
+.q-scrollbar {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  &:hover .q-scrollbar__bar {
+    opacity: 1;
+  }
+  &.is-always-show .q-scrollbar__bar {
+    opacity: 1;
+  }
+  &.is-native .q-scrollbar__content {
+    &::-webkit-scrollbar {
+      width: 6px;
+      display: unset;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-color: var(--q-scrollbar);
+      &:hover {
+        background-color: var(--q-scrollbar-hover);
+      }
+      &:active {
+        background-color: var(--q-scrollbar-active);
+      }
+    }
+  }
+}
+
+// 内容区域
+.q-scrollbar__content {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+// 滚动条轨道
+.q-scrollbar__bar {
+  position: absolute;
+  background: transparent;
+  transition: all 0.3s ease;
+  opacity: 0;
+  user-select: none;
+  &.vertical {
+    top: 0; right: 0;
+    width: 10px;
+    height: 100%;
+    .q-scrollbar__thumb { 
+      left: 2px; 
+      width: 6px;
+    }
+  }
+  &.horizontal {
+    left: 0; bottom: 0;
+    width: 100%;
+    height: 10px;
+    .q-scrollbar__thumb {
+      top: 2px;
+      height: 6px;
+    }
+  }
+  &:active {
+    opacity: 1;
+    .q-scrollbar__thumb { background: var(--q-scrollbar-active) }
+  }
+}
+
+// 滚动条滑块
+.q-scrollbar__thumb {
+  position: absolute;
+  border-radius: 10px;
+  background: var(--q-scrollbar);
+  &:hover {
+    background: var(--q-scrollbar-hover);
+  }
+}
