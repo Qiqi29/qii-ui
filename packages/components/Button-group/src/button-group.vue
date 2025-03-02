@@ -7,7 +7,7 @@
 <script setup lang="ts">
 import { computed, provide, readonly } from 'vue'
 import { buttonProps } from './button-group'
-import { useNS } from '@qii-ui/hooks'
+import { useNameSpace } from '@qii-ui/hooks'
 
 defineOptions({ 
   name: 'q-button-group',
@@ -16,7 +16,7 @@ defineOptions({
 
 const props = defineProps({ ...buttonProps })
 
-const ns = useNS('button-group')
+const ns = useNameSpace('button-group')
 const buttonGroupClass = computed(() => [
   ns.nameSpace,
 ])

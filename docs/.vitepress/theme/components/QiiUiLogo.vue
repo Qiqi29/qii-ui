@@ -40,7 +40,6 @@ const handleMoveLeave = () => {
   img {
     transition: all 0.4s;
     cursor: pointer;
-
     &:hover {
       transition: all 0.1s;
     }

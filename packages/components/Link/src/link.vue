@@ -2,7 +2,7 @@
   <a :class="linkClass" :href="href" @click.prevent="handleClick">
     
     <q-icon v-if="icon" :name="icon" size="1em"/>
-    <q-icon v-if="icon === ''" :name="icon" size="1em"><linkIcon/></q-icon>
+    <q-icon v-if="icon === ''" size="1em"><linkIcon/></q-icon>
     <slot></slot>
 
   </a>
@@ -10,7 +10,7 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { useNS } from '@qii-ui/hooks'
+import { useNameSpace } from '@qii-ui/hooks'
 import { linkProps } from './link'
 
 // 引入图标
@@ -30,10 +30,10 @@ const props = defineProps({ ...linkProps })
 
 
 // 组件类名
-const ns = useNS('link')
+const ns = useNameSpace('link')
 const linkClass = computed(() => [
   ns.nameSpace,
-  ns.n(props.type),
+  ns.name(props.type),
   ns.is(props.disabled, 'disabled'),
   ns.is(props.line, 'has-line')
 ])

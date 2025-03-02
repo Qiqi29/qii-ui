@@ -5,33 +5,34 @@ export const iconProps = {
    * @zh 图标名称
    */
   name: {
-    type: String as PropType<string>,
+    type: String,
   },
   /**
    * @zh 图标颜色
   */
   color: {
-    type: String as PropType<string>,
+    type: String,
     default: "currentColor",
   },
   /**
    * @zh 图标大小
    */
   size: {
-    type: String as PropType<string>,
+    type: String,
     default: "1.5em",
   },
   /**
    * @zh 图标是否为旋转状态
    */
   spin: {
-    type: Boolean as PropType<boolean>,
+    type: Boolean,
     default: false,
   },
   /**
    * @zh 自定义图标的旋转角度
    */
   rotate: {
-    type: Number as PropType<number>,
+    type: Number,
+    default: 0,
   },
 } as const;

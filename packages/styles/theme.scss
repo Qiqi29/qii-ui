@@ -13,9 +13,6 @@
   --q-color-text-3: #aeb0b6;
   --q-color-text-4: #cdced5;
 
-  // 头像组件颜色
-  --q-color-avatar-default: #b0b2ba;
-
   // 不同级别的颜色
   --q-color-default: #F1F1F4;
   --q-color-default-h: #EBEBEF;
@@ -23,6 +20,7 @@
   --q-color-default-l: #F1F1F4;
   --q-color-default-l-h: #EBEBEF;
   --q-color-default-l-a: #E0E0E5;
+  --q-color-default-fill: #B0B2BA;
 
   --q-color-primary: #3280FF;
   --q-color-primary-h: #4c8afe;
@@ -73,9 +71,6 @@ html.dark {
   --q-color-text-3: #606064;
   --q-color-text-4: #525256;
 
-  // 头像组件颜色
-  --q-color-avatar-default: #4a4b52;
-
   // 不同级别的颜色
   --q-color-default: #242426;
   --q-color-default-h: #29292B;
@@ -83,6 +78,7 @@ html.dark {
   --q-color-default-l: #242426;
   --q-color-default-l-h: #29292B;
   --q-color-default-l-a: #202022;
+  --q-color-default-fill: #4A4B52;
 
   --q-color-primary: #3280FF;
   --q-color-primary-h: #4693ff;

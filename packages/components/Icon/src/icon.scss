@@ -2,29 +2,22 @@
   display: inline-flex;
   vertical-align: middle;
   flex-shrink: 0;
-  i {
+  > span {
     display: inline-flex;
     width: 1em;
     height: 1em;
     fill: currentColor;
-    user-select: none;
-    svg {
+    > svg {
       width: inherit;
       height: inherit;
-      fill: inherit;
     }
   }
+  &.is-spin > span {
+    animation: iconSpinAnim 0.8s linear infinite;
+  }
 }
 
-.q-icon.is-spin > i {
-  animation: loading 0.8s linear infinite;
-}
-
-@keyframes loading {
-  from {
-    transform: rotate(0deg)
-  }
-  to {
-    transform: rotate(360deg)
-  }
+@keyframes iconSpinAnim {
+  from { transform: rotate(0deg) }
+  to { transform: rotate(360deg) }
 }

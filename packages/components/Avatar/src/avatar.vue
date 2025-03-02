@@ -1,7 +1,7 @@
 <template>
   <div :class="avatarClass" :style="avatarStyle" ref="avatarRef">
 
-    <div :class="ns.n('slot')" ref="slotRef">
+    <div :class="ns.name('slot')" ref="slotRef">
       <slot></slot>
     </div>
 
@@ -13,7 +13,7 @@
 <script lang="ts" setup>
 import { ref, computed, onMounted, onUpdated, inject, CSSProperties } from 'vue'
 import { avatarProps } from './avatar'
-import { useNS } from '@qii-ui/hooks'
+import { useNameSpace } from '@qii-ui/hooks'
 
 // 组件配置
 defineOptions({
@@ -30,11 +30,11 @@ const avatarSize = computed(() => avatarGroup.size?.value || props.size)
 const avatarShape = computed(() => avatarGroup.shape?.value || props.shape)
 
 // 组件类名
-const ns = useNS('avatar')
+const ns = useNameSpace('avatar')
 const avatarClass = computed(() => [
   ns.nameSpace,
-  ns.t(avatarSize.value, 'string'),
-  ns.n(avatarShape.value),
+  ns.type(avatarSize.value, 'string'),
+  ns.name(avatarShape.value),
 ])
 
 // 组件样式

@@ -4,8 +4,8 @@
       <!-- 默认插槽，放置需要徽标的内容 -->
       <slot></slot>
 
-      <div v-if="count > 0 || text" :class="ns.n('mark')" :style="badgeStyle">
-        <span v-if="text" :class="ns.n('text')">{{ text }}</span>
+      <div v-if="count > 0 || text" :class="ns.name('mark')" :style="badgeStyle">
+        <span v-if="text" :class="ns.name('text')">{{ text }}</span>
         <span v-else-if="!dot">{{ badgeMaxCount }}</span>
       </div>
 
@@ -15,7 +15,7 @@
 <script lang="ts" setup>
 import { computed, useSlots, Slots } from 'vue'
 import { badgeProps } from './badge'
-import { useNS } from '@qii-ui/hooks'
+import { useNameSpace } from '@qii-ui/hooks'
 const slots = useSlots() as Slots
 
 // 组件配置
@@ -28,7 +28,7 @@ defineOptions({
 const props = defineProps({ ...badgeProps })
 
 // 组件类名
-const ns = useNS('badge')
+const ns = useNameSpace('badge')
 const badgeClass = computed(() => [
   ns.nameSpace,
   ns.is(props.dot, 'dot'),

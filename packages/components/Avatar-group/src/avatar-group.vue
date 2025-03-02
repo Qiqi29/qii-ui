@@ -1,6 +1,6 @@
 <script lang="ts">
 import { defineComponent, h, computed, provide, readonly } from 'vue'
-import { useNS, useFilterNodes } from '@qii-ui/hooks'
+import { useNameSpace, useFilterNodes } from '@qii-ui/hooks'
 import { avatarGroupProps } from './avatar-group'
 import { QAvatar } from '../../Avatar'
 
@@ -10,10 +10,10 @@ export default defineComponent({
   setup(props, { slots }) {
 
     // 组件类名
-    const ns = useNS('avatar-group')
+    const ns = useNameSpace('avatar-group')
     const avatarGroupClass = computed(() => [
       ns.nameSpace,
-      ns.t(props.size, 'string')
+      ns.type(props.size, 'string')
     ])
 
     // 传值到子组件

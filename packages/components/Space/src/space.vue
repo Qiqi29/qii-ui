@@ -1,6 +1,6 @@
 <script lang="ts">
 import { defineComponent, computed, h, CSSProperties } from 'vue'
-import { useNS, useFilterNodes } from '@qii-ui/hooks'
+import { useNameSpace, useFilterNodes } from '@qii-ui/hooks'
 import { SpaceProps } from './space'
 
 export default defineComponent({
@@ -9,10 +9,10 @@ export default defineComponent({
   setup(props, { slots }) {
 
     // 组件类名
-    const ns = useNS('space')
+    const ns = useNameSpace('space')
     const classList = computed(() => [
       ns.nameSpace,
-      ns.t(props.size, 'string'),
+      ns.type(props.size, 'string'),
       ns.is(props.fill, 'fill'),
       ns.is(props.vertical, 'vertical'),
     ])

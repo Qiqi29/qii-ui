@@ -1,20 +1,20 @@
 <template>
-  <span :class="iconClass">
+  <i :class="iconClass">
 
-    <i :style="iconStyle">
+    <span :style="iconStyle">
       <slot>
         <svg><use :xlink:href="`#icon-${name}`"></use></svg>
       </slot>
-    </i>
+    </span>
 
-  </span>
+  </i>
 </template>
 
 <script lang="ts" setup>
 import { computed, CSSProperties } from 'vue'
 import { iconProps } from './icon'
 // @ts-ignore
-import { useNS } from '@qii-ui/hooks'
+import { useNameSpace } from '@qii-ui/hooks'
 
 // 组件配置
 defineOptions({
@@ -26,7 +26,7 @@ defineOptions({
 const props = defineProps({ ...iconProps })
 
 // 组件类名
-const ns = useNS('icon')
+const ns = useNameSpace('icon')
 const iconClass = computed(() => [
   ns.nameSpace,
   ns.is(props.spin, 'spin'),
@@ -36,6 +36,6 @@ const iconClass = computed(() => [
 const iconStyle = computed<CSSProperties>(() => ({
   color: props.color,
   fontSize: props.size,
-  transform: props.rotate ? `rotate(${props.rotate}deg)` : '',
+  transform: `rotate(${props.rotate}deg)`,
 }))
 </script>
