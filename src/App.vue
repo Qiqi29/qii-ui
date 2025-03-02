@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 
 const handleClick = () => {
-  console.log('点击')
+  console.log('点击了按钮')
 }
 
 </script>
@@ -10,16 +10,17 @@ const handleClick = () => {
   <div>
 
     <p class="title">图标</p>
-    <div style="color: #3080FF;">
-      <q-icon name="qii" color="#FF0000"/>
+    <q-space size="mini" direction="end" vertical fill>
+      <q-icon name="qii" color="#3080FF"/>
       <q-icon name="emoji" spin/>
       <q-icon name="moon" :rotate="180"/>
-    </div>
+      <q-button type="primary" size="large">主要按钮</q-button>
+    </q-space>
 
     <p class="title">按钮</p>
-    <q-space>
+    <q-space size="small">
       <q-button type="default">默认样式</q-button>
-      <q-button type="primary" icon="moon">主要按钮</q-button>
+      <q-button type="primary" icon="moon" @click="handleClick">主要按钮</q-button>
       <q-button type="primary" loading>加载状态</q-button>
       <q-button type="primary" icon="add"></q-button>
       <q-button type="danger" icon="delete"></q-button>

@@ -5,11 +5,11 @@ export const SpaceProps = {
    * @zh 间距大小
    */
   size: {
-    type: [String, Number] as PropType<'small' | 'medium' | 'large' | number>,
+    type: [String, Number] as PropType<'mini'|'small'|'medium'|'large'|number>,
     default: "medium",
   },
   /**
-   * @zh 垂直排列
+   * @zh 是否垂直排列
    */
   vertical: {
     type: Boolean,

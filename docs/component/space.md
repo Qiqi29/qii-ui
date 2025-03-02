@@ -9,11 +9,11 @@ Space 组件使用 [gap](https://developer.mozilla.org/zh-CN/docs/Web/CSS/gap) �
 ## 基本用法
 在 Space 组件中放置的内容，会自动加上间距。
 
-通过 `size` 属性控制间距的大小，提供 `small`、`medium`、`large` 三种尺寸， 也可以自定义大小。
+通过 `size` 属性控制间距大小，提供 `mini`、`small`、`medium`、`large` 四种尺寸， 也可以传入数字来自定义。
 <demo src="./demo/space/basic.vue"/>
 
 
-## 排列
+## 排列方式
 使用 `justify` 属性控制元素的排列方式，与 [justify-content](https://developer.mozilla.org/zh-CN/docs/Web/CSS/justify-content) 属性一致。
 
 ::: tip
@@ -21,7 +21,7 @@ Space 组件使用 [gap](https://developer.mozilla.org/zh-CN/docs/Web/CSS/gap) �
 :::
 
 
-## 对齐
+## 对齐方向
 使用 `direction` 属性控制元素的对齐方向，与 [align-items](https://developer.mozilla.org/zh-CN/docs/Web/CSS/align-items) 属性一致。
 
 ::: tip
@@ -30,9 +30,9 @@ Space 组件使用 [gap](https://developer.mozilla.org/zh-CN/docs/Web/CSS/gap) �
 
 
 ## 垂直排列
-添加 `vertical` 属性，可以让内部组件垂直排列。
+添加 `vertical` 属性，可以让内部的组件垂直排列。
 
-添加 `fill` 属性，可以让布局组件的宽度填满父组件。
+添加 `fill` 属性，可以让 Space 组件的宽度填满父组件。
 
 ::: tip
 演示待补充
