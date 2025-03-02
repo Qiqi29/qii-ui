@@ -123,6 +123,14 @@ function headleClickThumb(event: MouseEvent, thumb: 'thumbY'|'thumbX') {
 
 
 /**
+ * 事件：鼠标抬起，清除滚动条拖动事件
+ */
+function headleMouseup() {
+  document.body.removeEventListener('mousemove', handleMoveBar)
+}
+
+
+/**
  * 事件：拖动滚动条，移动内容区域
  */
 function handleMoveBar(event: MouseEvent) {
@@ -157,7 +165,7 @@ function headleScroll() {
 
 
 /**
- * 计算滑块的位置和大小
+ * 计算滑块的样式
  */
 function calcThumbStyle() {
   if (props.native) return
@@ -198,12 +206,6 @@ const resize = new ResizeObserver(() => {
 const mutation = new MutationObserver(() => {
   calcThumbStyle()
 })
-
-
-// 事件：鼠标抬起，清除滚动条拖动事件
-function headleMouseup() {
-  document.body.removeEventListener('mousemove', handleMoveBar)
-}
 
 
 // 注册监听器

@@ -1,4 +1,5 @@
 .q-space {
+  box-sizing: border-box;
   display: inline-flex;
   flex-wrap: wrap;
 }
@@ -9,6 +10,7 @@
 .q-space__large { gap: 24px }
 
 .q-space__item {
+  box-sizing: border-box;
   display: flex;
 }
 

@@ -1,5 +1,6 @@
 .q-scrollbar {
   position: relative;
+  box-sizing: border-box;
   width: 100%;
   height: 100%;
   &:hover .q-scrollbar__bar {
@@ -7,22 +8,6 @@
   }
   &.is-always-show .q-scrollbar__bar {
     opacity: 1;
-  }
-  &.is-native .q-scrollbar__content {
-    &::-webkit-scrollbar {
-      width: 6px;
-      display: unset;
-    }
-    &::-webkit-scrollbar-thumb {
-      border-radius: 10px;
-      background-color: var(--q-scrollbar);
-      &:hover {
-        background-color: var(--q-scrollbar-hover);
-      }
-      &:active {
-        background-color: var(--q-scrollbar-active);
-      }
-    }
   }
 }
 
@@ -74,5 +59,24 @@
   background: var(--q-scrollbar);
   &:hover {
     background: var(--q-scrollbar-hover);
+  }
+}
+
+
+// 原生滚动条样式
+.q-scrollbar.is-native .q-scrollbar__content {
+  &::-webkit-scrollbar {
+    width: 6px;
+    display: unset;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: var(--q-scrollbar);
+    &:hover {
+      background-color: var(--q-scrollbar-hover);
+    }
+    &:active {
+      background-color: var(--q-scrollbar-active);
+    }
   }
 }
