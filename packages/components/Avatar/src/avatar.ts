@@ -6,12 +6,13 @@ export const avatarProps = {
    */
   src: {
     type: String,
+    default: ''
   },
   /**
    * @zh 头像大小
    */
   size: {
-    type: [String, Number] as PropType<number | 'small' | 'medium' | 'large'>,
+    type: [String, Number] as PropType<'small' | 'medium' | 'large' | number>,
     default: 'medium'
   },
   /**

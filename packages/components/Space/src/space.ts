@@ -5,7 +5,7 @@ export const SpaceProps = {
    * @zh 间距大小
    */
   size: {
-    type: [Number, String] as PropType<number | 'small' | 'medium' | 'large'>,
+    type: [String, Number] as PropType<'small' | 'medium' | 'large' | number>,
     default: "medium",
   },
   /**
@@ -19,14 +19,14 @@ export const SpaceProps = {
    * @zh 排列方式
    */
   justify: {
-    type: String as PropType<string>,
+    type: String,
     default: 'start',
   },
   /**
    * @zh 对齐方向
    */
   direction: {
-    type: String as PropType<string>,
+    type: String,
     default: 'start',
   },
   /**

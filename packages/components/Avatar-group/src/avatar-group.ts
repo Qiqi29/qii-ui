@@ -5,7 +5,7 @@ export const avatarGroupProps = {
    * @zh 统一控制头像大小
    */
   size: {
-    type: [String, Number] as PropType<number | 'small' | 'medium' | 'large'>,
+    type: [String, Number] as PropType<'small' | 'medium' | 'large' | number>,
     default: 'medium'
   },
   /**

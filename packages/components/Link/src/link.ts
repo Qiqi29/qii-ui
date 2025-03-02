@@ -26,7 +26,7 @@ export const linkProps = {
    * @zh 链接图标
    */
   icon: {
-    type: [String] as PropType<string>,
+    type: String,
   },
   /**
    * @zh 是否显示下划线

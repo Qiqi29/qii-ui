@@ -4,7 +4,8 @@ export const demoProps = {
   /**
    * @zh 参数
    */
-  size: {
+  name: {
     type: String,
+    default: ''
   },
 } as const
