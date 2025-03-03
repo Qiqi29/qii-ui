@@ -99,6 +99,7 @@ export default defineConfig({
           items: [
             { text: '头像 Avatar', link: '/component/avatar' },
             { text: '徽标 Badge', link: '/component/badge' },
+            { text: '无内容 Empty', link: '/component/empty' },
           ]
         },
         {

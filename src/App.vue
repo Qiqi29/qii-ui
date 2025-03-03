@@ -40,6 +40,7 @@ const switchValue = ref(false)
     <q-space size="medium">
       <q-switch v-model="switchValue" />
       <q-switch v-model="switchValue" />
+      <q-switch v-model="switchValue" shape="square"/>
     </q-space>
 
 

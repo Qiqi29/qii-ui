@@ -57,14 +57,14 @@
   &:hover:not(.is-disabled) { 
     background: var(--q-color-#{$type}-h);
     &.is-plain { background: var(--q-color-#{$type}-l-h) }
-    &.is-text { background: var(--q-color-default-l) }
+    &.is-text { background: var(--q-color-default-l-h) }
     &.is-text.is-has-bg { background: var(--q-color-default-l-h) }
   }
   &:active:not(.is-disabled) { 
     transition: all 0.05s;
     background: var(--q-color-#{$type}-a);
     &.is-plain { background: var(--q-color-#{$type}-l-a) }
-    &.is-text { background: var(--q-color-default-l-h) }
+    &.is-text { background: var(--q-color-default-l-a) }
     &.is-text.is-has-bg { background: var(--q-color-default-l-a) }
   }
 }

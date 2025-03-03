@@ -1,0 +1,17 @@
+.q-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  color: var(--q-color-text-3);
+}
+
+.q-empty__text {
+  margin-top: 8px;
+}
+
+.q-empty__extra {
+  margin-top: 12px;
+}
