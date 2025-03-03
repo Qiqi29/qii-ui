@@ -17,7 +17,7 @@ export default defineConfig({
     }),
     // TS 类型生成插件
     dts({
-      outDir: ['output/es', "output/lib"],
+      outDir: ['es', "lib"],
       tsconfigPath: path.resolve(__dirname, "tsconfig.json"),
     })
   ],
@@ -37,14 +37,14 @@ export default defineConfig({
           entryFileNames: "[name].mjs",	// 文件名格式
           preserveModules: true,			  // 保留原文件结构
           exports: "named",				      // 使用具名导出
-          dir: "output/es",						  // 打包后的文件位置
+          dir: "es",						        // 打包后的文件位置
         },
         {
           format: "cjs",					      // 打包为 CommonJS 格式
           entryFileNames: "[name].js",
           preserveModules: true,
           exports: "named",
-          dir: "output/lib",
+          dir: "lib",
         },
       ],
     }
