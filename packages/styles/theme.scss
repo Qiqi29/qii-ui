@@ -51,9 +51,9 @@
   --q-color-danger-l-a: #fcd8d8;
 
   // 滚动条颜色
-  --q-scrollbar: #93949C40;
-  --q-scrollbar-hover: #93949C50;
-  --q-scrollbar-active: #93949C70;
+  --q-scrollbar: #404B6420;
+  --q-scrollbar-hover: #404B6425;
+  --q-scrollbar-active: #404B6435;
 }
 
 
@@ -107,4 +107,9 @@ html.dark {
   --q-color-danger-l: #ff5d5d30;
   --q-color-danger-l-h: #ff6b6b30;
   --q-color-danger-l-a: #ea494930;
+
+  // 滚动条颜色
+  --q-scrollbar: #7A849F30;
+  --q-scrollbar-hover: #7A849F35;
+  --q-scrollbar-active: #7A849F45;
 }

@@ -25,9 +25,13 @@
 .q-scrollbar__bar {
   position: absolute;
   background: transparent;
-  transition: all 0.3s ease;
+  transition: all 0.3s;
   opacity: 0;
   user-select: none;
+  &:active {
+    opacity: 1;
+    .q-scrollbar__thumb { background: var(--q-scrollbar-active) }
+  }
   &.vertical {
     top: 0; right: 0;
     width: 10px;
@@ -45,10 +49,6 @@
       top: 2px;
       height: 6px;
     }
-  }
-  &:active {
-    opacity: 1;
-    .q-scrollbar__thumb { background: var(--q-scrollbar-active) }
   }
 }
 
@@ -71,12 +71,12 @@
   }
   &::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background-color: var(--q-scrollbar);
+    background: var(--q-scrollbar);
     &:hover {
-      background-color: var(--q-scrollbar-hover);
+      background: var(--q-scrollbar-hover);
     }
     &:active {
-      background-color: var(--q-scrollbar-active);
+      background: var(--q-scrollbar-active);
     }
   }
 }

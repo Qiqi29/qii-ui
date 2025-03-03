@@ -41,8 +41,7 @@ const handleScroll = (top, left) => {
 <style scoped>
 .content {
   width: 100%;
-  padding: 12px;
-  background: #00002008;
+  padding: 0 12px;
 }
 .item {
   width: 100%;

@@ -11,9 +11,8 @@
 <style scoped>
 .content {
   display: flex;
-  padding: 12px;
+  padding: 12px 0;
   width: fit-content;
-  background: #00002008;
 }
 .item {
   flex-shrink: 0;

@@ -1,14 +1,14 @@
 # 滚动条 Scrollbar
-其实浏览器自带的滚动条也很好用。
+比浏览器原生滚动条好看点，但我保证绝对没他可靠。
 
 
 ## 基本用法
-使用 `height` 属性设置滚动区域的高度。
+使用 `height` 属性设置滚动区域的高度。点击滚动条轨道可以快速滚动，
 <demo src="./demo/scrollbar/basic.vue"/>
 
 
 ## 横向滚动
-内容的宽度超过滚动区域的宽度，就会显示横向滚动条。
+内容的宽度超过滚动区域的宽度时，就会显示横向滚动条。
 <demo src="./demo/scrollbar/horizontal.vue"/>
 
 
@@ -18,7 +18,7 @@
 
 
 ## 原生滚动条
-如果你担心计算的滚动条可能会有问题，可以添加 `native` 属性，将会使用原生滚动条。
+添加 `native` 属性，将会使用原生滚动条。
 <demo src="./demo/scrollbar/native.vue"/>
 
 

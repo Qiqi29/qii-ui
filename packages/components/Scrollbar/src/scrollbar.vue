@@ -65,12 +65,13 @@ const barX = ref<HTMLDivElement|null>(null)
 const thumbY = ref<HTMLDivElement|null>(null)
 const thumbX = ref<HTMLDivElement|null>(null)
 
-const activeThumb = ref<'thumbY'|'thumbX'|''>('') // 活跃的滚动条
-const down = { x: 0, y: 0 }   // 记录点击的坐标
-const origin = { x: 0, y: 0 } // 记录滑块原始位置
+type Thumb = 'thumbY'|'thumbX'|'';
+const activeThumb = ref<Thumb>('')  // 活跃的滚动条
+const down = { x: 0, y: 0 }         // 记录点击的坐标
+const origin = { x: 0, y: 0 }       // 记录滑块原始位置
 // 滑块样式
-const thumbYStyle = ref({ top: '0', right: '0', height: '0' })
-const thumbXStyle = ref({ bottom: '0', left: '0', width: '0' })
+const thumbYStyle = ref({ top: '0', height: '0' })
+const thumbXStyle = ref({ left: '0', width: '0' })
 
 
 /**
@@ -110,9 +111,9 @@ function headleClickBar(event: MouseEvent, bar: string) {
 
 
 /**
- * 事件：点击滚动条滑块，记录初始数据
+ * 事件：点击滚动条滑块，记录初始数据，并添加鼠标移动事件
  */
-function headleClickThumb(event: MouseEvent, thumb: 'thumbY'|'thumbX') {
+function headleClickThumb(event: MouseEvent, thumb: Thumb) {
   activeThumb.value = thumb
   down.y = event.clientY
   down.x = event.clientX
@@ -123,7 +124,7 @@ function headleClickThumb(event: MouseEvent, thumb: 'thumbY'|'thumbX') {
 
 
 /**
- * 事件：鼠标抬起，清除滚动条拖动事件
+ * 事件：鼠标抬起，清除鼠标移动事件
  */
 function headleMouseup() {
   document.body.removeEventListener('mousemove', handleMoveBar)
@@ -225,5 +226,4 @@ onBeforeUnmount(() => {
     document.body.removeEventListener('mouseup', headleMouseup)
   }
 })
-
 </script>
