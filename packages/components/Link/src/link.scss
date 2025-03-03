@@ -20,7 +20,7 @@
   // 下划线
   &.is-has-line::after {
     content: "";
-    position: absolute; left: 0; bottom: 2px;
+    position: absolute; left: 0; bottom: 0px;
     width: 100%;
     height: 1px;
     background-color: var(--q-color-#{$type}-a);

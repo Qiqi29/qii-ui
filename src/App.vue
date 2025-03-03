@@ -14,10 +14,9 @@ const switchValue = ref(false)
   <div class="content">
     
     <p class="title">链接</p>
-    <q-space size="medium">
-      <q-link href="https://www.baidu.com" line>百度官网</q-link>
-      <q-link href="https://www.baidu.com" line>这是链接</q-link>
-    </q-space>
+    <span>这里用来测试组件</span>
+    <q-link href="https://www.baidu.com" line>这是链接</q-link>
+    <span>哈哈哈</span>
   
     <p class="title">图标</p>
     <q-space size="mini" direction="end">
@@ -58,7 +57,7 @@ body {
   padding: 20px;
 }
 .title {
-  margin-top: 40px;
+  margin-top: 42px;
   font-size: 18px;
   font-weight: bold;
 }
