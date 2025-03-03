@@ -102,6 +102,12 @@ export default defineConfig({
           ]
         },
         {
+          text: '表单组件',
+          items: [
+            { text: '开关 Switch', link: '/component/switch' },
+          ]
+        },
+        {
           text: '布局组件',
           items: [
             { text: '间距 Space', link: '/component/space' },

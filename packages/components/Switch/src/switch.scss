@@ -1,0 +1,65 @@
+.q-switch {
+  display: inline-block;
+  position: relative;
+  font-size: 14px;
+  user-select: none;
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  .track {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--q-color-default-fill);
+    color: #909094;
+    border-radius: 50px;
+    transition: all 0.2s;
+    cursor: pointer;
+    .thumb {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--q-color-light);
+      border-radius: 50px;
+      transition: all 0.2s cubic-bezier(.2,0,.2,1);
+    }
+  }
+}
+
+
+// 混合：不同尺寸的开关
+@mixin switchSize($height, $thumb, $space) {
+  width: calc(#{$height} * 1.7);
+  height: $height;
+  .thumb {
+    top: $space;
+    left: $space;
+    width: $thumb;
+    height: $thumb;
+  }
+  &.is-open .track {
+    background: var(--q-color-primary);
+    color: var(--q-color-primary);
+    .thumb {
+      left: calc(100% - #{$thumb} - #{$space});
+    }
+  }
+}
+.q-switch__small {@include switchSize(18px, 12px, 3px)}
+.q-switch__medium {@include switchSize(22px, 14px, 4px)}
+.q-switch__large {@include switchSize(26px, 16.5px, 5px)}
+
+
+// 加载状态
+.q-switch.is-loading .track {
+  cursor: default !important;
+}
+
+// 禁用状态
+.q-switch.is-disabled {
+  opacity: 0.7;
+  .track {
+    cursor: default;
+  }
+}

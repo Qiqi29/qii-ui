@@ -13,6 +13,7 @@ import { QButton, QButtonGroup } from './components/Button/index'
 import QLink from './components/Link/index'
 import QBadge from './components/Badge/index'
 import QScrollbar from './components/Scrollbar/index'
+import QSwitch from './components/Switch/index'
 
 // 单独导出组件，提供按需引入
 export {
@@ -25,6 +26,7 @@ export {
   QLink,
   QBadge,
   QScrollbar,
+  QSwitch,
 }
 
 // 组件列表
@@ -38,6 +40,7 @@ const components = [
   QLink,
   QBadge,
   QScrollbar,
+  QSwitch,
 ]
 
 /**

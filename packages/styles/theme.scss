@@ -3,7 +3,7 @@
 */
 
 :root {
-  // 默认颜色
+  // 标准颜色
   --q-color-light: #FFFFFF;
   --q-color-black: #101011;
 
@@ -20,7 +20,7 @@
   --q-color-default-l: #F1F1F4;
   --q-color-default-l-h: #EBEBEF;
   --q-color-default-l-a: #E0E0E5;
-  --q-color-default-fill: #B0B2BA;
+  --q-color-default-fill: #D8D9DD;
 
   --q-color-primary: #3280FF;
   --q-color-primary-h: #4c8afe;
@@ -61,7 +61,7 @@
 html.dark {
   color-scheme: dark;
 
-  // 默认颜色
+  // 标准颜色
   --q-color-light: #101011;
   --q-color-black: #FAFAFA;
 
@@ -78,7 +78,7 @@ html.dark {
   --q-color-default-l: #242426;
   --q-color-default-l-h: #29292B;
   --q-color-default-l-a: #202022;
-  --q-color-default-fill: #4A4B52;
+  --q-color-default-fill: #323336;
 
   --q-color-primary: #3280FF;
   --q-color-primary-h: #4693ff;

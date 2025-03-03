@@ -33,7 +33,7 @@
 | native      | `boolean` | false | 是否使用原生滚动条 |
 
 ### Scrollbar 事件
-| 名称 | 说明 | 类型 |
+| 事件名 | 说明 | 回调参数 |
 | --- | --- | --- |
 | scroll | 滚动时触发 | `(scrollTop: number, scrollLeft: number) => void` |
 
