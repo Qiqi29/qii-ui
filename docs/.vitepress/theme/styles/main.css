@@ -194,20 +194,19 @@ body::-webkit-scrollbar-thumb:active {
 
 
 /* 侧边栏 */
-.VPSidebar[data-v-6750ea26] {
-  background-color: var(--vp-c-bg);
-  /* border-right: 1px solid var(--vp-c-gutter); */
+.VPSidebar {
+  background-color: var(--vp-c-bg) !important;
 }
 
-.VPSidebar[data-v-6750ea26] .curtain {
-  background-color: var(--vp-c-bg);
+.VPSidebar .curtain {
+  background-color: var(--vp-c-bg) !important;
 }
 
-.VPSidebar[data-v-6750ea26] .group+.group {
+.VPSidebar .group+.group {
   border-top: none;
 }
 
-.VPSidebar[data-v-6750ea26]::-webkit-scrollbar {
+.VPSidebar::-webkit-scrollbar {
   display: none;
 }
 
