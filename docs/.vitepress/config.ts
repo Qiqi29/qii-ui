@@ -91,7 +91,6 @@ export default defineConfig({
             { text: '按钮 Button', link: '/component/button' },
             { text: '图标 Icon', link: '/component/icon' },
             { text: '链接 Link', link: '/component/link' },
-            { text: '分割线 Divider', link: '/component/divider' },
             { text: '滚动条 Scrollbar', link: '/component/scrollbar' },
           ]
         },
@@ -113,6 +112,7 @@ export default defineConfig({
         {
           text: '布局组件',
           items: [
+            { text: '分割线 Divider', link: '/component/divider' },
             { text: '间距 Space', link: '/component/space' },
           ]
         },
