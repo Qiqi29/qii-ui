@@ -1,7 +1,9 @@
 <template>
   <q-space size="large">
-    <q-switch disabled />
-    <q-switch v-model="value" :disabled="true" shape="square"/>
+
+    <q-switch v-model="value" shape="round" />
+    <q-switch v-model="value" shape="square"/>
+
   </q-space>
 </template>
 

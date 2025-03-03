@@ -1,8 +1,12 @@
 <script lang="ts" setup>
+import { ref } from "vue"
+
 
 const handleClick = () => {
   console.log('点击了按钮')
 }
+
+const switchValue = ref(false)
 
 </script>
 
@@ -32,13 +36,10 @@ const handleClick = () => {
       <q-button type="danger" icon="delete"></q-button>
     </q-space>
     
-    <p class="title">按钮</p>
-    <q-space size="small" vertical>
-      <q-button type="default">默认样式</q-button>
-      <q-button type="primary" icon="moon" @click="handleClick">主要按钮</q-button>
-      <q-button type="primary" loading>加载状态</q-button>
-      <q-button type="primary" icon="add"></q-button>
-      <q-button type="danger" icon="delete"></q-button>
+    <p class="title">开关</p>
+    <q-space size="medium">
+      <q-switch v-model="switchValue" />
+      <q-switch v-model="switchValue" />
     </q-space>
 
 
@@ -55,8 +56,8 @@ body {
   padding: 20px;
 }
 .title {
-  margin-top: 20px;
-  font-size: 20px;
+  margin-top: 30px;
+  font-size: 18px;
   font-weight: bold;
 }
 </style>

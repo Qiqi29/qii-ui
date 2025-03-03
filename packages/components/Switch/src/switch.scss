@@ -12,7 +12,6 @@
     position: absolute; top: 0; left: 0; right: 0; bottom: 0;
     background: var(--q-color-default-fill);
     color: #909094;
-    border-radius: 50px;
     transition: all 0.2s;
     cursor: pointer;
     .thumb {
@@ -21,7 +20,6 @@
       align-items: center;
       justify-content: center;
       background: var(--q-color-light);
-      border-radius: 50px;
       transition: all 0.2s cubic-bezier(.2,0,.2,1);
     }
   }
@@ -50,6 +48,26 @@
 .q-switch__medium {@include switchSize(22px, 14px, 4px)}
 .q-switch__large {@include switchSize(26px, 16.5px, 5px)}
 
+
+// 圆形开关
+.q-switch__round {
+  .track {
+    border-radius: 50px;
+    .thumb {
+      border-radius: 50px;
+    }
+  }
+}
+
+// 方形开关
+.q-switch__square {
+  .track {
+    border-radius: 6px;
+    .thumb {
+      border-radius: 3px;
+    }
+  }
+}
 
 // 加载状态
 .q-switch.is-loading .track {

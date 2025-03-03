@@ -2,7 +2,7 @@
   <q-space size="large">
   
     <q-switch v-model="value_1" :before-change="change_1"/>
-    <q-switch v-model="value_2" :before-change="change_2"/>
+    <q-switch v-model="value_2" :before-change="change_2" shape="square"/>
   
   </q-space>
 </template>

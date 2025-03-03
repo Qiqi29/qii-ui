@@ -17,6 +17,13 @@ export const switchProps = {
     default: "medium"
   },
   /**
+   * @zh 开关的形状
+   */
+  shape: {
+    type: String as PropType<"square" | "round">,
+    default: "round"
+  },
+  /**
    * @zh 开关开启时的颜色
    */
   checkedColor: {

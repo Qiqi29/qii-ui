@@ -44,6 +44,7 @@ const ns = useNameSpace('switch')
 const switchClass = computed(() => [
   ns.nameSpace,
   ns.name(props.size),
+  ns.name(props.shape),
   ns.is(props.modelValue, 'open'),
   ns.is(props.loading, 'loading'),
   ns.is(props.disabled || loadingState.value, 'disabled'),

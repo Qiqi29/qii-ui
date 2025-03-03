@@ -1,5 +1,5 @@
 <template>
-  <q-switch v-model="value" checked-color="#F83D91" unchecked-color="#6DBAA1"/>
+  <q-switch v-model="value" checked-color="#F83D91" unchecked-color="#6DBAA1" shape="square"/>
 </template>
 
 <script lang="ts" setup>

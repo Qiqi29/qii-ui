@@ -12,6 +12,13 @@
 <demo src="./demo/switch/size.vue"/>
 
 
+## 形状
+使用 `shape` 属性改变开关的形状。
+
+`round` - **圆形开关**，`square` - **方形按钮**。
+<demo src="./demo/switch/shape.vue"/>
+
+
 ## 颜色
 使用 `checked-color` 属性和 `unchecked-color` 属性自定义开关的颜色。
 <demo src="./demo/switch/color.vue"/>
@@ -44,6 +51,7 @@
 | --- | --- | --- | --- |
 | modelValue (v-model)  | `boolean`   | —       | 绑定值 |
 | size                      | `string`    | medium  | 开关大小 |
+| shape                     | `string`    | round   | 开关形状 |
 | checkedColor              | `string`    | —       | 开关开启时的颜色 |
 | uncheckedColor            | `string`    | —       | 开关关闭时的颜色 |
 | checkedIcon               | `string`    | —       | 开关开启时显示的图标 |
