@@ -1,0 +1,113 @@
+.q-input {
+  display: flex;
+  align-items: center;
+  height: 30px;
+
+  background: var(--q-color-default-l);
+  border: 1px solid var(--q-color-default-h);
+  border-radius: 5.5px;
+  transition: all 0.15s;
+  cursor: text;
+
+  input {
+    font-size: 1em;
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    &::placeholder {
+      color: var(--q-color-text-3);
+      transform: translateY(0.5px);
+    }
+  }
+
+  &:not(.is-disabled) {
+    &:hover {
+      background: var(--q-color-default-l-h);
+    }
+    &:focus-within,
+    &:active {
+      background: transparent;
+      box-shadow: 0 0 0 1px var(--q-color-primary);
+    }
+  }
+}
+
+
+// 混合：不同的输入框大小
+@mixin inputSize($height, $padding, $radius, $fontSize) {
+  padding: $padding;
+  height: $height;
+  border-radius: $radius;
+  font-size: $fontSize;
+}
+.q-input__small { @include inputSize(24px, 0 8px, 5px, 12px) }
+.q-input__medium { @include inputSize(30px, 0 10px, 5px, 14px) }
+.q-input__large { @include inputSize(38px, 0 12px, 6px, 14px) }
+
+
+// 输入框图标
+.q-input {
+  .q-icon {
+    color: var(--q-color-text-3) !important;
+    transition: color 0.15s;
+    user-select: none;
+    cursor: pointer;
+    &:hover {
+      color: var(--q-color-text-1) !important;
+    }
+  }
+  // 左右图标
+  .q-input__icon-left {
+    margin-right: 6px;
+  }
+  .q-input__icon-right {
+    margin-left: 6px;
+  }
+  // 清除图标
+  .q-input__icon-clear {
+    display: none;
+  }
+  &:hover .q-input__icon-clear {
+    display: block;
+  }
+  // 密码图标
+  .q-input__icon-eye {
+    margin-left: 5px;
+  }
+}
+
+
+// 输入框前后缀
+.q-input__prepend {
+  display: flex;
+  align-items: center;
+  padding-right: 8px;
+  margin-right: 8px;
+  border-right: 1px solid rgba(0, 0, 20, 0.08);
+}
+.q-input__append {
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+  margin-left: 8px;
+  border-left: 1px solid rgba(0, 0, 20, 0.08);
+}
+
+
+// 密码框样式
+.q-input input[type="password"]:not([value=""]) {
+  padding-top: 1px;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+
+// 字数统计
+.q-input__word-limit {
+  margin-left: 4px;
+  color: var(--q-color-text-3);
+  font-size: 13px;
+  text-wrap: nowrap;
+}

@@ -56,7 +56,7 @@ export default defineConfig({
         text: '0.1.0',
         items: [
           { text: '更新日志', link: '/guide/changelog' },
-          { text: '参与贡献', link: '/' }
+          { text: '参与贡献', link: 'https://github.com/Qiqi29/qii-ui' }
         ]
       }
     ],
@@ -106,6 +106,7 @@ export default defineConfig({
         {
           text: '表单组件',
           items: [
+            { text: '输入框 Input', link: '/component/input' },
             { text: '开关 Switch', link: '/component/switch' },
           ]
         },

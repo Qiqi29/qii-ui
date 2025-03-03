@@ -7,6 +7,7 @@ const handleClick = () => {
 }
 
 const switchValue = ref(false)
+const inputValue = ref('')
 
 </script>
 
@@ -43,6 +44,10 @@ const switchValue = ref(false)
     
     <p class="title">分割线</p>
     <q-divider title-position="left">分割线标题</q-divider>
+    
+    <p class="title">输入框</p>
+    <q-input v-model="inputValue" placeholder="写点什么" clearable @clear="() => console.log('点击清除按钮')"/>
+    <p>{{ inputValue }}</p>
 
   </div>
 </template>
