@@ -54,6 +54,9 @@
   --q-scrollbar: #404B6420;
   --q-scrollbar-hover: #404B6425;
   --q-scrollbar-active: #404B6435;
+
+  // 边框颜色
+  --q-color-border: #ECEDF0;
 }
 
 
@@ -112,4 +115,7 @@ html.dark {
   --q-scrollbar: #7A849F30;
   --q-scrollbar-hover: #7A849F35;
   --q-scrollbar-active: #7A849F45;
+
+  // 边框颜色
+  --q-color-border: #242527;
 }

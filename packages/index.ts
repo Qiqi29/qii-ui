@@ -15,6 +15,7 @@ import QBadge from './components/Badge/index'
 import QScrollbar from './components/Scrollbar/index'
 import QSwitch from './components/Switch/index'
 import QEmpty from './components/Empty/index'
+import QDivider from './components/Divider/index'
 
 // 单独导出组件，提供按需引入
 export {
@@ -29,6 +30,7 @@ export {
   QScrollbar,
   QSwitch,
   QEmpty,
+  QDivider,
 }
 
 // 组件列表
@@ -44,6 +46,7 @@ const components = [
   QScrollbar,
   QSwitch,
   QEmpty,
+  QDivider,
 ]
 
 /**

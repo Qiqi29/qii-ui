@@ -24,7 +24,6 @@ const switchValue = ref(false)
       <q-icon name="qii" color="#3080FF"/>
       <q-icon name="emoji" spin/>
       <q-icon name="moon" :rotate="180"/>
-      <q-button type="primary" size="large">主要按钮</q-button>
     </q-space>
   
     <p class="title">按钮</p>
@@ -42,7 +41,9 @@ const switchValue = ref(false)
       <q-switch v-model="switchValue" />
       <q-switch v-model="switchValue" shape="square"/>
     </q-space>
-
+    
+    <p class="title">分割线</p>
+    <q-divider title-position="left">分割线标题</q-divider>
 
   </div>
 </template>
@@ -51,13 +52,13 @@ const switchValue = ref(false)
 body {
   padding: 0px;
   margin: 0px;
-  font-size: 16px;
+  font-size: 14px;
 }
 .content {
   padding: 20px;
 }
 .title {
-  margin-top: 30px;
+  margin-top: 40px;
   font-size: 18px;
   font-weight: bold;
 }

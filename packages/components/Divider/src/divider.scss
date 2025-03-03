@@ -1,0 +1,42 @@
+.q-divider {
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.q-divider__line {
+  flex: 1;
+  height: 1px;
+  background: var(--q-color-border);
+}
+
+.q-divider__title {
+  flex-shrink: 0;
+  margin: 0 12px;
+}
+
+// 左侧线条
+.q-divider__title--left {
+  .q-divider__line--left {
+    flex: none;
+    width: 28px;
+  }
+}
+
+// 右侧线条
+.q-divider__title--right {
+  .q-divider__line--right {
+    flex: none;
+    width: 28px;
+  }
+}
+
+// 垂直分割线
+.q-divider.is-vertical {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 8px 1px 8px;
+  width: 1px;
+  background: var(--q-color-border);
+}

@@ -68,12 +68,6 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-/* 鼠标选中文本样式 */
-::selection {
-  background-color: #3080FF60;
-  color: inherit;
-}
-
 
 body {
   font-size: 14px;
@@ -266,7 +260,7 @@ body::-webkit-scrollbar-thumb:active {
 }
 
 .vitepress-demo .demo-slot {
-  padding: 40px !important;
+  padding: 30px !important;
 }
 
 .vitepress-demo .demo-actions {

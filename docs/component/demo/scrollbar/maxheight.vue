@@ -48,7 +48,7 @@ const handleScroll = (top, left) => {
   height: 80px;
   line-height: 80px;
   border-radius: 10px;
-  background: var(--q-color-primary-l-a);
+  background: var(--q-color-primary-l);
   color: var(--q-color-primary);
   font-size: 20px;
   text-align: center;
