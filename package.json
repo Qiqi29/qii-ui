@@ -33,6 +33,7 @@
     "docs"
   ],
   "dependencies": {
+    "@tsparticles/confetti": "^3.8.1",
     "nprogress": "^0.2.0",
     "vue": "^3.4.21"
   },

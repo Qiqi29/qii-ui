@@ -352,3 +352,9 @@ body {
 #nprogress .peg {
   box-shadow: 0 0 10px var(--q-color-theme), 0 0 5px var(--q-color-theme);
 }
+
+
+/* 纸屑特效 */
+#confetti {
+  pointer-events: none;
+}
