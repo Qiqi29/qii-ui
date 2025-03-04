@@ -53,7 +53,7 @@ export default defineConfig({
       { text: '指北', link: '/guide/install', activeMatch: '/guide/' },
       { text: '组件', link: '/component/button', activeMatch: '/component/' },
       {
-        text: '0.1.0',
+        text: '0.2.0',
         items: [
           { text: '更新日志', link: '/guide/changelog' },
           { text: '参与贡献', link: 'https://github.com/Qiqi29/qii-ui' }

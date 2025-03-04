@@ -15,7 +15,7 @@
 ## 形状
 使用 `shape` 属性改变开关的形状。
 
-`round` - **圆形开关**，`square` - **方形按钮**。
+`round` - **圆形开关**，`square` - **方形开关**。
 <demo src="./demo/switch/shape.vue"/>
 
 

@@ -3,14 +3,28 @@ import { onMounted, ref } from 'vue'
 import { confetti } from '@tsparticles/confetti'
 
 const logoRef = ref<HTMLDivElement>()
+const angle = ref(0)
 const speed = 5
 
 const handleMove = (event: MouseEvent) => {
   window.requestAnimationFrame(() => {
-    let box = logoRef.value!.getBoundingClientRect()
-    let calcX = (event.clientY - box.y - (box.height / 2)) / speed
-    let calcY = (event.clientX - box.x - (box.width / 2)) / speed * -1
-    logoRef.value!.style.transform = `rotateX(${calcX}deg) rotateY(${calcY}deg)`
+    if (logoRef.value) {
+      let box = logoRef.value.getBoundingClientRect()
+
+      // 计算粒子角度
+      const deltaX = event.clientX - (box.left + box.width / 2)
+      const deltaY = (box.top + box.height / 2) - event.clientY;
+      angle.value = (Math.atan2(deltaY, deltaX) * 180) / Math.PI;
+      if (angle.value < 0) {
+        angle.value += 360;
+      }
+      
+      // 旋转 Logo
+      const calcX = (event.clientY - box.y - (box.height / 2)) / speed * -1;
+      const calcY = (event.clientX - box.x - (box.width / 2)) / speed;
+      logoRef.value.style.transform = `rotateX(${calcX}deg) rotateY(${calcY}deg)`
+      logoRef.value!.style.transform = `rotateX(${calcX}deg) rotateY(${calcY}deg)`
+    }
   })
 }
 
@@ -21,19 +35,16 @@ const handleMoveLeave = () => {
 }
 
 const showConfetti = () => {
-  // 计算logo相对于屏幕的坐标
   const rect = logoRef.value!.getBoundingClientRect()
-  const elementCenterX = rect.left + rect.width / 2;
-  const elementCenterY = rect.top + rect.height / 2;
-  const mappedX = elementCenterX / window.innerWidth;
-  const mappedY = elementCenterY / window.innerHeight;
+  const mappedX = (rect.left + rect.width / 2) / window.innerWidth;
+  const mappedY = (rect.top + rect.height / 2) / window.innerHeight;
   // 释放纸屑特效
   confetti({
     particleCount: 200,
-    angle: 100,
+    origin: { x: mappedX, y: mappedY },
+    angle: angle.value,
     startVelocity: 80,
     spread: 120,
-    origin: { x: mappedX, y: mappedY },
     ticks: 20,
     gravity: 1.5,
     colors: ['#FF8C06','#DD2A2A','#73FFB1','#15BE59','#F48AC3','#FFDC22','#06C3FF'],
@@ -43,8 +54,11 @@ const showConfetti = () => {
 </script>
 
 <template>
-  <div class="qii-logo image-src" @mousemove="handleMove" @mouseleave="handleMoveLeave">
-    <img ref="logoRef" src="/favicon.svg" draggable="false" alt="" @click="showConfetti">
+  <div class="qii-logo image-src" 
+    @mousemove="handleMove" 
+    @mouseleave="handleMoveLeave" 
+    @click="showConfetti">
+    <img ref="logoRef" src="/favicon.svg" draggable="false" alt="">
   </div>
 </template>
 
@@ -60,6 +74,7 @@ const showConfetti = () => {
 
   img {
     transition: all 0.4s;
+    user-select: none;
     cursor: pointer;
     &:hover {
       transition: all 0.1s;
