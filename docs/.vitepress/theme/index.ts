@@ -14,8 +14,10 @@ import QiiUI from '../../../packages/index'
 import '../../../packages/styles/index.scss'
 
 // 自定义组件
-import MyLayout from '../theme/components/MyLayout.vue'
-import Member from '../theme/components/Member.vue'
+import MyLayout from './components/MyLayout.vue'
+import Member from './components/Member.vue'
+
+// 代码演示块
 import DemoBlock from '@ruabick/vitepress-demo-block'
 import '@ruabick/vitepress-demo-block/dist/style.css'
 
