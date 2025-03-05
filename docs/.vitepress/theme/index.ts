@@ -13,14 +13,10 @@ import 'virtual:svg-icons-register'
 import QiiUI from '../../../packages/index'
 import '../../../packages/styles/index.scss'
 
-// 自定义组件
+// 引入自定义组件
 import MyLayout from './components/MyLayout.vue'
 import Member from './components/Member.vue'
-
-// 代码演示块
-import DemoBlock from '@ruabick/vitepress-demo-block'
-import '@ruabick/vitepress-demo-block/dist/style.css'
-
+import QiiDemo from './components/Demo.vue'
 
 // VitePress 主题和布局配置
 export default {
@@ -29,6 +25,6 @@ export default {
   enhanceApp({ app, router, siteData }) {
     app.use(QiiUI)
     app.component('member', Member)
-    app.component('demo', DemoBlock)
+    app.component('qii-demo', QiiDemo)
   }
 } satisfies Theme

@@ -10,7 +10,7 @@ Space 组件使用 [gap](https://developer.mozilla.org/zh-CN/docs/Web/CSS/gap) �
 在 Space 组件中放置的内容，会自动加上间距。
 
 通过 `size` 属性控制间距大小，提供 `mini`、`small`、`medium`、`large` 四种尺寸， 也可以传入数字来自定义。
-<demo src="./demo/space/basic.vue"/>
+<qii-demo src="./demo/space/basic.vue"/>
 
 
 ## 排列方式

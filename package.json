@@ -41,8 +41,6 @@
     "@qii-ui/hooks": "workspace:*",
     "@qii-ui/icons": "workspace:*",
     "@qii-ui/utils": "workspace:*",
-    "@ruabick/md-demo-plugins": "^0.3.3",
-    "@ruabick/vitepress-demo-block": "^0.3.3",
     "@types/nprogress": "^0.2.3",
     "@vitejs/plugin-vue": "^5.0.4",
     "del": "^5.1.0",

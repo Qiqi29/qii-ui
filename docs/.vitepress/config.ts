@@ -3,8 +3,7 @@ import { defineConfig } from 'vitepress'
 // 引入插件
 import path from "path"                                         // 路径解析
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'    // 注册 SVG 图标
-import { applyPlugins } from '@ruabick/md-demo-plugins'         // 代码演示块
-
+import { qiiDemoPlugins } from '../.vitepress/plugins/plugins-demo-block'
 
 // VitePress 配置
 export default defineConfig({
@@ -186,7 +185,8 @@ export default defineConfig({
   // Markdown 配置
   markdown: {
     config: (md) => {
-      applyPlugins(md)
+      qiiDemoPlugins(md)
+      // applyPlugins(md)
     },
   },
 })

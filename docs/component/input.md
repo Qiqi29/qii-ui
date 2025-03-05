@@ -4,49 +4,49 @@
 
 ## 基本用法
 使用 `v-model` 属性进行双向绑定。
-<demo src="./demo/input/basic.vue"/>
+<qii-demo src="./demo/input/basic.vue"/>
 
 
 ## 大小
 使用 `size` 属性设置输入框的大小，提供 `small`、`medium`、`large` 三种尺寸。
 
 使用 `width` 属性设置输入框的宽度。
-<demo src="./demo/input/size.vue"/>
+<qii-demo src="./demo/input/size.vue"/>
 
 
 ## 图标
 使用 `icon` 属性设置输入框的图标。使用 `right-icon` 属性设置右侧图标。
-<demo src="./demo/input/icon.vue"/>
+<qii-demo src="./demo/input/icon.vue"/>
 
 
 ## 前后缀
 使用 `prepend` 和 `append` 插槽自定义输入框的前后缀内容。
-<demo src="./demo/input/prepend.vue"/>
+<qii-demo src="./demo/input/prepend.vue"/>
 
 
 ## 清空
 添加 `clearable` 属性，会显示一个按钮，点击可以清空输入框。
-<demo src="./demo/input/clearable.vue"/>
+<qii-demo src="./demo/input/clearable.vue"/>
 
 
 ## 密码框
 添加 `password` 属性后，输入框会变为密码类型，并显示一个切换按钮。
-<demo src="./demo/input/password.vue"/>
+<qii-demo src="./demo/input/password.vue"/>
 
 
 ## 字数
 使用 `maxlength` 属性限制输入的字数，添加 `word-limit` 属性显示字数统计。
-<demo src="./demo/input/length.vue"/>
+<qii-demo src="./demo/input/length.vue"/>
 
 
 ## 默认选中
 添加 `autofocus` 属性，打开页面后，输入框会自动获取焦点。
-<demo src="./demo/input/autofocus.vue"/>
+<qii-demo src="./demo/input/autofocus.vue"/>
 
 
 ## 禁用
 添加 `disabled` 属性，输入框会被禁用。
-<demo src="./demo/input/disabled.vue"/>
+<qii-demo src="./demo/input/disabled.vue"/>
 
 
 ## API

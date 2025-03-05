@@ -4,12 +4,12 @@
 
 ## 基本用法
 默认会显示一个图标，使用 `text` 属性自定义提示文案。
-<demo src="./demo/empty/basic.vue"/>
+<qii-demo src="./demo/empty/basic.vue"/>
 
 
 ## 自定义
 在 `icon` 插槽中自定义顶部内容，在 `extra` 插槽中自定义底部内容。
-<demo src="./demo/empty/custom.vue"/>
+<qii-demo src="./demo/empty/custom.vue"/>
 
 
 ## API

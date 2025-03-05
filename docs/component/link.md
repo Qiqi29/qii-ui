@@ -7,24 +7,24 @@
 - `new` -- 在新标签页打开（默认）
 - `replace` -- 替换当前页面，重定向，不会留下历史记录
 - `push` -- 直接修改当前页面URL，保留历史记录
-<demo src="./demo/link/basic.vue"/>
+<qii-demo src="./demo/link/basic.vue"/>
 
 
 ## 样式
 使用 `type` 属性指定 Link 类型，不同类型只在颜色上有区别。
 
 添加 `line` 属性，鼠标移动到链接上面，会显示下划线。
-<demo src="./demo/link/line.vue"/>
+<qii-demo src="./demo/link/line.vue"/>
 
 
 ## 图标
 添加 `icon` 属性，会显示默认图标。你可以填入图标名称来自定义图标。
-<demo src="./demo/link/icon.vue"/>
+<qii-demo src="./demo/link/icon.vue"/>
 
 
 ## 禁用
 添加 `disabled` 属性，Link 会被禁用。
-<demo src="./demo/link/disabled.vue"/>
+<qii-demo src="./demo/link/disabled.vue"/>
 
 
 ## API

@@ -44,22 +44,22 @@ src
 
 ## 使用图标
 在组件的 `name` 属性中填入图标文件的名称，即可使用图标。
-<demo src="./demo/icon/basic.vue"/>
+<qii-demo src="./demo/icon/basic.vue"/>
 
 
 ## 颜色与大小
 使用 `color` 和 `size` 属性设置图标的颜色和大小。
-<demo src="./demo/icon/color.vue"/>
+<qii-demo src="./demo/icon/color.vue"/>
 
 
 ## 旋转状态
 添加 `spin` 属性可以让图标旋转起来。也可以使用 `rotate` 属性自定义旋转角度。
-<demo src="./demo/icon/spin.vue"/>
+<qii-demo src="./demo/icon/spin.vue"/>
 
 
 ## 自定义图标
 默认插槽中可以传入 SVG 代码来自定义图标。
-<demo src="./demo/icon/svg.vue"/>
+<qii-demo src="./demo/icon/svg.vue"/>
 
 
 ## API

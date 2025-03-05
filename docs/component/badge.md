@@ -4,32 +4,32 @@
 
 ## 基本用法
 设置 `count` 属性的数量，即可在组件上显示标记。添加 `dot` 属性，可以变成小点点。
-<demo src="./demo/badge/basic.vue"/>
+<qii-demo src="./demo/badge/basic.vue"/>
 
 
 ## 最大值
 使用 `max` 属性，限制徽标显示的最大值，超出会显示后缀 `+`。
-<demo src="./demo/badge/max.vue"/>
+<qii-demo src="./demo/badge/max.vue"/>
 
 
 ## 文本
 使用 `text` 属性，可以自定义徽标显示的文本。
-<demo src="./demo/badge/text.vue"/>
+<qii-demo src="./demo/badge/text.vue"/>
 
 
 ## 独立使用
 `default slot` 默认插槽为空时，徽标可以独立使用。
-<demo src="./demo/badge/alone.vue"/>
+<qii-demo src="./demo/badge/alone.vue"/>
 
 
 ## 类型
 使用 `type` 属性改变徽标类型，不同类型只在颜色上有区别。
-<demo src="./demo/badge/type.vue"/>
+<qii-demo src="./demo/badge/type.vue"/>
 
 
 ## 颜色
 如果需要自定义徽标颜色，可以使用 `color` 属性。
-<demo src="./demo/badge/color.vue"/>
+<qii-demo src="./demo/badge/color.vue"/>
 
 
 

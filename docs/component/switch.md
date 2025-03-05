@@ -4,44 +4,44 @@
 
 ## 基本用法
 使用 `v-model` 属性进行双向绑定，否则开关将不会改变状态。
-<demo src="./demo/switch/basic.vue"/>
+<qii-demo src="./demo/switch/basic.vue"/>
 
 
 ## 大小
 使用 `size` 属性设置开关的大小，提供 `small`、`medium`、`large` 三种尺寸。
-<demo src="./demo/switch/size.vue"/>
+<qii-demo src="./demo/switch/size.vue"/>
 
 
 ## 形状
 使用 `shape` 属性改变开关的形状。
 
 `round` - **圆形开关**，`square` - **方形开关**。
-<demo src="./demo/switch/shape.vue"/>
+<qii-demo src="./demo/switch/shape.vue"/>
 
 
 ## 颜色
 使用 `checked-color` 属性和 `unchecked-color` 属性自定义开关的颜色。
-<demo src="./demo/switch/color.vue"/>
+<qii-demo src="./demo/switch/color.vue"/>
 
 
 ## 图标
 使用 `checked-icon` 属性和 `unchecked-icon` 属性自定义开关上显示的图标。
-<demo src="./demo/switch/icon.vue"/>
+<qii-demo src="./demo/switch/icon.vue"/>
 
 
 ## 加载中
 添加 `loading` 属性，开关会显示加载状态。
-<demo src="./demo/switch/loading.vue"/>
+<qii-demo src="./demo/switch/loading.vue"/>
 
 
 ## 异步切换
 设置 `beforeChange` 属性为一个函数，函数的返回值即为是否切换。
-<demo src="./demo/switch/change.vue"/>
+<qii-demo src="./demo/switch/change.vue"/>
 
 
 ## 禁用
 添加 `disabled` 属性，开关会被禁用。
-<demo src="./demo/switch/disabled.vue"/>
+<qii-demo src="./demo/switch/disabled.vue"/>
 
 
 ## API

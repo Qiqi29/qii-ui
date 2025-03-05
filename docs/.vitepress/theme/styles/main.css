@@ -29,7 +29,7 @@
   --q-docs-scrollbar-active: #babdc1;
 }
 
-.dark {
+html.dark {
   --q-color-theme: #3080FF;
   --q-color-theme-alpha: #2871f820;
 
@@ -76,6 +76,7 @@ body {
 /* 滚动条样式 */
 ::-webkit-scrollbar {
   width: 6px;
+  height: 6px;
   display: unset;
 }
 
@@ -92,19 +93,10 @@ body {
   background-color: var(--q-docs-scrollbar-active);
 }
 
-/* 去除标题加粗 */
-/* .vp-doc h1,
-.vp-doc h2,
-.vp-doc h3,
-.vp-doc h4 {
-  font-weight: normal;
-} */
-
 /* 去除标题下划线 */
 .vp-doc h2 {
   border: none;
 }
-
 
 .vp-doc p {
   line-height: 24px;
@@ -113,13 +105,6 @@ body {
 
 .vp-doc :not(pre)>code {
   padding: 2px 6px;
-}
-
-/* 代码块 */
-.vp-doc div[class*='language-'],
-.vp-block {
-  margin: 16px 0px;
-  border-radius: 8px;
 }
 
 
@@ -250,37 +235,6 @@ body {
   width: 4px;
   left: 0px;
 }
-
-
-/* 代码演示块样式 */
-.vitepress-demo {
-  border-radius: 8px !important;
-  border: 1px solid var(--vp-c-gutter) !important;
-  overflow: hidden;
-}
-
-.vitepress-demo .demo-slot {
-  padding: 30px !important;
-}
-
-.vitepress-demo .demo-actions {
-  padding: 0 14px 0 8px !important;
-  border-top: 1px dashed var(--vp-c-gutter) !important;
-  justify-content: flex-end !important;
-}
-
-.vitepress-demo .demo-actions .demo-platforms {
-  display: none;
-}
-
-.vitepress-demo .extra-class {
-  border-top: 1px dashed var(--vp-c-gutter) !important;
-}
-
-.vitepress-demo [class*=language-] code {
-  padding: 20px 22px !important;
-}
-
 
 /* 文档内表格样式 */
 .vp-doc table {
