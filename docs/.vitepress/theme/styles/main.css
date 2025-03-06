@@ -107,6 +107,11 @@ body {
   padding: 2px 6px;
 }
 
+/* 代码块样式 */
+.vp-doc div[class*='language-'], .vp-block {
+  margin: 16px 0px;
+  border-radius: 8px;
+}
 
 /* 代码组标题栏 */
 .vp-code-group .tabs {

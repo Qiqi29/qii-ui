@@ -25,7 +25,7 @@
 // 混合：不同大小的按钮
 @mixin buttonSize($size, $height, $padding, $fontSize, $borderRadius) {
   height: $height;
-  padding: if($size == "small", 0px $padding, 0.5px $padding 0px $padding);
+  padding: if($size == "small", 0px $padding, 0px $padding);
   font-size: $fontSize;
   border-radius: $borderRadius;
   // 文字为空，形状为圆形

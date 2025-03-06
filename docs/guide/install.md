@@ -14,14 +14,14 @@ Qii UI 使用 Vue3 开发， 请在同样使用 Vue3 的项目中使用。
 :::
 
 ::: code-group
-```sh [npm]
-npm install qii-ui
+```shell [npm]
+npm i qii-ui
 ```
-```sh [yarn]
-* 施工中..
+```shell [pnpm]
+🚧 施工中..
 ```
-```sh [pnpm]
-* 施工中..
+```shell [yarn]
+🚧 施工中..
 ```
 :::
 
@@ -30,7 +30,7 @@ npm install qii-ui
 
 ### 按需引入 <Badge type="tip" text="推荐" />
 支持单独引入需要的组件，你可以全局安装在 Vue 中，或者在 vue 组件中引入。
-```ts
+```ts [main.ts]
 // main.ts
 import { QButton, QIcon } from 'qii-ui'
 import 'qii-ui/dist/index.css'
