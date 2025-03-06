@@ -1,7 +1,7 @@
 <template>
   <q-space :size="40" direction="center">
 
-    <q-avatar-group size="large" shape="square">
+    <q-avatar-group size="medium" shape="square">
       <q-avatar :src="avatar" />
       <q-avatar :src="avatar" />
       <q-avatar :src="avatar" />

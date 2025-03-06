@@ -8,7 +8,6 @@ export default defineComponent({
   props: { ...SpaceProps },
   setup(props, { slots }) {
 
-    // 组件类名
     const ns = useNameSpace('space')
     const spaceClass = computed(() => [
       ns.nameSpace,
@@ -16,7 +15,6 @@ export default defineComponent({
       ns.is(props.fill, 'fill'),
     ])
 
-    // 组件样式
     const spaceStyle = computed<CSSProperties>(() => ({
       gap: typeof props.size === 'number' ? props.size + 'px' : '',
       flexDirection: props.vertical ? 'column' : 'row',

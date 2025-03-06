@@ -1,9 +1,12 @@
 .q-avatar-group {
   display: inline-flex;
 
-  // 给头像添加边框
+  // 头像边框
   > .q-avatar {
     outline: 3px solid var(--q-color-light);
+    &:not(:first-child) {
+      margin-left: -8px;
+    }
   }
 }
 
@@ -13,6 +16,6 @@
     margin-left: $size;
   }
 }
-.q-avatar-group__small { @include marginSize(-8px) }
+.q-avatar-group__small { @include marginSize(-6px) }
 .q-avatar-group__medium { @include marginSize(-10px) }
 .q-avatar-group__large { @include marginSize(-14px) }

@@ -3,7 +3,7 @@
   align-items: center;
   height: 30px;
 
-  background: var(--q-color-default-l);
+  background: var(--q-color-default);
   border: 1px solid var(--q-color-default-h);
   border-radius: 5.5px;
   transition: all 0.15s;
@@ -24,7 +24,7 @@
 
   &:not(.is-disabled) {
     &:hover {
-      background: var(--q-color-default-l-h);
+      background: var(--q-color-default-h);
     }
     &:focus-within,
     &:active {

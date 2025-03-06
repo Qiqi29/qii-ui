@@ -15,16 +15,13 @@ import { linkProps } from './link'
 import { QIcon } from '../../Icon'
 import { linkIcon } from '@qii-ui/icons'
 
-// 组件配置
 defineOptions({ 
   name: 'q-link',
   inheritAttrs: false,
 })
 
-// 组件属性
 const props = defineProps({ ...linkProps })
 
-// 组件类名
 const ns = useNameSpace('link')
 const linkClass = computed(() => [
   ns.nameSpace,
@@ -33,7 +30,6 @@ const linkClass = computed(() => [
   ns.is(props.line, 'has-line')
 ])
 
-// 点击事件
 function handleClick() {
   if (!props.href || props.disabled) return
   if (props.open === 'new') window.open(props.href)

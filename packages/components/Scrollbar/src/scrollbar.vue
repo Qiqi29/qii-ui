@@ -39,17 +39,14 @@ import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import { scrollbarProps, scrollbarEmits } from './scrollbar'
 import { useNameSpace } from '@qii-ui/hooks'
 
-// 组件配置
 defineOptions({ 
   name: 'q-scrollbar',
   inheritAttrs: true,
 })
 
-// 组件属性
 const props = defineProps({ ...scrollbarProps })
 const emits = defineEmits({ ...scrollbarEmits })
 
-// 组件类名
 const ns = useNameSpace('scrollbar')
 const scrollbarClass = computed(() => [
   ns.nameSpace,
@@ -59,11 +56,11 @@ const scrollbarClass = computed(() => [
 
 
 // 绑定滚动条的dom节点
-const content = ref<HTMLDivElement|null>(null)
-const barY = ref<HTMLDivElement|null>(null)
-const barX = ref<HTMLDivElement|null>(null)
-const thumbY = ref<HTMLDivElement|null>(null)
-const thumbX = ref<HTMLDivElement|null>(null)
+const content = ref<HTMLDivElement>()
+const barY = ref<HTMLDivElement>()
+const barX = ref<HTMLDivElement>()
+const thumbY = ref<HTMLDivElement>()
+const thumbX = ref<HTMLDivElement>()
 
 type Thumb = 'thumbY'|'thumbX'|'';
 const activeThumb = ref<Thumb>('')  // 活跃的滚动条

@@ -54,17 +54,14 @@ import { useNameSpace } from '@qii-ui/hooks'
 import { QIcon } from '../../Icon'
 import { closeIcon, eyeIcon, eyeCloseIcon } from '@qii-ui/icons'
 
-// 组件配置
 defineOptions({ 
   name: 'q-input',
   inheritAttrs: true,
 })
 
-// 组件属性
 const props = defineProps({ ...inputProps })
 const emits = defineEmits({ ...inputEmits })
 
-// 组件类名
 const ns = useNameSpace('input')
 const inputClass = computed(() => [
   ns.nameSpace,
@@ -73,35 +70,25 @@ const inputClass = computed(() => [
 ])
 
 
-// 绑定输入框
 const inputRef = ref<HTMLInputElement|null>()
 
-
-/**
- * 点击输入框任意内容，聚焦输入框
- */
+// 点击输入框任意内容，聚焦输入框
 const handleClickInput = () => {
   inputRef.value?.focus()
 }
 onMounted(() => {
-  // 判断是否默认聚焦输入框
   if (props.autofocus) {
     inputRef.value?.focus()
   }
 })
 
 
-/**
- * 计算属性：判断是否显示清除按钮
- */
+// 判断是否显示清除按钮
 const showClear = computed(() => {
   return props.clearable && props.modelValue && !props.disabled && !props.readonly
 })
 
-
-/**
- * 计算属性：判断是否显示密码显隐按钮
- */
+// 判断是否显示密码显隐按钮
 const showPasswordBtn = computed(() => {
   return props.password && props.modelValue && !props.disabled && !props.readonly
 })
@@ -110,18 +97,12 @@ const switchPassword = () => {
   passwordVisible.value = !passwordVisible.value
 }
 
-
-/**
- * 计算属性：输入框类型
- */
- const inputType = computed(() => {
+// 输入框类型
+const inputType = computed(() => {
   return props.password ? (passwordVisible.value ? 'text' : 'password') : props.type
 })
 
-
-/**
- * 计算属性：字数统计
- */
+// 字数统计
 const wordLimitValue = computed(() => {
   return `${props.modelValue.length}/${props.maxlength}`
 })
@@ -134,30 +115,22 @@ watch(() => props.modelValue, (newValue, oldValue) => {
   }
 })
 
-
-/**
- * 事件：输入框输入时触发
- */
+// 事件：输入框输入时触发
 const handleInput = (e: Event) => {
   const value = (e.target as HTMLInputElement).value
   emits('update:modelValue', value)
   emits('input', value)
 }
 
-/**
- * 事件：输入框值发生改变时触发
- */
- const handleChange = (e: Event) => {
+// 事件：输入框值发生改变时触发
+const handleChange = (e: Event) => {
   emits('change', (e.target as HTMLInputElement).value)
 }
 
-/**
- * 事件：点击清除按钮
- */
+// 事件：点击清除按钮
 const onClear = () => {
   emits('update:modelValue', '')
   emits('input', '')
   emits('clear')
 }
-
 </script>

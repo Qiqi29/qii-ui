@@ -9,7 +9,6 @@ export default defineComponent({
   props: { ...avatarGroupProps },
   setup(props, { slots }) {
 
-    // 组件类名
     const ns = useNameSpace('avatar-group')
     const avatarGroupClass = computed(() => [
       ns.nameSpace,
@@ -22,9 +21,9 @@ export default defineComponent({
       shape: readonly(computed(() => props.shape)),
     })
 
-    // 获取默认插槽内容
+    // 获取默认插槽中的组件
     const children = useFilterNodes(slots.default?.())
-    // 遍历插槽内容，返回 max 属性限制的节点
+    // 截取 max 属性限制的数量
     const avatarNodes = children.filter((_, index) => index < props.max)
   
     // 判断是否添加显示超出数量提示
@@ -34,7 +33,7 @@ export default defineComponent({
       )
     }
 
-    // 渲染头像组件
+    // 渲染头像组
     return () => h('div', { class: avatarGroupClass.value }, avatarNodes)
   }
 })

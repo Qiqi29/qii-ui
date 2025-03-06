@@ -15,8 +15,8 @@
 
 <script lang="ts" setup>
 import { computed, useSlots, Slots, CSSProperties, inject } from 'vue'
-import { buttonProps, buttonEmits } from './button'
 import { useNameSpace } from '@qii-ui/hooks'
+import { buttonProps, buttonEmits } from './button'
 const slots = useSlots() as Slots
 
 import { QIcon } from '../../Icon'
@@ -24,20 +24,16 @@ import { QIcon } from '../../Icon'
 import { loadingIcon } from '@qii-ui/icons'
 
 
-// 组件配置
 defineOptions({ 
   name: 'q-button',
   inheritAttrs: false,
 })
 
-// 组件属性
 const props = defineProps({ ...buttonProps })
 const emits = defineEmits({ ...buttonEmits })
 
-// 接收按钮组属性
 const buttonGroup: any = inject('buttonGroup', '')
 
-// 组件类名
 const ns = useNameSpace('button')
 const buttonClass = computed(() => [
   ns.nameSpace,
@@ -54,12 +50,10 @@ const buttonClass = computed(() => [
   ns.is(!slots.default, 'empty'),
 ])
 
-// 组件样式
 const buttonStyle = computed<CSSProperties>(() => ({
   height: typeof props.size === 'number' ? `${props.size}px` : '',
 }))
 
-// 点击事件
 const onClick = (event: MouseEvent) => {
   if (props.disabled || props.loading) return;
   emits('click', event)

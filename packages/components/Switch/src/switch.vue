@@ -29,17 +29,14 @@ import { isFunction } from '@qii-ui/utils'
 import { QIcon } from '../../Icon'
 import { loadingIcon } from '@qii-ui/icons'
 
-// 组件配置
 defineOptions({ 
   name: 'q-switch',
   inheritAttrs: true,
 })
 
-// 组件属性
 const props = defineProps({ ...switchProps })
 const emits = defineEmits({ ...switchEmits })
 
-// 组件类名
 const ns = useNameSpace('switch')
 const switchClass = computed(() => [
   ns.nameSpace,
@@ -54,7 +51,6 @@ const switchClass = computed(() => [
 const loading = ref(props.loading)
 const loadingState = computed(() => loading.value || props.loading)
 
-// 组件样式
 const switchStyle = computed<CSSProperties>(() => ({
   backgroundColor: props.modelValue ? props.checkedColor : props.uncheckedColor,
 }))
