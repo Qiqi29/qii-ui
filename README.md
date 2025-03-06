@@ -1,3 +1,4 @@
+<br>
 <p align="center">
   <a href="https://qiqi29.github.io/qii-ui-doc/" target="_blank" rel="noopener noreferrer">
     <img width="150" src="https://qiqi29.github.io/qii-ui-doc/favicon.svg" alt="logo">
@@ -15,13 +16,13 @@
 
 
 ### 开发中
-Qii UI 组件库目前正在缓慢开发中，组件数量也不多，不推荐在正式项目中使用，不过别担心，我会持续更新完善这个组件库哒！
+组件库目前正在缓慢开发中，组件数量也不多，不推荐在正式项目中使用。
 
 
 ### 安装
 使用 npm 命令快速安装组件库。
 ```npm
-npm install qii-ui
+npm i qii-ui
 ```
 
 
