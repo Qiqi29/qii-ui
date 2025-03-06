@@ -1,4 +1,5 @@
 import { PropType } from "vue"
+import { ElementSizes, ElementShapes } from '@qii-ui/utils'
 
 export const avatarProps = {
   /**
@@ -12,14 +13,14 @@ export const avatarProps = {
    * @zh 头像大小
    */
   size: {
-    type: [String, Number] as PropType<'small' | 'medium' | 'large' | number>,
+    type: [String, Number] as PropType<ElementSizes | number>,
     default: 'medium'
   },
   /**
    * @zh 头像的形状
    */
   shape: {
-    type: String as PropType<'square' | 'round'>,
+    type: String as PropType<ElementShapes>,
     default: 'round'
   }
 } as const

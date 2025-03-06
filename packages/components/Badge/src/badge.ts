@@ -1,4 +1,5 @@
 import { PropType } from "vue"
+import { ElementTypes } from '@qii-ui/utils'
 
 export const badgeProps = {
   /**
@@ -26,7 +27,7 @@ export const badgeProps = {
    * @zh 徽标类型
    */
   type: {
-    type: String,
+    type: String as PropType<ElementTypes>,
     default: 'danger'
   },
   /**

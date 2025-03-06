@@ -1,11 +1,12 @@
 import { PropType } from "vue"
+import { ElementTypes } from '@qii-ui/utils'
 
 export const linkProps = {
   /**
    * @zh 链接类型
    */
   type: {
-    type: String,
+    type: String as PropType<ElementTypes>,
     default: "primary",
   },
   /**

@@ -184,7 +184,13 @@ body {
 
 
 /* 侧边栏 */
+#VPSidebarNav {
+  padding-top: 20px;
+}
+
 .VPSidebar {
+  padding: 64px 32px 96px 32px !important;
+  width: 270px !important;
   background-color: var(--vp-c-bg) !important;
   border-right: 1px solid var(--vp-c-gutter);
 }

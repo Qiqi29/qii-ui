@@ -1,5 +1,5 @@
 import { PropType } from "vue"
-import { isBoolean } from '@qii-ui/utils'
+import { isBoolean, ElementSizes, ElementShapes } from '@qii-ui/utils'
 
 export const switchProps = {
   /**
@@ -13,14 +13,14 @@ export const switchProps = {
    * @zh 开关的大小
    */
   size: {
-    type: String as PropType<"small" | "medium" | "large">,
+    type: String as PropType<ElementSizes>,
     default: "medium"
   },
   /**
    * @zh 开关的形状
    */
   shape: {
-    type: String as PropType<"square" | "round">,
+    type: String as PropType<ElementShapes>,
     default: "round"
   },
   /**

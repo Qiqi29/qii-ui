@@ -1,11 +1,12 @@
 import { PropType } from "vue"
+import { ElementSizes } from '@qii-ui/utils'
 
 export const SpaceProps = {
   /**
    * @zh 间距大小
    */
   size: {
-    type: [String, Number] as PropType<'mini'|'small'|'medium'|'large'|number>,
+    type: [String, Number] as PropType<'mini' | ElementSizes | number>,
     default: "medium",
   },
   /**

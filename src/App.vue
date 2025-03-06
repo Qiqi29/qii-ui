@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import { ref } from "vue"
 
-
 const handleClick = () => {
   console.log('点击了按钮')
 }
@@ -13,7 +12,7 @@ const inputValue = ref('')
 
 <template>
   <div class="content">
-    
+
     <p class="title">链接</p>
     <span>这里用来测试组件</span>
     <q-link href="https://www.baidu.com" line>这是链接</q-link>

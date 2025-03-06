@@ -1,18 +1,19 @@
 import { PropType } from "vue"
+import { ElementTypes, ElementSizes } from '@qii-ui/utils'
 
 export const buttonProps = {
   /**
    * @zh 按钮类型
    */
   type: {
-    type: String as PropType<"default" | "primary" | "success" | "warning" | "danger">,
+    type: String as PropType<ElementTypes>,
     default: "default",
   },
   /**
    * @zh 按钮大小
    */
   size: {
-    type: [String, Number] as PropType<"small" | "medium" | "large" | number>,
+    type: [String, Number] as PropType<ElementSizes | number>,
     default: "medium"
   },
   /**

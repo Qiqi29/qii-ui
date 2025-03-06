@@ -115,6 +115,12 @@ export default defineConfig({
             { text: '间距 Space', link: '/component/space' },
           ]
         },
+        {
+          text: '反馈组件',
+          items: [
+            { text: '消息 Message', link: '/component/message' },
+          ]
+        },
       ],
     },
 

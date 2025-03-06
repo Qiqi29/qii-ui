@@ -1,5 +1,6 @@
 import { PropType } from "vue"
 import { isString } from "@qii-ui/utils"
+import { ElementSizes } from '@qii-ui/utils'
 
 export const inputProps = {
   /**
@@ -20,7 +21,7 @@ export const inputProps = {
    * @zh 输入框大小
    */
   size: {
-    type: String as PropType<"small" | "medium" | "large">,
+    type: String as PropType<ElementSizes>,
     default: 'medium'
   },
   /**
