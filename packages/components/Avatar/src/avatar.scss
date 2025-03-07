@@ -20,9 +20,17 @@
     height: 100%;
     object-fit: cover;
   }
+  
+  &.q-avatar__round {
+    border-radius: 50%;
+  }
+
+  &.q-avatar__slot {
+    display: flex;
+    text-wrap: nowrap;
+  }
 }
 
-// 不同大小
 @mixin size($size, $radius) {
   width: $size;
   height: $size;
@@ -33,14 +41,3 @@
 .q-avatar__small { @include size(24px, 4px) }
 .q-avatar__medium { @include size(36px, 5px) }
 .q-avatar__large { @include size(48px, 6px) }
-
-// 圆形
-.q-avatar__round {
-  border-radius: 50%;
-}
-
-// 插槽内容
-.q-avatar__slot {
-  display: flex;
-  text-wrap: nowrap;
-}

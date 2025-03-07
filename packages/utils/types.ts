@@ -10,7 +10,9 @@ export const isFunction = (val: any): val is Function => typeof val === 'functio
 export const isArray = (val: any): val is Array<any> => Array.isArray(val)
 export const isUndefined = (val: any): val is undefined => val === undefined
 
-
+/**
+ * 常用的类型
+ */
 export type ElementTypes = 'default' | 'primary' | 'success' | 'warning' | 'danger'
 export type ElementSizes = 'small' | 'mudium' | 'large'
 export type ElementShapes = 'square' | 'round'

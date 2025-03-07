@@ -1,0 +1,14 @@
+
+@mixin n($name) {
+  .q-#{$name} {
+    @content;
+  }
+}
+
+@mixin m($modifier) {
+  @at-root {
+    #{& + '__' + $modifier} {
+      @content;
+    }
+  }
+}
