@@ -3,9 +3,16 @@
   display: inline-flex;
   align-items: center;
   vertical-align: top;
+  cursor: pointer;
 
   transition: all 0.1s !important;
   text-decoration: none !important;
+
+
+  &.is-disabled {
+    opacity: 0.6;
+    cursor: default;
+  }
 
   .q-icon {
     margin-right: 1px;
@@ -14,36 +21,28 @@
 }
 
 
-// 混合：不同的链接类型
 @mixin linkType($type) {
-  color: var(--q-color-#{$type}) !important;
-  // 下划线
-  &.is-has-line::after {
-    content: "";
-    position: absolute; left: 0; bottom: 0px;
-    width: 100%;
-    height: 1px;
-    background-color: var(--q-color-#{$type}-a);
-    transition: transform 0.25s ease;
-    transform: scale(0, 1);
-  }
-  &:hover:not(.is-disabled) {
-    color: var(--q-color-#{$type}-a) !important;
-    &.is-has-line::after { 
-      transform: scale(1, 1); 
+  .q-link__#{$type} {
+    color: var(--q-color-#{$type}) !important;
+    &.is-has-line::after {
+      content: "";
+      position: absolute; left: 0; bottom: 0px;
+      width: 100%;
+      height: 1px;
+      background-color: var(--q-color-#{$type}-a);
+      transition: transform 0.25s ease;
+      transform: scale(0, 1);
+    }
+    &:hover:not(.is-disabled) {
+      color: var(--q-color-#{$type}-a) !important;
+      &.is-has-line::after { 
+        transform: scale(1, 1); 
+      }
     }
   }
 }
 
-// 生成链接类名
-$lineTypes: ("primary", "success", "warning", "danger");
+$lineTypes: ('primary', 'success', 'warning', 'danger');
 @each $type in $lineTypes {
-  .q-link__#{$type} { @include linkType($type) }
-}
-
-
-// 禁用状态
-.q-link.is-disabled {
-  opacity: 0.6;
-  cursor: no-drop;
+  @include linkType($type)
 }

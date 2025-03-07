@@ -14,7 +14,6 @@ export const linkProps = {
    */
   href: {
     type: String,
-    default: "",
   },
   /**
    * @zh 链接的跳转方式

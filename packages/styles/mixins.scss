@@ -15,7 +15,7 @@
 //   }
 // }
 
-
+// 常用的 flex 布局
 $flex-types: (
   'start': flex-start,
   'center': center,
@@ -34,7 +34,6 @@ $flex-types: (
   }
 }
 
-// 常用的 flex 布局
 @mixin flex($direction, $type) {
   @if $direction == 'x' {
     display: flex;

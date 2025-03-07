@@ -1,5 +1,5 @@
 <template>
-  <a :class="linkClass" :href="href" @click.prevent="handleClick">
+  <a :class="linkClass" :href="linkHref" @click.prevent="handleClick">
     
     <q-icon v-if="icon === ''" size="1em"><linkIcon/></q-icon>
     <q-icon v-if="icon" :name="icon" size="1em"/>
@@ -30,7 +30,11 @@ const linkClass = computed(() => [
   ns.is(props.line, 'has-line')
 ])
 
-function handleClick() {
+const linkHref = computed(() => {
+  return props.disabled ? undefined : props.href
+})
+
+const handleClick = () => {
   if (!props.href || props.disabled) return
   if (props.open === 'new') window.open(props.href)
   if (props.open === 'replace') window.location.replace(props.href)
