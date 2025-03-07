@@ -2,11 +2,11 @@
   <div :class="dividerClass" :style="dividerStyle">
     
     <template v-if="!vertical">
-        <div :class="[ns.name('line'), ns.name('line--left')]"></div>
-        <div v-if="$slots.default" :class="ns.name('title')">
-            <slot></slot>
-        </div>
-        <div v-if="$slots.default" :class="[ns.name('line'), ns.name('line--right')]"></div>
+      <div :class="[ns.name('line'), ns.name('line-left')]"></div>
+      <div v-if="$slots.default" :class="ns.name('title')">
+          <slot></slot>
+      </div>
+      <div v-if="$slots.default" :class="[ns.name('line'), ns.name('line-right')]"></div>
     </template>
 
   </div>
@@ -27,7 +27,7 @@ const props = defineProps({ ...dividerProps })
 const ns = useNameSpace('divider')
 const dividerClass = computed(() => [
   ns.nameSpace,
-  ns.name('title--' + props.titlePosition),
+  ns.name(props.titlePosition),
   ns.is(props.vertical, 'vertical'),
 ])
 

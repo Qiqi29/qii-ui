@@ -1,3 +1,3 @@
 <template>
-  <q-empty text="暂无数据"/>
+  <q-empty text="啥都木有"/>
 </template>

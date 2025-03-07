@@ -6,6 +6,5 @@ export const emptyProps = {
    */
   text: {
     type: String,
-    default: ''
   },
 } as const

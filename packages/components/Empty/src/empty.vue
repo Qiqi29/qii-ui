@@ -7,11 +7,11 @@
       </slot>
     </div>
 
-    <div :class="ns.name('text')">
+    <div v-if="text" :class="ns.name('text')">
        {{ text }}
     </div>
 
-    <div :class="ns.name('extra')">
+    <div v-if="$slots.extra" :class="ns.name('extra')">
       <slot name="extra"></slot>
     </div>
 
