@@ -1,29 +1,29 @@
 @use '../../../styles/mixins.scss' as *;
 
 .q-divider {
-  @include flex(x, center);
+  @include flex(x);
   box-sizing: border-box;
   width: 100%;
 
-  .q-divider__line {
+  @include m( line ) {
     flex: 1;
     height: 1px;
     background: var(--q-color-border);
   }
 
-  .q-divider__title {
+  @include m( title ) {
     margin: 0 12px;
     flex-shrink: 0;
   }
-
-  &.q-divider__left {
+  
+  @include m( left ) {
     .q-divider__line-left {
       flex: none;
       width: 28px;
     }
   }
 
-  &.q-divider__right {
+  @include m( right ) {
     .q-divider__line-right {
       flex: none;
       width: 28px;

@@ -1,3 +1,5 @@
+@use '../../../styles/mixins.scss' as *;
+
 .q-avatar {
   box-sizing: border-box;
   user-select: none;
@@ -21,11 +23,11 @@
     object-fit: cover;
   }
   
-  &.q-avatar__round {
+  @include m( round ) {
     border-radius: 50%;
   }
 
-  &.q-avatar__slot {
+  @include m( slot ) {
     display: flex;
     text-wrap: nowrap;
   }

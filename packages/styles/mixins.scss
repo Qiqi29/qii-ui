@@ -9,14 +9,20 @@
 // }
 
 // 命名空间__参数
-// @mixin m($modify) {
-//   @at-root #{& + '__' + $modify} {
-//     @content;
-//   }
-// }
+@mixin m($modify) {
+  @at-root #{& + '__' + $modify} {
+    @content;
+  }
+}
+
 
 // 常用的 flex 布局
-$flex-types: (
+$flex-aligns: (
+  'start': flex-start,
+  'center': center,
+  'end': flex-end
+);
+$flex-justifies: (
   'start': flex-start,
   'center': center,
   'end': flex-end,
@@ -25,28 +31,19 @@ $flex-types: (
   'evenly': space-evenly
 );
 
-@function get-flex($type) {
-  @if map.has-key($flex-types, $type) {
-    @return map.get($flex-types, $type);
-  } @else {
-    @error '无效的布局类型: #{$type}';
-    @return null;
-  }
-}
-
-@mixin flex($direction, $type) {
+@mixin flex($direction, $align: center, $justify: center) {
+  display: flex;
   @if $direction == 'x' {
-    display: flex;
-    align-items: center;
-    justify-content: get-flex($type);
+    align-items: map.get($flex-aligns, $justify);
+    justify-content: map.get($flex-justifies, $align);
   }
   @else if $direction == 'y' {
-    display: flex;
-    align-items: get-flex($type);
-    justify-content: center;
+    align-items: map.get($flex-aligns, $align);
+    justify-content: map.get($flex-justifies, $justify);
     flex-direction: column;
   }
   @else {
     @error '无效的布局类型: #{$direction}'
   }
 }
+

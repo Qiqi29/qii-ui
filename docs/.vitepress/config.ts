@@ -192,7 +192,6 @@ export default defineConfig({
   markdown: {
     config: (md) => {
       qiiDemoPlugins(md)
-      // applyPlugins(md)
     },
   },
 })
