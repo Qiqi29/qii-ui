@@ -8,10 +8,9 @@
   transition: all 0.1s !important;
   text-decoration: none !important;
 
-
   &.is-disabled {
     opacity: 0.6;
-    cursor: default;
+    cursor: no-drop;
   }
 
   .q-icon {
@@ -42,7 +41,6 @@
   }
 }
 
-$lineTypes: ('primary', 'success', 'warning', 'danger');
-@each $type in $lineTypes {
+@each $type in ('primary', 'success', 'warning', 'danger') {
   @include linkType($type)
 }

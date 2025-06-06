@@ -2,7 +2,7 @@ import { PropType } from "vue"
 
 export const iconProps = {
   /**
-   * @zh 图标名称
+   * @zh 图标名
    */
   name: {
     type: String,
@@ -36,4 +36,4 @@ export const iconProps = {
     type: Number,
     default: 0,
   },
-} as const;
+} as const

@@ -1,11 +1,11 @@
 # 图标 Icon
-图标组件使用 `symbol` 格式的 SVG 图标，输入图标的名称就可以使用本地图标。
+图标组件使用 `symbol` 格式的 SVG 图标，可以简单快速的使用本地的 SVG 图标。
 
 Qii-UI 使用的图标来自 [MingCute Icon](https://www.mingcute.com/) 图标库。
 
 
 ## 安装插件
-1. 安装下面的两个插件。（用来把 SVG 图标自动注册到 HTML 中）
+1. 首先安装下面的两个插件（用来把 SVG 图标自动注册到 HTML 中）
 ```bash
 npm i vite-plugin-svg-icons -D
 npm i fast-glob@3.x -D
@@ -26,7 +26,7 @@ export default defineConfig({
   plugins: [
     createSvgIconsPlugin({
       iconDirs: [path.resolve(__dirname, 'src/icons')],  // 存放图标的目录
-      symbolId: 'icon-[dir]-[name]'                      // symbolId 的格式
+      symbolId: 'icon-[dir]-[name]'                      // symbolId 格式
     })
   ]
 })

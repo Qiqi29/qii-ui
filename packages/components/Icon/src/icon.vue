@@ -8,9 +8,9 @@
 
 <script lang="ts" setup>
 import { computed, CSSProperties } from 'vue'
-import { iconProps } from './icon'
 // @ts-ignore
 import { useNameSpace } from '@qii-ui/hooks'
+import { iconProps } from './icon'
 
 defineOptions({
   name: 'q-icon',
